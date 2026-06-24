@@ -113,7 +113,7 @@ export async function getFailureById(id: string) {
   };
 }
 
-export asnfunction getApiLogs(
+export async function getApiLogs(
   testId: string
 ) {
   try {

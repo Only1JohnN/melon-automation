@@ -1,8 +1,5 @@
 import Topbar from "@/components/Topbar";
-import {
-  getFailureById,
-  getApiLogs,
-} from "@/lib/report-parser";
+import { getFailureById } from "@/lib/report-parser";
 import { notFound } from "next/navigation";
 import ApiRequestRow from "@/components/ApiRequestRow";
 
@@ -14,11 +11,12 @@ export default async function FailureDetailsPage({
   const { id } = await params;
 
   const failure = await getFailureById(id);
-  const apiLogs = await getApiLogs(id);
 
   if (!failure) {
     notFound();
   }
+
+  const apiLogs = (failure as any).apiLogs ?? [];
 
   return (
   <>
