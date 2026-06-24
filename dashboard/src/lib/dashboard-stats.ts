@@ -1,4 +1,4 @@
-export function calculateStats(report: any) {
+export async function calculateStats(report: any) {
   let passed = 0;
   let failed = 0;
 
