@@ -119,6 +119,10 @@ jobs:
 
           cp -R /tmp/melon-reports/* reports/
 
+          mkdir -p reports-artifacts
+
+          cp -R test-results reports-artifacts/test-results || true
+
           git add .
 
           git commit -m "Update reports" || echo "No changes to commit"

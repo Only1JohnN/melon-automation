@@ -112,6 +112,10 @@ export async function getFailures() {
                     id:
                       spec.id ||
                       spec.title,
+                    playwrightTestId:
+                      test.results?.[0]?.testId ||
+                      test.testId ||
+                      spec.id,
 
                     title:
                       spec.title,

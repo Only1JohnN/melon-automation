@@ -6,7 +6,7 @@ import {
 import {
   attachNetworkLogger,
   saveNetworkLogs,
-} from "../utils/networkLogger.ts";
+} from "../utils/networkLogger";
 
 base.beforeEach(
   async ({ page }, testInfo) => {
