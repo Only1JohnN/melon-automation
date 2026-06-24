@@ -28,8 +28,8 @@ export function getOverviewStats() {
       report.stats.duration / 1000
     ).toFixed(2),
     browser:
-      report.config.projects?.[0]?.name ??
-      "Unknown",
+      report.config?.projects?.[0]
+        ?.name ?? "Unknown",
     startTime: report.stats.startTime,
     environment:
       metadata.environment ?? "Unknown",

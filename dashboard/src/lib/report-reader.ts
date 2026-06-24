@@ -17,20 +17,27 @@ export function getReportData() {
     !fs.existsSync(metadataPath)
   ) {
     return {
-      report: {
-        suites: [],
-        stats: {
-          expected: 0,
-          unexpected: 0,
-          flaky: 0,
-          duration: 0,
-          startTime: new Date().toISOString(),
+        report: {
+            config: {
+            projects: [],
+            },
+
+            suites: [],
+
+            stats: {
+            expected: 0,
+            unexpected: 0,
+            flaky: 0,
+            duration: 0,
+            startTime:
+                new Date().toISOString(),
+            },
         },
-      },
-      metadata: {
-        environment: "Unknown",
-      },
-    };
+
+        metadata: {
+            environment: "Unknown",
+        },
+        };
   }
 
   return {
