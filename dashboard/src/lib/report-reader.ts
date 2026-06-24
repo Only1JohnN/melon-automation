@@ -12,16 +12,33 @@ export function getReportData() {
     "../reports/run-metadata.json"
   );
 
-  const report = JSON.parse(
-    fs.readFileSync(reportPath, "utf8")
-  );
-
-  const metadata = JSON.parse(
-    fs.readFileSync(metadataPath, "utf8")
-  );
+  if (
+    !fs.existsSync(reportPath) ||
+    !fs.existsSync(metadataPath)
+  ) {
+    return {
+      report: {
+        suites: [],
+        stats: {
+          expected: 0,
+          unexpected: 0,
+          flaky: 0,
+          duration: 0,
+          startTime: new Date().toISOString(),
+        },
+      },
+      metadata: {
+        environment: "Unknown",
+      },
+    };
+  }
 
   return {
-    report,
-    metadata,
+    report: JSON.parse(
+      fs.readFileSync(reportPath, "utf8")
+    ),
+    metadata: JSON.parse(
+      fs.readFileSync(metadataPath, "utf8")
+    ),
   };
 }
