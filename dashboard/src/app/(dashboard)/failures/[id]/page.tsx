@@ -3,6 +3,8 @@ import { getFailureById } from "@/lib/report-parser";
 import { notFound } from "next/navigation";
 import ApiRequestRow from "@/components/ApiRequestRow";
 
+export const dynamic = "force-dynamic";
+
 export default async function FailureDetailsPage({
   params,
 }: {

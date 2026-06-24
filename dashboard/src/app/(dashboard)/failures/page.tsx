@@ -2,8 +2,10 @@ import Topbar from "@/components/Topbar";
 import { getFailures } from "@/lib/report-parser";
 import Link from "next/link";
 
-export default function FailuresPage() {
-  const failures = getFailures();
+export const dynamic = "force-dynamic";
+
+export default async function FailuresPage() {
+  const failures = await getFailures();
 
   return (
     <>
