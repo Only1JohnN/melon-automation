@@ -1,7 +1,7 @@
 {
   "config": {
     "argv": [
-      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
+      "/opt/hostedtoolcache/node/22.23.0/x64/bin/node",
       "/home/runner/work/melon-automation/melon-automation/node_modules/.bin/playwright",
       "test"
     ],
@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/aa9074c0bb4778a3327bf3c1d08a743f6762ff5e",
-        "commitHash": "aa9074c0bb4778a3327bf3c1d08a743f6762ff5e",
-        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28113844845"
+        "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/20d9c629c9480247cea14c332c373a7e4c0fd1bb",
+        "commitHash": "20d9c629c9480247cea14c332c373a7e4c0fd1bb",
+        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28115402877"
       },
       "gitCommit": {
-        "shortHash": "aa9074c",
-        "hash": "aa9074c0bb4778a3327bf3c1d08a743f6762ff5e",
-        "subject": "Update async function calls in dashboard components for proper data retrieval",
-        "body": "Update async function calls in dashboard components for proper data retrieval\n",
+        "shortHash": "20d9c62",
+        "hash": "20d9c629c9480247cea14c332c373a7e4c0fd1bb",
+        "subject": "Update branch name from main to master in Playwright workflow",
+        "body": "Update branch name from main to master in Playwright workflow\n",
         "author": {
           "name": "John",
           "email": "adeniyijohn2002@gmail.com",
-          "time": 1782318621000
+          "time": 1782320327000
         },
         "committer": {
           "name": "John",
           "email": "adeniyijohn2002@gmail.com",
-          "time": 1782318621000
+          "time": 1782320327000
         },
         "branch": "master"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/aa9074c0bb4778a3327bf3c1d08a743f6762ff5e",
-            "commitHash": "aa9074c0bb4778a3327bf3c1d08a743f6762ff5e",
-            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28113844845"
+            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/20d9c629c9480247cea14c332c373a7e4c0fd1bb",
+            "commitHash": "20d9c629c9480247cea14c332c373a7e4c0fd1bb",
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28115402877"
           },
           "gitCommit": {
-            "shortHash": "aa9074c",
-            "hash": "aa9074c0bb4778a3327bf3c1d08a743f6762ff5e",
-            "subject": "Update async function calls in dashboard components for proper data retrieval",
-            "body": "Update async function calls in dashboard components for proper data retrieval\n",
+            "shortHash": "20d9c62",
+            "hash": "20d9c629c9480247cea14c332c373a7e4c0fd1bb",
+            "subject": "Update branch name from main to master in Playwright workflow",
+            "body": "Update branch name from main to master in Playwright workflow\n",
             "author": {
               "name": "John",
               "email": "adeniyijohn2002@gmail.com",
-              "time": 1782318621000
+              "time": 1782320327000
             },
             "committer": {
               "name": "John",
               "email": "adeniyijohn2002@gmail.com",
-              "time": 1782318621000
+              "time": 1782320327000
             },
             "branch": "master"
           },
@@ -139,10 +139,10 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11588,
+                      "duration": 10572,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
                         "location": {
                           "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
                           "column": 24,
@@ -157,13 +157,13 @@
                             "column": 24,
                             "line": 22
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-24T16:34:00.020Z",
+                      "startTime": "2026-06-24T16:59:36.704Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -197,10 +197,10 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11332,
+                      "duration": 11555,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
                         "location": {
                           "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
                           "column": 24,
@@ -215,13 +215,13 @@
                             "column": 24,
                             "line": 22
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-24T16:34:12.821Z",
+                      "startTime": "2026-06-24T16:59:48.453Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -255,10 +255,10 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11299,
+                      "duration": 11771,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
                         "location": {
                           "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
                           "column": 24,
@@ -273,13 +273,13 @@
                             "column": 24,
                             "line": 22
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    7 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-24T16:34:25.167Z",
+                      "startTime": "2026-06-24T17:00:00.977Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -336,12 +336,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6140,
+                      "duration": 6739,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-24T16:34:37.598Z",
+                      "startTime": "2026-06-24T17:00:13.903Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -381,12 +381,12 @@
                           "workerIndex": 3,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 2854,
+                          "duration": 2796,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-24T16:34:43.841Z",
+                          "startTime": "2026-06-24T17:00:20.749Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -408,8 +408,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-24T16:33:59.506Z",
-    "duration": 47258.503,
+    "startTime": "2026-06-24T16:59:36.167Z",
+    "duration": 47449.231,
     "expected": 2,
     "skipped": 0,
     "unexpected": 1,
