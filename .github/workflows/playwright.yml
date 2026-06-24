@@ -116,12 +116,11 @@ jobs:
             -exec rm -rf {} +
 
           mkdir -p reports
+          mkdir -p reports-artifacts
 
           cp -R /tmp/melon-reports/* reports/
 
-          mkdir -p reports-artifacts
-
-          cp -R test-results reports-artifacts/test-results || true
+          cp -R /tmp/melon-test-results reports-artifacts/test-results || true
 
           git add .
 
