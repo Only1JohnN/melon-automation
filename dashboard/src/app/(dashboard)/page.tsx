@@ -3,7 +3,7 @@ import StatCard from "@/components/StatCard";
 
 import { getOverviewStats } from "@/lib/report-parser";
 
-export default function Dashboard() {
+export default async function Dashboard() {
   const stats = getOverviewStats();
 
   return (

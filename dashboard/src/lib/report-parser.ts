@@ -2,8 +2,8 @@ import { getReportData } from "./report-reader";
 import fs from "fs";
 import path from "path";
 
-export function getOverviewStats() {
-  const { report, metadata } = getReportData();
+export async function getOverviewStats() {
+  const { report, metadata } = await getReportData();
 
   const total =
     report.stats.expected +
@@ -36,8 +36,8 @@ export function getOverviewStats() {
   };
 }
 
-export function getFailures() {
-  const { report } = getReportData();
+export async function getFailures() {
+  const { report } = await getReportData();
 
   const failures: any[] = [];
 
@@ -81,8 +81,8 @@ export function getFailures() {
   return failures;
 }
 
-export function getFailureById(id: string) {
-  const failure = getFailures().find(
+export async function getFailureById(id: string) {
+  const failure = (await getFailures()).find(
     (failure) => failure.id === id
   );
 
@@ -134,9 +134,9 @@ export function getApiLogs(
   }
 }
 
-export function getAllTests() {
+export async function getAllTests() {
   const { report } =
-    getReportData();
+    await getReportData();
 
   const tests: any[] = [];
 
@@ -178,9 +178,9 @@ export function getAllTests() {
   return tests;
 }
 
-export function getApplications() {
+export async function getApplications() {
   const tests =
-    getAllTests();
+    await getAllTests();
 
   const apps = [
     "partners",
@@ -228,11 +228,11 @@ export function getApplications() {
   });
 }
 
-export function getTestsByApplication(
+export async function getTestsByApplication(
   application: string
 ) {
   const tests =
-    getAllTests();
+    await getAllTests();
 
   return tests.filter((test) =>
     test.tags.includes(
@@ -241,11 +241,11 @@ export function getTestsByApplication(
   );
 }
 
-export function getTestById(
+export async function getTestById(
   id: string
 ) {
   const tests =
-    getAllTests();
+    await getAllTests();
 
   return tests.find(
     (test) =>

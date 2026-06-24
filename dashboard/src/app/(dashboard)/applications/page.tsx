@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ApplicationsPage() {
   const applications =
-    getApplications();
+    await getApplications();
 
   return (
     <>
