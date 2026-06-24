@@ -19,7 +19,7 @@ test.describe("@partners", () => {
       process.env.PARTNER_PASSWORD!
     );
 
-    await expect(page).toHaveURL(/dashboard/, {
+    await expect(page).toHaveURL(/get-started/, {
       // timeout: 15000,
     });
   });
