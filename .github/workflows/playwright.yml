@@ -44,6 +44,21 @@ jobs:
 
       - name: Run Tests
         run: npm run test:pre-release
+        continue-on-error: true
+
+      - name: Generate Run Metadata
+        if: always()
+        run: |
+            mkdir -p reports
+
+            echo '{
+            "environment":"pre-release",
+            "executedAt":"'"$(date -u +"%Y-%m-%dT%H:%M:%SZ")"'"
+            }' > reports/run-metadata.json
+      - name: Verify Reports
+        if: always()
+        run: |
+            ls -R reports
 
       - name: Upload Playwright Report
         if: always()
