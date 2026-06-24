@@ -1,7 +1,7 @@
 {
   "config": {
     "argv": [
-      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
+      "/opt/hostedtoolcache/node/22.23.0/x64/bin/node",
       "/home/runner/work/melon-automation/melon-automation/node_modules/.bin/playwright",
       "test"
     ],
@@ -18,27 +18,28 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/4dbd15da9e9cdee636a42cd13ebf0af6658918d8",
-        "commitHash": "4dbd15da9e9cdee636a42cd13ebf0af6658918d8",
-        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28116548751"
+        "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/d08df2aa4ae20faa9c06eaddcb22d15be9db3894",
+        "commitHash": "d08df2aa4ae20faa9c06eaddcb22d15be9db3894",
+        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28116844648"
       },
       "gitCommit": {
-        "shortHash": "4dbd15d",
-        "hash": "4dbd15da9e9cdee636a42cd13ebf0af6658918d8",
-        "subject": "Refactor FailureDetailsPage to use apiLogs from failure object and fix typo in getApiLogs function declaration",
-        "body": "Refactor FailureDetailsPage to use apiLogs from failure object and fix typo in getApiLogs function declaration\n",
+        "shortHash": "d08df2a",
+        "hash": "d08df2aa4ae20faa9c06eaddcb22d15be9db3894",
+        "subject": "Refactor attachNetworkLogger and saveNetworkLogs functions to remove async keyword for improved clarity",
+        "body": "Refactor attachNetworkLogger and saveNetworkLogs functions to remove async keyword for improved clarity\n",
         "author": {
           "name": "John",
           "email": "adeniyijohn2002@gmail.com",
-          "time": 1782321497000
+          "time": 1782321796000
         },
         "committer": {
           "name": "John",
           "email": "adeniyijohn2002@gmail.com",
-          "time": 1782321497000
+          "time": 1782321796000
         },
         "branch": "master"
-      }
+      },
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -48,27 +49,28 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/4dbd15da9e9cdee636a42cd13ebf0af6658918d8",
-            "commitHash": "4dbd15da9e9cdee636a42cd13ebf0af6658918d8",
-            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28116548751"
+            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/d08df2aa4ae20faa9c06eaddcb22d15be9db3894",
+            "commitHash": "d08df2aa4ae20faa9c06eaddcb22d15be9db3894",
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28116844648"
           },
           "gitCommit": {
-            "shortHash": "4dbd15d",
-            "hash": "4dbd15da9e9cdee636a42cd13ebf0af6658918d8",
-            "subject": "Refactor FailureDetailsPage to use apiLogs from failure object and fix typo in getApiLogs function declaration",
-            "body": "Refactor FailureDetailsPage to use apiLogs from failure object and fix typo in getApiLogs function declaration\n",
+            "shortHash": "d08df2a",
+            "hash": "d08df2aa4ae20faa9c06eaddcb22d15be9db3894",
+            "subject": "Refactor attachNetworkLogger and saveNetworkLogs functions to remove async keyword for improved clarity",
+            "body": "Refactor attachNetworkLogger and saveNetworkLogs functions to remove async keyword for improved clarity\n",
             "author": {
               "name": "John",
               "email": "adeniyijohn2002@gmail.com",
-              "time": 1782321497000
+              "time": 1782321796000
             },
             "committer": {
               "name": "John",
               "email": "adeniyijohn2002@gmail.com",
-              "time": 1782321497000
+              "time": 1782321796000
             },
             "branch": "master"
-          }
+          },
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -105,29 +107,312 @@
     "workers": 1,
     "webServer": null
   },
-  "suites": [],
-  "errors": [
+  "suites": [
     {
-      "message": "SyntaxError: /home/runner/work/melon-automation/melon-automation/utils/networkLogger.ts: Unexpected token, expected \"{\" (93:7)\n\n\u001b[0m \u001b[90m 91 |\u001b[39m }\n \u001b[90m 92 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m \u001b[36mexport\u001b[39m asyncfunction saveNetworkLogs(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   testId\u001b[33m:\u001b[39m string\n \u001b[90m 95 |\u001b[39m ) {\n \u001b[90m 96 |\u001b[39m   \u001b[36mconst\u001b[39m logDir \u001b[33m=\u001b[39m path\u001b[33m.\u001b[39mjoin(\u001b[0m",
-      "stack": "SyntaxError: /home/runner/work/melon-automation/melon-automation/utils/networkLogger.ts: Unexpected token, expected \"{\" (93:7)\n\n\u001b[0m \u001b[90m 91 |\u001b[39m }\n \u001b[90m 92 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m \u001b[36mexport\u001b[39m asyncfunction saveNetworkLogs(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   testId\u001b[33m:\u001b[39m string\n \u001b[90m 95 |\u001b[39m ) {\n \u001b[90m 96 |\u001b[39m   \u001b[36mconst\u001b[39m logDir \u001b[33m=\u001b[39m path\u001b[33m.\u001b[39mjoin(\u001b[0m\n    at Object.<anonymous> (/home/runner/work/melon-automation/melon-automation/fixtures/baseTest.ts:6:1)\n    at Object.<anonymous> (/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:4:1)",
-      "location": {
-        "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-        "line": 93,
-        "column": 7
-      },
-      "snippet": "   at ui/partners/login.spec.ts:93\n\n\u001b[0m\u001b[0m"
-    },
-    {
-      "message": "Error: No tests found",
-      "stack": "Error: No tests found"
+      "title": "ui/partners/login.spec.ts",
+      "file": "ui/partners/login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@partners",
+          "file": "ui/partners/login.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should allow a partner to log in successfully",
+              "ok": false,
+              "tags": [
+                "partners"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11537,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
+                        "location": {
+                          "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                          "column": 24,
+                          "line": 22
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 20 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/dashboard/\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m       \u001b[90m// timeout: 15000,\u001b[39m\n \u001b[90m 24 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                            "column": 24,
+                            "line": 22
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-24T17:23:58.815Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                        "column": 24,
+                        "line": 22
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11418,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
+                        "location": {
+                          "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                          "column": 24,
+                          "line": 22
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 20 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/dashboard/\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m       \u001b[90m// timeout: 15000,\u001b[39m\n \u001b[90m 24 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                            "column": 24,
+                            "line": 22
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-06-24T17:24:12.078Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry1/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry1/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                        "column": 24,
+                        "line": 22
+                      }
+                    },
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11394,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
+                        "location": {
+                          "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                          "column": 24,
+                          "line": 22
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 20 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/dashboard/\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m       \u001b[90m// timeout: 15000,\u001b[39m\n \u001b[90m 24 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                            "column": 24,
+                            "line": 22
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/complete-profile\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    6 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    8 × unexpected value \"https://partner-dev.getmelon.co/complete-profile\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2026-06-24T17:24:24.502Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry2/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry2/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry2/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry2/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                        "column": 24,
+                        "line": 22
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ad1b3db5438dd591e891-9b1428281def9c37a1b9",
+              "file": "ui/partners/login.spec.ts",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "should display an error message for invalid credentials",
+              "ok": true,
+              "tags": [
+                "partners"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7339,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-24T17:24:37.040Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ad1b3db5438dd591e891-3b3c62edc10679a9377a",
+              "file": "ui/partners/login.spec.ts",
+              "line": 27,
+              "column": 7
+            }
+          ],
+          "suites": [
+            {
+              "title": "@partners",
+              "file": "ui/partners/login.spec.ts",
+              "line": 46,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should display verification failed page for an invalid verification token and allow navigation to login",
+                  "ok": true,
+                  "tags": [
+                    "partners",
+                    "partners"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2824,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-24T17:24:44.483Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "ad1b3db5438dd591e891-f4bbc4cc337e6ce7bc2f",
+                  "file": "ui/partners/login.spec.ts",
+                  "line": 47,
+                  "column": 9
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
+  "errors": [],
   "stats": {
-    "startTime": "2026-06-24T17:19:05.393Z",
-    "duration": 106.548,
-    "expected": 0,
+    "startTime": "2026-06-24T17:23:58.290Z",
+    "duration": 49084.578,
+    "expected": 2,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
