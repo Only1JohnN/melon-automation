@@ -56,6 +56,7 @@ export default function Dashboard() {
         value={new Date(
           stats.startTime
         ).toLocaleTimeString("en-GB", {
+          timeZone: "Africa/Lagos",
           day: "2-digit",
           month: "short",
           year: "numeric",
