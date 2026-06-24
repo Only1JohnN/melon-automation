@@ -1,7 +1,7 @@
 {
   "config": {
     "argv": [
-      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
+      "/opt/hostedtoolcache/node/22.23.0/x64/bin/node",
       "/home/runner/work/melon-automation/melon-automation/node_modules/.bin/playwright",
       "test"
     ],
@@ -18,24 +18,24 @@
     "maxFailures": 0,
     "metadata": {
       "ci": {
-        "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/c25afbd7327cbdd464a3b0a7413d2cd055c4d9d7",
-        "commitHash": "c25afbd7327cbdd464a3b0a7413d2cd055c4d9d7",
-        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28123895342"
+        "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/48b74f0e1a881096b74f909b0f323edddb728fef",
+        "commitHash": "48b74f0e1a881096b74f909b0f323edddb728fef",
+        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28124829938"
       },
       "gitCommit": {
-        "shortHash": "c25afbd",
-        "hash": "c25afbd7327cbdd464a3b0a7413d2cd055c4d9d7",
-        "subject": "update",
-        "body": "update\n",
+        "shortHash": "48b74f0",
+        "hash": "48b74f0e1a881096b74f909b0f323edddb728fef",
+        "subject": "updated workflow: SAVE test-results ↓ Delete workspace ↓ Restore test-results",
+        "body": "updated workflow:\nSAVE test-results\n↓\nDelete workspace\n↓\nRestore test-results\n",
         "author": {
           "name": "John",
           "email": "adeniyijohn2002@gmail.com",
-          "time": 1782329025000
+          "time": 1782330009000
         },
         "committer": {
           "name": "John",
           "email": "adeniyijohn2002@gmail.com",
-          "time": 1782329025000
+          "time": 1782330009000
         },
         "branch": "master"
       },
@@ -49,24 +49,24 @@
         "retries": 2,
         "metadata": {
           "ci": {
-            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/c25afbd7327cbdd464a3b0a7413d2cd055c4d9d7",
-            "commitHash": "c25afbd7327cbdd464a3b0a7413d2cd055c4d9d7",
-            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28123895342"
+            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/48b74f0e1a881096b74f909b0f323edddb728fef",
+            "commitHash": "48b74f0e1a881096b74f909b0f323edddb728fef",
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28124829938"
           },
           "gitCommit": {
-            "shortHash": "c25afbd",
-            "hash": "c25afbd7327cbdd464a3b0a7413d2cd055c4d9d7",
-            "subject": "update",
-            "body": "update\n",
+            "shortHash": "48b74f0",
+            "hash": "48b74f0e1a881096b74f909b0f323edddb728fef",
+            "subject": "updated workflow: SAVE test-results ↓ Delete workspace ↓ Restore test-results",
+            "body": "updated workflow:\nSAVE test-results\n↓\nDelete workspace\n↓\nRestore test-results\n",
             "author": {
               "name": "John",
               "email": "adeniyijohn2002@gmail.com",
-              "time": 1782329025000
+              "time": 1782330009000
             },
             "committer": {
               "name": "John",
               "email": "adeniyijohn2002@gmail.com",
-              "time": 1782329025000
+              "time": 1782330009000
             },
             "branch": "master"
           },
@@ -123,7 +123,7 @@
           "specs": [
             {
               "title": "should allow a partner to log in successfully",
-              "ok": false,
+              "ok": true,
               "tags": [
                 "partners"
               ],
@@ -138,179 +138,18 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 11170,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/auth/login\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/auth/login\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
-                        "location": {
-                          "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                          "column": 24,
-                          "line": 22
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 20 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/dashboard/\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m       \u001b[90m// timeout: 15000,\u001b[39m\n \u001b[90m 24 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                            "column": 24,
-                            "line": 22
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/auth/login\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 10642,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-24T19:24:31.410Z",
+                      "startTime": "2026-06-24T19:40:57.795Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium/video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium/error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium/trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                        "column": 24,
-                        "line": 22
-                      }
-                    },
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 11596,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/select-business-type\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/select-business-type\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/select-business-type\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/select-business-type\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
-                        "location": {
-                          "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                          "column": 24,
-                          "line": 22
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 20 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/dashboard/\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m       \u001b[90m// timeout: 15000,\u001b[39m\n \u001b[90m 24 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                            "column": 24,
-                            "line": 22
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/select-business-type\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    5 × unexpected value \"https://partner-dev.getmelon.co/select-business-type\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 1,
-                      "startTime": "2026-06-24T19:24:45.520Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry1/test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry1/video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry1/error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry1/trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                        "column": 24,
-                        "line": 22
-                      }
-                    },
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 11697,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/select-business-type\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    11 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    3 × unexpected value \"https://partner-dev.getmelon.co/select-business-type\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/select-business-type\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    11 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    3 × unexpected value \"https://partner-dev.getmelon.co/select-business-type\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24",
-                        "location": {
-                          "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                          "column": 24,
-                          "line": 22
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 20 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/dashboard/\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m       \u001b[90m// timeout: 15000,\u001b[39m\n \u001b[90m 24 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                            "column": 24,
-                            "line": 22
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/dashboard/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/select-business-type\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    11 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\u001b[2m    3 × unexpected value \"https://partner-dev.getmelon.co/select-business-type\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/dashboard/, {\n     |                        ^\n  23 |       // timeout: 15000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 2,
-                      "startTime": "2026-06-24T19:24:58.262Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry2/test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry2/video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry2/error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-9c650-tner-to-log-in-successfully-chromium-retry2/trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
-                        "column": 24,
-                        "line": 22
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "ad1b3db5438dd591e891-9b1428281def9c37a1b9",
@@ -333,15 +172,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7239,
+                      "duration": 7646,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-24T19:25:11.133Z",
+                      "startTime": "2026-06-24T19:41:08.671Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -378,15 +217,15 @@
                       "projectName": "chromium",
                       "results": [
                         {
-                          "workerIndex": 3,
+                          "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 3825,
+                          "duration": 2831,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-24T19:25:18.470Z",
+                          "startTime": "2026-06-24T19:41:16.335Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -408,11 +247,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-24T19:24:30.855Z",
-    "duration": 51504.973000000005,
-    "expected": 2,
+    "startTime": "2026-06-24T19:40:57.271Z",
+    "duration": 21965.810999999998,
+    "expected": 3,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }
