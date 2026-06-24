@@ -1,4 +1,6 @@
 name: Melon Automation
+permissions:
+  contents: write
 
 on:
   push:
@@ -32,6 +34,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ github.token }}
 
       - name: Setup Node
         uses: actions/setup-node@v4

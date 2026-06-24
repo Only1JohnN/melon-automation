@@ -14,7 +14,7 @@ export default async function TestPage({
     await params;
 
   const test =
-    getTestById(id);
+    await getTestById(id);
 
   if (!test) {
     notFound();

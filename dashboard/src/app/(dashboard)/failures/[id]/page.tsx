@@ -13,8 +13,8 @@ export default async function FailureDetailsPage({
 }) {
   const { id } = await params;
 
-  const failure = getFailureById(id);
-  const apiLogs = getApiLogs(id);
+  const failure = await getFailureById(id);
+  const apiLogs = await getApiLogs(id);
 
   if (!failure) {
     notFound();

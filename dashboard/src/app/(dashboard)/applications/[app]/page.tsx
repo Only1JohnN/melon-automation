@@ -10,7 +10,7 @@ export default async function ApplicationPage({
   const { app } = await params;
 
   const tests =
-    getTestsByApplication(app);
+    await getTestsByApplication(app);
 
   return (
     <>

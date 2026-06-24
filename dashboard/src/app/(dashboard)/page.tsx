@@ -4,7 +4,7 @@ import StatCard from "@/components/StatCard";
 import { getOverviewStats } from "@/lib/report-parser";
 
 export default async function Dashboard() {
-  const stats = getOverviewStats();
+  const stats = await getOverviewStats();
 
   return (
     <>

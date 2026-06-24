@@ -2,7 +2,7 @@ import Topbar from "@/components/Topbar";
 import { getApplications } from "@/lib/report-parser";
 import Link from "next/link";
 
-export default function ApplicationsPage() {
+export default async function ApplicationsPage() {
   const applications =
     await getApplications();
 
