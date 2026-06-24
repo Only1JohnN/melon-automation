@@ -103,8 +103,8 @@ jobs:
 
           git fetch origin reports || true
 
-          if git show-ref --verify --quiet refs/remotes/origin/reports; then
-            git checkout reports
+          if git ls-remote --heads origin reports | grep reports; then
+            git checkout -B reports origin/reports
           else
             git checkout --orphan reports
           fi
