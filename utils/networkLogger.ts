@@ -7,7 +7,7 @@ const networkLogs = new Map<
   any[]
 >();
 
-export async function attachNetworkLogger(
+export function attachNetworkLogger(
   page: Page,
   testId: string
 ) {
@@ -90,7 +90,7 @@ export async function attachNetworkLogger(
   });
 }
 
-export asyncfunction saveNetworkLogs(
+export function saveNetworkLogs(
   testId: string
 ) {
   const logDir = path.join(
