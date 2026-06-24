@@ -51,6 +51,25 @@ export async function getFailures() {
 
   const failures: any[] = [];
 
+  const githubBase =
+    "https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports";
+
+  const buildArtifactUrl = (
+    attachment: any
+  ) => {
+    if (!attachment?.path) {
+      return null;
+    }
+
+    const relativePath =
+      attachment.path.replace(
+        "/home/runner/work/melon-automation/melon-automation/",
+        ""
+      );
+
+    return `${githubBase}/reports-artifacts/${relativePath}`;
+  };
+
   const walkSuites = (
     suites: any[]
   ) => {
@@ -113,6 +132,21 @@ export async function getFailures() {
                     screenshot,
                     video,
                     trace,
+
+                    screenshotUrl:
+                      buildArtifactUrl(
+                        screenshot
+                      ),
+
+                    videoUrl:
+                      buildArtifactUrl(
+                        video
+                      ),
+
+                    traceUrl:
+                      buildArtifactUrl(
+                        trace
+                      ),
 
                     attachments:
                       result.attachments ||
