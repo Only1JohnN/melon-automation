@@ -1,22 +1,25 @@
 import { getReportData } from "./report-reader";
-import fs from "fs";
-import path from "path";
 
 export async function getOverviewStats() {
-  const { report, metadata } = await getReportData();
+  const { report, metadata } =
+    await getReportData();
 
   const total =
     report.stats.expected +
     report.stats.unexpected +
     report.stats.flaky;
 
-  const passed = report.stats.expected;
+  const passed =
+    report.stats.expected;
 
-  const failed = report.stats.unexpected;
+  const failed =
+    report.stats.unexpected;
 
   const passRate =
     total > 0
-      ? ((passed / total) * 100).toFixed(1)
+      ? ((passed / total) * 100).toFixed(
+          1
+        )
       : "0";
 
   return {
@@ -24,110 +27,147 @@ export async function getOverviewStats() {
     passed,
     failed,
     passRate,
+
     duration: (
       report.stats.duration / 1000
     ).toFixed(2),
+
     browser:
       report.config?.projects?.[0]
         ?.name ?? "Unknown",
-    startTime: report.stats.startTime,
+
+    startTime:
+      report.stats.startTime,
+
     environment:
-      metadata.environment ?? "Unknown",
+      metadata.environment ??
+      "Unknown",
   };
 }
 
 export async function getFailures() {
-  const { report } = await getReportData();
+  const { report } =
+    await getReportData();
 
   const failures: any[] = [];
 
-  const walkSuites = (suites: any[]) => {
+  const walkSuites = (
+    suites: any[]
+  ) => {
     suites.forEach((suite) => {
       if (suite.specs) {
-        suite.specs.forEach((spec: any) => {
-          spec.tests?.forEach((test: any) => {
-            const result = test.results?.[0];
+        suite.specs.forEach(
+          (spec: any) => {
+            spec.tests?.forEach(
+              (test: any) => {
+                const result =
+                  test.results?.[0];
 
-            if (
-              result &&
-              result.status !== "passed"
-            ) {
-              failures.push({
-                id: spec.id || spec.title,
-                title: spec.title,
-                status: result.status,
-                duration: result.duration,
-                error:
-                  result.errors?.[1]?.message ||
-                  result.error?.message ||
-                  "Unknown error",
-                attachments:
-                  result.attachments || [],
-                tags: spec.tags || [],
-              });
-            }
-          });
-        });
+                if (
+                  result &&
+                  result.status !==
+                    "passed"
+                ) {
+                  const screenshot =
+                    result.attachments?.find(
+                      (a: any) =>
+                        a.name ===
+                        "screenshot"
+                    ) || null;
+
+                  const video =
+                    result.attachments?.find(
+                      (a: any) =>
+                        a.name ===
+                        "video"
+                    ) || null;
+
+                  const trace =
+                    result.attachments?.find(
+                      (a: any) =>
+                        a.name ===
+                        "trace"
+                    ) || null;
+
+                  failures.push({
+                    id:
+                      spec.id ||
+                      spec.title,
+
+                    title:
+                      spec.title,
+
+                    status:
+                      result.status,
+
+                    duration:
+                      result.duration,
+
+                    error:
+                      result.errors?.[1]
+                        ?.message ||
+                      result.error
+                        ?.message ||
+                      "Unknown error",
+
+                    screenshot,
+                    video,
+                    trace,
+
+                    attachments:
+                      result.attachments ||
+                      [],
+
+                    tags:
+                      spec.tags || [],
+                  });
+                }
+              }
+            );
+          }
+        );
       }
 
       if (suite.suites) {
-        walkSuites(suite.suites);
+        walkSuites(
+          suite.suites
+        );
       }
     });
   };
 
-  walkSuites(report.suites || []);
+  walkSuites(
+    report.suites || []
+  );
 
   return failures;
 }
 
-export async function getFailureById(id: string) {
-  const failure = (await getFailures()).find(
-    (failure) => failure.id === id
+export async function getFailureById(
+  id: string
+) {
+  const failures =
+    await getFailures();
+
+  return (
+    failures.find(
+      (failure) =>
+        failure.id === id
+    ) || null
   );
-
-  if (!failure) {
-    return null;
-  }
-
-  return {
-    ...failure,
-
-    screenshot:
-      failure.attachments.find(
-        (a: any) =>
-          a.name === "screenshot"
-      ) || null,
-
-    video:
-      failure.attachments.find(
-        (a: any) =>
-          a.name === "video"
-      ) || null,
-
-    trace:
-      failure.attachments.find(
-        (a: any) =>
-          a.name === "trace"
-      ) || null,
-  };
 }
 
 export async function getApiLogs(
   testId: string
 ) {
   try {
-    const filePath = path.join(
-      process.cwd(),
-      "../reports/api-logs",
-      `${testId}.json`
-    );
-
-    return JSON.parse(
-      fs.readFileSync(
-        filePath,
-        "utf8"
-      )
+    return await fetch(
+      `https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports/reports/api-logs/${testId}.json`,
+      {
+        cache: "no-store",
+      }
+    ).then((res) =>
+      res.json()
     );
   } catch {
     return [];
@@ -150,13 +190,21 @@ export async function getAllTests() {
             spec.tests?.forEach(
               (test: any) => {
                 tests.push({
-                    id: spec.id || spec.title,
-                    title: spec.title,
-                    tags: spec.tags || [],
-                    status:
-                        test.results?.[0]?.status ||
-                        "unknown",
-                    });
+                  id:
+                    spec.id ||
+                    spec.title,
+
+                  title:
+                    spec.title,
+
+                  tags:
+                    spec.tags || [],
+
+                  status:
+                    test.results?.[0]
+                      ?.status ||
+                    "unknown",
+                });
               }
             );
           }
@@ -198,13 +246,15 @@ export async function getApplications() {
     const passed =
       appTests.filter(
         (t) =>
-          t.status === "passed"
+          t.status ===
+          "passed"
       ).length;
 
     const failed =
       appTests.filter(
         (t) =>
-          t.status !== "passed"
+          t.status !==
+          "passed"
       ).length;
 
     const total =
@@ -247,8 +297,10 @@ export async function getTestById(
   const tests =
     await getAllTests();
 
-  return tests.find(
-    (test) =>
-      test.id === id
+  return (
+    tests.find(
+      (test) =>
+        test.id === id
+    ) || null
   );
 }

@@ -90,12 +90,16 @@ export default function Sidebar() {
 
       <div className="p-4 border-t border-slate-800">
         <div className="rounded-xl bg-slate-900 p-4">
-          <p className="text-xs text-slate-500 uppercase tracking-wider">
-            Environment
-          </p>
-
-          <p className="mt-2 font-medium text-[#D6FF32]">
-            Pre-Release
+          <p className="text-xs text-slate-500 tracking-wider">
+            Made with ❤️ by{" "}
+            <a
+              href="https://www.google.com/search?q=Only1JohnN&sca_esv=17f1fe3018333faf&sxsrf=APpeQnu3oMxbTKO1EVSWZDIYCmc4hxbCww%3A1782324002545&ei=Ihs8ap_oIMmbhbIP6omg-Qk&ved=0ahUKEwifga-ouqCVAxXJTUEAHeoEKJ8Q4dUDCBI&uact=5&oq=Only1JohnN&gs_lp=Egxnd3Mtd2l6LXNlcnAiCk9ubHkxSm9obk4yBRAAGO8FMgUQABjvBTIFEAAY7wVI0R1QygZYvBtwAXgAkAEAmAHeAqABvhaqAQUyLTkuMrgBA8gBAPgBAZgCCaACyBDCAggQABiABBiwA8ICCRAAGAcYHhiwA8ICBxAAGB4YsAPCAgoQIxiABBiKBRgnwgIEECMYJ8ICERAuGIAEGIoFGJECGLEDGIMBwgILEAAYgAQYigUYkQLCAgoQLhiABBiKBRhDwgIOEC4YgAQYsQMYxwEY0QPCAgsQABiABBixAxiDAcICBRAAGIAEwgIIEAAYgAQYsQPCAgUQLhiABMICCBAuGIAEGLEDwgIZEC4YgAQYigUYQxiXBRjcBBjeBBjgBNgBAcICBxAAGIAEGAqYAwCIBgGQBgq6BgYIARABGBSSBwcxLjAuNy4xoAegUbIHBTItNy4xuAe-EMIHBzAuMy4yLjTIBzqACAE&sclient=gws-wiz-serp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#D6FF32] hover:underline"
+            >
+              Only1JohnN
+            </a>
           </p>
         </div>
       </div>
