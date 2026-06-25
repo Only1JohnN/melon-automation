@@ -14,6 +14,11 @@ export function attachNetworkLogger(
   networkLogs.set(testId, []);
 
   page.on("response", async (response) => {
+  //   console.log(
+  //   "API:",
+  //   response.request().resourceType(),
+  //   response.request().url()
+  // );
     const request = response.request();
 
     const resourceType =
@@ -93,6 +98,17 @@ export function attachNetworkLogger(
 export function saveNetworkLogs(
   testId: string
 ) {
+
+  // console.log(
+  //   "Saving logs for:",
+  //   testId
+  // );
+
+  // console.log(
+  //   "Captured requests:",
+  //   networkLogs.get(testId)?.length
+  // );
+
   const logDir = path.join(
     process.cwd(),
     "reports",

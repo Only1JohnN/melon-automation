@@ -26,9 +26,39 @@ export default async function FailureDetailsPage({
 
     <div className="space-y-6">
       <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
-        <h2 className="text-2xl font-bold">
-          {failure.title}
-        </h2>
+        <div>
+          <h2 className="text-2xl font-bold">
+            {failure.title}
+          </h2>
+
+          {failure.tags?.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {failure.tags.map(
+                (
+                  tag: string,
+                  index: number
+                ) => (
+                  <span
+                    key={index}
+                    className="
+                    rounded-md
+                    border
+                    border-slate-700
+                    bg-slate-800
+                    px-2.5
+                    py-1
+                    text-xs
+                    font-medium
+                    text-slate-300
+                  "
+                  >
+                    @{tag}
+                  </span>
+                )
+              )}
+            </div>
+          )}
+        </div>
 
         <div className="mt-4 flex gap-4">
           <span className="rounded-full bg-red-500/20 px-3 py-1 text-red-400">

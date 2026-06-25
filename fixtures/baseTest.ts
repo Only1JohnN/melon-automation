@@ -18,7 +18,11 @@ base.beforeEach(
 );
 
 base.afterEach(
-  async ({}, testInfo) => {
+  async ({ page }, testInfo) => {
+    await page.waitForTimeout(
+      2000
+    );
+    
     saveNetworkLogs(
       testInfo.testId
     );

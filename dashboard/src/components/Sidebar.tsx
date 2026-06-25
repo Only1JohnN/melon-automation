@@ -26,6 +26,11 @@ const links = [
     href: "/executions",
     icon: Activity,
   },
+  // {
+  //   name: "Tests",
+  //   href: "/tests",
+  //   icon: Activity,
+  // },
   {
     name: "Failures",
     href: "/failures",

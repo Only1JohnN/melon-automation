@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import { getReportData } from "./report-reader";
 
 export async function getOverviewStats() {
@@ -46,138 +48,84 @@ export async function getOverviewStats() {
 }
 
 export async function getFailures() {
-  const { report } =
-    await getReportData();
-
+  const { report } = await getReportData();
   const failures: any[] = [];
 
   const githubBase =
-    "https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports";
+    'https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports';
 
-  const buildArtifactUrl = (
-    attachment: any
-  ) => {
-    if (!attachment?.path) {
-      return null;
-    }
-
-    const relativePath =
-      attachment.path.replace(
-        "/home/runner/work/melon-automation/melon-automation/",
-        ""
-      );
-
+  const buildArtifactUrl = (attachment: any) => {
+    if (!attachment?.path) return null;
+    const relativePath = attachment.path.replace(
+      '/home/runner/work/melon-automation/melon-automation/',
+      ''
+    );
     return `${githubBase}/reports-artifacts/${relativePath}`;
   };
 
-  const walkSuites = (
-    suites: any[]
-  ) => {
+  // Convert spec file path to a human‑readable feature name
+  const extractFeature = (filePath: string) => {
+    const fileName = filePath.split('/').pop() ?? 'Unknown';
+    return fileName
+      .replace('.spec.ts', '')
+      .replace(/[-_]/g, ' ')
+      .replace(/\b\w/g, (char: string) => char.toUpperCase());
+  };
+
+  const walkSuites = (suites: any[]) => {
     suites.forEach((suite) => {
       if (suite.specs) {
-        suite.specs.forEach(
-          (spec: any) => {
-            spec.tests?.forEach(
-              (test: any) => {
-                const result =
-                  test.results?.[0];
+        suite.specs.forEach((spec: any) => {
+          spec.tests?.forEach((test: any) => {
+            const result = test.results?.[0];
+            if (result && result.status !== 'passed') {
+              const filePath = spec.location?.file ?? spec.file ?? 'Unknown';
+              const file = filePath;
+              const fileName = filePath.split('/').pop() ?? 'Unknown';
+              const feature = extractFeature(filePath);
 
-                if (
-                  result &&
-                  result.status !==
-                    "passed"
-                ) {
-                  const screenshot =
-                    result.attachments?.find(
-                      (a: any) =>
-                        a.name ===
-                        "screenshot"
-                    ) || null;
+              // Extract attachments safely
+              const screenshot = result.attachments?.find((a: any) => a.name === 'screenshot') ?? null;
+              const video = result.attachments?.find((a: any) => a.name === 'video') ?? null;
+              const trace = result.attachments?.find((a: any) => a.name === 'trace') ?? null;
 
-                  const video =
-                    result.attachments?.find(
-                      (a: any) =>
-                        a.name ===
-                        "video"
-                    ) || null;
+              // Error message priority: direct error → first error from array → fallback
+              const errorMessage =
+                result.error?.message ??
+                result.errors?.[0]?.message ??
+                'Unknown error';
 
-                  const trace =
-                    result.attachments?.find(
-                      (a: any) =>
-                        a.name ===
-                        "trace"
-                    ) || null;
-
-                  failures.push({
-                    id:
-                      spec.id ||
-                      spec.title,
-                    playwrightTestId:
-                      test.results?.[0]?.testId ||
-                      test.testId ||
-                      spec.id,
-
-                    title:
-                      spec.title,
-
-                    status:
-                      result.status,
-
-                    duration:
-                      result.duration,
-
-                    error:
-                      result.errors?.[1]
-                        ?.message ||
-                      result.error
-                        ?.message ||
-                      "Unknown error",
-
-                    screenshot,
-                    video,
-                    trace,
-
-                    screenshotUrl:
-                      buildArtifactUrl(
-                        screenshot
-                      ),
-
-                    videoUrl:
-                      buildArtifactUrl(
-                        video
-                      ),
-
-                    traceUrl:
-                      buildArtifactUrl(
-                        trace
-                      ),
-
-                    attachments:
-                      result.attachments ||
-                      [],
-
-                    tags:
-                      spec.tags || [],
-                  });
-                }
-              }
-            );
-          }
-        );
+              failures.push({
+                id: spec.id ?? spec.title,
+                playwrightTestId: spec.id,
+                title: spec.title,
+                status: result.status,
+                duration: result.duration,
+                error: errorMessage,
+                file,
+                fileName,
+                feature,
+                screenshot,
+                video,
+                trace,
+                screenshotUrl: buildArtifactUrl(screenshot),
+                videoUrl: buildArtifactUrl(video),
+                traceUrl: buildArtifactUrl(trace),
+                attachments: result.attachments ?? [],
+                tags: [...(spec.tags ?? []), ...(test.tags ?? [])],
+              });
+            }
+          });
+        });
       }
 
       if (suite.suites) {
-        walkSuites(
-          suite.suites
-        );
+        walkSuites(suite.suites);
       }
     });
   };
 
-  walkSuites(
-    report.suites || []
-  );
-
+  walkSuites(report.suites ?? []);
   return failures;
 }
 
@@ -187,29 +135,101 @@ export async function getFailureById(
   const failures =
     await getFailures();
 
-  return (
+  const failure =
     failures.find(
       (failure) =>
         failure.id === id
-    ) || null
-  );
+    );
+
+  if (!failure) {
+    return null;
+  }
+
+  const apiLogs =
+    await getApiLogs(
+      failure.playwrightTestId
+    );
+  // console.log(
+  //   "Failure ID:",
+  //   failure.id
+  // );
+
+  // console.log(
+  //   "Playwright Test ID:",
+  //   failure.playwrightTestId
+  // );
+
+  // console.log(
+  //   "API Logs Count:",
+  //   apiLogs.length
+  // );
+
+  return {
+    ...failure,
+    apiLogs,
+  };
 }
 
 export async function getApiLogs(
   testId: string
 ) {
+  // ---------- Local ----------
+  const localPath = path.join(
+    process.cwd(),
+    "../reports/api-logs",
+    `${testId}.json`
+  );
+
+  if (fs.existsSync(localPath)) {
+    return JSON.parse(
+      fs.readFileSync(
+        localPath,
+        "utf8"
+      )
+    );
+  }
+
+  // ---------- CI ----------
   try {
-    return await fetch(
+    const res = await fetch(
       `https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports/reports/api-logs/${testId}.json`,
       {
         cache: "no-store",
       }
-    ).then((res) =>
-      res.json()
     );
+
+    if (!res.ok) {
+      return [];
+    }
+
+    return await res.json();
   } catch {
     return [];
   }
+}
+
+function getFeatureInfo(spec: any) {
+  const file =
+    spec.location?.file ??
+    spec.file ??
+    "Unknown";
+
+  const fileName =
+    file.split("/").pop() ??
+    "Unknown";
+
+  const feature = fileName
+    .replace(".spec.ts", "")
+    .replace(/[-_]/g, " ")
+    .replace(/\b\w/g, (c: string) =>
+      c.toUpperCase()
+    );
+
+  return {
+    file,
+    fileName,
+    feature,
+  };
 }
 
 export async function getAllTests() {
@@ -225,8 +245,18 @@ export async function getAllTests() {
       if (suite.specs) {
         suite.specs.forEach(
           (spec: any) => {
+            const {
+              file,
+              fileName,
+              feature,
+            } =
+              getFeatureInfo(spec);
+
             spec.tests?.forEach(
               (test: any) => {
+                const result =
+                  test.results?.[0];
+
                 tests.push({
                   id:
                     spec.id ||
@@ -235,13 +265,24 @@ export async function getAllTests() {
                   title:
                     spec.title,
 
-                  tags:
-                    spec.tags || [],
+                  feature,
+
+                  file,
+
+                  fileName,
+
+                  tags: [
+                    ...(spec.tags || []),
+                    ...(test.tags || []),
+                  ],
 
                   status:
-                    test.results?.[0]
-                      ?.status ||
+                    result?.status ??
                     "unknown",
+
+                  duration:
+                    result?.duration ??
+                    0,
                 });
               }
             );
@@ -262,6 +303,102 @@ export async function getAllTests() {
   );
 
   return tests;
+}
+
+export async function getGroupedTests() {
+  const tests =
+    await getAllTests();
+
+  const grouped = new Map<
+    string,
+    any
+  >();
+
+  tests.forEach((test) => {
+    if (
+      !grouped.has(
+        test.fileName
+      )
+    ) {
+      grouped.set(
+        test.fileName,
+        {
+          feature:
+            test.feature,
+
+          file:
+            test.file,
+
+          fileName:
+            test.fileName,
+
+          tests: [],
+        }
+      );
+    }
+
+    grouped
+      .get(test.fileName)
+      .tests.push(test);
+  });
+
+  return Array.from(
+    grouped.values()
+  ).map((group) => ({
+    ...group,
+
+    total:
+      group.tests.length,
+
+    passed:
+      group.tests.filter(
+        (t: any) =>
+          t.status ===
+          "passed"
+      ).length,
+
+    failed:
+      group.tests.filter(
+        (t: any) =>
+          t.status !==
+          "passed"
+      ).length,
+  }));
+}
+
+export async function getGroupedFailures() {
+  const failures =
+    await getFailures();
+
+  const grouped = new Map<
+    string,
+    any
+  >();
+
+  failures.forEach((failure) => {
+    if (
+      !grouped.has(
+        failure.feature
+      )
+    ) {
+      grouped.set(
+        failure.feature,
+        {
+          feature:
+            failure.feature,
+          failures: [],
+        }
+      );
+    }
+
+    grouped
+      .get(failure.feature)
+      .failures.push(failure);
+  });
+
+  return Array.from(
+    grouped.values()
+  );
 }
 
 export async function getApplications() {
@@ -322,11 +459,61 @@ export async function getTestsByApplication(
   const tests =
     await getAllTests();
 
-  return tests.filter((test) =>
-    test.tags.includes(
-      application
-    )
-  );
+  const filtered =
+    tests.filter((test) =>
+      test.tags.includes(
+        application
+      )
+    );
+
+  const grouped = new Map<
+    string,
+    any
+  >();
+
+  filtered.forEach((test) => {
+    if (
+      !grouped.has(
+        test.feature
+      )
+    ) {
+      grouped.set(
+        test.feature,
+        {
+          feature:
+            test.feature,
+          tests: [],
+        }
+      );
+    }
+
+    grouped
+      .get(test.feature)
+      .tests.push(test);
+  });
+
+  return Array.from(
+    grouped.values()
+  ).map((group) => ({
+    ...group,
+
+    total:
+      group.tests.length,
+
+    passed:
+      group.tests.filter(
+        (t: any) =>
+          t.status ===
+          "passed"
+      ).length,
+
+    failed:
+      group.tests.filter(
+        (t: any) =>
+          t.status !==
+          "passed"
+      ).length,
+  }));
 }
 
 export async function getTestById(
