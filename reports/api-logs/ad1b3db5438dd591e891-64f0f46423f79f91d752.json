@@ -1,13 +1,51 @@
 [
   {
-    "timestamp": "2026-06-24T19:41:11.592Z",
+    "timestamp": "2026-06-25T02:20:49.718Z",
+    "resourceType": "xhr",
+    "method": "POST",
+    "url": "https://partner-dev.getmelon.co/cdn-cgi/rum?",
+    "status": 204,
+    "request": {
+      "headers": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://partner-dev.getmelon.co/auth/email-verified/3264794e-896f-44c4-b709-740470b66073",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
+        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0",
+        "accept-language": "en-US"
+      },
+      "body": "{\"memory\":{\"totalJSHeapSize\":33100000,\"usedJSHeapSize\":29400000,\"jsHeapSizeLimit\":3760000000},\"resources\":[],\"referrer\":\"\",\"eventType\":1,\"firstPaint\":1248,\"firstContentfulPaint\":1248,\"startTime\":1782354048137.2,\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.5.0\",\"timings\":2},\"pageloadId\":\"9fe45b84-59f0-47e4-a922-5048c1686a88\",\"location\":\"https://partner-dev.getmelon.co/auth/email-verified/3264794e-896f-44c4-b709-740470b66073\",\"nt\":\"navigate\",\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"domainLookupStart\":1,\"domainLookupEnd\":1.6000000000058208,\"connectStart\":1.6000000000058208,\"connectEnd\":16.5,\"requestStart\":16.69999999999709,\"responseStart\":35.60000000000582,\"responseEnd\":69.5,\"domInteractive\":76.69999999999709,\"domComplete\":1510.699999999997,\"loadEventStart\":1510.699999999997,\"loadEventEnd\":1510.800000000003,\"finalResponseHeadersStart\":68.69999999999709,\"firstInterimResponseStart\":35.60000000000582,\"transferSize\":972,\"decodedBodySize\":1211},\"dt\":\"\",\"siteToken\":\"9b7fef37d0b74d79a4cc9b0a8f823dd4\",\"st\":2}"
+    },
+    "response": {
+      "headers": {
+        "access-control-max-age": "86400",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=1LZJ3IbHTihJSOTNWrCt6WcVKOG5vuyUo8jm7scDoauQuerW0F1u%2Ft5Z1%2BdOfSLNVf6QcYoeXf6vnaRa%2BuLTcIGlnl7dRu2ob9rQwtH2JCabXXYILjqZeiPCILLwtZWO86s27B%2BBGqrDog%3D%3D\"}]}",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "POST,OPTIONS",
+        "cf-ray": "a1107eca5b49387c-IAD",
+        "access-control-allow-origin": "https://partner-dev.getmelon.co",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "server-timing": "cfExtPri",
+        "date": "Thu, 25 Jun 2026 02:20:49 GMT",
+        "content-type": "text/plain",
+        "vary": "Origin",
+        "server": "cloudflare",
+        "priority": "u=1,i"
+      },
+      "body": ""
+    }
+  },
+  {
+    "timestamp": "2026-06-25T02:20:49.735Z",
     "resourceType": "fetch",
     "method": "POST",
     "url": "https://firebaseinstallations.googleapis.com/v1/projects/melon-dev-53520/installations",
     "status": 200,
     "request": {
       "headers": {
-        "x-firebase-client": "eyJ2ZXJzaW9uIjoyLCJoZWFydGJlYXRzIjpbeyJhZ2VudCI6ImZpcmUtY29yZS8wLjE0LjMgZmlyZS1jb3JlLWVzbTIwMjAvMC4xNC4zIGZpcmUtanMvIGZpcmUtanMtYWxsLWFwcC8xMi4zLjAgZmlyZS1paWQvMC42LjE5IGZpcmUtaWlkLWVzbTIwMjAvMC42LjE5IGZpcmUtYW5hbHl0aWNzLzAuMTAuMTggZmlyZS1hbmFseXRpY3MtZXNtMjAyMC8wLjEwLjE4IGZpcmUtcnRkYi8xLjEuMCBmaXJlLXJ0ZGItZXNtMjAyMC8xLjEuMCIsImRhdGVzIjpbIjIwMjYtMDYtMjQiXX1dfQ",
+        "x-firebase-client": "eyJ2ZXJzaW9uIjoyLCJoZWFydGJlYXRzIjpbeyJhZ2VudCI6ImZpcmUtY29yZS8wLjE0LjMgZmlyZS1jb3JlLWVzbTIwMjAvMC4xNC4zIGZpcmUtanMvIGZpcmUtanMtYWxsLWFwcC8xMi4zLjAgZmlyZS1paWQvMC42LjE5IGZpcmUtaWlkLWVzbTIwMjAvMC42LjE5IGZpcmUtYW5hbHl0aWNzLzAuMTAuMTggZmlyZS1hbmFseXRpY3MtZXNtMjAyMC8wLjEwLjE4IGZpcmUtcnRkYi8xLjEuMCBmaXJlLXJ0ZGItZXNtMjAyMC8xLjEuMCIsImRhdGVzIjpbIjIwMjYtMDYtMjUiXX1dfQ",
         "sec-ch-ua-platform": "\"Windows\"",
         "referer": "https://partner-dev.getmelon.co/",
         "accept-language": "en-US",
@@ -18,7 +56,7 @@
         "accept": "application/json",
         "content-type": "application/json"
       },
-      "body": "{\"fid\":\"d0L1kAGJIN-AIgmFCCtQM1\",\"authVersion\":\"FIS_v2\",\"appId\":\"1:944351073735:web:b5622c2c9f05058a49b5e2\",\"sdkVersion\":\"w:0.6.19\"}"
+      "body": "{\"fid\":\"dv6ms7wsfmVy7_PIogazNd\",\"authVersion\":\"FIS_v2\",\"appId\":\"1:944351073735:web:b5622c2c9f05058a49b5e2\",\"sdkVersion\":\"w:0.6.19\"}"
     },
     "response": {
       "headers": {
@@ -27,19 +65,19 @@
         "x-content-type-options": "nosniff",
         "access-control-allow-origin": "https://partner-dev.getmelon.co",
         "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
-        "content-length": "488",
-        "date": "Wed, 24 Jun 2026 19:41:10 GMT",
+        "content-length": "490",
+        "date": "Thu, 25 Jun 2026 02:20:49 GMT",
         "x-xss-protection": "0",
         "content-type": "application/json; charset=UTF-8",
         "vary": "Origin, X-Origin, Referer",
         "server": "ESF",
         "x-frame-options": "SAMEORIGIN"
       },
-      "body": "{\n  \"name\": \"projects/944351073735/installations/d0L1kAGJIN-AIgmFCCtQM1\",\n  \"fid\": \"d0L1kAGJIN-AIgmFCCtQM1\",\n  \"refreshToken\": \"3_AS3qfwJhyir0y4tKZSlCFVFzwxXyWwEjMxH1wqgvGr73nclpQk5XhYLPoDYm3HwcmTLfuaHiuhUj_3tacCBxavR6or_xDNzyc6XHyMs0-ylC5wk\",\n  \"authToken\": {\n    \"token\": \"eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjE6OTQ0MzUxMDczNzM1OndlYjpiNTYyMmMyYzlmMDUwNThhNDliNWUyIiwiZXhwIjoxNzgyOTM0ODcwLCJmaWQiOiJkMEwxa0FHSklOLUFJZ21GQ0N0UU0xIiwicHJvamVjdE51bWJlciI6OTQ0MzUxMDczNzM1fQ.AB2LPV8wRQIgPAUYzlpbK4Cg6XzXwshIdPI05EEz6mub_1w36RMauv8CIQCm3SLvjHxOyp2S4feKT1vT3-eGo6sjUJawOaW-RxWEwQ\",\n    \"expiresIn\": \"604800s\"\n  }\n}\n"
+      "body": "{\n  \"name\": \"projects/944351073735/installations/dv6ms7wsfmVy7_PIogazNd\",\n  \"fid\": \"dv6ms7wsfmVy7_PIogazNd\",\n  \"refreshToken\": \"3_AS3qfwLbKKcOqW7EmYUj0gAE-S9bB-WIVRE9XpqsLjR6Bk_Klvm5Pf155ZvhrGwKshzVQNEpwd_xRNuQfH5mfhdjwS7IDWYw3xBe98QjRXqP3eU\",\n  \"authToken\": {\n    \"token\": \"eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjE6OTQ0MzUxMDczNzM1OndlYjpiNTYyMmMyYzlmMDUwNThhNDliNWUyIiwiZXhwIjoxNzgyOTU4ODQ5LCJmaWQiOiJkdjZtczd3c2ZtVnk3X1BJb2dhek5kIiwicHJvamVjdE51bWJlciI6OTQ0MzUxMDczNzM1fQ.AB2LPV8wRQIgICaLnBk9z25zDKyJhBl3xBKyBG_5k_ear8ytURvhP7MCIQCXA6fXs0-7zZPVUVuOQQX38iU7CDABiOvt3TE-SDZNVg\",\n    \"expiresIn\": \"604800s\"\n  }\n}\n"
     }
   },
   {
-    "timestamp": "2026-06-24T19:41:11.594Z",
+    "timestamp": "2026-06-25T02:20:49.744Z",
     "resourceType": "fetch",
     "method": "GET",
     "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:944351073735:web:b5622c2c9f05058a49b5e2/webConfig",
@@ -65,7 +103,7 @@
         "access-control-allow-origin": "https://partner-dev.getmelon.co",
         "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
         "content-length": "232",
-        "date": "Wed, 24 Jun 2026 19:41:10 GMT",
+        "date": "Thu, 25 Jun 2026 02:20:49 GMT",
         "x-xss-protection": "0",
         "content-type": "application/json; charset=UTF-8",
         "vary": "Origin, X-Origin, Referer",
@@ -76,48 +114,10 @@
     }
   },
   {
-    "timestamp": "2026-06-24T19:41:11.750Z",
-    "resourceType": "xhr",
-    "method": "POST",
-    "url": "https://partner-dev.getmelon.co/cdn-cgi/rum?",
-    "status": 204,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "referer": "https://partner-dev.getmelon.co/",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "content-type": "application/json",
-        "sec-ch-ua-mobile": "?0",
-        "accept-language": "en-US"
-      },
-      "body": "{\"memory\":{\"totalJSHeapSize\":39600000,\"usedJSHeapSize\":33100000,\"jsHeapSizeLimit\":3760000000},\"resources\":[],\"referrer\":\"\",\"eventType\":1,\"firstPaint\":1308,\"firstContentfulPaint\":1308,\"startTime\":1782330068725.8,\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.5.0\",\"timings\":2},\"pageloadId\":\"cd4d6c57-9df2-43a8-b409-f93900b5b13d\",\"location\":\"https://partner-dev.getmelon.co/\",\"nt\":\"navigate\",\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"domainLookupStart\":1,\"domainLookupEnd\":1.7000000000116415,\"connectStart\":1.7000000000116415,\"connectEnd\":18.20000000001164,\"requestStart\":18.30000000000291,\"responseStart\":26.90000000000873,\"responseEnd\":48.80000000000291,\"domInteractive\":55.5,\"domComplete\":3012.600000000006,\"loadEventStart\":3013,\"loadEventEnd\":3013,\"finalResponseHeadersStart\":48.20000000001164,\"firstInterimResponseStart\":26.90000000000873,\"transferSize\":972,\"decodedBodySize\":1211},\"dt\":\"\",\"siteToken\":\"9b7fef37d0b74d79a4cc9b0a8f823dd4\",\"st\":2}"
-    },
-    "response": {
-      "headers": {
-        "access-control-max-age": "86400",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Vu2o2DCBCi%2FRZcwz7aOgOS8NXGBZGzzO6ZSq4VM6RR7G5Chj0FhImoQPja6zkpDi0G64b4%2B1o3bwZK9LwTmAg%2F%2B4RWEVlEqLFKJvGNvyOs9qaKXJtUVJW4D9dWA77axF9U6kLL1dmRLLcw%3D%3D\"}]}",
-        "access-control-allow-credentials": "true",
-        "access-control-allow-methods": "POST,OPTIONS",
-        "cf-ray": "a10e35646d275cfb-SJC",
-        "access-control-allow-origin": "https://partner-dev.getmelon.co",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 24 Jun 2026 19:41:11 GMT",
-        "content-type": "text/plain",
-        "vary": "Origin",
-        "server": "cloudflare",
-        "priority": "u=1,i"
-      },
-      "body": ""
-    }
-  },
-  {
-    "timestamp": "2026-06-24T19:41:11.777Z",
+    "timestamp": "2026-06-25T02:20:49.984Z",
     "resourceType": "fetch",
     "method": "POST",
-    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-ZM1JE3JR2F&gtm=45je66n0v9240486858za200zd9240486858&_p=1782330071527&gcd=13l3l3l3l1l1&npa=0&dma=0&_fid=d0L1kAGJIN-AIgmFCCtQM1&are=1&cid=30403905.1782330072&frm=0&pscdl=noapi&rcb=19&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&_s=1&tag_exp=115616986~115938465~115938469~119027224~119392696~119392704&sid=1782330071&sct=1&seg=0&dl=https%3A%2F%2Fpartner-dev.getmelon.co%2F&dt=Melon&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&ep.origin=firebase&tfd=3011",
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-ZM1JE3JR2F&gtm=45je66n1v9240486858za200zd9240486858&_p=1782354049739&gcd=13l3l3l3l1l1&npa=0&dma=0&_fid=dv6ms7wsfmVy7_PIogazNd&are=1&cid=744360992.1782354050&frm=0&pscdl=noapi&rcb=11&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&_s=1&tag_exp=0~115616985~115938465~115938469~118395333~119027224&sid=1782354049&sct=1&seg=0&dl=https%3A%2F%2Fpartner-dev.getmelon.co%2Fauth%2Femail-verified%2F3264794e-896f-44c4-b709-740470b66073&dt=Melon&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&ep.origin=firebase&tfd=1809",
     "status": 204,
     "request": {
       "headers": {
@@ -143,7 +143,7 @@
         "cross-origin-opener-policy-report-only": "same-origin; report-to=ascnsrsggc:138:0",
         "content-length": "0",
         "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
-        "date": "Wed, 24 Jun 2026 19:41:11 GMT",
+        "date": "Thu, 25 Jun 2026 02:20:49 GMT",
         "content-type": "text/plain",
         "server": "Golfe2"
       },
@@ -151,34 +151,32 @@
     }
   },
   {
-    "timestamp": "2026-06-24T19:41:15.771Z",
+    "timestamp": "2026-06-25T02:20:50.411Z",
     "resourceType": "xhr",
-    "method": "POST",
-    "url": "https://staging-api.getmelon.co/api/v1/auth/login-member",
-    "status": 404,
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/businesses/verify-email/3264794e-896f-44c4-b709-740470b66073",
+    "status": 400,
     "request": {
       "headers": {
         "sec-ch-ua-platform": "\"Windows\"",
         "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
         "accept": "application/json, text/plain, */*",
-        "content-type": "application/json"
+        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
+        "accept-language": "en-US",
+        "sec-ch-ua-mobile": "?0"
       },
-      "body": "{\"email\":\"invalid.user@yopmail.com\",\"password\":\"InvalidPassword123!\"}"
+      "body": null
     },
     "response": {
       "headers": {
-        "content-encoding": "zstd",
         "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"3e-+kMdS0rUWJ/TwfCP9Pf45v8of1A\"",
+        "etag": "W/\"47-SUyjdoGZg0QoOYPDqxCEm7ka9NI\"",
         "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=n3M0oW2vxbHEf8pGmeM71P3NTnS0uu982s5yFOE93qmm6OfSVWDZT0ZJ%2BbMrIfNOhEOnSGhpQFUrgEAUPg%2FsRXfepLift8vpfq4SG1E%2FbJJu6LNQX82rQRJ4FxRYK4rNTR9ivBBG6m592g%3D%3D\"}]}",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=7WAwx%2Fu7BHjYQ2Cs1r%2BubQ2Nqrtp9WuqK%2BCUIKva7oQ4GkmodoXKiEZZ10jzrFZquaADTz5vIQDFQ6K6HvLc7VzuPUoQw67BwLzhbWhBl1%2B6GDTnCZ5RBG1ss7CIYgmnBN27X2cCuxWKng%3D%3D\"}]}",
         "x-content-type-options": "nosniff",
         "alt-svc": "h3=\":443\"; ma=86400",
-        "date": "Wed, 24 Jun 2026 19:41:15 GMT",
+        "date": "Thu, 25 Jun 2026 02:20:50 GMT",
         "content-type": "application/json; charset=utf-8",
         "x-frame-options": "SAMEORIGIN",
         "strict-transport-security": "max-age=15552000; includeSubDomains",
@@ -189,13 +187,14 @@
         "cross-origin-resource-policy": "same-origin",
         "referrer-policy": "no-referrer",
         "x-download-options": "noopen",
-        "cf-ray": "a10e35778e126cb7-SJC",
+        "cf-ray": "a1107eca39e79c6a-IAD",
         "access-control-allow-origin": "*",
+        "content-length": "71",
         "x-xss-protection": "0",
         "origin-agent-cluster": "?1",
         "server": "cloudflare"
       },
-      "body": "{\"status\":\"error\",\"statusCode\":404,\"message\":\"User not found\"}"
+      "body": "{\"message\":\"Invalid or expired link\",\"status\":\"error\",\"statusCode\":400}"
     }
   }
 ]
