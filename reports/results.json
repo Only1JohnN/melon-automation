@@ -1,7 +1,7 @@
 {
   "config": {
     "argv": [
-      "/opt/hostedtoolcache/node/22.22.3/x64/bin/node",
+      "/opt/hostedtoolcache/node/22.23.0/x64/bin/node",
       "/home/runner/work/melon-automation/melon-automation/node_modules/.bin/playwright",
       "test"
     ],
@@ -20,7 +20,7 @@
       "ci": {
         "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/d11937fadcbd0f5b56d585e4437172ad219fbfd5",
         "commitHash": "d11937fadcbd0f5b56d585e4437172ad219fbfd5",
-        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28158529529"
+        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28227878977"
       },
       "gitCommit": {
         "shortHash": "d11937f",
@@ -51,7 +51,7 @@
           "ci": {
             "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/d11937fadcbd0f5b56d585e4437172ad219fbfd5",
             "commitHash": "d11937fadcbd0f5b56d585e4437172ad219fbfd5",
-            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28158529529"
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28227878977"
           },
           "gitCommit": {
             "shortHash": "d11937f",
@@ -89,7 +89,7 @@
           "ci": {
             "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/d11937fadcbd0f5b56d585e4437172ad219fbfd5",
             "commitHash": "d11937fadcbd0f5b56d585e4437172ad219fbfd5",
-            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28158529529"
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28227878977"
           },
           "gitCommit": {
             "shortHash": "d11937f",
@@ -130,7 +130,7 @@
           "ci": {
             "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/d11937fadcbd0f5b56d585e4437172ad219fbfd5",
             "commitHash": "d11937fadcbd0f5b56d585e4437172ad219fbfd5",
-            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28158529529"
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28227878977"
           },
           "gitCommit": {
             "shortHash": "d11937f",
@@ -209,12 +209,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 12841,
+                  "duration": 14089,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-25T08:52:49.803Z",
+                  "startTime": "2026-06-26T08:55:35.600Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -263,12 +263,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11874,
+                      "duration": 11293,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:53:27.474Z",
+                      "startTime": "2026-06-26T08:56:14.658Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -302,7 +302,7 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32331,
+                      "duration": 32348,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -315,7 +315,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:53:39.442Z",
+                      "startTime": "2026-06-26T08:56:26.052Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -344,7 +344,7 @@
                       "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32221,
+                      "duration": 32379,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -357,7 +357,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T08:54:12.368Z",
+                      "startTime": "2026-06-26T08:56:59.015Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -386,7 +386,7 @@
                       "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32203,
+                      "duration": 32331,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -399,7 +399,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T08:54:45.243Z",
+                      "startTime": "2026-06-26T08:57:32.069Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -454,12 +454,12 @@
                       "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11750,
+                      "duration": 12381,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:55:18.102Z",
+                      "startTime": "2026-06-26T08:58:05.098Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -493,12 +493,12 @@
                       "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11800,
+                      "duration": 12858,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:55:29.956Z",
+                      "startTime": "2026-06-26T08:58:17.576Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -532,12 +532,12 @@
                       "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10694,
+                      "duration": 11109,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:55:41.776Z",
+                      "startTime": "2026-06-26T08:58:30.450Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -571,12 +571,12 @@
                       "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11363,
+                      "duration": 12701,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:55:52.485Z",
+                      "startTime": "2026-06-26T08:58:41.577Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -610,7 +610,7 @@
                       "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 17538,
+                      "duration": 17013,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:116:94",
@@ -634,7 +634,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:56:03.868Z",
+                      "startTime": "2026-06-26T08:58:54.297Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -668,7 +668,7 @@
                       "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 17011,
+                      "duration": 17022,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:116:94",
@@ -692,7 +692,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T08:56:22.269Z",
+                      "startTime": "2026-06-26T08:59:12.246Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -726,7 +726,7 @@
                       "workerIndex": 7,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 16671,
+                      "duration": 17062,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:116:94",
@@ -750,7 +750,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T08:56:40.204Z",
+                      "startTime": "2026-06-26T08:59:30.244Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -810,7 +810,7 @@
                       "workerIndex": 8,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 17159,
+                      "duration": 17078,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:129:94",
@@ -834,7 +834,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:56:57.787Z",
+                      "startTime": "2026-06-26T08:59:48.316Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -868,7 +868,7 @@
                       "workerIndex": 9,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 17582,
+                      "duration": 18584,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:129:94",
@@ -892,7 +892,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T08:57:15.897Z",
+                      "startTime": "2026-06-26T09:00:06.365Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -926,7 +926,7 @@
                       "workerIndex": 10,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 16725,
+                      "duration": 17729,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be higher than stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be higher than stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:129:94",
@@ -950,7 +950,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T08:57:34.434Z",
+                      "startTime": "2026-06-26T09:00:25.924Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1010,7 +1010,7 @@
                       "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 17358,
+                      "duration": 17584,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be equal to stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be equal to stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be equal to stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be equal to stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:142:91",
@@ -1034,7 +1034,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:57:52.085Z",
+                      "startTime": "2026-06-26T09:00:44.668Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1068,7 +1068,7 @@
                       "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 17416,
+                      "duration": 17068,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be equal to stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be equal to stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be equal to stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be equal to stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:142:91",
@@ -1092,7 +1092,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T08:58:10.478Z",
+                      "startTime": "2026-06-26T09:01:03.221Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1126,7 +1126,7 @@
                       "workerIndex": 13,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 16642,
+                      "duration": 17585,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be equal to stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be equal to stock quantity')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Low stock threshold can\\'t be equal to stock quantity')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Low stock threshold can\\'t be equal to stock quantity')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:142:91",
@@ -1150,7 +1150,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T08:58:28.816Z",
+                      "startTime": "2026-06-26T09:01:21.274Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1210,12 +1210,12 @@
                       "workerIndex": 14,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11906,
+                      "duration": 11207,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:58:46.392Z",
+                      "startTime": "2026-06-26T09:01:39.837Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1249,7 +1249,7 @@
                       "workerIndex": 14,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8022,
+                      "duration": 8256,
                       "errors": [],
                       "stdout": [
                         {
@@ -1258,7 +1258,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:58:58.396Z",
+                      "startTime": "2026-06-26T09:01:51.151Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1292,12 +1292,12 @@
                       "workerIndex": 14,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11295,
+                      "duration": 11515,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:59:06.437Z",
+                      "startTime": "2026-06-26T09:01:59.421Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1331,12 +1331,12 @@
                       "workerIndex": 14,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9212,
+                      "duration": 9712,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:59:17.743Z",
+                      "startTime": "2026-06-26T09:02:10.954Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1370,7 +1370,7 @@
                       "workerIndex": 14,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 16392,
+                      "duration": 15912,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/maximum/i)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/maximum/i)\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/maximum/i)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/maximum/i)\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:214:46",
@@ -1394,7 +1394,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:59:26.968Z",
+                      "startTime": "2026-06-26T09:02:20.683Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1428,7 +1428,7 @@
                       "workerIndex": 15,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 15766,
+                      "duration": 16018,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/maximum/i)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/maximum/i)\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/maximum/i)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/maximum/i)\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:214:46",
@@ -1452,7 +1452,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T08:59:44.202Z",
+                      "startTime": "2026-06-26T09:02:37.502Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1486,7 +1486,7 @@
                       "workerIndex": 16,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 15953,
+                      "duration": 16401,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/maximum/i)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/maximum/i)\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/maximum/i)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/maximum/i)\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:214:46",
@@ -1510,7 +1510,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:00:00.872Z",
+                      "startTime": "2026-06-26T09:02:54.501Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1570,7 +1570,7 @@
                       "workerIndex": 17,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32488,
+                      "duration": 32511,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -1583,7 +1583,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:00:17.717Z",
+                      "startTime": "2026-06-26T09:03:11.869Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1612,7 +1612,7 @@
                       "workerIndex": 18,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32450,
+                      "duration": 32488,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -1625,7 +1625,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:00:51.147Z",
+                      "startTime": "2026-06-26T09:03:45.373Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1654,7 +1654,7 @@
                       "workerIndex": 19,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32486,
+                      "duration": 32547,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -1667,7 +1667,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:01:24.547Z",
+                      "startTime": "2026-06-26T09:04:18.864Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1722,7 +1722,7 @@
                       "workerIndex": 20,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32438,
+                      "duration": 32455,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -1735,7 +1735,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:01:58.016Z",
+                      "startTime": "2026-06-26T09:04:52.397Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1764,7 +1764,7 @@
                       "workerIndex": 21,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32427,
+                      "duration": 32486,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -1777,7 +1777,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:02:31.386Z",
+                      "startTime": "2026-06-26T09:05:25.864Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1806,7 +1806,7 @@
                       "workerIndex": 22,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32441,
+                      "duration": 32486,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -1819,7 +1819,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:03:04.724Z",
+                      "startTime": "2026-06-26T09:05:59.394Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -1874,12 +1874,12 @@
                       "workerIndex": 23,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8013,
+                      "duration": 7565,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:03:38.083Z",
+                      "startTime": "2026-06-26T09:06:32.936Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1913,12 +1913,12 @@
                       "workerIndex": 23,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7316,
+                      "duration": 8512,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:03:46.202Z",
+                      "startTime": "2026-06-26T09:06:40.605Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1952,12 +1952,12 @@
                       "workerIndex": 23,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7418,
+                      "duration": 7787,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:03:53.536Z",
+                      "startTime": "2026-06-26T09:06:49.136Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1991,12 +1991,12 @@
                       "workerIndex": 23,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6917,
+                      "duration": 7792,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:04:00.972Z",
+                      "startTime": "2026-06-26T09:06:56.938Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2030,12 +2030,12 @@
                       "workerIndex": 23,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6876,
+                      "duration": 7319,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:04:07.903Z",
+                      "startTime": "2026-06-26T09:07:04.746Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2069,12 +2069,12 @@
                       "workerIndex": 23,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6894,
+                      "duration": 8441,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:04:14.792Z",
+                      "startTime": "2026-06-26T09:07:12.086Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2108,12 +2108,12 @@
                       "workerIndex": 23,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 19519,
+                      "duration": 20305,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:04:21.701Z",
+                      "startTime": "2026-06-26T09:07:20.542Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2147,7 +2147,7 @@
                       "workerIndex": 23,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 14268,
+                      "duration": 15185,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:329:39",
@@ -2171,7 +2171,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:04:41.236Z",
+                      "startTime": "2026-06-26T09:07:40.861Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2205,7 +2205,7 @@
                       "workerIndex": 24,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 15998,
+                      "duration": 15243,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:329:39",
@@ -2229,7 +2229,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:04:56.384Z",
+                      "startTime": "2026-06-26T09:07:56.998Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2263,7 +2263,7 @@
                       "workerIndex": 25,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 15291,
+                      "duration": 16240,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:329:39",
@@ -2287,7 +2287,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:05:13.433Z",
+                      "startTime": "2026-06-26T09:08:13.293Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2347,12 +2347,12 @@
                       "workerIndex": 26,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9193,
+                      "duration": 8847,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:05:29.722Z",
+                      "startTime": "2026-06-26T09:08:30.640Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2386,7 +2386,7 @@
                       "workerIndex": 26,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 21795,
+                      "duration": 22038,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m6\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\u001b[2m       - unexpected value \"6\"\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m6\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\u001b[2m       - unexpected value \"6\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:352:39",
@@ -2410,7 +2410,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:05:39.017Z",
+                      "startTime": "2026-06-26T09:08:39.593Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2444,7 +2444,7 @@
                       "workerIndex": 27,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 22175,
+                      "duration": 22149,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m6\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\u001b[2m       - unexpected value \"6\"\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m6\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\u001b[2m       - unexpected value \"6\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:352:39",
@@ -2468,7 +2468,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:06:02.276Z",
+                      "startTime": "2026-06-26T09:09:03.228Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2502,7 +2502,7 @@
                       "workerIndex": 28,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 22692,
+                      "duration": 23141,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m6\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\u001b[2m       - unexpected value \"6\"\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('img')\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m6\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('img')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\u001b[2m       - unexpected value \"6\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:352:39",
@@ -2526,7 +2526,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:06:25.984Z",
+                      "startTime": "2026-06-26T09:09:27.033Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2586,7 +2586,7 @@
                       "workerIndex": 29,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 17440,
+                      "duration": 17759,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByPlaceholder(/Enter quantity/)\nExpected: \u001b[32m\"5\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder(/Enter quantity/)\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByPlaceholder(/Enter quantity/)\nExpected: \u001b[32m\"5\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder(/Enter quantity/)\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:372:53",
@@ -2610,7 +2610,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:06:50.174Z",
+                      "startTime": "2026-06-26T09:09:51.932Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2644,7 +2644,7 @@
                       "workerIndex": 30,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 17794,
+                      "duration": 18686,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByPlaceholder(/Enter quantity/)\nExpected: \u001b[32m\"5\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder(/Enter quantity/)\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByPlaceholder(/Enter quantity/)\nExpected: \u001b[32m\"5\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder(/Enter quantity/)\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:372:53",
@@ -2668,7 +2668,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:07:08.566Z",
+                      "startTime": "2026-06-26T09:10:10.715Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2702,7 +2702,7 @@
                       "workerIndex": 31,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 18327,
+                      "duration": 17676,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByPlaceholder(/Enter quantity/)\nExpected: \u001b[32m\"5\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder(/Enter quantity/)\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByPlaceholder(/Enter quantity/)\nExpected: \u001b[32m\"5\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder(/Enter quantity/)\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:372:53",
@@ -2726,7 +2726,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:07:27.339Z",
+                      "startTime": "2026-06-26T09:10:30.429Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2786,7 +2786,7 @@
                       "workerIndex": 32,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32508,
+                      "duration": 32533,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -2799,7 +2799,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:07:46.600Z",
+                      "startTime": "2026-06-26T09:10:49.090Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2828,7 +2828,7 @@
                       "workerIndex": 33,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32448,
+                      "duration": 32512,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -2841,7 +2841,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:08:20.071Z",
+                      "startTime": "2026-06-26T09:11:22.686Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2870,7 +2870,7 @@
                       "workerIndex": 34,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32515,
+                      "duration": 32533,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -2883,7 +2883,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:08:53.473Z",
+                      "startTime": "2026-06-26T09:11:56.235Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -2938,12 +2938,12 @@
                       "workerIndex": 35,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14787,
+                      "duration": 15353,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:09:26.959Z",
+                      "startTime": "2026-06-26T09:12:29.811Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2977,7 +2977,7 @@
                       "workerIndex": 35,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32505,
+                      "duration": 32507,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -2990,7 +2990,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:09:41.853Z",
+                      "startTime": "2026-06-26T09:12:45.269Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3019,7 +3019,7 @@
                       "workerIndex": 36,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32496,
+                      "duration": 32519,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3032,7 +3032,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:10:15.225Z",
+                      "startTime": "2026-06-26T09:13:18.713Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3061,7 +3061,7 @@
                       "workerIndex": 37,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32592,
+                      "duration": 32574,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3074,7 +3074,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:10:48.682Z",
+                      "startTime": "2026-06-26T09:13:52.298Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3129,7 +3129,7 @@
                       "workerIndex": 38,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32510,
+                      "duration": 32455,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3142,7 +3142,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:11:22.293Z",
+                      "startTime": "2026-06-26T09:14:25.920Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3171,7 +3171,7 @@
                       "workerIndex": 39,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32434,
+                      "duration": 32459,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3184,7 +3184,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:11:55.806Z",
+                      "startTime": "2026-06-26T09:14:59.395Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3213,7 +3213,7 @@
                       "workerIndex": 40,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32471,
+                      "duration": 32454,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3226,7 +3226,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:12:29.143Z",
+                      "startTime": "2026-06-26T09:15:32.890Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3281,7 +3281,7 @@
                       "workerIndex": 41,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11893,
+                      "duration": 12340,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Fashion')\nExpected: visible\nError: strict mode violation: getByText('Fashion') resolved to 2 elements:\n    1) <span class=\"text-pashBlack-5\">Fashion</span> aka getByLabel('Category')\n    2) <span class=\"px-3 py-1 text-sm rounded-lg bg-gray-100 border border-gray-300 text-gray-700\">Fashion</span> aka getByLabel('Product Preview').getByText('Fashion')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Fashion')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Fashion')\nExpected: visible\nError: strict mode violation: getByText('Fashion') resolved to 2 elements:\n    1) <span class=\"text-pashBlack-5\">Fashion</span> aka getByLabel('Category')\n    2) <span class=\"px-3 py-1 text-sm rounded-lg bg-gray-100 border border-gray-300 text-gray-700\">Fashion</span> aka getByLabel('Product Preview').getByText('Fashion')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Fashion')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:441:52",
@@ -3305,7 +3305,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:13:02.549Z",
+                      "startTime": "2026-06-26T09:16:06.354Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3339,7 +3339,7 @@
                       "workerIndex": 42,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 12424,
+                      "duration": 15998,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Fashion')\nExpected: visible\nError: strict mode violation: getByText('Fashion') resolved to 2 elements:\n    1) <span class=\"text-pashBlack-5\">Fashion</span> aka getByLabel('Category')\n    2) <span class=\"px-3 py-1 text-sm rounded-lg bg-gray-100 border border-gray-300 text-gray-700\">Fashion</span> aka getByLabel('Product Preview').getByText('Fashion')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Fashion')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Fashion')\nExpected: visible\nError: strict mode violation: getByText('Fashion') resolved to 2 elements:\n    1) <span class=\"text-pashBlack-5\">Fashion</span> aka getByLabel('Category')\n    2) <span class=\"px-3 py-1 text-sm rounded-lg bg-gray-100 border border-gray-300 text-gray-700\">Fashion</span> aka getByLabel('Product Preview').getByText('Fashion')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Fashion')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:441:52",
@@ -3363,7 +3363,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:13:15.365Z",
+                      "startTime": "2026-06-26T09:16:19.722Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3397,7 +3397,7 @@
                       "workerIndex": 43,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 11797,
+                      "duration": 12269,
                       "error": {
                         "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Fashion')\nExpected: visible\nError: strict mode violation: getByText('Fashion') resolved to 2 elements:\n    1) <span class=\"text-pashBlack-5\">Fashion</span> aka getByLabel('Category')\n    2) <span class=\"px-3 py-1 text-sm rounded-lg bg-gray-100 border border-gray-300 text-gray-700\">Fashion</span> aka getByLabel('Product Preview').getByText('Fashion')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Fashion')\u001b[22m\n",
                         "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Fashion')\nExpected: visible\nError: strict mode violation: getByText('Fashion') resolved to 2 elements:\n    1) <span class=\"text-pashBlack-5\">Fashion</span> aka getByLabel('Category')\n    2) <span class=\"px-3 py-1 text-sm rounded-lg bg-gray-100 border border-gray-300 text-gray-700\">Fashion</span> aka getByLabel('Product Preview').getByText('Fashion')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Fashion')\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/products/product.spec.ts:441:52",
@@ -3421,7 +3421,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:13:28.713Z",
+                      "startTime": "2026-06-26T09:16:36.899Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3481,12 +3481,12 @@
                       "workerIndex": 44,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11631,
+                      "duration": 12416,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:13:41.393Z",
+                      "startTime": "2026-06-26T09:16:50.199Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3520,7 +3520,7 @@
                       "workerIndex": 44,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32405,
+                      "duration": 32453,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3541,7 +3541,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:13:53.119Z",
+                      "startTime": "2026-06-26T09:17:02.716Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3570,7 +3570,7 @@
                       "workerIndex": 45,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32446,
+                      "duration": 32438,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3591,7 +3591,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:14:26.366Z",
+                      "startTime": "2026-06-26T09:17:36.101Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3620,7 +3620,7 @@
                       "workerIndex": 46,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32418,
+                      "duration": 32460,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3641,7 +3641,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:14:59.749Z",
+                      "startTime": "2026-06-26T09:18:09.558Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3696,7 +3696,7 @@
                       "workerIndex": 47,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32570,
+                      "duration": 32549,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3709,7 +3709,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T09:15:33.121Z",
+                      "startTime": "2026-06-26T09:18:43.008Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3738,7 +3738,7 @@
                       "workerIndex": 48,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32468,
+                      "duration": 32481,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3751,7 +3751,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-06-25T09:16:06.682Z",
+                      "startTime": "2026-06-26T09:19:16.559Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3780,7 +3780,7 @@
                       "workerIndex": 49,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 32543,
+                      "duration": 32540,
                       "error": {
                         "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
                         "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
@@ -3793,7 +3793,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 2,
-                      "startTime": "2026-06-25T09:16:40.092Z",
+                      "startTime": "2026-06-26T09:19:50.095Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -3863,12 +3863,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11258,
+                      "duration": 10459,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:53:03.277Z",
+                      "startTime": "2026-06-26T08:55:50.372Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3900,12 +3900,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7577,
+                      "duration": 8214,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-25T08:53:14.631Z",
+                      "startTime": "2026-06-26T08:56:00.937Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -3946,12 +3946,12 @@
                           "workerIndex": 1,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 4682,
+                          "duration": 4898,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-25T08:53:22.231Z",
+                          "startTime": "2026-06-26T08:56:09.165Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -3973,8 +3973,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-25T08:52:49.075Z",
-    "duration": 1464041.563,
+    "startTime": "2026-06-26T08:55:34.831Z",
+    "duration": 1488285.709,
     "expected": 23,
     "skipped": 0,
     "unexpected": 16,
