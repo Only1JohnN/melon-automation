@@ -56,10 +56,29 @@ jobs:
         run: |
           mkdir -p reports
 
+          TOTAL=$(jq '.stats.expected + .stats.unexpected + .stats.flaky' reports/results.json)
+          PASSED=$(jq '.stats.expected' reports/results.json)
+          FAILED=$(jq '.stats.unexpected' reports/results.json)
+
+          if [ "$FAILED" -eq 0 ]; then
+            STATUS="passed"
+          else
+            STATUS="failed"
+          fi
+
+          DURATION=$(jq '.stats.duration' reports/results.json)
+
           cat > reports/run-metadata.json << EOF
           {
-            "environment": "pre-release",
-            "executedAt": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+            "id":"${GITHUB_RUN_ID}",
+            "environment":"pre-release",
+            "executedAt":"$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "status":"$STATUS",
+            "total":$TOTAL,
+            "passed":$PASSED,
+            "failed":$FAILED,
+            "duration":$DURATION,
+            "trigger":"${GITHUB_EVENT_NAME}"
           }
           EOF
 
@@ -98,6 +117,9 @@ jobs:
           mkdir -p /tmp/melon-reports
           cp -R reports/* /tmp/melon-reports/
 
+          mkdir -p /tmp/melon-test-results
+          cp -R test-results/* /tmp/melon-test-results/ || true
+
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
@@ -108,22 +130,58 @@ jobs:
           else
             git checkout --orphan reports
           fi
+          
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
 
-          find . \
-            -mindepth 1 \
-            -maxdepth 1 \
-            ! -name ".git" \
-            -exec rm -rf {} +
+          mkdir -p reports
+          mkdir -p reports-artifacts
+          mkdir -p reports/executions
+
+          YEAR=$(date +"%Y")
+          MONTH=$(date +"%m")
+          RUN_ID=${GITHUB_RUN_ID}
+
+          EXECUTION_DIR="reports/executions/$YEAR/$MONTH/$RUN_ID"
+
+          mkdir -p "$EXECUTION_DIR"
+
+          cp /tmp/melon-reports/results.json "$EXECUTION_DIR/"
+          cp /tmp/melon-reports/run-metadata.json "$EXECUTION_DIR/"
+
+          cp -R /tmp/melon-reports/api-logs \
+            "$EXECUTION_DIR/" || true
+
+          cp -R /tmp/melon-test-results \
+            "$EXECUTION_DIR/reports-artifacts" || true
 
           mkdir -p reports
           mkdir -p reports-artifacts
 
-          cp -R /tmp/melon-reports/* reports/
+          cp /tmp/melon-reports/results.json reports/
+          cp /tmp/melon-reports/run-metadata.json reports/
 
-          cp -R /tmp/melon-test-results reports-artifacts/test-results || true
+          cp -R /tmp/melon-reports/api-logs reports/ || true
+
+          cp -R /tmp/melon-test-results/* reports-artifacts/ || true
+
+          INDEX_FILE="reports/executions/index.json"
+
+          mkdir -p reports/executions
+
+          if [ ! -f "$INDEX_FILE" ]; then
+            echo "[]" > "$INDEX_FILE"
+          fi
+
+          TMP_INDEX=$(mktemp)
+
+          jq --slurpfile run "$EXECUTION_DIR/run-metadata.json" \
+            '. |= map(select(.id != $run[0].id)) | [$run[0]] + .' \
+            "$INDEX_FILE" > "$TMP_INDEX"
+
+          mv "$TMP_INDEX" "$INDEX_FILE"
 
           git add .
 
-          git commit -m "Update reports" || echo "No changes to commit"
+          git commit -m "Add execution $RUN_ID" || echo "No changes to commit"
 
-          git push origin reports --force
+          git push origin reports

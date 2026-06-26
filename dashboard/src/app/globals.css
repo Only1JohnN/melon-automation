@@ -28,3 +28,28 @@ body {
   color: var(--melon-white);
 }
 
+html,
+body,
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
+
+input,
+textarea {
+  cursor: text !important;
+}
+
+@keyframes pulse-ring {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}

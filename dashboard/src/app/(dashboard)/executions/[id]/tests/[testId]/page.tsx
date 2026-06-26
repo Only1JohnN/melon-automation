@@ -1,5 +1,5 @@
 import Topbar from "@/components/Topbar";
-import { getTestById } from "@/lib/report-parser";
+import { getExecutionTestById } from "@/lib/execution-parser";
 import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -7,13 +7,19 @@ export const dynamic = "force-dynamic";
 export default async function TestPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{
+    id: string;
+    testId: string;
+  }>;
 }) {
-  const { id } =
+  const { id, testId, } =
     await params;
 
   const test =
-    await getTestById(id);
+    await getExecutionTestById(
+        id,
+        testId
+    );
 
   if (!test) {
     notFound();

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Topbar from "@/components/Topbar";
 import { getGroupedFailures } from "@/lib/report-parser";
+import StatusBadge from "@/components/StatusBadge";
 
 export const dynamic = "force-dynamic";
 
@@ -66,9 +67,9 @@ export default async function FailuresPage() {
                         </td>
 
                         <td className="p-4">
-                          <span className="rounded-full bg-red-500/20 px-2 py-1 text-xs text-red-400">
-                            {failure.status}
-                          </span>
+                          <StatusBadge
+                            status={failure.status}
+                          />
                         </td>
 
                         <td className="p-4">

@@ -1,6 +1,7 @@
 import Topbar from "@/components/Topbar";
 import { getTestsByApplication } from "@/lib/report-parser";
 import Link from "next/link";
+import StatusBadge from "@/components/StatusBadge";
 
 export const dynamic = "force-dynamic";
 
@@ -81,16 +82,9 @@ export default async function ApplicationPage({
                         </td>
 
                         <td className="p-4">
-                          <span
-                            className={
-                              test.status ===
-                              "passed"
-                                ? "rounded-full bg-green-500/20 px-3 py-1 text-green-400"
-                                : "rounded-full bg-red-500/20 px-3 py-1 text-red-400"
-                            }
-                          >
-                            {test.status}
-                          </span>
+                          <StatusBadge
+                            status={test.status}
+                          />
                         </td>
                       </tr>
                     )
