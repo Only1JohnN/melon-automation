@@ -18,6 +18,10 @@ export default async function FailureDetailsPage({
     notFound();
   }
 
+  console.log("Screenshot:", failure.screenshotUrl);
+  console.log("Video:", failure.videoUrl);
+  console.log("Trace:", failure.traceUrl);
+
   const apiLogs = (failure as any).apiLogs ?? [];
 
   return (

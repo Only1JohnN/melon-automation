@@ -423,30 +423,31 @@ function buildExecutionArtifactUrl(
     return null;
   }
 
-  const relative =
-    attachment.path.replace(
-      "/home/runner/work/melon-automation/melon-automation/test-results/",
-      ""
-    );
+  const relative = path.relative(
+    path.join(process.cwd(), "test-results"),
+    attachment.path
+  );
 
-  const localArtifact =
-    path.join(
-      process.cwd(),
-      "../reports/executions",
-      String(year),
-      month,
-      executionId,
-      "reports-artifacts",
-      relative
-    );
+  const localArtifact = path.join(
+    process.cwd(),
+    "../reports/executions",
+    String(year),
+    month,
+    executionId,
+    "reports-artifacts",
+    relative
+  );
 
-  if (
-    fs.existsSync(
-      localArtifact
-    )
-  ) {
+  // Local execution reports (if they've been copied)
+  if (fs.existsSync(localArtifact)) {
     return `file://${localArtifact}`;
   }
 
+  // Local Playwright test-results
+  if (fs.existsSync(attachment.path)) {
+    return `file://${attachment.path}`;
+  }
+
+  // GitHub reports branch
   return `${REPORTS_URL}/executions/${year}/${month}/${executionId}/reports-artifacts/${relative}`;
 }

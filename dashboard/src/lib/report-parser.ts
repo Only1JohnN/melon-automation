@@ -1,9 +1,3 @@
-import {
-  parseTests,
-  parseFailures,
-  parseApplications,
-  groupByFeature,
-} from "./playwright-parser";
 import fs from "fs";
 import path from "path";
 import { getReportData } from "./report-reader";
@@ -61,12 +55,24 @@ export async function getFailures() {
     'https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports';
 
   const buildArtifactUrl = (attachment: any) => {
-    if (!attachment?.path) return null;
-    const relativePath = attachment.path.replace(
-      '/home/runner/work/melon-automation/melon-automation/',
-      ''
+    if (!attachment?.path) {
+      return null;
+    }
+
+    const relative = path.relative(
+      path.join(process.cwd(), "test-results"),
+      attachment.path
     );
-    return `${githubBase}/reports-artifacts/${relativePath}`;
+
+    const localArtifact = attachment.path;
+
+    // Local Playwright test-results
+    if (fs.existsSync(localArtifact)) {
+      return `file://${localArtifact}`;
+    }
+
+    // GitHub reports branch
+    return `${githubBase}/reports-artifacts/${relative}`;
   };
 
   // Convert spec file path to a human‑readable feature name
