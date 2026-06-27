@@ -18,9 +18,9 @@ export default async function FailureDetailsPage({
     notFound();
   }
 
-  console.log("Screenshot:", failure.screenshotUrl);
-  console.log("Video:", failure.videoUrl);
-  console.log("Trace:", failure.traceUrl);
+  // console.log("Screenshot:", failure.screenshotUrl);
+  // console.log("Video:", failure.videoUrl);
+  // console.log("Trace:", failure.traceUrl);
 
   const apiLogs = (failure as any).apiLogs ?? [];
 
@@ -93,7 +93,7 @@ export default async function FailureDetailsPage({
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {failure.screenshot && (
             <a
-              href={`file://${failure.screenshot.path}`}
+              href={failure.screenshotUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
@@ -110,7 +110,7 @@ export default async function FailureDetailsPage({
 
           {failure.video && (
             <a
-              href={`file://${failure.video.path}`}
+              href={failure.videoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
@@ -127,7 +127,7 @@ export default async function FailureDetailsPage({
 
           {failure.trace && (
             <a
-              href={`file://${failure.trace.path}`}
+              href={failure.traceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"

@@ -423,10 +423,14 @@ function buildExecutionArtifactUrl(
     return null;
   }
 
-  const relative = path.relative(
-    path.join(process.cwd(), "test-results"),
-    attachment.path
-  );
+  const normalized = attachment.path.replace(/\\/g, "/");
+  const marker = "/test-results/";
+  const index = normalized.lastIndexOf(marker);
+
+  // Extract everything after the last "/test-results/"
+  const relative = index >= 0
+    ? normalized.substring(index + marker.length)
+    : normalized;
 
   const localArtifact = path.join(
     process.cwd(),
@@ -438,14 +442,14 @@ function buildExecutionArtifactUrl(
     relative
   );
 
-  // Local execution reports (if they've been copied)
+  // Local reports copy (if you manually copied artifacts)
   if (fs.existsSync(localArtifact)) {
     return `file://${localArtifact}`;
   }
 
-  // Local Playwright test-results
+  // Fallback to original path (for local Playwright test-results)
   if (fs.existsSync(attachment.path)) {
-    return `file://${attachment.path}`;
+    return `/api/artifacts/${year}/${month}/${executionId}/${relative}`;
   }
 
   // GitHub reports branch

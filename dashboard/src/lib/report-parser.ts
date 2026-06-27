@@ -59,19 +59,21 @@ export async function getFailures() {
       return null;
     }
 
-    const relative = path.relative(
-      path.join(process.cwd(), "test-results"),
-      attachment.path
-    );
+    const normalized = attachment.path.replace(/\\/g, "/");
+    const marker = "/test-results/";
+    const index = normalized.indexOf(marker);
 
-    const localArtifact = attachment.path;
+    // Extract everything after "/test-results/"
+    const relative = index >= 0
+      ? normalized.substring(index + marker.length)
+      : normalized;
 
-    // Local Playwright test-results
-    if (fs.existsSync(localArtifact)) {
-      return `file://${localArtifact}`;
+    // For local development – try to serve from the original path
+    if (fs.existsSync(attachment.path)) {
+      return `/api/artifacts/${relative}`;
     }
 
-    // GitHub reports branch
+    // Fallback to GitHub reports branch
     return `${githubBase}/reports-artifacts/${relative}`;
   };
 
@@ -419,8 +421,8 @@ export async function getApplications() {
 
   const apps = [
     "partners",
-    "admin",
     "storefront",
+    "admin",
     "stack",
   ];
 
