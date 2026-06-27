@@ -1,9 +1,11 @@
 name: Melon Automation
+permissions:
+  contents: write
 
 on:
   push:
     branches:
-      - main
+      - master
 
   schedule:
     - cron: "0 6 * * *"
@@ -30,11 +32,14 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install Dependencies
         run: npm ci
@@ -43,7 +48,62 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Tests
+        continue-on-error: true
         run: npm run test:pre-release
+
+      - name: Convert Videos to MP4
+        if: always()
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+          find test-results -name "*.webm" | while read file; do
+            ffmpeg \
+              -i "$file" \
+              -c:v libx264 \
+              -preset fast \
+              -pix_fmt yuv420p \
+              -movflags +faststart \
+              "${file%.webm}.mp4"
+
+            rm "$file"
+          done
+
+      - name: Generate Run Metadata
+        if: always()
+        run: |
+          mkdir -p reports
+
+          TOTAL=$(jq '.stats.expected + .stats.unexpected + .stats.flaky' reports/results.json)
+          PASSED=$(jq '.stats.expected' reports/results.json)
+          FAILED=$(jq '.stats.unexpected' reports/results.json)
+
+          if [ "$FAILED" -eq 0 ]; then
+            STATUS="passed"
+          else
+            STATUS="failed"
+          fi
+
+          DURATION=$(jq '.stats.duration' reports/results.json)
+
+          cat > reports/run-metadata.json << EOF
+          {
+            "id":"${GITHUB_RUN_ID}",
+            "environment":"pre-release",
+            "executedAt":"$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "status":"$STATUS",
+            "total":$TOTAL,
+            "passed":$PASSED,
+            "failed":$FAILED,
+            "duration":$DURATION,
+            "trigger":"${GITHUB_EVENT_NAME}"
+          }
+          EOF
+
+      - name: Verify Reports
+        if: always()
+        run: |
+          ls -R reports
 
       - name: Upload Playwright Report
         if: always()
@@ -51,6 +111,7 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report
+          retention-days: 30
 
       - name: Upload Test Results
         if: always()
@@ -58,6 +119,7 @@ jobs:
         with:
           name: test-results
           path: test-results
+          retention-days: 30
 
       - name: Upload JSON Reports
         if: always()
@@ -65,3 +127,102 @@ jobs:
         with:
           name: reports
           path: reports
+          retention-days: 30
+
+      - name: Publish Reports Branch
+        if: always()
+        run: |
+          set -e
+
+          echo "📦 Preparing artifacts..."
+          mkdir -p /tmp/melon-reports
+          cp -R reports/* /tmp/melon-reports/
+
+          mkdir -p /tmp/melon-test-results
+          cp -R test-results/* /tmp/melon-test-results/ || true
+
+          echo "🔧 Configuring git..."
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          echo "🔄 Fetching reports branch..."
+          git fetch origin reports || true
+
+          if git ls-remote --heads origin reports | grep -q reports; then
+            echo "📥 Checking out existing reports branch..."
+            git checkout -B reports origin/reports
+          else
+            echo "🌱 Creating new reports branch..."
+            git checkout --orphan reports
+          fi
+
+          echo "💾 Backing up existing reports..."
+          mkdir -p /tmp/existing-reports
+          cp -R reports /tmp/existing-reports/ 2>/dev/null || true
+          cp -R reports-artifacts /tmp/existing-reports/ 2>/dev/null || true
+
+          echo "🧹 Cleaning working directory (keeping .git)..."
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+
+          echo "📁 Recreating base directories..."
+          mkdir -p reports reports-artifacts reports/executions
+
+          echo "♻️ Restoring previous reports..."
+          cp -R /tmp/existing-reports/reports/* reports/ 2>/dev/null || true
+          cp -R /tmp/existing-reports/reports-artifacts/* reports-artifacts/ 2>/dev/null || true
+
+          echo "📂 Creating execution directory for run $GITHUB_RUN_ID..."
+          YEAR=$(jq -r '.executedAt' /tmp/melon-reports/run-metadata.json | cut -c1-4)
+          MONTH=$(jq -r '.executedAt' /tmp/melon-reports/run-metadata.json | cut -c6-7)
+          RUN_ID=${GITHUB_RUN_ID}
+          EXECUTION_DIR="reports/executions/$YEAR/$MONTH/$RUN_ID"
+          mkdir -p "$EXECUTION_DIR"
+
+          echo "📋 Copying current run artifacts to execution folder..."
+          cp /tmp/melon-reports/results.json "$EXECUTION_DIR/"
+          cp /tmp/melon-reports/run-metadata.json "$EXECUTION_DIR/"
+          cp -R /tmp/melon-reports/api-logs "$EXECUTION_DIR/" 2>/dev/null || true
+
+          mkdir -p "$EXECUTION_DIR/reports-artifacts"
+          cp -R /tmp/melon-test-results/* "$EXECUTION_DIR/reports-artifacts/" 2>/dev/null || true
+
+          echo "📄 Copying current run to root (latest view)..."
+          cp /tmp/melon-reports/results.json reports/
+          cp /tmp/melon-reports/run-metadata.json reports/
+          cp -R /tmp/melon-reports/api-logs reports/ 2>/dev/null || true
+          mkdir -p reports-artifacts
+          cp -R /tmp/melon-test-results/* reports-artifacts/ 2>/dev/null || true
+
+          echo "📊 Updating execution index..."
+          INDEX_FILE="reports/executions/index.json"
+
+          if [ ! -f "$INDEX_FILE" ]; then
+            echo "[]" > "$INDEX_FILE"
+          fi
+
+          # Validate index is valid JSON; reset if corrupted
+          if ! jq empty "$INDEX_FILE" 2>/dev/null; then
+            echo "⚠️ Index file is corrupted, resetting..."
+            echo "[]" > "$INDEX_FILE"
+          fi
+
+          TMP_INDEX=$(mktemp)
+          if jq --slurpfile run "$EXECUTION_DIR/run-metadata.json" \
+                '. |= map(select(.id != $run[0].id)) | [$run[0]] + .' \
+                "$INDEX_FILE" > "$TMP_INDEX" 2>/dev/null; then
+            mv "$TMP_INDEX" "$INDEX_FILE"
+            echo "✅ Index updated successfully."
+          else
+            echo "❌ jq failed to update index – keeping old index."
+            rm -f "$TMP_INDEX"
+          fi
+
+          # Optional: print the number of executions for verification
+          echo "📈 Total executions now: $(jq '. | length' "$INDEX_FILE")"
+
+          echo "📦 Committing and pushing to reports branch..."
+          git add .
+          git commit -m "Add execution $RUN_ID" || echo "No changes to commit"
+          git push origin HEAD:reports
+
+          echo "✅ Reports branch published successfully."

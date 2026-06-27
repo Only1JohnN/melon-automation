@@ -1,10 +1,10 @@
 import Topbar from "@/components/Topbar";
-import {
-  getFailureById,
-  getApiLogs,
-} from "@/lib/report-parser";
+import { getFailureById } from "@/lib/report-parser";
 import { notFound } from "next/navigation";
 import ApiRequestRow from "@/components/ApiRequestRow";
+import { formatBytes } from "@/lib/format";
+
+export const dynamic = "force-dynamic";
 
 export default async function FailureDetailsPage({
   params,
@@ -13,12 +13,17 @@ export default async function FailureDetailsPage({
 }) {
   const { id } = await params;
 
-  const failure = getFailureById(id);
-  const apiLogs = getApiLogs(id);
+  const failure = await getFailureById(id);
 
   if (!failure) {
     notFound();
   }
+
+  // console.log("Screenshot:", failure.screenshotUrl);
+  // console.log("Video:", failure.videoUrl);
+  // console.log("Trace:", failure.traceUrl);
+
+  const apiLogs = (failure as any).apiLogs ?? [];
 
   return (
   <>
@@ -26,9 +31,39 @@ export default async function FailureDetailsPage({
 
     <div className="space-y-6">
       <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
-        <h2 className="text-2xl font-bold">
-          {failure.title}
-        </h2>
+        <div>
+          <h2 className="text-2xl font-bold">
+            {failure.title}
+          </h2>
+
+          {failure.tags?.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {failure.tags.map(
+                (
+                  tag: string,
+                  index: number
+                ) => (
+                  <span
+                    key={index}
+                    className="
+                    rounded-md
+                    border
+                    border-slate-700
+                    bg-slate-800
+                    px-2.5
+                    py-1
+                    text-xs
+                    font-medium
+                    text-slate-300
+                  "
+                  >
+                    @{tag}
+                  </span>
+                )
+              )}
+            </div>
+          )}
+        </div>
 
         <div className="mt-4 flex gap-4">
           <span className="rounded-full bg-red-500/20 px-3 py-1 text-red-400">
@@ -59,7 +94,7 @@ export default async function FailureDetailsPage({
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {failure.screenshot && (
             <a
-              href={`file://${failure.screenshot.path}`}
+              href={failure.screenshotUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
@@ -69,14 +104,14 @@ export default async function FailureDetailsPage({
               </p>
 
               <p className="mt-1 text-xs text-slate-400">
-                Open Screenshot
+                PNG • {formatBytes(failure.screenshot?.size)}
               </p>
             </a>
           )}
 
           {failure.video && (
             <a
-              href={`file://${failure.video.path}`}
+              href={failure.videoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
@@ -86,14 +121,14 @@ export default async function FailureDetailsPage({
               </p>
 
               <p className="mt-1 text-xs text-slate-400">
-                Open Video
+                MP4 • {formatBytes(failure.video?.size)}
               </p>
             </a>
           )}
 
           {failure.trace && (
             <a
-              href={`file://${failure.trace.path}`}
+              href={failure.traceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
@@ -103,7 +138,7 @@ export default async function FailureDetailsPage({
               </p>
 
               <p className="mt-1 text-xs text-slate-400">
-                Download Trace
+                ZIP • {formatBytes(failure.trace?.size)}
               </p>
             </a>
           )}

@@ -6,7 +6,7 @@ import {
 import {
   attachNetworkLogger,
   saveNetworkLogs,
-} from "../utils/networkLogger.ts";
+} from "../utils/networkLogger";
 
 base.beforeEach(
   async ({ page }, testInfo) => {
@@ -18,7 +18,11 @@ base.beforeEach(
 );
 
 base.afterEach(
-  async ({}, testInfo) => {
+  async ({ page }, testInfo) => {
+    await page.waitForTimeout(
+      2000
+    );
+    
     saveNetworkLogs(
       testInfo.testId
     );

@@ -15,6 +15,7 @@
       "@pages/*": ["pages/*"],
       "@utils/*": ["utils/*"],
       "@fixtures/*": ["fixtures/*"],
+      "@test-data/*": ["test-data/*"],
       "@api/*": ["api/*"],
       "@workflows/*": ["workflows/*"],
       "@data/*": ["test-data/*"]

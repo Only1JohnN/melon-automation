@@ -1,69 +1,56 @@
 import Topbar from "@/components/Topbar";
 import StatCard from "@/components/StatCard";
+import RecentExecutions from "@/components/RecentExecutions";
+import Link from "next/link";
 
 import { getOverviewStats } from "@/lib/report-parser";
+import { getExecutions } from "@/lib/executions";
 
-export default function Dashboard() {
-  const stats = getOverviewStats();
+export const dynamic = "force-dynamic";
+
+export default async function Dashboard() {
+  const [stats, executions] = await Promise.all([
+    getOverviewStats(),
+    getExecutions(),
+  ]);
 
   return (
     <>
-      <Topbar
-        title="Overview"
-        environment={stats.environment}
-      />
+      <Topbar title="Overview" environment={stats.environment} />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      {/* --- Stats Grid with modern cards --- */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           title="Total Tests"
           value={stats.total.toString()}
+          icon="📊"
+          color="blue"
         />
-
         <StatCard
           title="Passed"
           value={stats.passed.toString()}
+          icon="✅"
+          color="green"
         />
-
         <StatCard
           title="Failed"
           value={stats.failed.toString()}
+          icon="❌"
+          color="red"
         />
-
         <StatCard
           title="Pass Rate"
           value={`${stats.passRate}%`}
+          icon="🎯"
+          color="yellow"
+          progress={typeof stats.passRate === 'string' ? parseInt(stats.passRate) : stats.passRate}
         />
       </div>
 
-      <div className="grid grid-cols-4 gap-6 mt-6">
-      <StatCard
-        title="Browser"
-        value={stats.browser}
-      />
-
-      <StatCard
-        title="Duration"
-        value={`${stats.duration}s`}
-      />
-
-      <StatCard
-        title="Environment"
-        value={stats.environment}
-      />
-
-      <StatCard
-        title="Last Run"
-        value={new Date(
-          stats.startTime
-        ).toLocaleTimeString("en-GB", {
-          day: "2-digit",
-          month: "short",
-          year: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-      />
-    </div>
+      {/* --- Recent Executions with header and link --- */}
+      <div className="mt-8">
+        <RecentExecutions executions={executions.slice(0, 10)} />
+      </div>
     </>
   );
 }

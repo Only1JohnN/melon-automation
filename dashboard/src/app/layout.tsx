@@ -1,4 +1,5 @@
 import { Figtree } from "next/font/google";
+import Cursor from "@/components/Cursor";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -14,7 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={figtree.className}>
-        {children}
+        <Cursor />
+          {children}
       </body>
     </html>
   );

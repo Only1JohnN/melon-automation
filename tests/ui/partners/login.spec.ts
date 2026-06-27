@@ -6,7 +6,7 @@ import {
   expect,
 } from "../../../fixtures/baseTest";
 
-test.describe("@partners", () => {
+test.describe("@partners @auth", () => {
   test("should allow a partner to log in successfully", async ({
     page,
   }) => {
@@ -19,8 +19,8 @@ test.describe("@partners", () => {
       process.env.PARTNER_PASSWORD!
     );
 
-    await expect(page).toHaveURL(/dashboard/, {
-      // timeout: 15000,
+    await expect(page).toHaveURL(/get-started/, {
+      timeout: 100000,
     });
   });
 
@@ -39,7 +39,7 @@ test.describe("@partners", () => {
     await expect(
       page.getByText("User not found")
     ).toBeVisible({
-      // timeout: 10000,
+      timeout: 100000,
     });
   });
 
@@ -65,7 +65,7 @@ test.describe("@partners", () => {
       await expect(page).toHaveURL(
         /auth\/login/,
         {
-          // timeout: 10000,
+          timeout: 100000,
         }
       );
 

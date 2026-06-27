@@ -1,9 +1,8 @@
 import Topbar from "@/components/Topbar";
-import {
-  getTestById,
-  getFailureById,
-} from "@/lib/report-parser";
+import { getTestById } from "@/lib/report-parser";
 import { notFound } from "next/navigation";
+
+export const dynamic = "force-dynamic";
 
 export default async function TestPage({
   params,
@@ -14,14 +13,11 @@ export default async function TestPage({
     await params;
 
   const test =
-    getTestById(id);
+    await getTestById(id);
 
   if (!test) {
     notFound();
   }
-
-  const failure =
-    getFailureById(id);
 
   return (
     <>
@@ -31,17 +27,12 @@ export default async function TestPage({
 
       <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
         <p>
-          Status:
-          {" "}
-          {test.status}
+          Status: {test.status}
         </p>
 
         <p>
-          Application:
-          {" "}
-          {test.tags.join(
-            ", "
-          )}
+          Application:{" "}
+          {test.tags.join(", ")}
         </p>
       </div>
     </>
