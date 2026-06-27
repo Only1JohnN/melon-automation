@@ -51,6 +51,24 @@ jobs:
         continue-on-error: true
         run: npm run test:pre-release
 
+      - name: Convert Videos to MP4
+        if: always()
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+          find test-results -name "*.webm" | while read file; do
+            ffmpeg \
+              -i "$file" \
+              -c:v libx264 \
+              -preset fast \
+              -pix_fmt yuv420p \
+              -movflags +faststart \
+              "${file%.webm}.mp4"
+
+            rm "$file"
+          done
+
       - name: Generate Run Metadata
         if: always()
         run: |

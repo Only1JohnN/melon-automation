@@ -273,26 +273,50 @@ export async function getExecutionFailureById(
     return null;
   }
 
+  const screenshotAttachment =
+    failure.attachments?.find(
+      (a: any) => a.name === "screenshot"
+    ) ?? null;
+  
+  const videoAttachment =
+    failure.attachments?.find(
+      (a: any) => a.name === "video"
+    ) ?? null;
+  
+  const traceAttachment =
+    failure.attachments?.find(
+      (a: any) => a.name === "trace"
+    ) ?? null;
+  
   const screenshot =
-    failure.attachments.find(
-      (a: any) =>
-        a.name ===
-        "screenshot"
-    );
-
+    screenshotAttachment && fs.existsSync(screenshotAttachment.path)
+      ? {
+          ...screenshotAttachment,
+          size: fs.statSync(
+            screenshotAttachment.path
+          ).size,
+        }
+      : screenshotAttachment;
+  
   const video =
-    failure.attachments.find(
-      (a: any) =>
-        a.name ===
-        "video"
-    );
-
+    videoAttachment && fs.existsSync(videoAttachment.path)
+      ? {
+          ...videoAttachment,
+          size: fs.statSync(
+            videoAttachment.path
+          ).size,
+        }
+      : videoAttachment;
+  
   const trace =
-    failure.attachments.find(
-      (a: any) =>
-        a.name ===
-        "trace"
-    );
+    traceAttachment && fs.existsSync(traceAttachment.path)
+      ? {
+          ...traceAttachment,
+          size: fs.statSync(
+            traceAttachment.path
+          ).size,
+        }
+      : traceAttachment;
 
   return {
     ...failure,
@@ -444,7 +468,7 @@ function buildExecutionArtifactUrl(
 
   // Local reports copy (if you manually copied artifacts)
   if (fs.existsSync(localArtifact)) {
-    return `file://${localArtifact}`;
+    return `/api/artifacts/${year}/${month}/${executionId}/${relative}`;
   }
 
   // Fallback to original path (for local Playwright test-results)

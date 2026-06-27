@@ -44,6 +44,12 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     headless: env.headless,
+    viewport: {
+      width: 1920,
+      height: 1080,
+    },
+
+    deviceScaleFactor: 2,
 
     launchOptions: {
       slowMo: env.slowMo,
@@ -51,7 +57,14 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     screenshot: "only-on-failure",
-    video: "retain-on-failure",
+    video: {
+      mode: "retain-on-failure",
+
+      size: {
+        width: 1920,
+        height: 1080,
+      },
+    },
     trace: "retain-on-failure",
   },
 

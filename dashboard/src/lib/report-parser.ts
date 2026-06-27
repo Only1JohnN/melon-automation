@@ -99,9 +99,50 @@ export async function getFailures() {
               const feature = extractFeature(filePath);
 
               // Extract attachments safely
-              const screenshot = result.attachments?.find((a: any) => a.name === 'screenshot') ?? null;
-              const video = result.attachments?.find((a: any) => a.name === 'video') ?? null;
-              const trace = result.attachments?.find((a: any) => a.name === 'trace') ?? null;
+              const screenshotAttachment =
+                result.attachments?.find(
+                  (a: any) => a.name === "screenshot"
+                ) ?? null;
+
+              const videoAttachment =
+                result.attachments?.find(
+                  (a: any) => a.name === "video"
+                ) ?? null;
+
+              const traceAttachment =
+                result.attachments?.find(
+                  (a: any) => a.name === "trace"
+                ) ?? null;
+
+              const screenshot =
+                screenshotAttachment && fs.existsSync(screenshotAttachment.path)
+                  ? {
+                      ...screenshotAttachment,
+                      size: fs.statSync(
+                        screenshotAttachment.path
+                      ).size,
+                    }
+                  : screenshotAttachment;
+
+              const video =
+                videoAttachment && fs.existsSync(videoAttachment.path)
+                  ? {
+                      ...videoAttachment,
+                      size: fs.statSync(
+                        videoAttachment.path
+                      ).size,
+                    }
+                  : videoAttachment;
+
+              const trace =
+                traceAttachment && fs.existsSync(traceAttachment.path)
+                  ? {
+                      ...traceAttachment,
+                      size: fs.statSync(
+                        traceAttachment.path
+                      ).size,
+                    }
+                  : traceAttachment;
 
               // Error message priority: direct error → first error from array → fallback
               const errorMessage =

@@ -3,6 +3,7 @@ import Topbar from "@/components/Topbar";
 import { getExecutionFailureById } from "@/lib/execution-parser";
 import { notFound } from "next/navigation";
 import ApiRequestRow from "@/components/ApiRequestRow";
+import { formatBytes } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
 
@@ -107,7 +108,7 @@ export default async function FailureDetailsPage({
               </p>
 
               <p className="mt-1 text-xs text-slate-400">
-                Open Screenshot
+                PNG • {formatBytes(failure.screenshot?.size)}
               </p>
             </a>
           )}
@@ -119,12 +120,12 @@ export default async function FailureDetailsPage({
               rel="noopener noreferrer"
               className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
             >
-              <p className="font-medium">
+                <p className="font-medium">
                 🎥 Video
               </p>
 
               <p className="mt-1 text-xs text-slate-400">
-                Open Video
+                MP4 • {formatBytes(failure.video?.size)}
               </p>
             </a>
           )}
@@ -141,7 +142,7 @@ export default async function FailureDetailsPage({
               </p>
 
               <p className="mt-1 text-xs text-slate-400">
-                Download Trace
+                ZIP • {formatBytes(failure.trace?.size)}
               </p>
             </a>
           )}
