@@ -1,13 +1,13 @@
 [
   {
-    "id": "28273796380",
+    "id": "28275307464",
     "environment": "pre-release",
-    "executedAt": "2026-06-27T01:28:50Z",
+    "executedAt": "2026-06-27T02:29:17Z",
     "status": "failed",
     "total": 39,
     "passed": 23,
     "failed": 16,
-    "duration": 1483716.5459999999,
+    "duration": 1486192.489,
     "trigger": "push"
   }
 ]
