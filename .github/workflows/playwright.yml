@@ -57,8 +57,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-          find test-results -name "*.webm" | while read file; do
+          find test-results -type f -name "*.webm" -print0 |
+          while IFS= read -r -d '' file; do
+            echo "Converting: $file"
+
             ffmpeg \
+              -nostdin \
+              -y \
               -i "$file" \
               -c:v libx264 \
               -preset fast \
@@ -66,7 +71,7 @@ jobs:
               -movflags +faststart \
               "${file%.webm}.mp4"
 
-            rm "$file"
+            rm -f "$file"
           done
 
       - name: Generate Run Metadata
