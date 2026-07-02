@@ -1,6 +1,45 @@
 [
   {
-    "timestamp": "2026-07-01T09:38:37.212Z",
+    "timestamp": "2026-07-02T08:49:56.220Z",
+    "resourceType": "fetch",
+    "method": "POST",
+    "url": "https://firebaseinstallations.googleapis.com/v1/projects/melon-dev-53520/installations",
+    "status": 200,
+    "request": {
+      "headers": {
+        "x-firebase-client": "eyJ2ZXJzaW9uIjoyLCJoZWFydGJlYXRzIjpbeyJhZ2VudCI6ImZpcmUtY29yZS8wLjE0LjMgZmlyZS1jb3JlLWVzbTIwMjAvMC4xNC4zIGZpcmUtanMvIGZpcmUtanMtYWxsLWFwcC8xMi4zLjAgZmlyZS1paWQvMC42LjE5IGZpcmUtaWlkLWVzbTIwMjAvMC42LjE5IGZpcmUtYW5hbHl0aWNzLzAuMTAuMTggZmlyZS1hbmFseXRpY3MtZXNtMjAyMC8wLjEwLjE4IGZpcmUtcnRkYi8xLjEuMCBmaXJlLXJ0ZGItZXNtMjAyMC8xLjEuMCIsImRhdGVzIjpbIjIwMjYtMDctMDIiXX1dfQ",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://partner-dev.getmelon.co/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-goog-api-key": "AIzaSyBJYsTWrU-8JqJToCg3m87ZIhp2Cd0UUFw",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "body": "{\"fid\":\"fWg_vIlYd9uspb_OcJOB_J\",\"authVersion\":\"FIS_v2\",\"appId\":\"1:944351073735:web:b5622c2c9f05058a49b5e2\",\"sdkVersion\":\"w:0.6.19\"}"
+    },
+    "response": {
+      "headers": {
+        "access-control-expose-headers": "vary,vary,vary,content-encoding,date,server,content-length",
+        "content-encoding": "gzip",
+        "x-content-type-options": "nosniff",
+        "access-control-allow-origin": "https://partner-dev.getmelon.co",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "content-length": "485",
+        "date": "Thu, 02 Jul 2026 08:49:55 GMT",
+        "x-xss-protection": "0",
+        "content-type": "application/json; charset=UTF-8",
+        "vary": "Origin, X-Origin, Referer",
+        "server": "ESF",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "body": "{\n  \"name\": \"projects/944351073735/installations/fWg_vIlYd9uspb_OcJOB_J\",\n  \"fid\": \"fWg_vIlYd9uspb_OcJOB_J\",\n  \"refreshToken\": \"3_AS3qfwJmIx_w3tEkHb6qYj7TDjJEaLALJ02fl2TaIWSj105wDeOVvm9tG6Ukjx5KW7qNQDEFW4mU_GsgI5s9ej4QkxS519kceFxwAM_cgr5smQ\",\n  \"authToken\": {\n    \"token\": \"eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjE6OTQ0MzUxMDczNzM1OndlYjpiNTYyMmMyYzlmMDUwNThhNDliNWUyIiwiZXhwIjoxNzgzNTg2OTk1LCJmaWQiOiJmV2dfdklsWWQ5dXNwYl9PY0pPQl9KIiwicHJvamVjdE51bWJlciI6OTQ0MzUxMDczNzM1fQ.AB2LPV8wRAIgNAtbmRc951SIY2e4JLP46yS6OYh3CXKw-TKlTBva1KYCICjJTDEZj9CqLHfXkwM68bIsVXspMy20RAPTrTJkh_Rb\",\n    \"expiresIn\": \"604800s\"\n  }\n}\n"
+    }
+  },
+  {
+    "timestamp": "2026-07-02T08:49:56.221Z",
     "resourceType": "fetch",
     "method": "GET",
     "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:944351073735:web:b5622c2c9f05058a49b5e2/webConfig",
@@ -26,7 +65,7 @@
         "access-control-allow-origin": "https://partner-dev.getmelon.co",
         "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
         "content-length": "232",
-        "date": "Wed, 01 Jul 2026 09:38:35 GMT",
+        "date": "Thu, 02 Jul 2026 08:49:54 GMT",
         "x-xss-protection": "0",
         "content-type": "application/json; charset=UTF-8",
         "vary": "Origin, X-Origin, Referer",
@@ -37,46 +76,7 @@
     }
   },
   {
-    "timestamp": "2026-07-01T09:38:37.371Z",
-    "resourceType": "fetch",
-    "method": "POST",
-    "url": "https://firebaseinstallations.googleapis.com/v1/projects/melon-dev-53520/installations",
-    "status": 200,
-    "request": {
-      "headers": {
-        "x-firebase-client": "eyJ2ZXJzaW9uIjoyLCJoZWFydGJlYXRzIjpbeyJhZ2VudCI6ImZpcmUtY29yZS8wLjE0LjMgZmlyZS1jb3JlLWVzbTIwMjAvMC4xNC4zIGZpcmUtanMvIGZpcmUtanMtYWxsLWFwcC8xMi4zLjAgZmlyZS1paWQvMC42LjE5IGZpcmUtaWlkLWVzbTIwMjAvMC42LjE5IGZpcmUtYW5hbHl0aWNzLzAuMTAuMTggZmlyZS1hbmFseXRpY3MtZXNtMjAyMC8wLjEwLjE4IGZpcmUtcnRkYi8xLjEuMCBmaXJlLXJ0ZGItZXNtMjAyMC8xLjEuMCIsImRhdGVzIjpbIjIwMjYtMDctMDEiXX1dfQ",
-        "sec-ch-ua-platform": "\"Windows\"",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "x-goog-api-key": "AIzaSyBJYsTWrU-8JqJToCg3m87ZIhp2Cd0UUFw",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json",
-        "content-type": "application/json"
-      },
-      "body": "{\"fid\":\"ddSE0XV-NsMcK9DSR-3M8Z\",\"authVersion\":\"FIS_v2\",\"appId\":\"1:944351073735:web:b5622c2c9f05058a49b5e2\",\"sdkVersion\":\"w:0.6.19\"}"
-    },
-    "response": {
-      "headers": {
-        "access-control-expose-headers": "vary,vary,vary,content-encoding,date,server,content-length",
-        "content-encoding": "gzip",
-        "x-content-type-options": "nosniff",
-        "access-control-allow-origin": "https://partner-dev.getmelon.co",
-        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
-        "content-length": "487",
-        "date": "Wed, 01 Jul 2026 09:38:37 GMT",
-        "x-xss-protection": "0",
-        "content-type": "application/json; charset=UTF-8",
-        "vary": "Origin, X-Origin, Referer",
-        "server": "ESF",
-        "x-frame-options": "SAMEORIGIN"
-      },
-      "body": "{\n  \"name\": \"projects/944351073735/installations/ddSE0XV-NsMcK9DSR-3M8Z\",\n  \"fid\": \"ddSE0XV-NsMcK9DSR-3M8Z\",\n  \"refreshToken\": \"3_AS3qfwI4VesYAZsnm5suV3I5JOZ0e9Mv0doYhzdDg05pk5oyApwtsG4euP9socr3otrxPtCg5MjU1h_pTRcpo1bEKPEfABNuf9t4zBHUjhEKdg\",\n  \"authToken\": {\n    \"token\": \"eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjE6OTQ0MzUxMDczNzM1OndlYjpiNTYyMmMyYzlmMDUwNThhNDliNWUyIiwiZXhwIjoxNzgzNTAzNTE3LCJmaWQiOiJkZFNFMFhWLU5zTWNLOURTUi0zTThaIiwicHJvamVjdE51bWJlciI6OTQ0MzUxMDczNzM1fQ.AB2LPV8wRAIgdQoordeb1ePL64qhfS2b0tBx3yoRyIttB9jEtVHwF9sCIHugLw40apdZEzrrEjULxIyz0GwI1aEWsK-3I0GjvAs2\",\n    \"expiresIn\": \"604800s\"\n  }\n}\n"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:37.463Z",
+    "timestamp": "2026-07-02T08:49:56.460Z",
     "resourceType": "xhr",
     "method": "POST",
     "url": "https://partner-dev.getmelon.co/cdn-cgi/rum?",
@@ -91,20 +91,20 @@
         "sec-ch-ua-mobile": "?0",
         "accept-language": "en-US"
       },
-      "body": "{\"memory\":{\"totalJSHeapSize\":39600000,\"usedJSHeapSize\":33100000,\"jsHeapSizeLimit\":3760000000},\"resources\":[],\"referrer\":\"\",\"eventType\":1,\"firstPaint\":1296,\"firstContentfulPaint\":1296,\"startTime\":1782898714406.1,\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.6.0\",\"timings\":2},\"pageloadId\":\"cee8b09a-99d0-4a94-9013-b2e0aa17b209\",\"location\":\"https://partner-dev.getmelon.co/\",\"nt\":\"navigate\",\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"domainLookupStart\":1.5,\"domainLookupEnd\":2.6000000000349246,\"connectStart\":2.6000000000349246,\"connectEnd\":13.600000000034925,\"requestStart\":13.900000000023283,\"responseStart\":20.900000000023283,\"responseEnd\":39.40000000002328,\"domInteractive\":48.40000000002328,\"domComplete\":3040.100000000035,\"loadEventStart\":3040.2999999999884,\"loadEventEnd\":3040.4000000000233,\"finalResponseHeadersStart\":38.5,\"firstInterimResponseStart\":20.900000000023283,\"transferSize\":976,\"decodedBodySize\":1211},\"dt\":\"\",\"siteToken\":\"9b7fef37d0b74d79a4cc9b0a8f823dd4\",\"st\":2}"
+      "body": "{\"memory\":{\"totalJSHeapSize\":39600000,\"usedJSHeapSize\":33100000,\"jsHeapSizeLimit\":3760000000},\"resources\":[],\"referrer\":\"\",\"eventType\":1,\"firstPaint\":1260,\"firstContentfulPaint\":1260,\"startTime\":1782982193428.5,\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.6.0\",\"timings\":2},\"pageloadId\":\"d9f2a5da-01e1-4f51-b590-d6e59eeba158\",\"location\":\"https://partner-dev.getmelon.co/\",\"nt\":\"navigate\",\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"domainLookupStart\":3.3999999999941792,\"domainLookupEnd\":4.100000000005821,\"connectStart\":4.100000000005821,\"connectEnd\":51.70000000001164,\"requestStart\":51.79999999998836,\"responseStart\":76.70000000001164,\"responseEnd\":112.5,\"domInteractive\":120.60000000000582,\"domComplete\":2916.399999999994,\"loadEventStart\":2916.7000000000116,\"loadEventEnd\":2916.7999999999884,\"finalResponseHeadersStart\":111.60000000000582,\"firstInterimResponseStart\":76.70000000001164,\"transferSize\":975,\"decodedBodySize\":1211},\"dt\":\"\",\"siteToken\":\"9b7fef37d0b74d79a4cc9b0a8f823dd4\",\"st\":2}"
     },
     "response": {
       "headers": {
         "access-control-max-age": "86400",
         "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2Bj3eVcjck4uWP%2BAkTVOPXpfCQ4NNe6RWMG%2Be65M8iUe%2FnT1LOlw8GqOH6pFBr8yRNs1dNh21MLxjnmA4KOV%2FJe9E6oeQXlURnle8kNXxyovMQTCEKNrpAeND%2F04F2CJDq5WEOr4g9zUUmg%3D%3D\"}]}",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=55%2F%2FpXwYkFKhFC8sa0m7ksORt4nlXk2rxxqZs4wTGVyK9IiYCkmc7u%2FvMaJnx7seCC9IJiQhQzsee71DuC1CYba%2B0FoBaMdqof4oBIbsmrgV8ze9ZsaWWEqnL7kvELI%2BIYUaQPtl6gkxoA%3D%3D\"}]}",
         "access-control-allow-credentials": "true",
         "access-control-allow-methods": "POST,OPTIONS",
-        "cf-ray": "a14470580936a124-IAD",
+        "cf-ray": "a14c66677c5ee7aa-DFW",
         "access-control-allow-origin": "https://partner-dev.getmelon.co",
         "alt-svc": "h3=\":443\"; ma=86400",
         "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:37 GMT",
+        "date": "Thu, 02 Jul 2026 08:49:56 GMT",
         "content-type": "text/plain",
         "vary": "Origin",
         "server": "cloudflare",
@@ -114,10 +114,10 @@
     }
   },
   {
-    "timestamp": "2026-07-01T09:38:37.481Z",
+    "timestamp": "2026-07-02T08:49:56.462Z",
     "resourceType": "fetch",
     "method": "POST",
-    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-ZM1JE3JR2F&gtm=45je66t1v9240486858za200zd9240486858&_p=1782898717168&gcd=13l3l3l3l1l1&npa=0&dma=0&_fid=ddSE0XV-NsMcK9DSR-3M8Z&are=1&cid=867276081.1782898717&frm=0&pscdl=noapi&rcb=4&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&_s=1&tag_exp=115616985~115938466~115938468~118897920~118897930~119027224~119576881~119576885~119576891~119576895~119773332&sid=1782898717&sct=1&seg=0&dl=https%3A%2F%2Fpartner-dev.getmelon.co%2F&dt=Melon&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&ep.origin=firebase&tfd=3038",
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-ZM1JE3JR2F&gtm=45je66u1v9240486858za200zd9240486858&_p=1782982196147&gcd=13l3l3l3l1l1&npa=0&dma=0&_fid=fWg_vIlYd9uspb_OcJOB_J&are=1&cid=1630950140.1782982196&frm=0&pscdl=noapi&rcb=9&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&_s=1&tag_exp=115616986~115938466~115938468~119027224~119576881~119576885~119576891~119576895&sid=1782982196&sct=1&seg=0&dl=https%3A%2F%2Fpartner-dev.getmelon.co%2F&dt=Melon&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&ep.origin=firebase&tfd=2956",
     "status": 204,
     "request": {
       "headers": {
@@ -143,7 +143,7 @@
         "cross-origin-opener-policy-report-only": "same-origin; report-to=ascnsrsggc:138:0",
         "content-length": "0",
         "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
-        "date": "Wed, 01 Jul 2026 09:38:37 GMT",
+        "date": "Thu, 02 Jul 2026 08:49:56 GMT",
         "content-type": "text/plain",
         "server": "Golfe2"
       },
@@ -151,11 +151,11 @@
     }
   },
   {
-    "timestamp": "2026-07-01T09:38:41.217Z",
+    "timestamp": "2026-07-02T08:49:59.336Z",
     "resourceType": "xhr",
     "method": "POST",
     "url": "https://staging-api.getmelon.co/api/v1/auth/login-member",
-    "status": 200,
+    "status": 404,
     "request": {
       "headers": {
         "sec-ch-ua-platform": "\"Windows\"",
@@ -171,15 +171,15 @@
     },
     "response": {
       "headers": {
-        "x-request-id": "bf1d505f-979d-4689-9db7-98480ccbb006",
+        "x-request-id": "f5f30402-53ba-4e8d-8928-8fda59f6eb5b",
         "content-encoding": "zstd",
         "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"722-xMygRTtYDUp0WRzwqeT8QmoCVug\"",
+        "etag": "W/\"3e-+kMdS0rUWJ/TwfCP9Pf45v8of1A\"",
         "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=qEfV1o5lhj6dHhwH%2FGp6d%2BRCJN3N6aKysENkk1C9upL60g%2BxZdGhWkS2zO8%2B6st3s6%2BuQzD91axYuZatqPyv8Y8M2UPMDdSvMn4v%2FCqhYRoDR3mlNopOFvcR4f73ps0rd84U5b3%2Fc8Q0sw%3D%3D\"}]}",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=tWzyOPGcT%2B6H2QJAjZisSrariAitGSOiQKkMRt9YLAC4qN3HR64DNhxCylfVzIqCI9da%2FLIv4ebFgjUQPM4VlIAk977ZHJYSl59jzceQrZlg%2BbfxKMAC3LF1elR%2FFswotdKcGhy8KLJsow%3D%3D\"}]}",
         "x-content-type-options": "nosniff",
         "alt-svc": "h3=\":443\"; ma=86400",
-        "date": "Wed, 01 Jul 2026 09:38:41 GMT",
+        "date": "Thu, 02 Jul 2026 08:49:59 GMT",
         "content-type": "application/json; charset=utf-8",
         "x-frame-options": "SAMEORIGIN",
         "strict-transport-security": "max-age=15552000; includeSubDomains",
@@ -190,612 +190,13 @@
         "cross-origin-resource-policy": "same-origin",
         "referrer-policy": "no-referrer",
         "x-download-options": "noopen",
-        "cf-ray": "a144706a6f25e10e-IAD",
+        "cf-ray": "a14c66779ee0f070-DFW",
         "access-control-allow-origin": "*",
         "x-xss-protection": "0",
         "origin-agent-cluster": "?1",
         "server": "cloudflare"
       },
-      "body": "{\"message\":\"Logged in successfully\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"member\":{\"member_id\":\"ffb1aed4-b9d6-49ee-bbbe-a147f4035083\",\"businesses\":[{\"id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"name\":\"Melon QA Bot\",\"logo\":null,\"rc_number\":\"RC100011\",\"business_email\":\"melonqabot@yopmail.com\",\"phone\":\"+2347080702920\",\"industry\":\"technology\",\"website_link\":null,\"instagram\":null,\"facebook\":null,\"twitter\":null,\"linkedin\":null}],\"default_business\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"has_business_access\":true,\"requires_business_setup\":false,\"avatar\":null,\"phone_number\":\"+2347080702920\",\"profile_completed\":true,\"verified\":true,\"email\":\"melonqabot@yopmail.com\",\"first_name\":\"Melon\",\"last_name\":\"QA-Bot\",\"type\":\"member\"},\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw\"}}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:42.235Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/businesses/personal/ffb1aed4-b9d6-49ee-bbbe-a147f4035083",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "49c673f3-2798-49a6-b0dd-716da784fee1",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"361-LqzDviiaWFsxLDYB02v+eIZjzpY\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=IDsvhwWtGI0O%2Bhqw4fT80K5vho0iNa%2BFMMoO0AOeQVh6Esuty6g7eTO7o8%2BaxfXXl1eRIwAzBh6j2JjYG3uvRJlfsX5C0f6mQJHlszKofk0CJhBR7p35nDuFawJaUbUUZBe5HTGszoy3PA%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:42 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a14470743ef28296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Fetch Personal details\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"id\":\"ffb1aed4-b9d6-49ee-bbbe-a147f4035083\",\"first_name\":\"Melon\",\"last_name\":\"QA-Bot\",\"phone_number\":\"+2347080702920\",\"email\":\"melonqabot@yopmail.com\",\"verified\":true,\"created_at\":\"2026-06-24T12:11:58.490Z\",\"updated_at\":\"2026-06-25T07:32:19.577Z\",\"city\":\"Yaba\",\"state\":\"Lagos\",\"street\":\"Online\",\"phone_verified\":true,\"country\":\"Nigeria\",\"avatar\":null,\"add_terms_cond\":true,\"profile_completed\":true,\"gender\":\"male\",\"default_business\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"is_invited\":false,\"businesses\":[{\"id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"name\":\"Melon QA Bot\",\"logo\":null,\"rc_number\":\"RC100011\",\"business_email\":\"melonqabot@yopmail.com\",\"phone\":\"+2347080702920\",\"industry\":\"technology\",\"website_link\":null,\"instagram\":null,\"facebook\":null,\"twitter\":null,\"linkedin\":null}]}}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:42.777Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/plans/active/52ea1440-778e-428b-a4f1-9c94681ba77a",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "1c9d18f3-fea8-4c14-9f4c-8b96f11c4884",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"3eb-Vb3h8C7wFgVvlMqxANGCnkKf27c\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=hxYNibNACDvneCUjSo5p2bwocI8xRbqogxl5fbENV9B%2BgDblHxeKE2M1WDURGZLXICH95D4n4D%2BpGEwxGI4iN6RqUVk40NJvG1DmxGJva8M6BYGQObQoV5wCAgIC8DOaWrsK0b3R2UeyWQ%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:42 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a14470777f018296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Fetch Business Active\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"id\":\"dcca8988-a723-4172-8bff-a795d626eb9d\",\"amount\":\"45000000\",\"business_id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"status\":\"active\",\"point\":\"10144525\",\"start_date\":\"2026-06-29T16:02:02.931Z\",\"end_date\":\"2026-09-29T16:02:02.931Z\",\"duration\":\"quarterly\",\"expired_at\":\"2026-09-29T16:02:02.931Z\",\"plan\":{\"plan_id\":\"7d10eb42-855a-41a7-abe9-213e8b15ffe4\",\"type\":\"Bloom\",\"point_allowance\":12000000,\"amount\":45000000,\"covered\":[\"12 million Offer Coins\",\"4 Monthly Boosts\",\"Unlimited In-App Advertising\",\"Insights Engine\",\"All of Sprout\"]},\"offer_reward_balance\":{\"available\":10144525,\"held\":2700,\"issued\":600,\"total_allocated\":10147825,\"consumed\":3300,\"threshold\":{\"percentage\":99.97,\"state\":\"healthy\",\"rewards_enabled\":true,\"config\":{\"warning_percentage\":50,\"critical_percentage\":25,\"stop_percentage\":15}},\"capacity\":{\"average_reward_per_customer\":1650,\"estimated_customers_remaining\":6148,\"basis\":\"all_time\",\"sample_size\":2}}}}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:42.812Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/businesses/52ea1440-778e-428b-a4f1-9c94681ba77a",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "117e6342-867e-4c7f-9569-a82937f5a894",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"c10-hNX17Gb3AL8PmTHNJnUARDZG730\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=W0nd7KxLb2yiwbrOE0uluKYLI7DNj4QNWu2OBOpYkfeWPL9BfoDDzd4be5YD48Ym4lZyHN%2F3L1VhNmI%2BkMWqzy8gUwF0y44YQJZhpCCSGX8TxyVPsDehXZrE9bCisnR6GTjBJvGf3zMgIQ%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:42 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a14470777f028296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Retrive business successfully\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"plain_key\":\"VfEcCXeCak2yRWC9v\",\"plugin_key\":\"CO4597043165\",\"profile_completed\":false,\"type\":\"registered\",\"details\":{\"logo\":null,\"rc_number\":\"RC100011\",\"type\":\"registered\",\"name\":\"Melon QA Bot\",\"business_email\":\"melonqabot@yopmail.com\",\"slug\":\"melon-qa-bot\",\"phone_number\":\"+2347080702920\",\"industry\":\"technology\",\"industry_id\":null,\"industry_category_id\":null,\"industry_info\":null,\"category_info\":null,\"address\":null},\"stage\":5,\"required_stage\":3,\"bvn_validated\":false,\"is_onboarded\":true,\"is_subscribed\":true,\"directors\":[{\"id\":\"1df5a50e-6837-4e98-a373-6e63a0d9320a\",\"first_name\":\"FESTUS\",\"last_name\":\"AJIMOBI\",\"email\":\"a.festus@yopmail.com\",\"phone_number\":\"+2342345678900\",\"address\":\"10, HERBERT TEST WAY,  LAGOS,\"},{\"id\":\"a8ab9127-45a9-436a-aeec-7d48f9ca010b\",\"first_name\":\"FESTUS\",\"last_name\":\"AJIMOBI\",\"email\":\"festus@yopmail.com\",\"phone_number\":\"+2342345678900\",\"address\":\"10, HERBERT TEST WAY, LAGOS\"},{\"id\":\"70147b6e-e834-48ac-84a9-1ae07c0b9949\",\"first_name\":\"BONES\",\"last_name\":\"STEFFANY\",\"email\":\"bones@yopmail.com\",\"phone_number\":\"+2342345678900\",\"address\":\"PLOT 167 STEFFANY CRESCENT, APARTMENT1,ZONE 2, ABUJA.\"},{\"id\":\"23387dce-0dd8-442c-af5a-d69810be127f\",\"first_name\":\"John\",\"last_name\":\"Adeniyi\",\"email\":\"john@yopmail.com\",\"phone_number\":\"+2347080702920\",\"address\":\"Wasiu Shokunbi Street\"}],\"branches\":[{\"id\":\"f88450e6-a4fb-470a-b13f-46196322f860\",\"channel\":null,\"link\":null,\"address\":\"General Warehouse\",\"location\":null,\"longitude\":null,\"latitude\":null,\"accuracy\":null,\"opening_hours\":null,\"pick_up_details\":null,\"has_offer\":false,\"manager_id\":\"Melo001\",\"member_count\":0,\"manager\":null},{\"id\":\"94bcec88-a685-423a-9bf9-64634e3e0a85\",\"channel\":\"online\",\"link\":\"https://melon-qa-bot.getmelon.shop\",\"address\":null,\"location\":null,\"longitude\":null,\"latitude\":null,\"accuracy\":null,\"opening_hours\":null,\"pick_up_details\":{\"address\":\"Area 10, Garki, Abuja 900103, Federal Capital Territory, Nigeria\",\"accuracy\":90,\"latitude\":9.0394046,\"longitude\":7.4888579,\"opening_time\":{\"Friday\":[{\"open\":\"10:00AM\",\"close\":\"10:00PM\"}],\"Monday\":[{\"open\":\"10:00AM\",\"close\":\"10:00PM\"}]},\"phone_number\":\"07080702920\"},\"has_offer\":true,\"manager_id\":\"Melo002\",\"member_count\":2,\"manager\":{\"name\":\"Melon QA-Bot\",\"id\":\"d183eb40-5418-478f-ad5d-fe80b535175a\",\"member_id\":\"ffb1aed4-b9d6-49ee-bbbe-a147f4035083\",\"passcode_set\":false}},{\"id\":\"0cdd53b7-9558-41a7-a3a6-bf8874759036\",\"channel\":\"offline\",\"link\":null,\"address\":\"Lagos, Nigeria\",\"location\":\"0101000020E6100000F1738DE090D70A40B60DA32078741A40\",\"longitude\":3.3552568,\"latitude\":6.613739499999999,\"accuracy\":90,\"opening_hours\":{\"Friday\":[{\"open\":\"10:00AM\",\"close\":\"8:00PM\"}],\"Monday\":[{\"open\":\"10:00AM\",\"close\":\"8:00PM\"}],\"Tuesday\":[{\"open\":\"10:00AM\",\"close\":\"8:00PM\"}],\"Saturday\":[{\"open\":\"10:00AM\",\"close\":\"8:00PM\"}],\"Thursday\":[{\"open\":\"10:00AM\",\"close\":\"8:00PM\"}],\"Wednesday\":[{\"open\":\"10:00AM\",\"close\":\"8:00PM\"}]},\"pick_up_details\":null,\"has_offer\":true,\"manager_id\":\"Melo003\",\"member_count\":1,\"manager\":null}]}}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:42.933Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/permissions",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "812ff545-92c9-4718-b388-f26cfaa0fcc8",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"35ba-cZqGN5FzsyDQfH/WWdm0/mgih4Q\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=307XkFlyuCrd54O%2BX1qFBLDFStgg8C7GUYARqiOyZm7IAVbQjOLeeAx2qQXhg%2FHDgKtE9kO7j3nWIBpHBbgn%2FRR45%2Fezkv90jPKhWoSif1j%2FNI%2F4ZcKkszGqZqylcoVZAu%2BAelZSV%2FEMCw%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:42 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a14470743ef38296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Permissions Retrived\",\"status\":\"success\",\"statusCode\":200,\"data\":[{\"id\":\"8e3ffa65-0f57-45f3-b6f9-31b830f3df18\",\"category\":\"Admins\",\"permission\":\"admins:view\",\"description\":\"View admins\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"c68606c0-eba3-4d0b-896a-cce02a73d834\",\"category\":\"Admins\",\"permission\":\"admins:update\",\"description\":\"Manage admins (invite, delete, activate/deactivate)\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"15fa1991-8378-4644-ad59-a2005d99269d\",\"category\":\"Points\",\"permission\":\"points:view\",\"description\":\"View point configurations\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"a0b62ddc-6fb3-40b6-8e37-55db049dc2c8\",\"category\":\"Points\",\"permission\":\"points:update\",\"description\":\"Manage point configurations\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"2dedfbbd-9f63-49a8-bb25-434e0af004c8\",\"category\":\"Dashboard\",\"permission\":\"dashboard:view\",\"description\":\"View dashboard\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"ed9bb6fb-6708-46a4-9bff-8f7221db61c8\",\"category\":\"Dashboard\",\"permission\":\"dashboard:update\",\"description\":\"Manage dashboard settings\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"07688383-ea78-4d97-9d06-22c011c905c0\",\"category\":\"Users\",\"permission\":\"users:view\",\"description\":\"View users\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"a35839ac-d862-47fd-aafa-a656c9a2636e\",\"category\":\"Users\",\"permission\":\"users:update\",\"description\":\"Manage users\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"80c1a528-c9d1-4c8f-b761-1613a5747c1d\",\"category\":\"Ads\",\"permission\":\"ads:view\",\"description\":\"View advertisements\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"1a4396ed-6b99-46b3-9f75-f728aff28677\",\"category\":\"Ads\",\"permission\":\"ads:update\",\"description\":\"Manage advertisements\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"6d7310be-82a8-4b56-bf98-c0f16792ad5a\",\"category\":\"Requests\",\"permission\":\"requests:view\",\"description\":\"View approval requests\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"189df7b0-ce28-450e-9aac-536adfffdc8f\",\"category\":\"Requests\",\"permission\":\"requests:update\",\"description\":\"Manage approval requests\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"58190fbd-39b3-4d83-872f-1f0c79a92a5d\",\"category\":\"Settings\",\"permission\":\"setting:update\",\"description\":\"Update setting\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"5a8e80d9-d1a3-4310-9368-1d5cba6b1ece\",\"category\":\"Settings\",\"permission\":\"setting:delete\",\"description\":\"Delete setting\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"1321ad9f-e855-44e4-9794-05a43235cfab\",\"category\":\"Settings\",\"permission\":\"setting:get\",\"description\":\"View setting\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"7348160a-dddd-4854-a73e-aa2ee972ef58\",\"category\":\"Roles\",\"permission\":\"roles:update\",\"description\":\"Update roles\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"bfdb1c7f-3ffd-434d-99ee-94afefd66c0a\",\"category\":\"Roles\",\"permission\":\"roles:delete\",\"description\":\"Delete roles\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"8117443f-ca33-430a-8166-b38d20a9427e\",\"category\":\"Roles\",\"permission\":\"roles:get\",\"description\":\"View roles\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"87dcaa25-da42-462f-816f-20febe6dfe27\",\"category\":\"People\",\"permission\":\"people:update\",\"description\":\"Update people\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"12c1d0fc-4b3d-4d35-a1df-e61986318907\",\"category\":\"People\",\"permission\":\"people:delete\",\"description\":\"Delete people\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"b773aa42-fb14-4618-b1f6-9846c546ef15\",\"category\":\"People\",\"permission\":\"people:get\",\"description\":\"View people\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"8fc04ee0-d927-439b-8013-f502041aa981\",\"category\":\"Activity\",\"permission\":\"activity:update\",\"description\":\"Update activity\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"9c9ab5ab-aa80-4041-b97e-2c16b37b44f2\",\"category\":\"Activity\",\"permission\":\"activity:delete\",\"description\":\"Delete activity\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"9e08ad59-14d0-45b7-a121-1d834299e08a\",\"category\":\"Activity\",\"permission\":\"activity:get\",\"description\":\"View activity\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"9a07bdb2-b29c-481c-bc6f-6d8d9e5e3446\",\"category\":\"Inventory\",\"permission\":\"inventory:update\",\"description\":\"Update inventory item\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"be9e55d8-073a-46e6-865d-4bf9bf0fa5e4\",\"category\":\"Inventory\",\"permission\":\"inventory:delete\",\"description\":\"Delete inventory item\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"8f42be51-5cff-4a46-a00a-87b65519ca79\",\"category\":\"Inventory\",\"permission\":\"inventory:get\",\"description\":\"View inventory item\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"d5b077ed-15da-4cbf-aab8-0a404b81cbab\",\"category\":\"Offers\",\"permission\":\"offers:update\",\"description\":\"Update offers\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"10d8a103-1e77-43e2-8af7-f9bb1075f357\",\"category\":\"Offers\",\"permission\":\"offers:delete\",\"description\":\"Delete offers\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"1081ab8a-fbe9-4bf6-85b9-7b96ecf791ce\",\"category\":\"Offers\",\"permission\":\"offers:get\",\"description\":\"View offers\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"b4cbadce-68a5-47b5-b1ce-7bcb782c0d51\",\"category\":\"Insight\",\"permission\":\"insight:update\",\"description\":\"Update insight\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"81e6a92a-5edd-46fc-aa46-cf64507bac59\",\"category\":\"Insight\",\"permission\":\"insight:delete\",\"description\":\"Delete insight\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"72a44375-1a17-4f90-a3ba-cd0cb12f61be\",\"category\":\"Insight\",\"permission\":\"insight:get\",\"description\":\"View insight\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"3848bbea-3518-4455-9509-670937238971\",\"category\":\"Wallet\",\"permission\":\"wallet:get\",\"description\":\"View Wallet\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"0ee53663-8fb3-4bb1-9a02-d17d775a3d33\",\"category\":\"Wallet\",\"permission\":\"wallet:withdraw\",\"description\":\"Wallet Withdrawal\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"9f1f3c20-68fe-4bed-b58b-70f504f0493e\",\"category\":\"Wallet\",\"permission\":\"wallet:fund\",\"description\":\"Fund Wallet\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"94759423-ec1f-48db-bd32-7c9fd50b5f7f\",\"category\":\"Wallet\",\"permission\":\"wallet:create\",\"description\":\"Wallet Creation\",\"created_at\":\"2026-06-20T16:50:24.208Z\",\"updated_at\":\"2026-06-20T16:50:24.208Z\",\"is_admin\":false},{\"id\":\"2a2f0995-d794-4756-ba63-65b0b3d190b5\",\"category\":\"QR Codes\",\"permission\":\"qr_codes:create\",\"description\":\"Create QR codes\",\"created_at\":\"2026-06-20T16:50:24.243Z\",\"updated_at\":\"2026-06-20T16:50:24.243Z\",\"is_admin\":false},{\"id\":\"d8989576-0566-48e2-ac2c-5b9a177976e8\",\"category\":\"QR Codes\",\"permission\":\"qr_codes:update\",\"description\":\"Update QR codes\",\"created_at\":\"2026-06-20T16:50:24.243Z\",\"updated_at\":\"2026-06-20T16:50:24.243Z\",\"is_admin\":false},{\"id\":\"96b119b2-1045-42f3-9fe4-97171c500dd8\",\"category\":\"QR Codes\",\"permission\":\"qr_codes:get\",\"description\":\"View QR codes\",\"created_at\":\"2026-06-20T16:50:24.243Z\",\"updated_at\":\"2026-06-20T16:50:24.243Z\",\"is_admin\":false},{\"id\":\"fb09f91e-a0d8-4e47-99d3-80bf4339ba9a\",\"category\":\"Logs\",\"permission\":\"logs:view\",\"description\":\"View activity logs\",\"created_at\":\"2026-06-20T16:50:24.267Z\",\"updated_at\":\"2026-06-20T16:50:24.267Z\",\"is_admin\":true},{\"id\":\"d5244880-b676-4ad6-a60a-e48af436652d\",\"category\":\"Members\",\"permission\":\"members:create\",\"description\":\"Create and invite new team members\",\"created_at\":\"2026-06-20T16:50:24.299Z\",\"updated_at\":\"2026-06-20T16:50:24.299Z\",\"is_admin\":false},{\"id\":\"f1b3637b-0333-4b40-bc03-cb94d4bce0c1\",\"category\":\"Members\",\"permission\":\"members:update\",\"description\":\"Update team member details including status\",\"created_at\":\"2026-06-20T16:50:24.299Z\",\"updated_at\":\"2026-06-20T16:50:24.299Z\",\"is_admin\":false},{\"id\":\"f8f88ee1-90d7-4257-9ed1-f545f62f5a7f\",\"category\":\"Members\",\"permission\":\"members:view\",\"description\":\"View team members and their details\",\"created_at\":\"2026-06-20T16:50:24.299Z\",\"updated_at\":\"2026-06-20T16:50:24.299Z\",\"is_admin\":false},{\"id\":\"ecabf6ba-20e4-467b-84f3-45293717de59\",\"category\":\"Members\",\"permission\":\"members:delete\",\"description\":\"Remove team members from business\",\"created_at\":\"2026-06-20T16:50:24.299Z\",\"updated_at\":\"2026-06-20T16:50:24.299Z\",\"is_admin\":false},{\"id\":\"c7ab147f-71dd-41a5-ac94-d248ee5fb2cd\",\"category\":\"Inventory\",\"permission\":\"inventory:transfer\",\"description\":\"Transfer inventory\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"43715e15-f296-4ea9-bb5f-180d5452102b\",\"category\":\"Order Management\",\"permission\":\"order:confirm\",\"description\":\"Confirm Order\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"3156e06d-5997-44e5-89e5-1c2256d2c293\",\"category\":\"Reports\",\"permission\":\"reports:download\",\"description\":\"Download Reports\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"3dd4bfa5-d2b8-49cd-9368-cee308f49485\",\"category\":\"Order Management\",\"permission\":\"order:manage\",\"description\":\"Order Management\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"271e524a-3cee-4498-a439-efaed8a2698c\",\"category\":\"Inventory\",\"permission\":\"inventory:allocate\",\"description\":\"Allocate inventory\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"7bc606dc-2827-480e-b2b4-e6e620a962fc\",\"category\":\"Roles\",\"permission\":\"roles:create\",\"description\":\"Create roles\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"22c4e27a-3263-44c4-a589-72bc6474cbff\",\"category\":\"Settings\",\"permission\":\"setting:create\",\"description\":\"Create setting\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"46918043-6a35-48e0-8311-8f68276c329b\",\"category\":\"Subscription\",\"permission\":\"subscription:manage\",\"description\":\"Manage Subscription\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"8efaad46-f382-4d6e-9e64-65f5fe51e407\",\"category\":\"Offers\",\"permission\":\"offers:create\",\"description\":\"Create offer\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"96f47bba-d3be-4501-a4b0-321faf5cec42\",\"category\":\"Inventory\",\"permission\":\"inventory:create\",\"description\":\"Create inventory item\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"3a3c93b5-cfd9-4d16-b7ed-ef52985eb10a\",\"category\":\"People\",\"permission\":\"people:create\",\"description\":\"Create people\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"472607ee-731c-4d42-b227-feb16bdc104f\",\"category\":\"Subscription\",\"permission\":\"subscription:get\",\"description\":\"View Subscription\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"b14fcb27-9d14-4984-af2b-e3669a9f04e5\",\"category\":\"Order Management\",\"permission\":\"order:get\",\"description\":\"View Orders\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"5479d632-e100-495d-b16d-6a0d5664fa48\",\"category\":\"Order Management\",\"permission\":\"order:decline\",\"description\":\"Decline Order\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false},{\"id\":\"fdfb76e5-9591-4ee3-b55f-8b02336c2ecc\",\"category\":\"Order Management\",\"permission\":\"order:fulfill\",\"description\":\"Fulfill Order\",\"created_at\":\"2026-06-20T16:50:24.301Z\",\"updated_at\":\"2026-06-20T16:50:24.301Z\",\"is_admin\":false}]}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:43.260Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/job-titles/52ea1440-778e-428b-a4f1-9c94681ba77a",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "19d4fcb1-ff02-4db2-adad-5b6ed0264a70",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"2fe-BfHPePYKBku5MMfbDT0V1izk1G4\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=9Cy6GWs4fIMAolksYMgXpQYfrCKPEy%2F1iSgqt0NlnfnI5cpwUtGgHNHXFrBc84saZ9eoDczfOIAce0v3HQbpyXrzrxya18iYt17EpJHOdIdoM5hfXsmWAGsMUOTzLaoTWCG7tYRqiVwhjw%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:43 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a144707a8f0f8296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Job Titles Retrived\",\"status\":\"success\",\"statusCode\":200,\"data\":[{\"id\":\"026bfca0-ba1a-4795-9138-df4d2e73fd4e\",\"name\":\"Store Manager - Abuja\",\"business_id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"created_at\":\"2026-06-26T10:54:48.379Z\",\"updated_at\":\"2026-06-26T10:54:48.379Z\",\"member_count\":\"0\"},{\"id\":\"44ef638e-f79d-44c0-9b94-e96a079810cb\",\"name\":\"Store Manager - Lagos\",\"business_id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"created_at\":\"2026-06-26T10:54:48.379Z\",\"updated_at\":\"2026-06-26T10:54:48.379Z\",\"member_count\":\"0\"},{\"id\":\"8136cce8-36c5-4188-881b-dc52aaf59cfb\",\"name\":\"Store Manager - Remote\",\"business_id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"created_at\":\"2026-06-26T10:54:48.379Z\",\"updated_at\":\"2026-06-26T10:54:48.379Z\",\"member_count\":\"1\"}]}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:43.260Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/onboarding/progress/52ea1440-778e-428b-a4f1-9c94681ba77a",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "33f264b5-dab0-4393-a042-b4aa33dc5617",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"2ac-DEPAuc5J7jiVulO4n5Vd6rRHHBc\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=iz3IfiXxfl9D55T9VsAW4y2NQCLnyECTVmgf0FI5R0FmcSvZlVdODDTY%2BsInfj1J4S1OEWQ8g%2FCD%2BMnwvZMetnvUnZgR95DnUyMgkKbvDw7Yu3%2Ba5ungaCGAx%2FA%2Bf6FYBvhg29MjgIWa8Q%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:43 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a144707a7f0e8296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Onboarding progress\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"business_id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"completed_tasks\":4,\"required_tasks\":4,\"is_complete\":true,\"completion_percentage\":100,\"tasks\":[{\"task_type\":\"inventory\",\"is_completed\":true,\"completed_at\":\"2026-06-26T10:18:38.803Z\",\"completion_source\":\"manual\"},{\"task_type\":\"offers\",\"is_completed\":true,\"completed_at\":\"2026-06-26T11:06:55.373Z\",\"completion_source\":\"manual\"},{\"task_type\":\"wallet\",\"is_completed\":true,\"completed_at\":\"2026-06-29T07:35:43.583Z\",\"completion_source\":\"manual\"},{\"task_type\":\"team\",\"is_completed\":true,\"completed_at\":\"2026-06-30T07:39:49.216Z\",\"completion_source\":\"manual\"}]}}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:43.276Z",
-    "resourceType": "xhr",
-    "method": "POST",
-    "url": "https://partner-dev.getmelon.co/cdn-cgi/rum?",
-    "status": 204,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "referer": "https://partner-dev.getmelon.co/auth/login",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "content-type": "application/json",
-        "sec-ch-ua-mobile": "?0",
-        "accept-language": "en-US"
-      },
-      "body": "{\"resources\":[],\"referrer\":\"https://partner-dev.getmelon.co/\",\"eventType\":1,\"firstPaint\":1296,\"firstContentfulPaint\":1296,\"startTime\":1782898714406.1,\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.6.0\",\"timings\":1},\"pageloadId\":\"0a13bd8f-294b-46e7-ab99-2330ce57c5c2\",\"location\":\"https://partner-dev.getmelon.co/auth/login\",\"nt\":\"navigate\",\"timingsV2\":{\"nextHopProtocol\":\"h2\",\"transferSize\":976,\"decodedBodySize\":1211},\"dt\":\"\",\"siteToken\":\"9b7fef37d0b74d79a4cc9b0a8f823dd4\",\"st\":2}"
-    },
-    "response": {
-      "headers": {
-        "access-control-max-age": "86400",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=QqZlHmU6v5inGVfeJRNyymVwPOZwgkMaU%2B0dfIbZMlrIB3qbce0qiPAvd7RYjXSxJl8xL5vLpmql7NG7CtyqbUf7%2FZEyvWLZl6F9v04QaNEi56LA5w5vcRZwEOc2zkCc9O0RifbaG%2FrHjw%3D%3D\"}]}",
-        "access-control-allow-credentials": "true",
-        "access-control-allow-methods": "POST,OPTIONS",
-        "cf-ray": "a144707c49b6a124-IAD",
-        "access-control-allow-origin": "https://partner-dev.getmelon.co",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:43 GMT",
-        "content-type": "text/plain",
-        "vary": "Origin",
-        "server": "cloudflare",
-        "priority": "u=1,i"
-      },
-      "body": ""
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:43.341Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/roles/52ea1440-778e-428b-a4f1-9c94681ba77a",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "59cb1720-7aa5-4fd5-b747-094ae949daa5",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"191a-htBbPStBepXCDhXpLMBr2Z1rEeY\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=bIMgPeDB3G3mYY2wNT0gj0ZBHjuZ5qiVdYx7tlno7rRUEVSyvc0urnPZGoAENNLZPm4ls%2FPN6iPo%2BSOqrfxCKVzusqdZE47xufxJAL9SBYjBu%2FH7BQa3qcxwlxOT3h7PvGTpCTh1t8yilw%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:43 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a144707a8f108296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Roles Retrived\",\"status\":\"success\",\"statusCode\":200,\"data\":[{\"id\":\"f211ca7a-4867-41ce-88a9-0b10eada2cb0\",\"name\":\"Store Manager\",\"description\":\"Responsible for managing daily store operations, inventory, orders, staff, and customer-related activities. Has operational access but cannot manage subscriptions, wallet, roles, or critical business settings.\",\"created_at\":\"2026-06-26T10:54:17.174Z\",\"updated_at\":\"2026-06-26T10:54:17.174Z\",\"business_id\":\"52ea1440-778e-428b-a4f1-9c94681ba77a\",\"type\":\"custom\",\"is_admin\":false,\"permissions\":[{\"id\":\"87dcaa25-da42-462f-816f-20febe6dfe27\",\"category\":\"People\",\"permission\":\"people:update\",\"description\":\"Update people\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"b773aa42-fb14-4618-b1f6-9846c546ef15\",\"category\":\"People\",\"permission\":\"people:get\",\"description\":\"View people\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"8fc04ee0-d927-439b-8013-f502041aa981\",\"category\":\"Activity\",\"permission\":\"activity:update\",\"description\":\"Update activity\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"9e08ad59-14d0-45b7-a121-1d834299e08a\",\"category\":\"Activity\",\"permission\":\"activity:get\",\"description\":\"View activity\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"9a07bdb2-b29c-481c-bc6f-6d8d9e5e3446\",\"category\":\"Inventory\",\"permission\":\"inventory:update\",\"description\":\"Update inventory item\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"8f42be51-5cff-4a46-a00a-87b65519ca79\",\"category\":\"Inventory\",\"permission\":\"inventory:get\",\"description\":\"View inventory item\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"d5b077ed-15da-4cbf-aab8-0a404b81cbab\",\"category\":\"Offers\",\"permission\":\"offers:update\",\"description\":\"Update offers\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"1081ab8a-fbe9-4bf6-85b9-7b96ecf791ce\",\"category\":\"Offers\",\"permission\":\"offers:get\",\"description\":\"View offers\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"72a44375-1a17-4f90-a3ba-cd0cb12f61be\",\"category\":\"Insight\",\"permission\":\"insight:get\",\"description\":\"View insight\",\"created_at\":\"2026-06-20T16:50:24.208252+00:00\",\"updated_at\":\"2026-06-20T16:50:24.208252+00:00\",\"is_admin\":false},{\"id\":\"2a2f0995-d794-4756-ba63-65b0b3d190b5\",\"category\":\"QR Codes\",\"permission\":\"qr_codes:create\",\"description\":\"Create QR codes\",\"created_at\":\"2026-06-20T16:50:24.243476+00:00\",\"updated_at\":\"2026-06-20T16:50:24.243476+00:00\",\"is_admin\":false},{\"id\":\"d8989576-0566-48e2-ac2c-5b9a177976e8\",\"category\":\"QR Codes\",\"permission\":\"qr_codes:update\",\"description\":\"Update QR codes\",\"created_at\":\"2026-06-20T16:50:24.243476+00:00\",\"updated_at\":\"2026-06-20T16:50:24.243476+00:00\",\"is_admin\":false},{\"id\":\"96b119b2-1045-42f3-9fe4-97171c500dd8\",\"category\":\"QR Codes\",\"permission\":\"qr_codes:get\",\"description\":\"View QR codes\",\"created_at\":\"2026-06-20T16:50:24.243476+00:00\",\"updated_at\":\"2026-06-20T16:50:24.243476+00:00\",\"is_admin\":false},{\"id\":\"f8f88ee1-90d7-4257-9ed1-f545f62f5a7f\",\"category\":\"Members\",\"permission\":\"members:view\",\"description\":\"View team members and their details\",\"created_at\":\"2026-06-20T16:50:24.299971+00:00\",\"updated_at\":\"2026-06-20T16:50:24.299971+00:00\",\"is_admin\":false},{\"id\":\"c7ab147f-71dd-41a5-ac94-d248ee5fb2cd\",\"category\":\"Inventory\",\"permission\":\"inventory:transfer\",\"description\":\"Transfer inventory\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"43715e15-f296-4ea9-bb5f-180d5452102b\",\"category\":\"Order Management\",\"permission\":\"order:confirm\",\"description\":\"Confirm Order\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"3156e06d-5997-44e5-89e5-1c2256d2c293\",\"category\":\"Reports\",\"permission\":\"reports:download\",\"description\":\"Download Reports\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"3dd4bfa5-d2b8-49cd-9368-cee308f49485\",\"category\":\"Order Management\",\"permission\":\"order:manage\",\"description\":\"Order Management\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"271e524a-3cee-4498-a439-efaed8a2698c\",\"category\":\"Inventory\",\"permission\":\"inventory:allocate\",\"description\":\"Allocate inventory\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"8efaad46-f382-4d6e-9e64-65f5fe51e407\",\"category\":\"Offers\",\"permission\":\"offers:create\",\"description\":\"Create offer\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"96f47bba-d3be-4501-a4b0-321faf5cec42\",\"category\":\"Inventory\",\"permission\":\"inventory:create\",\"description\":\"Create inventory item\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"3a3c93b5-cfd9-4d16-b7ed-ef52985eb10a\",\"category\":\"People\",\"permission\":\"people:create\",\"description\":\"Create people\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"b14fcb27-9d14-4984-af2b-e3669a9f04e5\",\"category\":\"Order Management\",\"permission\":\"order:get\",\"description\":\"View Orders\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"5479d632-e100-495d-b16d-6a0d5664fa48\",\"category\":\"Order Management\",\"permission\":\"order:decline\",\"description\":\"Decline Order\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false},{\"id\":\"fdfb76e5-9591-4ee3-b55f-8b02336c2ecc\",\"category\":\"Order Management\",\"permission\":\"order:fulfill\",\"description\":\"Fulfill Order\",\"created_at\":\"2026-06-20T16:50:24.301918+00:00\",\"updated_at\":\"2026-06-20T16:50:24.301918+00:00\",\"is_admin\":false}],\"member_count\":\"1\"}]}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:43.808Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/feature-flags/52ea1440-778e-428b-a4f1-9c94681ba77a",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "9fb434a9-dd94-4bd0-9e49-137c8992a766",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"f8-ifN7er2GjFzqYffMghh4wERqzTg\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Y0HPDWfWVVjDZKX2NJ5LuE09JLeqWNMNpymWMcx5%2FfKivQSp2IPBrCE0cUEBr4TxMniQ37CI1chxfMuk293j24y6W4joFLXI2KOKS%2BXAN786k78dgS9Gn8pMDpi1r%2FM3tgb2ZSKDd7jYZQ%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:43 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a144707e0f148296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Feature flags retrieved successfully\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"offers\":true,\"insight\":true,\"products\":true,\"warehouse\":true,\"categories\":true,\"wallet\":true,\"settings\":true,\"docs\":true,\"orders\":true,\"dashboard\":true}}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:43.829Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/members/permissions/ffb1aed4-b9d6-49ee-bbbe-a147f4035083/52ea1440-778e-428b-a4f1-9c94681ba77a",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "4cd05508-70a2-4a69-90e9-871ebeb8daac",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"233b-QYnD9vQJUJIyRD0jqA4wcQOawdk\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=DR%2BOIRK7MRquJVw1gLb37sWKunHo2bpX5VRcM5xoP02cWx34FyNPJUvUC0R1I9oxwWsrFkEDDGfs3CT%2FtXIL4MUaGSbGcYziOTSaj0Do3Yfn3CU3bXM7EioX9FRKVjTw71TbsTw8hTQDsw%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:43 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a144707e0f158296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Permission Retrived\",\"status\":\"success\",\"statusCode\":200,\"data\":[{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Activity\",\"permissions\":[{\"id\":\"9c9ab5ab-aa80-4041-b97e-2c16b37b44f2\",\"permission\":\"activity:delete\",\"description\":\"Delete activity\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"9e08ad59-14d0-45b7-a121-1d834299e08a\",\"permission\":\"activity:get\",\"description\":\"View activity\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"8fc04ee0-d927-439b-8013-f502041aa981\",\"permission\":\"activity:update\",\"description\":\"Update activity\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Insight\",\"permissions\":[{\"id\":\"81e6a92a-5edd-46fc-aa46-cf64507bac59\",\"permission\":\"insight:delete\",\"description\":\"Delete insight\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"72a44375-1a17-4f90-a3ba-cd0cb12f61be\",\"permission\":\"insight:get\",\"description\":\"View insight\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"b4cbadce-68a5-47b5-b1ce-7bcb782c0d51\",\"permission\":\"insight:update\",\"description\":\"Update insight\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Inventory\",\"permissions\":[{\"id\":\"271e524a-3cee-4498-a439-efaed8a2698c\",\"permission\":\"inventory:allocate\",\"description\":\"Allocate inventory\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"96f47bba-d3be-4501-a4b0-321faf5cec42\",\"permission\":\"inventory:create\",\"description\":\"Create inventory item\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"be9e55d8-073a-46e6-865d-4bf9bf0fa5e4\",\"permission\":\"inventory:delete\",\"description\":\"Delete inventory item\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"8f42be51-5cff-4a46-a00a-87b65519ca79\",\"permission\":\"inventory:get\",\"description\":\"View inventory item\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"c7ab147f-71dd-41a5-ac94-d248ee5fb2cd\",\"permission\":\"inventory:transfer\",\"description\":\"Transfer inventory\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"9a07bdb2-b29c-481c-bc6f-6d8d9e5e3446\",\"permission\":\"inventory:update\",\"description\":\"Update inventory item\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Members\",\"permissions\":[{\"id\":\"d5244880-b676-4ad6-a60a-e48af436652d\",\"permission\":\"members:create\",\"description\":\"Create and invite new team members\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"ecabf6ba-20e4-467b-84f3-45293717de59\",\"permission\":\"members:delete\",\"description\":\"Remove team members from business\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"f1b3637b-0333-4b40-bc03-cb94d4bce0c1\",\"permission\":\"members:update\",\"description\":\"Update team member details including status\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"f8f88ee1-90d7-4257-9ed1-f545f62f5a7f\",\"permission\":\"members:view\",\"description\":\"View team members and their details\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Offers\",\"permissions\":[{\"id\":\"8efaad46-f382-4d6e-9e64-65f5fe51e407\",\"permission\":\"offers:create\",\"description\":\"Create offer\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"10d8a103-1e77-43e2-8af7-f9bb1075f357\",\"permission\":\"offers:delete\",\"description\":\"Delete offers\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"1081ab8a-fbe9-4bf6-85b9-7b96ecf791ce\",\"permission\":\"offers:get\",\"description\":\"View offers\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"d5b077ed-15da-4cbf-aab8-0a404b81cbab\",\"permission\":\"offers:update\",\"description\":\"Update offers\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Order Management\",\"permissions\":[{\"id\":\"43715e15-f296-4ea9-bb5f-180d5452102b\",\"permission\":\"order:confirm\",\"description\":\"Confirm Order\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"5479d632-e100-495d-b16d-6a0d5664fa48\",\"permission\":\"order:decline\",\"description\":\"Decline Order\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"fdfb76e5-9591-4ee3-b55f-8b02336c2ecc\",\"permission\":\"order:fulfill\",\"description\":\"Fulfill Order\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"b14fcb27-9d14-4984-af2b-e3669a9f04e5\",\"permission\":\"order:get\",\"description\":\"View Orders\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"3dd4bfa5-d2b8-49cd-9368-cee308f49485\",\"permission\":\"order:manage\",\"description\":\"Order Management\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"People\",\"permissions\":[{\"id\":\"3a3c93b5-cfd9-4d16-b7ed-ef52985eb10a\",\"permission\":\"people:create\",\"description\":\"Create people\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"12c1d0fc-4b3d-4d35-a1df-e61986318907\",\"permission\":\"people:delete\",\"description\":\"Delete people\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"b773aa42-fb14-4618-b1f6-9846c546ef15\",\"permission\":\"people:get\",\"description\":\"View people\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"87dcaa25-da42-462f-816f-20febe6dfe27\",\"permission\":\"people:update\",\"description\":\"Update people\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"QR Codes\",\"permissions\":[{\"id\":\"2a2f0995-d794-4756-ba63-65b0b3d190b5\",\"permission\":\"qr_codes:create\",\"description\":\"Create QR codes\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"96b119b2-1045-42f3-9fe4-97171c500dd8\",\"permission\":\"qr_codes:get\",\"description\":\"View QR codes\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"d8989576-0566-48e2-ac2c-5b9a177976e8\",\"permission\":\"qr_codes:update\",\"description\":\"Update QR codes\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Reports\",\"permissions\":[{\"id\":\"3156e06d-5997-44e5-89e5-1c2256d2c293\",\"permission\":\"reports:download\",\"description\":\"Download Reports\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Roles\",\"permissions\":[{\"id\":\"7bc606dc-2827-480e-b2b4-e6e620a962fc\",\"permission\":\"roles:create\",\"description\":\"Create roles\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"bfdb1c7f-3ffd-434d-99ee-94afefd66c0a\",\"permission\":\"roles:delete\",\"description\":\"Delete roles\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"8117443f-ca33-430a-8166-b38d20a9427e\",\"permission\":\"roles:get\",\"description\":\"View roles\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"7348160a-dddd-4854-a73e-aa2ee972ef58\",\"permission\":\"roles:update\",\"description\":\"Update roles\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Settings\",\"permissions\":[{\"id\":\"22c4e27a-3263-44c4-a589-72bc6474cbff\",\"permission\":\"setting:create\",\"description\":\"Create setting\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"5a8e80d9-d1a3-4310-9368-1d5cba6b1ece\",\"permission\":\"setting:delete\",\"description\":\"Delete setting\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"1321ad9f-e855-44e4-9794-05a43235cfab\",\"permission\":\"setting:get\",\"description\":\"View setting\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"58190fbd-39b3-4d83-872f-1f0c79a92a5d\",\"permission\":\"setting:update\",\"description\":\"Update setting\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Subscription\",\"permissions\":[{\"id\":\"472607ee-731c-4d42-b227-feb16bdc104f\",\"permission\":\"subscription:get\",\"description\":\"View Subscription\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"46918043-6a35-48e0-8311-8f68276c329b\",\"permission\":\"subscription:manage\",\"description\":\"Manage Subscription\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]},{\"role_id\":\"49495e3d-5810-4478-9c6f-4b199e893ddf\",\"role_name\":\"Business Owner\",\"category\":\"Wallet\",\"permissions\":[{\"id\":\"94759423-ec1f-48db-bd32-7c9fd50b5f7f\",\"permission\":\"wallet:create\",\"description\":\"Wallet Creation\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"9f1f3c20-68fe-4bed-b58b-70f504f0493e\",\"permission\":\"wallet:fund\",\"description\":\"Fund Wallet\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"3848bbea-3518-4455-9509-670937238971\",\"permission\":\"wallet:get\",\"description\":\"View Wallet\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"},{\"id\":\"0ee53663-8fb3-4bb1-9a02-d17d775a3d33\",\"permission\":\"wallet:withdraw\",\"description\":\"Wallet Withdrawal\",\"assigned_at\":\"2026-06-24T08:19:23.035267+00:00\"}]}]}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:44.366Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/businesses/recent-engagements/52ea1440-778e-428b-a4f1-9c94681ba77a?page=1",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "08d30cdd-793d-4335-a485-f301a1c3e83e",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"216-oqXe+uqlHs2Ud/N5Dxk1LeGP4mg\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=vVz%2FG42cfpukKMkG7WSlcn%2FwBxzAFdiWCep1ua4KzEW0mpVsFcCWuBpr1yCdRVwt36Y8VoI%2FaO0pBUmVD89ARzGJmJSGrT11D5tJkEsTNh4E6ycY7uZ3yPM2ijEpMRRVGvmTr%2BsJg5Sqww%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:44 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a14470818f208296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Fetch recent engagement analysis\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"results\":[{\"id\":\"aa97a556-5efe-4a32-9f51-cd485fe3804a\",\"amount\":\"2322000\",\"melon_id\":\"8069972717\",\"point_type\":\"offer\",\"created_at\":\"2026-06-26T15:23:09.212Z\",\"items\":[{\"name\":\"Classic Cotton T-Shirt - Extra Large(XL)/Blue/Cotton\",\"quantity\":3,\"unit_price\":774000}],\"receipt_id\":\"ML-TXN-260626444503\",\"coin_value\":\"1100\",\"count\":\"1\"}],\"paginate\":{\"page\":\"1\",\"perPage\":10,\"offset\":0,\"totalEntriesSize\":1,\"currentEntriesSize\":1,\"totalPages\":1}}}"
-    }
-  },
-  {
-    "timestamp": "2026-07-01T09:38:44.382Z",
-    "resourceType": "xhr",
-    "method": "GET",
-    "url": "https://staging-api.getmelon.co/api/v1/businesses/overview/52ea1440-778e-428b-a4f1-9c94681ba77a",
-    "status": 200,
-    "request": {
-      "headers": {
-        "sec-ch-ua-platform": "\"Windows\"",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZW1iZXJfaWQiOiJmZmIxYWVkNC1iOWQ2LTQ5ZWUtYmJiZS1hMTQ3ZjQwMzUwODMiLCJidXNpbmVzc2VzIjpbeyJpZCI6IjUyZWExNDQwLTc3OGUtNDI4Yi1hNGYxLTljOTQ2ODFiYTc3YSIsIm5hbWUiOiJNZWxvbiBRQSBCb3QiLCJsb2dvIjpudWxsLCJyY19udW1iZXIiOiJSQzEwMDAxMSIsImJ1c2luZXNzX2VtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsInBob25lIjoiKzIzNDcwODA3MDI5MjAiLCJpbmR1c3RyeSI6InRlY2hub2xvZ3kiLCJ3ZWJzaXRlX2xpbmsiOm51bGwsImluc3RhZ3JhbSI6bnVsbCwiZmFjZWJvb2siOm51bGwsInR3aXR0ZXIiOm51bGwsImxpbmtlZGluIjpudWxsfV0sImRlZmF1bHRfYnVzaW5lc3MiOiI1MmVhMTQ0MC03NzhlLTQyOGItYTRmMS05Yzk0NjgxYmE3N2EiLCJoYXNfYnVzaW5lc3NfYWNjZXNzIjp0cnVlLCJyZXF1aXJlc19idXNpbmVzc19zZXR1cCI6ZmFsc2UsImF2YXRhciI6bnVsbCwicGhvbmVfbnVtYmVyIjoiKzIzNDcwODA3MDI5MjAiLCJwcm9maWxlX2NvbXBsZXRlZCI6dHJ1ZSwidmVyaWZpZWQiOnRydWUsImVtYWlsIjoibWVsb25xYWJvdEB5b3BtYWlsLmNvbSIsImZpcnN0X25hbWUiOiJNZWxvbiIsImxhc3RfbmFtZSI6IlFBLUJvdCIsInR5cGUiOiJtZW1iZXIiLCJpYXQiOjE3ODI4OTg3MjEsImV4cCI6MTc4Mjk4NTEyMSwiYXVkIjoiaHR0cHM6Ly9nZXRtZWxvbi5jbyIsImlzcyI6Ik1lbG9uIEFmcmljYSIsInN1YiI6IkF1dGhlbnRpY2F0aW9uIFRva2VuIn0.MtyEQBxR2NAPN4oDXEh_v68ochOMcN_c1DKAoGKbmIw",
-        "referer": "https://partner-dev.getmelon.co/",
-        "accept-language": "en-US",
-        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
-        "accept": "application/json, text/plain, */*"
-      },
-      "body": null
-    },
-    "response": {
-      "headers": {
-        "x-request-id": "51ce7f85-05a8-4f99-b730-7a0281e4d9ff",
-        "content-encoding": "zstd",
-        "cf-cache-status": "DYNAMIC",
-        "etag": "W/\"af-1rHmLV71dDJT9QjYzsBHUhVgbaU\"",
-        "x-permitted-cross-domain-policies": "none",
-        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=a%2Bo2taIay9VTBRXV76rQH5ZTdreo1aXjqm%2FUj2M0iy72iG1cE8Y5GHfpw%2BNUn%2BLgHP9eaF%2BrGnc3MnVDPsdOvZACit2ZJrkM6jIDvXhXMiCO4e%2FIM3PWaj%2BubLZPdNfb4awyDg26U%2FROSQ%3D%3D\"}]}",
-        "x-content-type-options": "nosniff",
-        "alt-svc": "h3=\":443\"; ma=86400",
-        "server-timing": "cfExtPri",
-        "date": "Wed, 01 Jul 2026 09:38:44 GMT",
-        "content-type": "application/json; charset=utf-8",
-        "priority": "u=1,i",
-        "x-frame-options": "SAMEORIGIN",
-        "strict-transport-security": "max-age=15552000; includeSubDomains",
-        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
-        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
-        "x-dns-prefetch-control": "off",
-        "cross-origin-opener-policy": "same-origin",
-        "cross-origin-resource-policy": "same-origin",
-        "referrer-policy": "no-referrer",
-        "x-download-options": "noopen",
-        "cf-ray": "a14470818f1f8296-IAD",
-        "access-control-allow-origin": "*",
-        "x-xss-protection": "0",
-        "origin-agent-cluster": "?1",
-        "server": "cloudflare"
-      },
-      "body": "{\"message\":\"Fetch Overview\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"total_members\":\"2\",\"total_customers\":\"1\",\"total_points_earned\":\"1100\",\"total_amount_spent\":\"2322000\"}}"
+      "body": "{\"status\":\"error\",\"statusCode\":404,\"message\":\"User not found\"}"
     }
   }
 ]

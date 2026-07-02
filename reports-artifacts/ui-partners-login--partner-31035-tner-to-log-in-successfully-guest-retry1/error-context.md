@@ -19,92 +19,39 @@ Test timeout of 30000ms exceeded.
 Error: expect(page).toHaveURL(expected) failed
 
 Expected pattern: /get-started/
-Received string:  "https://partner-dev.getmelon.co/home"
+Received string:  "https://partner-dev.getmelon.co/auth/login"
 
 Call log:
   - Expect "toHaveURL" with timeout 100000ms
-    12 × unexpected value "https://partner-dev.getmelon.co/auth/login"
-    56 × unexpected value "https://partner-dev.getmelon.co/home"
+    68 × unexpected value "https://partner-dev.getmelon.co/auth/login"
 
 ```
 
 ```yaml
-- complementary:
-  - img "melon logo"
-  - link:
-    - /url: /home
-    - img
-  - link:
-    - /url: /offers
-    - img
-  - link:
-    - /url: /home
-    - img
-  - link:
-    - /url: /inventory/products
-    - img
-  - link:
-    - /url: /order-mgmt
-    - img
-  - link:
-    - /url: /inventory/warehouse
-    - img
-  - link:
-    - /url: /inventory/category
-    - img
-  - link:
-    - /url: /transactions
-    - img
-  - link:
-    - /url: /settings/profile
-    - img
-  - link:
-    - /url: /home
-    - img
-  - button "M"
-- button:
-  - img
-- button "M Q"
 - main:
-  - heading "Turbocharge Your Sales with Melon Offers!" [level=2]
-  - paragraph: Get ready to launch irresistible offers that drive customer loyalty, boost engagement, and skyrocket your revenue. Define your rewards, reach the right audience, and watch your business thrive.
-  - button "Get Started"
-  - heading "Overview" [level=2]
-  - heading "Total Customers" [level=3]
-  - paragraph: "1"
-  - img
-  - heading "Total Members" [level=3]
-  - paragraph: "2"
-  - img
-  - heading "Total Transactions processed" [level=3]
-  - paragraph: ₦23,220.00
-  - img
-  - heading "Total Coins processed" [level=3]
-  - paragraph: 1,100
-  - img
-  - heading "Recent Activities" [level=2]
-  - button "View all"
-  - table:
-    - rowgroup:
-      - row "Date Reciept ID Melon ID Amount Coin Type Coin Value":
-        - columnheader "Date"
-        - columnheader "Reciept ID"
-        - columnheader "Melon ID"
-        - columnheader "Amount"
-        - columnheader "Coin Type"
-        - columnheader "Coin Value"
-        - columnheader
-    - rowgroup:
-      - row "26/06/2026 ML-TXN-260626444503 8069972717 ₦ 23,220.00 Offer & Standard 1,100":
-        - cell "26/06/2026"
-        - cell "ML-TXN-260626444503"
-        - cell "8069972717"
-        - cell "₦ 23,220.00"
-        - cell "Offer & Standard"
-        - cell "1,100"
-        - cell:
-          - button:
-            - img
+  - link:
+    - /url: /
+  - heading "Welcome Back!" [level=1]
+  - paragraph: Log In to your account to continue.
+  - paragraph: User not found
+  - button:
+    - img
+  - text: Email Address
+  - textbox "Email Address":
+    - /placeholder: Enter business email
+    - text: melonqabot@yopmail.com
+  - text: Password
+  - textbox "Enter password": Password@12345
+  - button:
+    - img
+  - text: Forgot password?
+  - link "Reset here":
+    - /url: /auth/forgot-password
+  - button "Log In"
+  - paragraph:
+    - text: New to Melon?
+    - link "Create an account":
+      - /url: /auth/create-account
 - region "Notifications Alt+T"
 - region "Notifications alt+T"
 ```

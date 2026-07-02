@@ -1,0 +1,1571 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/22.23.0/x64/bin/node",
+      "/home/runner/work/melon-automation/melon-automation/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/home/runner/work/melon-automation/melon-automation/playwright.config.ts",
+    "rootDir": "/home/runner/work/melon-automation/melon-automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/362efd4083ef88c088f2a73ac85b3762fdba60ed",
+        "commitHash": "362efd4083ef88c088f2a73ac85b3762fdba60ed",
+        "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28577364180"
+      },
+      "gitCommit": {
+        "shortHash": "362efd4",
+        "hash": "362efd4083ef88c088f2a73ac85b3762fdba60ed",
+        "subject": "Merge pull request #4 from Only1JohnN/develop",
+        "body": "Merge pull request #4 from Only1JohnN/develop\n\nDevelop",
+        "author": {
+          "name": "Adeniyi John",
+          "email": "71540938+Only1JohnN@users.noreply.github.com",
+          "time": 1782688256000
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "time": 1782688256000
+        },
+        "branch": "master"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/melon-automation/melon-automation/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "commitHash": "362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28577364180"
+          },
+          "gitCommit": {
+            "shortHash": "362efd4",
+            "hash": "362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "subject": "Merge pull request #4 from Only1JohnN/develop",
+            "body": "Merge pull request #4 from Only1JohnN/develop\n\nDevelop",
+            "author": {
+              "name": "Adeniyi John",
+              "email": "71540938+Only1JohnN@users.noreply.github.com",
+              "time": 1782688256000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1782688256000
+            },
+            "branch": "master"
+          },
+          "actualWorkers": 1
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "/home/runner/work/melon-automation/melon-automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/auth.setup.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/melon-automation/melon-automation/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "commitHash": "362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28577364180"
+          },
+          "gitCommit": {
+            "shortHash": "362efd4",
+            "hash": "362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "subject": "Merge pull request #4 from Only1JohnN/develop",
+            "body": "Merge pull request #4 from Only1JohnN/develop\n\nDevelop",
+            "author": {
+              "name": "Adeniyi John",
+              "email": "71540938+Only1JohnN@users.noreply.github.com",
+              "time": 1782688256000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1782688256000
+            },
+            "branch": "master"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/runner/work/melon-automation/melon-automation/tests",
+        "testIgnore": [
+          "**/setup/**",
+          "**/login.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/runner/work/melon-automation/melon-automation/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/Only1JohnN/melon-automation/commit/362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "commitHash": "362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "buildHref": "https://github.com/Only1JohnN/melon-automation/actions/runs/28577364180"
+          },
+          "gitCommit": {
+            "shortHash": "362efd4",
+            "hash": "362efd4083ef88c088f2a73ac85b3762fdba60ed",
+            "subject": "Merge pull request #4 from Only1JohnN/develop",
+            "body": "Merge pull request #4 from Only1JohnN/develop\n\nDevelop",
+            "author": {
+              "name": "Adeniyi John",
+              "email": "71540938+Only1JohnN@users.noreply.github.com",
+              "time": 1782688256000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1782688256000
+            },
+            "branch": "master"
+          },
+          "actualWorkers": 1
+        },
+        "id": "guest",
+        "name": "guest",
+        "testDir": "/home/runner/work/melon-automation/melon-automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/login.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "setup/auth.setup.ts",
+      "file": "setup/auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate partner",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11085,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts:32:28",
+                    "location": {
+                      "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                      "column": 28,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m       \u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m   \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveURL(\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[35m/auth\\/login/\u001b[39m\n \u001b[90m 34 |\u001b[39m       )\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                        "column": 28,
+                        "line": 32
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n\n  30 |       .click();\n  31 |   \n> 32 |     await expect(page).not.toHaveURL(\n     |                            ^\n  33 |       /auth\\/login/\n  34 |       );\n  35 |   \n    at /home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts:32:28"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-02T08:47:58.594Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                    "column": 28,
+                    "line": 32
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10379,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts:32:28",
+                    "location": {
+                      "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                      "column": 28,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m       \u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m   \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveURL(\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[35m/auth\\/login/\u001b[39m\n \u001b[90m 34 |\u001b[39m       )\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                        "column": 28,
+                        "line": 32
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n\n  30 |       .click();\n  31 |   \n> 32 |     await expect(page).not.toHaveURL(\n     |                            ^\n  33 |       /auth\\/login/\n  34 |       );\n  35 |   \n    at /home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts:32:28"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-02T08:48:11.960Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup-retry1/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                    "column": 28,
+                    "line": 32
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10318,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n    at /home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts:32:28",
+                    "location": {
+                      "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                      "column": 28,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m       \u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m   \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoHaveURL(\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m       \u001b[35m/auth\\/login/\u001b[39m\n \u001b[90m 34 |\u001b[39m       )\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                        "column": 28,
+                        "line": 32
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).not.\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: not \u001b[32m/auth\\/login/\u001b[39m\nReceived string: \u001b[31m\"https://partner-dev.getmelon.co/\u001b[7mauth/login\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n\n  30 |       .click();\n  31 |   \n> 32 |     await expect(page).not.toHaveURL(\n     |                            ^\n  33 |       /auth\\/login/\n  34 |       );\n  35 |   \n    at /home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts:32:28"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-07-02T08:48:23.101Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup-retry2/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup-retry2/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup-retry2/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/home/runner/work/melon-automation/melon-automation/test-results/setup-auth.setup.ts-authenticate-partner-setup-retry2/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/melon-automation/melon-automation/tests/setup/auth.setup.ts",
+                    "column": 28,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e717b06d8d484d1cd946-b66b2303d2207b1c1448",
+          "file": "setup/auth.setup.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ui/partners/products/product.spec.ts",
+      "file": "ui/partners/products/product.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@partners @products @single-product @without-variant",
+          "file": "ui/partners/products/product.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should create a single product without variant successfully (basic)",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-a057121c0cd8e4f7980a",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "should create a single product without variant successfully (full journey)",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-4578f19961618c88dff2",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 19,
+              "column": 7
+            },
+            {
+              "title": "should prevent selling price less than cost price (case 1)",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-5a72ff547df163b152a7",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 45,
+              "column": 7
+            },
+            {
+              "title": "should prevent promo price greater than selling price (case 1)",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-e8e7d4e1d10c66567c29",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 59,
+              "column": 7
+            },
+            {
+              "title": "should prevent selling price less than cost price (case 2)",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-d155083d000c4f1a94c8",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 74,
+              "column": 7
+            },
+            {
+              "title": "should prevent promo price greater than selling price (case 2)",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-e760c0bfbfe34ae8eed0",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 88,
+              "column": 7
+            },
+            {
+              "title": "should prevent low stock threshold greater than stock quantity (case 1)",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-e11e3af56a702567104a",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 106,
+              "column": 7
+            },
+            {
+              "title": "should prevent low stock threshold greater than stock quantity (case 2)",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-8e1acc33df66b726ac43",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 119,
+              "column": 7
+            },
+            {
+              "title": "should validate threshold equal to stock quantity",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-76791d14708f9df5ec3f",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 132,
+              "column": 7
+            },
+            {
+              "title": "should prevent stock quantity of zero",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-c6a15d6f48e3b75cacfd",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 145,
+              "column": 7
+            },
+            {
+              "title": "should prevent negative stock quantity",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-9ed64dff1e8b3b11b5a3",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 158,
+              "column": 7
+            },
+            {
+              "title": "should require product name when creating a single product without variant",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-30699edc8ba79911809a",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 180,
+              "column": 7
+            },
+            {
+              "title": "should require category",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-5b89db2abba3535f190a",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 193,
+              "column": 7
+            },
+            {
+              "title": "should prevent product name exceeding maximum length",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-b6803fea631fb20ab392",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 205,
+              "column": 7
+            },
+            {
+              "title": "should trim leading and trailing spaces from product name",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-a7794ca166ade8623ad4",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 217,
+              "column": 7
+            },
+            {
+              "title": "should prevent description exceeding maximum length",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-98657f518c563a6c7f7f",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 226,
+              "column": 7
+            },
+            {
+              "title": "should prevent non numeric values in cost price",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-07bbbd6d2dc8cdcdd8ac",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 240,
+              "column": 7
+            },
+            {
+              "title": "should prevent non numeric values in selling price",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-22d44fbdf0cbd000f3ef",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 250,
+              "column": 7
+            },
+            {
+              "title": "should prevent non numeric values in promo price",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-e7e13e169bac82f69f9b",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 260,
+              "column": 7
+            },
+            {
+              "title": "should prevent negative cost price",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-d12e85a26838dfd3d006",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 270,
+              "column": 7
+            },
+            {
+              "title": "should prevent negative selling price",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-66a7f03b4af147ee1d44",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 281,
+              "column": 7
+            },
+            {
+              "title": "should prevent negative promo price",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-ab96b34e2ebd7b064605",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 292,
+              "column": 7
+            },
+            {
+              "title": "should enforce maximum of five images",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-eca063e722c555556607",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 306,
+              "column": 7
+            },
+            {
+              "title": "should remove uploaded image successfully",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-8793e1696d5973aed25f",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 321,
+              "column": 7
+            },
+            {
+              "title": "should prevent invalid image url upload",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-b89ea4ba4eb176672c55",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 332,
+              "column": 7
+            },
+            {
+              "title": "should allow exactly five images",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-15201d21ad2c6e3a905c",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 342,
+              "column": 7
+            },
+            {
+              "title": "should prevent assigning quantity greater than available stock",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-a36010bc82fe2f4fe0f5",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 358,
+              "column": 7
+            },
+            {
+              "title": "should assign stock across multiple locations",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-ef8ecefbfb6c299f9060",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 377,
+              "column": 7
+            },
+            {
+              "title": "should remove assigned location successfully",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-cac3a01865f2261a3259",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 391,
+              "column": 7
+            },
+            {
+              "title": "should prevent allocation exceeding stock quantity across branches",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-cbee5f4d596112ecc003",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 404,
+              "column": 7
+            },
+            {
+              "title": "should cancel product creation",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-95a741b30795385bf19d",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 421,
+              "column": 7
+            },
+            {
+              "title": "should display correct product information in preview modal",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-2b2bac337968c721b63c",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 431,
+              "column": 7
+            },
+            {
+              "title": "should close product preview modal",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-3219c077c9c745beb384",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 445,
+              "column": 7
+            },
+            {
+              "title": "should create a product successfully via api",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-95af5b7cea8c46c8bc0d",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 461,
+              "column": 7
+            },
+            {
+              "title": "should display correct product details in pending approval",
+              "ok": true,
+              "tags": [
+                "partners",
+                "products",
+                "single-product",
+                "without-variant"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "041127a65d49b31010c4-a71222f7b124a94e3fed",
+              "file": "ui/partners/products/product.spec.ts",
+              "line": 477,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui/partners/login.spec.ts",
+      "file": "ui/partners/login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@partners @auth",
+          "file": "ui/partners/login.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should allow a partner to log in successfully",
+              "ok": false,
+              "tags": [
+                "partners",
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "guest",
+                  "projectName": "guest",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 38820,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                            "column": 24,
+                            "line": 22
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/get-started/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/auth/login\"\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 100000ms\u001b[22m\n\u001b[2m    69 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/get-started/, {\n     |                        ^\n  23 |       timeout: 100000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T08:48:34.189Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 38132,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                            "column": 24,
+                            "line": 22
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/get-started/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/auth/login\"\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 100000ms\u001b[22m\n\u001b[2m    68 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/get-started/, {\n     |                        ^\n  23 |       timeout: 100000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-07-02T08:49:14.130Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest-retry1/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest-retry1/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest-retry1/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest-retry1/trace.zip"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 38878,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts",
+                            "column": 24,
+                            "line": 22
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/get-started/\u001b[39m\nReceived string:  \u001b[31m\"https://partner-dev.getmelon.co/auth/login\"\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 100000ms\u001b[22m\n\u001b[2m    70 × unexpected value \"https://partner-dev.getmelon.co/auth/login\"\u001b[22m\n\n\n  20 |     );\n  21 |\n> 22 |     await expect(page).toHaveURL(/get-started/, {\n     |                        ^\n  23 |       timeout: 100000,\n  24 |     });\n  25 |   });\n    at /home/runner/work/melon-automation/melon-automation/tests/ui/partners/login.spec.ts:22:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2026-07-02T08:49:53.279Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest-retry2/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest-retry2/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest-retry2/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/runner/work/melon-automation/melon-automation/test-results/ui-partners-login--partner-31035-tner-to-log-in-successfully-guest-retry2/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ad1b3db5438dd591e891-f5f9ed9b2b5397b3dbef",
+              "file": "ui/partners/login.spec.ts",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "should display an error message for invalid credentials",
+              "ok": true,
+              "tags": [
+                "partners",
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "guest",
+                  "projectName": "guest",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9671,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T08:50:33.234Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ad1b3db5438dd591e891-e73d975a96927868dd35",
+              "file": "ui/partners/login.spec.ts",
+              "line": 27,
+              "column": 7
+            }
+          ],
+          "suites": [
+            {
+              "title": "@partners",
+              "file": "ui/partners/login.spec.ts",
+              "line": 46,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should display verification failed page for an invalid verification token and allow navigation to login",
+                  "ok": true,
+                  "tags": [
+                    "partners",
+                    "auth",
+                    "partners"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "guest",
+                      "projectName": "guest",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 5727,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-02T08:50:43.002Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "ad1b3db5438dd591e891-64f0f46423f79f91d752",
+                  "file": "ui/partners/login.spec.ts",
+                  "line": 47,
+                  "column": 9
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-07-02T08:47:57.866Z",
+    "duration": 170915.298,
+    "expected": 2,
+    "skipped": 35,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
