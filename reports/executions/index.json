@@ -1,5 +1,16 @@
 [
   {
+    "id": "28783712423",
+    "environment": "pre-release",
+    "executedAt": "2026-07-06T10:09:59Z",
+    "status": "failed",
+    "total": 4,
+    "passed": 2,
+    "failed": 2,
+    "duration": 166715.313,
+    "trigger": "schedule"
+  },
+  {
     "id": "28735203691",
     "environment": "pre-release",
     "executedAt": "2026-07-05T09:47:11Z",

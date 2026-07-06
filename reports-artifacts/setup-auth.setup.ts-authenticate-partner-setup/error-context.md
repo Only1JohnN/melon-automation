@@ -30,7 +30,7 @@ Call log:
     - /url: /
   - heading "Welcome Back!" [level=1]
   - paragraph: Log In to your account to continue.
-  - paragraph: User not found
+  - paragraph: Your account isn't verified. We’ve sent a verification email to your registered address. Please check your inbox and verify your account to proceed.
   - button:
     - img
   - text: Email Address
