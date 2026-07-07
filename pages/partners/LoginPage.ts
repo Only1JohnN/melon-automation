@@ -1,8 +1,7 @@
-import { Locator, Page } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 import { BasePage } from "../common/BasePage";
 
 export class LoginPage extends BasePage {
-  readonly loginLink: Locator;
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly loginButton: Locator;
@@ -10,30 +9,38 @@ export class LoginPage extends BasePage {
   constructor(page: Page) {
     super(page);
 
-    this.loginLink = page.getByRole("button", {
-      name: "Login",
-    });
+    this.emailInput = page
+      .locator('input[type="email"], input[name="email"], input[placeholder*="email" i]')
+      .first();
 
-    this.emailInput = page.getByRole("textbox", {
-      name: "Email Address",
-    });
+    this.passwordInput = page
+      .locator('input[type="password"], input[name="password"], input[placeholder*="password" i]')
+      .first();
 
-    this.passwordInput = page.getByRole("textbox", {
-      name: "Enter password",
-    });
-
-    this.loginButton = page.getByRole("button", {
-      name: "Log In",
-    });
+    this.loginButton = page
+      .locator('button[type="submit"], button')
+      .filter({ hasText: /log in/i })
+      .first();
   }
 
-  async login(email: string, password: string) {
-    await this.loginLink.click();
+  async login(
+    email: string,
+    password: string,
+    options?: { expectSuccess?: boolean }
+  ) {
+    await expect(this.emailInput).toBeVisible({ timeout: 20_000 });
+    await expect(this.passwordInput).toBeVisible({ timeout: 20_000 });
 
     await this.emailInput.fill(email);
-
     await this.passwordInput.fill(password);
-
     await this.loginButton.click();
+
+    if (options?.expectSuccess ?? true) {
+      await this.page.waitForURL(/^(?!.*\/auth\/login).*$/, { timeout: 30000 });
+      await this.page.waitForURL(/\/get-started/, { timeout: 30_000 });
+      await expect(this.page.getByRole("button", { name: /skip to dashboard/i })).toBeVisible({
+        timeout: 20_000,
+      });
+    }
   }
 }

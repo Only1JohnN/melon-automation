@@ -1,17 +1,18 @@
 import Topbar from "@/components/Topbar";
 import StatCard from "@/components/StatCard";
+import PassRateCard from "@/components/PassRateCard";
 import RecentExecutions from "@/components/RecentExecutions";
-import Link from "next/link";
 
-import { getOverviewStats } from "@/lib/report-parser";
+import { getApplications, getOverviewStats } from "@/lib/report-parser";
 import { getExecutions } from "@/lib/executions";
 
 export const dynamic = "force-dynamic";
 
 export default async function Dashboard() {
-  const [stats, executions] = await Promise.all([
+  const [stats, executions, applications] = await Promise.all([
     getOverviewStats(),
     getExecutions(),
+    getApplications(),
   ]);
 
   return (
@@ -39,17 +40,25 @@ export default async function Dashboard() {
           color="red"
         />
         <StatCard
-          title="Pass Rate"
-          value={`${stats.passRate}%`}
-          icon="🎯"
+          title="Skipped"
+          value={stats.skipped.toString()}
+          icon="⏭️"
           color="yellow"
-          progress={typeof stats.passRate === 'string' ? parseInt(stats.passRate) : stats.passRate}
+        />
+      </div>
+
+      <div className="mt-6">
+        <PassRateCard
+          total={stats.total}
+          skipped={stats.skipped}
+          passRate={stats.passRate}
+          applications={applications}
         />
       </div>
 
       {/* --- Recent Executions with header and link --- */}
       <div className="mt-8">
-        <RecentExecutions executions={executions.slice(0, 10)} />
+        <RecentExecutions executions={executions.slice(0, 5)} />
       </div>
     </>
   );

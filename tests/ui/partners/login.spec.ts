@@ -4,20 +4,14 @@ import { LoginPage } from "../../../pages/partners/LoginPage";
 import {
   test,
   expect,
+  loginAsPartner,
 } from "../../../fixtures/baseTest";
 
 test.describe("@partners @auth", () => {
   test("should allow a partner to log in successfully", async ({
     page,
   }) => {
-    const loginPage = new LoginPage(page);
-
-    await page.goto(Applications.partners.url);
-
-    await loginPage.login(
-      process.env.PARTNER_EMAIL!,
-      process.env.PARTNER_PASSWORD!
-    );
+    await loginAsPartner(page);
 
     await expect(page).toHaveURL(/get-started/, {
       timeout: 100000,
@@ -29,11 +23,12 @@ test.describe("@partners @auth", () => {
   }) => {
     const loginPage = new LoginPage(page);
 
-    await page.goto(Applications.partners.url);
+    await page.goto(`${Applications.partners.url}/auth/login`);
 
     await loginPage.login(
       "invalid.user@yopmail.com",
-      "InvalidPassword123!"
+      "InvalidPassword123!",
+      { expectSuccess: false }
     );
 
     await expect(

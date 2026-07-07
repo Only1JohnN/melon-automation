@@ -24,6 +24,9 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
 
+  /* Add timeout for each test */
+  timeout: env.timeout || 180_000,
+
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
 
@@ -77,6 +80,7 @@ export default defineConfig({
 
       use: {
         ...devices["Desktop Chrome"],
+        storageState: undefined, // start with fresh context, no saved session
       },
     },
 
@@ -92,9 +96,8 @@ export default defineConfig({
 
       use: {
         ...devices["Desktop Chrome"],
-
-        storageState:
-          "playwright/.auth/partner.json",
+        storageState: "playwright/.auth/partner.json",
+        ignoreHTTPSErrors: true,
       },
     },
 
@@ -105,6 +108,7 @@ export default defineConfig({
 
       use: {
         ...devices["Desktop Chrome"],
+        storageState: undefined, // no session for login tests
       },
     },
 
