@@ -55,50 +55,88 @@ export default function GroupedTestsTable({ groups, executionId }: Props) {
               </span>
             </button>
 
-            {/* Collapsible table – only rendered when open */}
+            {/* Collapsible content – table on larger screens, stacked cards on mobile */}
             {isOpen && (
-              <table className="w-full">
-                <thead className="bg-slate-900">
-                  <tr>
-                    <th className="p-4 text-left">Test</th>
-                    <th className="p-4 text-left">Status</th>
-                    <th className="p-4 text-left">Duration</th>
-                    <th className="p-4 text-left">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {group.tests.map((test: any) => (
-                    <tr
-                      key={test.id}
-                      className="border-t border-slate-800 hover:bg-slate-900"
-                    >
-                      <td className="p-4">{test.title}</td>
-                      <td className="p-4">
-                        <StatusBadge status={test.status} />
-                      </td>
-                      <td className="p-4">
-                        {(test.duration / 1000).toFixed(2)}s
-                      </td>
-                      <td className="p-4">
-                        <Link
-                          href={
-                            executionId
-                              ? test.status === "passed"
-                                ? `/executions/${executionId}/tests/${test.id}`
-                                : `/executions/${executionId}/failures/${test.id}`
-                              : test.status === "passed"
-                              ? `/tests/${test.id}`
-                              : `/failures/${test.id}`
-                          }
-                          className="font-medium text-[#D6FF32] hover:underline"
-                        >
-                          View Details
-                        </Link>
-                      </td>
+              <div>
+                {/* Desktop / tablet table */}
+                <table className="w-full hidden sm:table">
+                  <thead className="bg-slate-900">
+                    <tr>
+                      <th className="p-4 text-left">Test</th>
+                      <th className="p-4 text-left">Status</th>
+                      <th className="p-4 text-left">Duration</th>
+                      <th className="p-4 text-left">Action</th>
                     </tr>
+                  </thead>
+                  <tbody>
+                    {group.tests.map((test: any) => (
+                      <tr
+                        key={test.id}
+                        className="border-t border-slate-800 hover:bg-slate-900"
+                      >
+                        <td className="p-4">{test.title}</td>
+                        <td className="p-4">
+                          <StatusBadge status={test.status} />
+                        </td>
+                        <td className="p-4">{(test.duration / 1000).toFixed(2)}s</td>
+                        <td className="p-4">
+                          <Link
+                            href={
+                              executionId
+                                ? test.status === "passed"
+                                  ? `/executions/${executionId}/tests/${test.id}`
+                                  : `/executions/${executionId}/failures/${test.id}`
+                                : test.status === "passed"
+                                ? `/tests/${test.id}`
+                                : `/failures/${test.id}`
+                            }
+                            className="font-medium text-[#D6FF32] hover:underline"
+                          >
+                            View Details
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+
+                {/* Mobile stacked view */}
+                <div className="sm:hidden space-y-3 p-4">
+                  {group.tests.map((test: any) => (
+                    <div
+                      key={test.id}
+                      className="rounded-xl border border-slate-800 bg-[#0b1220] p-3"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1">
+                          <div className="font-semibold">{test.title}</div>
+                          <div className="text-sm text-slate-400">
+                            {(test.duration / 1000).toFixed(2)}s
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col items-end gap-2">
+                          <StatusBadge status={test.status} />
+                          <Link
+                            href={
+                              executionId
+                                ? test.status === "passed"
+                                  ? `/executions/${executionId}/tests/${test.id}`
+                                  : `/executions/${executionId}/failures/${test.id}`
+                                : test.status === "passed"
+                                ? `/tests/${test.id}`
+                                : `/failures/${test.id}`
+                            }
+                            className="font-medium text-[#D6FF32] hover:underline"
+                          >
+                            View
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   ))}
-                </tbody>
-              </table>
+                </div>
+              </div>
             )}
           </div>
         );
