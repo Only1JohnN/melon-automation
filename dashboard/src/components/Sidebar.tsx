@@ -43,7 +43,7 @@ const links = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onLinkClick }: { onLinkClick?: () => void }) {
   const pathname = usePathname();
 
   return (
@@ -78,6 +78,7 @@ export default function Sidebar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => onLinkClick?.()}
                 className={`flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 ${
                   isActive
                     ? "bg-[#D6FF32] text-black font-semibold"
@@ -102,6 +103,7 @@ export default function Sidebar() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#D6FF32] hover:underline"
+              onClick={() => onLinkClick?.()}
             >
               Only1JohnN
             </a>
