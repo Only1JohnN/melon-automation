@@ -1,9 +1,12 @@
-import { test, expect } from '@fixtures/baseTest';
-import { LoginPage } from '@pages/partners/LoginPage';
-import { ProductPage } from '@pages/partners/products/ProductPage';
+import { test, expect, loginAsPartner } from '@fixtures/baseTest';
+import { ProductPage } from '@pages/partners/ProductPage';
 import { createSimpleProduct } from '@test-data/factories/productFactory';
 
 test.describe('@partners @products @single-product @without-variant', () => {
+  test.beforeEach(async ({ page }) => {
+    // await loginAsPartner(page);
+  });
+
   // ─────────────────────────────────────────────
   //  Successful creation (full flow + API)
   // ─────────────────────────────────────────────
@@ -17,11 +20,8 @@ test.describe('@partners @products @single-product @without-variant', () => {
   });
 
   test('should create a single product without variant successfully (full journey)', async ({ page }) => {
-    const loginPage = new LoginPage(page);
     const productPage = new ProductPage(page);
     const product = createSimpleProduct();
-
-    await loginPage.login(process.env.PARTNER_EMAIL!, process.env.PARTNER_PASSWORD!);
 
     await productPage.goto();
     await productPage.startSingleProduct();

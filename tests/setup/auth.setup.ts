@@ -1,44 +1,12 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
+import { LoginPage } from "../../pages/partners/LoginPage";
 
-test(
-  "authenticate partner",
-  async ({ page }) => {
-    await page.goto(
-      `${process.env.PARTNER_URL}/auth/login`
-    );
+test("authenticate partner", async ({ page }) => {
+  const loginPage = new LoginPage(page);
 
-    await page
-      .getByRole("textbox", {
-        name: "Email Address",
-      })
-      .fill(
-        process.env.PARTNER_EMAIL!
-      );
+  await page.goto(`${process.env.PARTNER_URL}/auth/login`);
+  await loginPage.login(process.env.PARTNER_EMAIL!, process.env.PARTNER_PASSWORD!);
 
-    await page
-      .getByRole("textbox", {
-        name: "Enter password",
-      })
-      .fill(
-        process.env.PARTNER_PASSWORD!
-      );
-
-    await page
-      .getByRole("button", {
-          name: "Log In",
-      })
-      .click();
-  
-    await expect(page).not.toHaveURL(
-      /auth\/login/
-      );
-  
-    await page.waitForTimeout(
-      5000
-      );
-  
-    await page.context().storageState({
-      path: "playwright/.auth/partner.json",
-      });
-  }
-);
+  await page.context().storageState({ path: "playwright/.auth/partner.json" });
+  console.log('✅ Storage state saved.');
+});

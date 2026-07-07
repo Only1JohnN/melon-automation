@@ -47,8 +47,8 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-72 h-screen border-r border-slate-800 bg-[#020B22] flex flex-col sticky top-0">
-      <div className="p-8">
+    <aside className="w-full lg:w-72 border-b lg:border-b-0 lg:border-r border-slate-800 bg-[#020B22] flex flex-col lg:h-screen lg:sticky lg:top-0">
+      <div className="p-4 sm:p-8">
         <div className="flex items-center gap-3">
           <span className="text-4xl">🍉</span>
 
