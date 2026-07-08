@@ -159,17 +159,22 @@ export class ProductPage {
 
   async selectCategory(category: string): Promise<void> {
     await this.categoryDropdown.click();
-    const option = this.page.getByRole('option', { name: category });
-    // If the exact category isn't found, pick the first one
-    if (!(await option.count())) {
-      const firstOption = this.page.getByRole('option').first();
-      await firstOption.click();
-      // Optionally log the selected category name
-      const selected = await firstOption.textContent();
-      console.log(`Selected category: ${selected}`);
+
+    await expect(this.page.getByRole('listbox')).toBeVisible({ timeout: 15_000 });
+
+    const matchedOption = this.page.getByRole('option', { name: category }).first();
+    if (await matchedOption.count()) {
+      await matchedOption.click();
       return;
     }
-    await option.click();
+
+    const fallbackOption = this.page
+      .getByRole('option')
+      .filter({ hasNotText: /^Add Category$/i })
+      .first();
+
+    await expect(fallbackOption).toBeVisible({ timeout: 15_000 });
+    await fallbackOption.click();
   }
 
   async fillProductDetails(product: ProductData): Promise<void> {
@@ -259,7 +264,13 @@ export class ProductPage {
 
   async addAnotherLocation(quantity: number): Promise<void> {
     await this.selectMoreLocationsButton.click();
-    const option = this.page.getByRole('option').first();
+
+    const option = this.page
+      .getByRole('option')
+      .filter({ hasNotText: /^Select/i })
+      .first();
+
+    await expect(option).toBeVisible({ timeout: 15_000 });
     await option.click();
     await this.locationEmptyState.click();
     await this.locationQuantityInput.fill(quantity.toString());
@@ -282,10 +293,16 @@ export class ProductPage {
 
   private async selectFirstAvailableBranch(): Promise<string> {
     await this.locationDropdown.click();
-    const firstOption = this.page.getByRole('option').first();
-    const branchName = await firstOption.textContent();
-    await firstOption.click();
-    return branchName ?? '';
+
+    const option = this.page
+      .getByRole('option')
+      .filter({ hasNotText: /^Select/i })
+      .first();
+
+    await expect(option).toBeVisible({ timeout: 15_000 });
+    const branchName = (await option.textContent())?.trim() ?? '';
+    await option.click();
+    return branchName;
   }
 
   // ============================================================
