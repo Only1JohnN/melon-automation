@@ -150,6 +150,7 @@ export class ProductPage {
     await this.goto();
     await this.startSingleProduct();
     await this.fillProductDetails(product);
+    await this.uploadImage();
     await this.submitProduct();
   }
 
@@ -262,19 +263,34 @@ export class ProductPage {
     await this.locationSubmitButton.click();
   }
 
-  async addAnotherLocation(quantity: number): Promise<void> {
+  async addAnotherLocation(quantity: number): Promise<string> {
     await this.selectMoreLocationsButton.click();
 
+    // Open the new branch dropdown
+    await this.page
+      .locator('button')
+      .filter({ hasText: 'Select a branch' })
+      .click();
+
+    // Select the first available branch
     const option = this.page
       .getByRole('option')
       .filter({ hasNotText: /^Select/i })
       .first();
 
     await expect(option).toBeVisible({ timeout: 15_000 });
+
+    const branchName = (await option.textContent())?.trim() ?? '';
+
     await option.click();
+
+    // Assign quantity
     await this.locationEmptyState.click();
     await this.locationQuantityInput.fill(quantity.toString());
+
     await this.locationSubmitButton.click();
+
+    return branchName;
   }
 
   async assignInvalidQuantity(quantity: number): Promise<void> {
@@ -372,4 +388,11 @@ export class ProductPage {
   async validateFieldEmpty(locator: Locator): Promise<void> {
     await expect(locator).toHaveValue('');
   }
+
+  async validateAssignedQuantity(quantity: number): Promise<void> {
+    await expect(
+      this.page.getByText(new RegExp(`\\(${quantity}\\)`))
+    ).toBeVisible();
+  }
 }
+
