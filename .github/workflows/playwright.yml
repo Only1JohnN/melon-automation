@@ -49,7 +49,7 @@ jobs:
 
       - name: Run Tests
         continue-on-error: true
-        run: npm run test:pre-release
+        run: npm run test:pre-release -- --reporter=line
 
       - name: Convert Videos to MP4
         if: always()

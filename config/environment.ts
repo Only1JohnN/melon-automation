@@ -53,7 +53,7 @@ export const env = {
   environment: appEnvironment,
   headless: process.env.HEADLESS === "true",
   slowMo: Number(process.env.SLOW_MO) || 0,
-  timeout: Number(process.env.TIMEOUT) || 1200000,
+  timeout: Number(process.env.TIMEOUT) || 120000,
 
   adminUrl: process.env.ADMIN_URL!,
   partnerUrl: process.env.PARTNER_URL!,
