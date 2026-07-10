@@ -148,7 +148,7 @@ test.describe("@partners @categories @smoke", () => {
     expect(
       body.message
     ).toMatch(
-      /already exists|duplicate/i
+      "Category with this name already exists"
     );
 
     await categoriesPage.validateErrorToast();
