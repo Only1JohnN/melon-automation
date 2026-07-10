@@ -7,8 +7,8 @@ on:
     branches:
       - master
 
-  schedule:
-    - cron: "0 6 * * *"
+  # schedule:
+  #   - cron: "0 6 * * *"
 
   workflow_dispatch:
 
@@ -199,39 +199,39 @@ jobs:
           cp -R /tmp/melon-test-results/* reports-artifacts/ 2>/dev/null || true
 
           echo "📊 Updating execution index..."
-                  
+
           INDEX_FILE="reports/executions/index.json"
-                  
+
           mkdir -p "$(dirname "$INDEX_FILE")"
-                  
+
           # Create or repair index
           if [ ! -s "$INDEX_FILE" ]; then
             echo "[]" > "$INDEX_FILE"
           fi
-                  
+
           if ! jq empty "$INDEX_FILE" >/dev/null 2>&1; then
             echo "⚠️ Index corrupted, resetting..."
             echo "[]" > "$INDEX_FILE"
           fi
-                  
+
           echo "===== RUN METADATA ====="
           cat "$EXECUTION_DIR/run-metadata.json"
-                  
+
           echo "===== INDEX BEFORE ====="
           cat "$INDEX_FILE"
-                  
+
           TMP_INDEX=$(mktemp)
-                  
+
           jq \
             --slurpfile run "$EXECUTION_DIR/run-metadata.json" \
             '[$run[0]] + map(select(.id != $run[0].id))' \
             "$INDEX_FILE" > "$TMP_INDEX"
-                  
+
           mv "$TMP_INDEX" "$INDEX_FILE"
-                  
+
           echo "===== INDEX AFTER ====="
           cat "$INDEX_FILE"
-                  
+
           echo "📈 Total executions now: $(jq length "$INDEX_FILE")"
 
           echo "📦 Committing and pushing to reports branch..."
