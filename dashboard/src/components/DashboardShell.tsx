@@ -102,7 +102,7 @@ export default function DashboardShell({
         <div />
       </div>
 
-      <div className="flex min-h-screen flex-col lg:flex-row">
+      <div className="flex h-screen flex-col lg:flex-row overflow-hidden">
         {/* Mobile overlay + slide-in sidebar */}
         <div className={`fixed inset-0 z-50 lg:relative lg:block ${open ? "pointer-events-auto" : "pointer-events-none"} lg:pointer-events-auto`}>
           {/* Backdrop */}
@@ -121,7 +121,7 @@ export default function DashboardShell({
                 open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
               }`}
             >
-              <div className="h-full lg:sticky lg:top-0">
+              <div className="h-full lg:h-screen lg:fixed lg:left-0 lg:top-0 lg:w-72">
                 <div className="flex items-center justify-end p-4 lg:hidden">
                   <button
                     aria-label="Close menu"
@@ -139,7 +139,7 @@ export default function DashboardShell({
           </div>
         </div>
 
-        <section className="flex-1 overflow-auto p-6 sm:p-10" aria-hidden={open ? true : undefined}>
+        <section className="flex-1 overflow-y-auto overflow-x-hidden p-6 sm:p-10" aria-hidden={open ? true : undefined}>
           {children}
         </section>
       </div>

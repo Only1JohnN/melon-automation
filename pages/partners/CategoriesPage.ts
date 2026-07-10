@@ -179,7 +179,7 @@ export class CategoriesPage {
         this.submitCategoryButton.click(),
       ]);
 
-    await this.waitForPageLoad();
+    // await this.waitForPageLoad();
 
     return response;
   }
@@ -380,7 +380,7 @@ export class CategoriesPage {
     await this.getRowByName(
       categoryName
     )
-      .getByRole("button", {
+      .getByRole("cell", {
         name: "Open menu",
       })
       .click();
@@ -483,11 +483,7 @@ export class CategoriesPage {
   }
 
   async validateErrorToast() {
-    await expect(
-      this.page.getByRole("alert")
-    ).toContainText(
-      /error|failed|exists/i
-    );
+    await expect(this.page.getByText("Category with this name")).toBeVisible();
   }
 
   async validateErrorMessage(

@@ -7,8 +7,8 @@ on:
     branches:
       - master
 
-  schedule:
-    - cron: "0 6 * * *"
+  # schedule:
+  #   - cron: "0 6 * * *"
 
   workflow_dispatch:
 
@@ -199,31 +199,40 @@ jobs:
           cp -R /tmp/melon-test-results/* reports-artifacts/ 2>/dev/null || true
 
           echo "📊 Updating execution index..."
+
           INDEX_FILE="reports/executions/index.json"
 
-          if [ ! -f "$INDEX_FILE" ]; then
+          mkdir -p "$(dirname "$INDEX_FILE")"
+
+          # Create or repair index
+          if [ ! -s "$INDEX_FILE" ]; then
             echo "[]" > "$INDEX_FILE"
           fi
 
-          # Validate index is valid JSON; reset if corrupted
-          if ! jq empty "$INDEX_FILE" 2>/dev/null; then
-            echo "⚠️ Index file is corrupted, resetting..."
+          if ! jq empty "$INDEX_FILE" >/dev/null 2>&1; then
+            echo "⚠️ Index corrupted, resetting..."
             echo "[]" > "$INDEX_FILE"
           fi
+
+          echo "===== RUN METADATA ====="
+          cat "$EXECUTION_DIR/run-metadata.json"
+
+          echo "===== INDEX BEFORE ====="
+          cat "$INDEX_FILE"
 
           TMP_INDEX=$(mktemp)
-          if jq --slurpfile run "$EXECUTION_DIR/run-metadata.json" \
-                '. |= map(select(.id != $run[0].id)) | [$run[0]] + .' \
-                "$INDEX_FILE" > "$TMP_INDEX" 2>/dev/null; then
-            mv "$TMP_INDEX" "$INDEX_FILE"
-            echo "✅ Index updated successfully."
-          else
-            echo "❌ jq failed to update index – keeping old index."
-            rm -f "$TMP_INDEX"
-          fi
 
-          # Optional: print the number of executions for verification
-          echo "📈 Total executions now: $(jq '. | length' "$INDEX_FILE")"
+          jq \
+            --slurpfile run "$EXECUTION_DIR/run-metadata.json" \
+            '[$run[0]] + map(select(.id != $run[0].id))' \
+            "$INDEX_FILE" > "$TMP_INDEX"
+
+          mv "$TMP_INDEX" "$INDEX_FILE"
+
+          echo "===== INDEX AFTER ====="
+          cat "$INDEX_FILE"
+
+          echo "📈 Total executions now: $(jq length "$INDEX_FILE")"
 
           echo "📦 Committing and pushing to reports branch..."
           git add .
