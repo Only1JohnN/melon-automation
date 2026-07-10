@@ -29,10 +29,14 @@ Call log:
       - element is not stable
     - retrying click action
       - waiting 100ms
-    173 × waiting for element to be visible, enabled and stable
-        - element is not enabled
-      - retrying click action
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  172 × retrying click action
         - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+        - element is not enabled
+  - retrying click action
+    - waiting 500ms
 
 ```
 
@@ -165,7 +169,7 @@ Call log:
                             - row:
                               - cell: AUTO-CAT-1783441233025
                               - cell: Trim Validation
-                              - cell: "10"
+                              - cell: "13"
                               - cell: 2026-07-07 04:20:35 PM
                               - cell:
                                 - button:
@@ -208,6 +212,15 @@ Call log:
                                   - generic: Open menu
                                   - img
                             - row:
+                              - cell: AUTO-CAT-1783620616425
+                              - cell: Trim Validation
+                              - cell: "0"
+                              - cell: 2026-07-09 06:10:17 PM
+                              - cell:
+                                - button:
+                                  - generic: Open menu
+                                  - img
+                            - row:
                               - cell: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
                               - cell: Description
                               - cell: "0"
@@ -239,15 +252,6 @@ Call log:
                               - cell: Automation description 1783441136340
                               - cell: "0"
                               - cell: 2026-07-07 04:18:59 PM
-                              - cell:
-                                - button:
-                                  - generic: Open menu
-                                  - img
-                            - row:
-                              - cell: AUTO-CAT-1783441153078
-                              - cell: Updated 1783441156469
-                              - cell: "0"
-                              - cell: 2026-07-07 04:19:15 PM
                               - cell:
                                 - button:
                                   - generic: Open menu

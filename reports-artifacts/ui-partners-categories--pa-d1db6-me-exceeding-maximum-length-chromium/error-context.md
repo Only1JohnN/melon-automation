@@ -46,6 +46,10 @@ Call log:
 # Test source
 
 ```ts
+  396 | 
+  397 |     return {
+  398 |       name:
+  399 |         (
   400 |           await row
   401 |             .locator("td")
   402 |             .nth(0)
@@ -132,22 +136,18 @@ Call log:
   483 |   }
   484 | 
   485 |   async validateErrorToast() {
-  486 |     await expect(
-  487 |       this.page.getByRole("alert")
-  488 |     ).toContainText(
-  489 |       /error|failed|exists/i
-  490 |     );
-  491 |   }
-  492 | 
-  493 |   async validateErrorMessage(
-  494 |     message: string | RegExp
-  495 |   ) {
-  496 |     await expect(
-  497 |       this.page.getByText(
-  498 |         message
-  499 |       )
-> 500 |     ).toBeVisible();
+  486 |     await expect(this.page.getByText("Category with this name")).toBeVisible();
+  487 |   }
+  488 | 
+  489 |   async validateErrorMessage(
+  490 |     message: string | RegExp
+  491 |   ) {
+  492 |     await expect(
+  493 |       this.page.getByText(
+  494 |         message
+  495 |       )
+> 496 |     ).toBeVisible();
       |       ^ Error: expect(locator).toBeVisible() failed
-  501 |   }
-  502 | }
+  497 |   }
+  498 | }
 ```

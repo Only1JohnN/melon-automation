@@ -12,16 +12,16 @@
 # Error details
 
 ```
-Error: expect(locator).toContainText(expected) failed
+Error: expect(locator).toBeVisible() failed
 
-Locator: getByRole('alert')
-Expected pattern: /error|failed|exists/i
+Locator: getByText('Category with this name')
+Expected: visible
 Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-  - Expect "toContainText" with timeout 5000ms
-  - waiting for getByRole('alert')
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText('Category with this name')
 
 ```
 
@@ -90,10 +90,10 @@ Call log:
         - columnheader "Date & Time"
         - columnheader
     - rowgroup:
-      - row "AUTO-CAT-1783441233025 Trim Validation 10 2026-07-07 04:20:35 PM Open menu":
+      - row "AUTO-CAT-1783441233025 Trim Validation 13 2026-07-07 04:20:35 PM Open menu":
         - cell "AUTO-CAT-1783441233025"
         - cell "Trim Validation"
-        - cell "10"
+        - cell "13"
         - cell "2026-07-07 04:20:35 PM"
         - cell "Open menu":
           - button "Open menu":
@@ -144,6 +144,15 @@ Call log:
           - button "Open menu":
             - text: Open menu
             - img
+      - row "AUTO-CAT-1783647053642 Trim Validation 0 2026-07-10 01:30:54 AM Open menu":
+        - cell "AUTO-CAT-1783647053642"
+        - cell "Trim Validation"
+        - cell "0"
+        - cell "2026-07-10 01:30:54 AM"
+        - cell "Open menu":
+          - button "Open menu":
+            - text: Open menu
+            - img
       - row "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA Description 0 2026-07-07 04:21:10 PM Open menu":
         - cell "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         - cell "Description"
@@ -171,15 +180,6 @@ Call log:
           - button "Open menu":
             - text: Open menu
             - img
-      - row "AUTO-CAT-1783441136340 Automation description 1783441136340 0 2026-07-07 04:18:59 PM Open menu":
-        - cell "AUTO-CAT-1783441136340"
-        - cell "Automation description 1783441136340"
-        - cell "0"
-        - cell "2026-07-07 04:18:59 PM"
-        - cell "Open menu":
-          - button "Open menu":
-            - text: Open menu
-            - img
   - button "Previous" [disabled]:
     - img
     - text: Previous
@@ -193,16 +193,14 @@ Call log:
     - text: Next
     - img
 - region "Notifications Alt+T"
-- region "Notifications alt+T":
-  - list:
-    - listitem:
-      - img
-      - text: Category created successfully
+- region "Notifications alt+T"
 ```
 
 # Test source
 
 ```ts
+  386 |       .click();
+  387 |   }
   388 | 
   389 |   async getRowData(
   390 |     categoryName: string
@@ -301,22 +299,18 @@ Call log:
   483 |   }
   484 | 
   485 |   async validateErrorToast() {
-  486 |     await expect(
-  487 |       this.page.getByRole("alert")
-> 488 |     ).toContainText(
-      |       ^ Error: expect(locator).toContainText(expected) failed
-  489 |       /error|failed|exists/i
-  490 |     );
-  491 |   }
-  492 | 
-  493 |   async validateErrorMessage(
-  494 |     message: string | RegExp
-  495 |   ) {
-  496 |     await expect(
-  497 |       this.page.getByText(
-  498 |         message
-  499 |       )
-  500 |     ).toBeVisible();
-  501 |   }
-  502 | }
+> 486 |     await expect(this.page.getByText("Category with this name")).toBeVisible();
+      |                                                                  ^ Error: expect(locator).toBeVisible() failed
+  487 |   }
+  488 | 
+  489 |   async validateErrorMessage(
+  490 |     message: string | RegExp
+  491 |   ) {
+  492 |     await expect(
+  493 |       this.page.getByText(
+  494 |         message
+  495 |       )
+  496 |     ).toBeVisible();
+  497 |   }
+  498 | }
 ```

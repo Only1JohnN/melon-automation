@@ -151,7 +151,7 @@ Call log:
                             - row:
                               - cell: AUTO-CAT-1783441233025
                               - cell: Trim Validation
-                              - cell: "10"
+                              - cell: "13"
                               - cell: 2026-07-07 04:20:35 PM
                               - cell:
                                 - button:
@@ -203,6 +203,15 @@ Call log:
                                   - generic: Open menu
                                   - img
                             - row:
+                              - cell: AUTO-CAT-1783647053642
+                              - cell: Trim Validation
+                              - cell: "0"
+                              - cell: 2026-07-10 01:30:54 AM
+                              - cell:
+                                - button:
+                                  - generic: Open menu
+                                  - img
+                            - row:
                               - cell: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
                               - cell: Description
                               - cell: "0"
@@ -225,15 +234,6 @@ Call log:
                               - cell: Automation description 1783441132320
                               - cell: "0"
                               - cell: 2026-07-07 04:18:55 PM
-                              - cell:
-                                - button:
-                                  - generic: Open menu
-                                  - img
-                            - row:
-                              - cell: AUTO-CAT-1783441136340
-                              - cell: Automation description 1783441136340
-                              - cell: "0"
-                              - cell: 2026-07-07 04:18:59 PM
                               - cell:
                                 - button:
                                   - generic: Open menu
@@ -421,7 +421,7 @@ Call log:
   380 |     await this.getRowByName(
   381 |       categoryName
   382 |     )
-  383 |       .getByRole("button", {
+  383 |       .getByRole("cell", {
   384 |         name: "Open menu",
   385 |       })
   386 |       .click();

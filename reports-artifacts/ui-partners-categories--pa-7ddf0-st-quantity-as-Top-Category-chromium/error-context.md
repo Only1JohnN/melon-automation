@@ -109,10 +109,10 @@ Call log:
                     - columnheader "Date & Time" [ref=e151]
                     - columnheader [ref=e152]
                 - rowgroup [ref=e153]:
-                  - row "AUTO-CAT-1783441233025 Trim Validation 10 2026-07-07 04:20:35 PM Open menu" [ref=e154]:
+                  - row "AUTO-CAT-1783441233025 Trim Validation 13 2026-07-07 04:20:35 PM Open menu" [ref=e154]:
                     - cell "AUTO-CAT-1783441233025" [ref=e155]
                     - cell "Trim Validation" [ref=e156]
-                    - cell "10" [ref=e157]
+                    - cell "13" [ref=e157]
                     - cell "2026-07-07 04:20:35 PM" [ref=e158]
                     - cell "Open menu" [ref=e159]:
                       - button "Open menu" [ref=e160] [cursor=pointer]:
@@ -163,38 +163,38 @@ Call log:
                       - button "Open menu" [ref=e220] [cursor=pointer]:
                         - generic [ref=e221]: Open menu
                         - img [ref=e222]
-                  - row "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA Description 0 2026-07-07 04:21:10 PM Open menu" [ref=e226]:
-                    - cell "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" [ref=e227]
-                    - cell "Description" [ref=e228]
+                  - row "AUTO-CAT-1783647053642 Trim Validation 0 2026-07-10 01:30:54 AM Open menu" [ref=e226]:
+                    - cell "AUTO-CAT-1783647053642" [ref=e227]
+                    - cell "Trim Validation" [ref=e228]
                     - cell "0" [ref=e229]
-                    - cell "2026-07-07 04:21:10 PM" [ref=e230]
+                    - cell "2026-07-10 01:30:54 AM" [ref=e230]
                     - cell "Open menu" [ref=e231]:
                       - button "Open menu" [ref=e232] [cursor=pointer]:
                         - generic [ref=e233]: Open menu
                         - img [ref=e234]
-                  - row "AUTO-CAT-1783441113207 Automation description 1783441113207 0 2026-07-07 04:18:36 PM Open menu" [ref=e238]:
-                    - cell "AUTO-CAT-1783441113207" [ref=e239]
-                    - cell "Automation description 1783441113207" [ref=e240]
+                  - row "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA Description 0 2026-07-07 04:21:10 PM Open menu" [ref=e238]:
+                    - cell "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" [ref=e239]
+                    - cell "Description" [ref=e240]
                     - cell "0" [ref=e241]
-                    - cell "2026-07-07 04:18:36 PM" [ref=e242]
+                    - cell "2026-07-07 04:21:10 PM" [ref=e242]
                     - cell "Open menu" [ref=e243]:
                       - button "Open menu" [ref=e244] [cursor=pointer]:
                         - generic [ref=e245]: Open menu
                         - img [ref=e246]
-                  - row "AUTO-CAT-1783441132320 Automation description 1783441132320 0 2026-07-07 04:18:55 PM Open menu" [ref=e250]:
-                    - cell "AUTO-CAT-1783441132320" [ref=e251]
-                    - cell "Automation description 1783441132320" [ref=e252]
+                  - row "AUTO-CAT-1783441113207 Automation description 1783441113207 0 2026-07-07 04:18:36 PM Open menu" [ref=e250]:
+                    - cell "AUTO-CAT-1783441113207" [ref=e251]
+                    - cell "Automation description 1783441113207" [ref=e252]
                     - cell "0" [ref=e253]
-                    - cell "2026-07-07 04:18:55 PM" [ref=e254]
+                    - cell "2026-07-07 04:18:36 PM" [ref=e254]
                     - cell "Open menu" [ref=e255]:
                       - button "Open menu" [ref=e256] [cursor=pointer]:
                         - generic [ref=e257]: Open menu
                         - img [ref=e258]
-                  - row "AUTO-CAT-1783441136340 Automation description 1783441136340 0 2026-07-07 04:18:59 PM Open menu" [ref=e262]:
-                    - cell "AUTO-CAT-1783441136340" [ref=e263]
-                    - cell "Automation description 1783441136340" [ref=e264]
+                  - row "AUTO-CAT-1783441132320 Automation description 1783441132320 0 2026-07-07 04:18:55 PM Open menu" [ref=e262]:
+                    - cell "AUTO-CAT-1783441132320" [ref=e263]
+                    - cell "Automation description 1783441132320" [ref=e264]
                     - cell "0" [ref=e265]
-                    - cell "2026-07-07 04:18:59 PM" [ref=e266]
+                    - cell "2026-07-07 04:18:55 PM" [ref=e266]
                     - cell "Open menu" [ref=e267]:
                       - button "Open menu" [ref=e268] [cursor=pointer]:
                         - generic [ref=e269]: Open menu
@@ -244,7 +244,7 @@ Call log:
   380 |     await this.getRowByName(
   381 |       categoryName
   382 |     )
-  383 |       .getByRole("button", {
+  383 |       .getByRole("cell", {
   384 |         name: "Open menu",
   385 |       })
   386 |       .click();
@@ -348,21 +348,17 @@ Call log:
   483 |   }
   484 | 
   485 |   async validateErrorToast() {
-  486 |     await expect(
-  487 |       this.page.getByRole("alert")
-  488 |     ).toContainText(
-  489 |       /error|failed|exists/i
-  490 |     );
-  491 |   }
-  492 | 
-  493 |   async validateErrorMessage(
-  494 |     message: string | RegExp
-  495 |   ) {
-  496 |     await expect(
-  497 |       this.page.getByText(
-  498 |         message
-  499 |       )
-  500 |     ).toBeVisible();
-  501 |   }
-  502 | }
+  486 |     await expect(this.page.getByText("Category with this name")).toBeVisible();
+  487 |   }
+  488 | 
+  489 |   async validateErrorMessage(
+  490 |     message: string | RegExp
+  491 |   ) {
+  492 |     await expect(
+  493 |       this.page.getByText(
+  494 |         message
+  495 |       )
+  496 |     ).toBeVisible();
+  497 |   }
+  498 | }
 ```
