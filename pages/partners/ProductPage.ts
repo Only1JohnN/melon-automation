@@ -252,6 +252,26 @@ export class ProductPage {
     return branch;
   }
 
+  async createSingleProduct(product: ProductData): Promise<void> {
+    await this.goto();
+    
+    await this.startSingleProduct();
+    
+    await this.fillProductDetails(product);
+    
+    await this.uploadImage();
+    
+    await this.assignLocation(5);
+    
+    await this.previewProduct();
+    
+    await this.validatePreviewDetails(product);
+    
+    await this.submitProduct();
+    
+    await this.validateSuccessModal();
+  }
+
   /**
    * Assigns stock to a specific branch.
    */
@@ -394,5 +414,71 @@ export class ProductPage {
       this.page.getByText(new RegExp(`\\(${quantity}\\)`))
     ).toBeVisible();
   }
+
+  async openProductActions(productName: string): Promise<void> {
+    const row = this.page.getByRole("row").filter({
+      hasText: productName,
+    });
+      await expect(row).toBeVisible;
+      await row.getByRole("button").last().click();
+  }
+
+  async clickViewProduct(): Promise<void> {
+    await this.page
+      .getByRole('menuitem', { name: /view product/i })
+      .click();
+  }
+
+  async clickUpdateProduct(): Promise<void> {
+    await this.page
+      .getByRole("menuitem", { name: /update product/i })
+      .click();
+
+  }
+
+  async clickTransferProduct(): Promise<void> {
+    await this.page
+      .getByRole("menuitem", { name: /transfer product/i })
+      .click();
+  }
+
+  async clickDeleteProduct(): Promise<void> {
+    await this.page
+      .getByRole("menuitem", { name: /delete product/i })
+      .click();
+  }
+
+  async expectProductDetailsPage(product: ProductData): Promise<void> {
+    await expect(this.page.getByText(product.name)).toBeVisible();
+
+    await expect(this.page.getByText(product.category)).toBeVisible();
+
+    await expect(
+      this.page.getByText(product.sellingPrice.toString())
+    ).toBeVisible();
+  }
+
+  async goBackToProducts(): Promise<void> {
+    await this.page.getByRole("button", { name: /back/i }).click();
+  }
+
+  async expectProductsPage(): Promise<void> {
+    await expect(this.page).toHaveURL(/products/i);
+
+    await expect(
+      this.page.getByRole("heading", { name: /products/i })
+    ).toBeVisible();
+  }
+
+  async expectCategoryVisible(categoryName: string): Promise<void> {
+  await this.categoryDropdown.click();
+
+  await expect(
+    this.page.getByRole("option", {
+      name: categoryName,
+    })
+  ).toBeVisible();
 }
+}
+
 

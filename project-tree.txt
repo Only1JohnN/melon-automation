@@ -1,0 +1,342 @@
+.
+├── .DS_Store
+├── .env.pre-release
+├── .env.staging
+├── .github
+│   └── workflows
+│       └── playwright.yml
+├── .gitignore
+├── auth
+│   ├── admin
+│   ├── partners
+│   └── storefront
+├── config
+│   ├── applications.ts
+│   └── environment.ts
+├── constants
+├── dashboard
+│   ├── .gitignore
+│   ├── AGENTS.md
+│   ├── CLAUDE.md
+│   ├── README.md
+│   ├── RESPONSIVE.md
+│   ├── eslint.config.mjs
+│   ├── next-env.d.ts
+│   ├── next.config.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   ├── public
+│   │   ├── file.svg
+│   │   ├── globe.svg
+│   │   ├── next.svg
+│   │   ├── vercel.svg
+│   │   └── window.svg
+│   ├── src
+│   │   ├── app
+│   │   │   ├── (dashboard)
+│   │   │   │   ├── analytics
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── applications
+│   │   │   │   │   ├── [app]
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── executions
+│   │   │   │   │   ├── [id]
+│   │   │   │   │   │   ├── applications
+│   │   │   │   │   │   │   └── [app]
+│   │   │   │   │   │   │       └── page.tsx
+│   │   │   │   │   │   ├── failures
+│   │   │   │   │   │   │   └── [failureId]
+│   │   │   │   │   │   │       └── page.tsx
+│   │   │   │   │   │   ├── page.tsx
+│   │   │   │   │   │   └── tests
+│   │   │   │   │   │       └── [testId]
+│   │   │   │   │   │           └── page.tsx
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── failures
+│   │   │   │   │   ├── [id]
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── layout.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── tests
+│   │   │   │       ├── [id]
+│   │   │   │       │   └── page.tsx
+│   │   │   │       └── page.tsx
+│   │   │   ├── api
+│   │   │   │   ├── artifacts
+│   │   │   │   │   └── [...path]
+│   │   │   │   │       └── route.ts
+│   │   │   │   └── latest-run
+│   │   │   │       └── route.ts
+│   │   │   ├── favicon.ico
+│   │   │   ├── globals.css
+│   │   │   └── layout.tsx
+│   │   ├── bin
+│   │   ├── components
+│   │   │   ├── ApiRequestRow.tsx
+│   │   │   ├── ApplicationCard.tsx
+│   │   │   ├── Cursor.tsx
+│   │   │   ├── DashboardShell.tsx
+│   │   │   ├── FailureCard.tsx
+│   │   │   ├── FeatureAccordion.tsx
+│   │   │   ├── GroupedTestsTable.tsx
+│   │   │   ├── PassRateCard.tsx
+│   │   │   ├── RecentExecutions.tsx
+│   │   │   ├── Sidebar.tsx
+│   │   │   ├── StatCard.tsx
+│   │   │   ├── StatusBadge.tsx
+│   │   │   └── Topbar.tsx
+│   │   ├── data
+│   │   └── lib
+│   │       ├── dashboard-stats.ts
+│   │       ├── execution-parser.ts
+│   │       ├── executions.ts
+│   │       ├── format.ts
+│   │       ├── github.ts
+│   │       ├── playwright-parser.ts
+│   │       ├── report-parser.ts
+│   │       └── report-reader.ts
+│   ├── test-results
+│   │   └── .last-run.json
+│   └── tsconfig.json
+├── fixtures
+│   ├── .DS_Store
+│   ├── baseTest.ts
+│   └── images
+│       ├── .DS_Store
+│       ├── Umigidi Note 10A - 2.jpg
+│       ├── Umigidi Note 10A - 3.jpg
+│       ├── Umigidi Note 10A - 4.jpg
+│       ├── Umigidi Note 10A - 5.jpg
+│       ├── Umigidi Note 10A - 6.jpg
+│       ├── Umigidi Note 10A - 7.jpg
+│       ├── Umigidi Note 10A - 8.jpg
+│       └── Umigidi Note 10A.jpg
+├── package-lock.json
+├── package.json
+├── pages
+│   ├── admin
+│   ├── common
+│   │   └── BasePage.ts
+│   ├── core
+│   ├── partners
+│   │   ├── CategoriesPage.ts
+│   │   ├── LoginPage.ts
+│   │   ├── ProductPage.ts
+│   │   └── SettingsPage.ts
+│   ├── stack
+│   └── storefront
+├── playwright
+│   └── .auth
+│       └── partner.json
+├── playwright-report
+│   ├── data
+│   │   ├── 2f325448b3724bdb5f9698f9c478dfd0595888ea.zip
+│   │   ├── 8a7c9dff47dd50ff56082bcdf54ac7a5549580e2.md
+│   │   └── b33b880ae52505eb30ee38c7b22482919d3c2784.webm
+│   ├── index.html
+│   └── trace
+│       ├── assets
+│       │   ├── codeMirrorModule-LEHpjmcn.js
+│       │   ├── defaultSettingsView-BNmKHKpQ.js
+│       │   └── urlMatch-BYQrIQwR.js
+│       ├── codeMirrorModule.DYBRYzYX.css
+│       ├── codicon.DCmgc-ay.ttf
+│       ├── defaultSettingsView.CjdS-WJx.css
+│       ├── index.CzXZzn5A.css
+│       ├── index.DEBl1tfz.js
+│       ├── index.html
+│       ├── manifest.webmanifest
+│       ├── playwright-logo.svg
+│       ├── snapshot.html
+│       ├── snapshot.v8KI4P3m.js
+│       ├── sw.bundle.js
+│       ├── uiMode.BZQ54Kgt.css
+│       ├── uiMode.Ut8wwJNp.js
+│       ├── uiMode.html
+│       └── xtermModule.DYP7pi_n.css
+├── playwright.config.ts
+├── project-tree.txt
+├── reports
+│   ├── api-logs
+│   │   ├── 041127a65d49b31010c4-07bbbd6d2dc8cdcdd8ac.json
+│   │   ├── 041127a65d49b31010c4-0a816fabd9ec4b556a88.json
+│   │   ├── 041127a65d49b31010c4-0ecb77b575a658eac2a0.json
+│   │   ├── 041127a65d49b31010c4-15201d21ad2c6e3a905c.json
+│   │   ├── 041127a65d49b31010c4-22d44fbdf0cbd000f3ef.json
+│   │   ├── 041127a65d49b31010c4-2684514f9008e4036240.json
+│   │   ├── 041127a65d49b31010c4-2b2bac337968c721b63c.json
+│   │   ├── 041127a65d49b31010c4-30699edc8ba79911809a.json
+│   │   ├── 041127a65d49b31010c4-3219c077c9c745beb384.json
+│   │   ├── 041127a65d49b31010c4-379a0a3eb098cad6d23a.json
+│   │   ├── 041127a65d49b31010c4-4578f19961618c88dff2.json
+│   │   ├── 041127a65d49b31010c4-4586dfbc924aba5d5d9a.json
+│   │   ├── 041127a65d49b31010c4-4f1a65a607aff0059d30.json
+│   │   ├── 041127a65d49b31010c4-4f9c49e2a9648d92786a.json
+│   │   ├── 041127a65d49b31010c4-5a72ff547df163b152a7.json
+│   │   ├── 041127a65d49b31010c4-5b89db2abba3535f190a.json
+│   │   ├── 041127a65d49b31010c4-66a7f03b4af147ee1d44.json
+│   │   ├── 041127a65d49b31010c4-76791d14708f9df5ec3f.json
+│   │   ├── 041127a65d49b31010c4-8793e1696d5973aed25f.json
+│   │   ├── 041127a65d49b31010c4-8e1acc33df66b726ac43.json
+│   │   ├── 041127a65d49b31010c4-9564134e3072edfe698d.json
+│   │   ├── 041127a65d49b31010c4-95a741b30795385bf19d.json
+│   │   ├── 041127a65d49b31010c4-95af5b7cea8c46c8bc0d.json
+│   │   ├── 041127a65d49b31010c4-95e1bf37027870254166.json
+│   │   ├── 041127a65d49b31010c4-98657f518c563a6c7f7f.json
+│   │   ├── 041127a65d49b31010c4-9ed64dff1e8b3b11b5a3.json
+│   │   ├── 041127a65d49b31010c4-a057121c0cd8e4f7980a.json
+│   │   ├── 041127a65d49b31010c4-a36010bc82fe2f4fe0f5.json
+│   │   ├── 041127a65d49b31010c4-a71222f7b124a94e3fed.json
+│   │   ├── 041127a65d49b31010c4-a7794ca166ade8623ad4.json
+│   │   ├── 041127a65d49b31010c4-ab96b34e2ebd7b064605.json
+│   │   ├── 041127a65d49b31010c4-abac73df1fcd379914bd.json
+│   │   ├── 041127a65d49b31010c4-b6803fea631fb20ab392.json
+│   │   ├── 041127a65d49b31010c4-b89ea4ba4eb176672c55.json
+│   │   ├── 041127a65d49b31010c4-c6a15d6f48e3b75cacfd.json
+│   │   ├── 041127a65d49b31010c4-cac3a01865f2261a3259.json
+│   │   ├── 041127a65d49b31010c4-cbee5f4d596112ecc003.json
+│   │   ├── 041127a65d49b31010c4-d12e85a26838dfd3d006.json
+│   │   ├── 041127a65d49b31010c4-d155083d000c4f1a94c8.json
+│   │   ├── 041127a65d49b31010c4-d1a0e428a30955962fc8.json
+│   │   ├── 041127a65d49b31010c4-e11e3af56a702567104a.json
+│   │   ├── 041127a65d49b31010c4-e760c0bfbfe34ae8eed0.json
+│   │   ├── 041127a65d49b31010c4-e7e13e169bac82f69f9b.json
+│   │   ├── 041127a65d49b31010c4-e8e7d4e1d10c66567c29.json
+│   │   ├── 041127a65d49b31010c4-eca063e722c555556607.json
+│   │   ├── 041127a65d49b31010c4-ef8ecefbfb6c299f9060.json
+│   │   ├── 041127a65d49b31010c4-f0584997047defa34951.json
+│   │   ├── 041127a65d49b31010c4-f3150a82346ee06c4c6f.json
+│   │   ├── 4bccdc5f44574acb2f0b-02815619627e03860cb0.json
+│   │   ├── 4bccdc5f44574acb2f0b-055f8901a846d8409492.json
+│   │   ├── 4bccdc5f44574acb2f0b-06a1390fcaf54444e28f.json
+│   │   ├── 4bccdc5f44574acb2f0b-1800f9d032ba92736d90.json
+│   │   ├── 4bccdc5f44574acb2f0b-237a64f45e3892e5f7dc.json
+│   │   ├── 4bccdc5f44574acb2f0b-27225ff7dd3e33b8a8b9.json
+│   │   ├── 4bccdc5f44574acb2f0b-2890fc0a0eae6193b9a7.json
+│   │   ├── 4bccdc5f44574acb2f0b-3566ef8eb1b43204d907.json
+│   │   ├── 4bccdc5f44574acb2f0b-35caf3196e6d40aa0722.json
+│   │   ├── 4bccdc5f44574acb2f0b-39605e321d40ebd81529.json
+│   │   ├── 4bccdc5f44574acb2f0b-3ce77fecc4dd18aac06a.json
+│   │   ├── 4bccdc5f44574acb2f0b-3eb4b8ff33396e72a32b.json
+│   │   ├── 4bccdc5f44574acb2f0b-49f6a55f67a2255981d2.json
+│   │   ├── 4bccdc5f44574acb2f0b-4ef6aaf61fb1a8c3f307.json
+│   │   ├── 4bccdc5f44574acb2f0b-5441be9bbe301b3eb936.json
+│   │   ├── 4bccdc5f44574acb2f0b-685e9edc755e35d38fe0.json
+│   │   ├── 4bccdc5f44574acb2f0b-7442d634144f73bb9411.json
+│   │   ├── 4bccdc5f44574acb2f0b-7e3ba9aa02a575d1487d.json
+│   │   ├── 4bccdc5f44574acb2f0b-7fd5bfd7d1a9875e1160.json
+│   │   ├── 4bccdc5f44574acb2f0b-804185fc5847799cfd51.json
+│   │   ├── 4bccdc5f44574acb2f0b-816c313d91781c994ce3.json
+│   │   ├── 4bccdc5f44574acb2f0b-9e7faec9aa63259a2cf0.json
+│   │   ├── 4bccdc5f44574acb2f0b-a1138360c56b4d763e74.json
+│   │   ├── 4bccdc5f44574acb2f0b-a630cd37db6a0c82ad74.json
+│   │   ├── 4bccdc5f44574acb2f0b-a8f214979dbe6f9a3a71.json
+│   │   ├── 4bccdc5f44574acb2f0b-ab677eb1e6c032013809.json
+│   │   ├── 4bccdc5f44574acb2f0b-b68df9b6e6cfd9a471cc.json
+│   │   ├── 4bccdc5f44574acb2f0b-b7e38b8228098f30eee5.json
+│   │   ├── 4bccdc5f44574acb2f0b-c0b4af6502ca6e3e4bfa.json
+│   │   ├── 4bccdc5f44574acb2f0b-c1368d907ddb7690cfa3.json
+│   │   ├── 4bccdc5f44574acb2f0b-c7e6c037f4cce23ee956.json
+│   │   ├── 4bccdc5f44574acb2f0b-dc8f409d32db46d4d8f0.json
+│   │   ├── 4bccdc5f44574acb2f0b-df42e6d7d0f12f6dd115.json
+│   │   ├── 4bccdc5f44574acb2f0b-f9c181d736a78edf9733.json
+│   │   ├── 4bccdc5f44574acb2f0b-fa153001b1c30ddb54b4.json
+│   │   ├── 4bccdc5f44574acb2f0b-fd1daa64c406f772d2b8.json
+│   │   ├── 981a336822773a1ea1d3-0046b8ce12428d5c4e99.json
+│   │   ├── 981a336822773a1ea1d3-00526ad5238beb3f0a49.json
+│   │   ├── 981a336822773a1ea1d3-0406c7f3868a04d54413.json
+│   │   ├── 981a336822773a1ea1d3-07d67b9b17c32ea28a59.json
+│   │   ├── 981a336822773a1ea1d3-0e2a6e0adfe815fd1b79.json
+│   │   ├── 981a336822773a1ea1d3-21134170c6e80d29c60d.json
+│   │   ├── 981a336822773a1ea1d3-2215336496ddd250fc88.json
+│   │   ├── 981a336822773a1ea1d3-23af4b3fd2c6afcb3373.json
+│   │   ├── 981a336822773a1ea1d3-241540fe76607c6f81f7.json
+│   │   ├── 981a336822773a1ea1d3-24b247466f93b8bd3c3e.json
+│   │   ├── 981a336822773a1ea1d3-3800e889db6e748e95c8.json
+│   │   ├── 981a336822773a1ea1d3-410b8203bba03b469011.json
+│   │   ├── 981a336822773a1ea1d3-451d4d8c8fd44ce07fe4.json
+│   │   ├── 981a336822773a1ea1d3-4688a2019bf323a8fe03.json
+│   │   ├── 981a336822773a1ea1d3-47f04601ab3eba6789d0.json
+│   │   ├── 981a336822773a1ea1d3-4c04aff95af600e21328.json
+│   │   ├── 981a336822773a1ea1d3-6927ba96a856df6917e2.json
+│   │   ├── 981a336822773a1ea1d3-7186b4e3ecd84a910316.json
+│   │   ├── 981a336822773a1ea1d3-890b01bf70ce47b511bb.json
+│   │   ├── 981a336822773a1ea1d3-8f78acc7d94facad87b4.json
+│   │   ├── 981a336822773a1ea1d3-9ac392191dc474372a34.json
+│   │   ├── 981a336822773a1ea1d3-a1af964bd5955a8501b9.json
+│   │   ├── 981a336822773a1ea1d3-ad5ce327824575e758c2.json
+│   │   ├── 981a336822773a1ea1d3-b3724e0a4bb1d38da207.json
+│   │   ├── 981a336822773a1ea1d3-b9373a3455325cfbd9b8.json
+│   │   ├── 981a336822773a1ea1d3-bf399f5b9e5c6b67f010.json
+│   │   ├── 981a336822773a1ea1d3-c62998cd2a6d74d190e8.json
+│   │   ├── 981a336822773a1ea1d3-c89927dd8a268fbe65dd.json
+│   │   ├── 981a336822773a1ea1d3-d2638f67143b26c3f37a.json
+│   │   ├── 981a336822773a1ea1d3-de862dc9774fa4d0297a.json
+│   │   ├── 981a336822773a1ea1d3-e79a9c821513e2823b05.json
+│   │   ├── 981a336822773a1ea1d3-e9035266854c4b7ae8b2.json
+│   │   ├── 981a336822773a1ea1d3-f1ccf9fd4228869af233.json
+│   │   ├── 981a336822773a1ea1d3-f49b55f9f771ec2a0fd4.json
+│   │   ├── 981a336822773a1ea1d3-f76e1749ec4784903dd9.json
+│   │   ├── 981a336822773a1ea1d3-f78d436fb20686dc6d9a.json
+│   │   ├── 981a336822773a1ea1d3-f8ed0c8422f205d4b469.json
+│   │   ├── 981a336822773a1ea1d3-f92b7c80ce4e743f46e0.json
+│   │   ├── 981a336822773a1ea1d3-ff7c2db4991ef43c3621.json
+│   │   ├── ad1b3db5438dd591e891-3b3c62edc10679a9377a.json
+│   │   ├── ad1b3db5438dd591e891-4fd3f5d310b67fcc4810.json
+│   │   ├── ad1b3db5438dd591e891-64f0f46423f79f91d752.json
+│   │   ├── ad1b3db5438dd591e891-9b1428281def9c37a1b9.json
+│   │   ├── ad1b3db5438dd591e891-e6cf772364ceab0fcfb6.json
+│   │   ├── ad1b3db5438dd591e891-e73d975a96927868dd35.json
+│   │   ├── ad1b3db5438dd591e891-f4bbc4cc337e6ce7bc2f.json
+│   │   ├── ad1b3db5438dd591e891-f5ebda6e1fd69c5c219a.json
+│   │   └── ad1b3db5438dd591e891-f5f9ed9b2b5397b3dbef.json
+│   ├── results.json
+│   └── run-metadata.json
+├── test-data
+│   ├── factories
+│   │   ├── categoryFactory.ts
+│   │   └── productFactory.ts
+│   └── products
+│       └── simpleProduct.ts
+├── test-results
+│   ├── .last-run.json
+│   ├── .playwright-artifacts-0
+│   ├── setup-auth.setup.ts-authenticate-partner-setup
+│   │   ├── error-context.md
+│   │   └── trace.zip
+│   ├── ui-partners-categories--pa-5f18c-ry-description-successfully-chromium
+│   │   ├── error-context.md
+│   │   ├── trace.zip
+│   │   └── video.webm
+│   ├── ui-partners-product--partn-2269d-k-across-multiple-locations-chromium
+│   │   └── error-context.md
+│   ├── ui-partners-product--partn-4964a-ng-spaces-from-product-name-chromium
+│   │   └── error-context.md
+│   ├── ui-partners-product--partn-639dd-uploaded-image-successfully-chromium
+│   │   └── error-context.md
+│   ├── ui-partners-product--partn-7b706-details-in-pending-approval-chromium
+│   │   └── error-context.md
+│   └── ui-partners-product--partn-82e04-approval-without-allocation-chromium
+│       └── error-context.md
+├── tests
+│   ├── api
+│   │   ├── clients
+│   │   ├── models
+│   │   └── services
+│   ├── setup
+│   │   └── auth.setup.ts
+│   └── ui
+│       ├── partners
+│       │   ├── categories.spec.ts
+│       │   ├── login.spec.ts
+│       │   ├── product.spec.ts
+│       │   └── settings.spec.ts
+│       └── storefront
+├── tsconfig.json
+└── utils
+    └── networkLogger.ts
+
+77 directories, 263 files

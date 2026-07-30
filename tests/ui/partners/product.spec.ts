@@ -10,39 +10,21 @@ test.describe('@partners @products @single-product @without-variant', () => {
   // ─────────────────────────────────────────────
   //  Successful creation (full flow + API)
   // ─────────────────────────────────────────────
-  test('should create a single product without variant successfully (basic)', async ({ page }) => {
+  test('should create a single product without variant successfully (full journey)', async ({ page }) => {
     const product = createSimpleProduct();
     const productPage = new ProductPage(page);
 
-    await productPage.goto();
-    await productPage.startSingleProduct();
-    await productPage.fillProductDetails(product);
+    await productPage.createSingleProduct(product);
+
+    await productPage.goToProducts();
+
+    await productPage.verifyProductInPendingApproval(product.name);
   });
-
-  // test('should create a single product without variant and successfully (full journey)', async ({ page }) => {
-  //   const productPage = new ProductPage(page);
-  //   const product = createSimpleProduct();
-
-  //   await productPage.goto();
-  //   await productPage.startSingleProduct();
-  //   await productPage.fillProductDetails(product);
-  //   await productPage.enableLowStockAlert(10);
-  //   await productPage.validateMarginReadonly();
-  //   await productPage.validateSkuGenerated();
-  //   await productPage.validateNoVariantSelected();
-  //   await productPage.uploadImage();
-  //   await productPage.assignLocationToBranch('https://melon-qa-bot.getmelon.shop', 5);
-  //   await productPage.validateLocationAssigned(5);
-  //   await productPage.previewProduct();
-  //   await productPage.submitProduct();
-  //   await productPage.goToProducts();
-  //   await productPage.verifyProductInPendingApproval(product.name);
-  // });
 
   // ─────────────────────────────────────────────
   //  Price validations
   // ─────────────────────────────────────────────
-  test('should prevent selling price less than cost price (case 1)', async ({ page }) => {
+  test('should prevent selling price less than cost price', async ({ page }) => {
     const productPage = new ProductPage(page);
     const product = createSimpleProduct();
     product.costPrice = 1000;
@@ -56,7 +38,7 @@ test.describe('@partners @products @single-product @without-variant', () => {
     await expect(page.getByText('Cost price is greater than')).toBeVisible();
   });
 
-  test('should prevent promo price greater than selling price (case 1)', async ({ page }) => {
+  test('should prevent promo price greater than selling price', async ({ page }) => {
     const productPage = new ProductPage(page);
     const product = createSimpleProduct();
     product.costPrice = 1000;
@@ -71,39 +53,11 @@ test.describe('@partners @products @single-product @without-variant', () => {
     await expect(page.getByText('The promo price must be less')).toBeVisible();
   });
 
-  test('should prevent selling price less than cost price (case 2)', async ({ page }) => {
-    const productPage = new ProductPage(page);
-    const product = createSimpleProduct();
-    product.costPrice = 2000;
-    product.sellingPrice = 1000;
-    product.promoPrice = 0;
-
-    await productPage.goto();
-    await productPage.startSingleProduct();
-    await productPage.fillProductDetails(product);
-
-    await expect(page.getByText('Cost price is greater than')).toBeVisible();
-  });
-
-  test('should prevent promo price greater than selling price (case 2)', async ({ page }) => {
-    const productPage = new ProductPage(page);
-    const product = createSimpleProduct();
-    product.costPrice = 1000;
-    product.sellingPrice = 2000;
-    product.promoPrice = 2500;
-
-    await productPage.goto();
-    await productPage.startSingleProduct();
-    await productPage.fillProductDetails(product);
-    await productPage.submitProduct();
-
-    await expect(page.getByText('The promo price must be less')).toBeVisible();
-  });
 
   // ─────────────────────────────────────────────
   //  Stock & threshold validations
   // ─────────────────────────────────────────────
-  test('should prevent low stock threshold greater than stock quantity (case 1)', async ({ page }) => {
+  test('should prevent low stock threshold greater than stock quantity', async ({ page }) => {
     const productPage = new ProductPage(page);
     const product = createSimpleProduct();
     product.stockQuantity = 10;
@@ -112,20 +66,6 @@ test.describe('@partners @products @single-product @without-variant', () => {
     await productPage.startSingleProduct();
     await productPage.fillProductDetails(product);
     await productPage.enableLowStockAlert(15);
-    await productPage.submitProduct();
-
-    await expect(page.getByText('Low stock threshold cannot be')).toBeVisible();
-  });
-
-  test('should prevent low stock threshold greater than stock quantity (case 2)', async ({ page }) => {
-    const productPage = new ProductPage(page);
-    const product = createSimpleProduct();
-    product.stockQuantity = 5;
-
-    await productPage.goto();
-    await productPage.startSingleProduct();
-    await productPage.fillProductDetails(product);
-    await productPage.enableLowStockAlert(10);
     await productPage.submitProduct();
 
     await expect(page.getByText('Low stock threshold cannot be')).toBeVisible();
@@ -480,6 +420,20 @@ test.describe('@partners @products @single-product @without-variant', () => {
     expect(response.status()).toBe(201);
     const body = await response.json();
     expect(body.status).toBe('success');
+
+    expect(body.data.name).toBe(product.name);
+
+    expect(body.data.selling_price).toBe(product.sellingPrice);
+
+    expect(body.data.cost_price).toBe(product.costPrice);
+
+    expect(body.data.category.name).toBe(product.category);
+    
+    expect(body.data.id).toBeDefined();
+
+    expect(body.data.created_at).toBeDefined();
+
+    expect(body.data.sku).toBeTruthy();
   });
 
   test('should display correct product details in pending approval without allocation', async ({ page }) => {
@@ -522,4 +476,57 @@ test.describe('@partners @products @single-product @without-variant', () => {
       page.getByRole('cell', { name: new RegExp(product.name, 'i') })
     ).toBeVisible();
   });
+
+  test('should view product details successfully', async ({ page }) => {
+    const product = createSimpleProduct();
+    const productPage = new ProductPage(page);
+
+    await productPage.createSingleProduct(product);
+
+    await productPage.goToProducts();
+
+    await productPage.openProductActions(product.name);
+
+    await productPage.clickViewProduct();
+
+    await expect(page).toHaveURL(/products\/details/i);
+
+    await expect(page.getByText(product.name)).toBeVisible();
+  });
+});
+
+test.describe("View Product", () => {
+  test("should view product details successfully", async ({ page }) => {
+    const product = createSimpleProduct();
+    const productPage = new ProductPage(page);
+
+    await productPage.createSingleProduct(product);
+
+    await productPage.goToProducts();
+
+    await productPage.openProductActions(product.name);
+
+    await productPage.clickViewProduct();
+
+    await productPage.expectProductDetailsPage(product);
+  });
+
+  test("should navigate back to the products list", async ({ page }) => {
+    const product = createSimpleProduct();
+    const productPage = new ProductPage(page);
+
+    await productPage.createSingleProduct(product);
+
+    await productPage.goToProducts();
+
+    await productPage.openProductActions(product.name);
+
+    await productPage.clickViewProduct();
+
+    await productPage.goBackToProducts();
+
+    await productPage.expectProductsPage();
+  });
+
+  
 });

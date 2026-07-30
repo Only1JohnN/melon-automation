@@ -185,12 +185,11 @@ export class CategoriesPage {
   }
 
   async editCategory(
-    categoryName: string,
-    description: string
+    currentName: string,
+    newName?: string,
+    newDescription?: string
   ): Promise<Response> {
-    await this.openActionsMenu(
-      categoryName
-    );
+    await this.openActionsMenu(currentName);
 
     await this.page
       .getByRole("menuitem", {
@@ -198,31 +197,27 @@ export class CategoriesPage {
       })
       .click();
 
-    await expect(
-      this.categoryNameInput
-    ).toBeVisible();
+    await expect(this.categoryNameInput).toBeVisible();
 
-    await this.descriptionInput.fill(
-      description
-    );
+    if (newName !== undefined) {
+      await this.categoryNameInput.clear();
+      await this.categoryNameInput.fill(newName);
+    }
 
-    const [response] =
-      await Promise.all([
-        this.page.waitForResponse(
-          (response) =>
-            response.url().includes(
-              "/categories"
-            ) &&
-            [
-              "PUT",
-              "PATCH",
-            ].includes(
-              response.request().method()
-            )
-        ),
+    if (newDescription !== undefined) {
+      await this.descriptionInput.clear();
+      await this.descriptionInput.fill(newDescription);
+    }
 
-        this.updateCategoryButton.click(),
-      ]);
+    const [response] = await Promise.all([
+      this.page.waitForResponse(
+        (response) =>
+          response.url().includes("/categories") &&
+          ["PUT", "PATCH"].includes(response.request().method())
+      ),
+
+      this.updateCategoryButton.click(),
+    ]);
 
     return response;
   }
@@ -495,4 +490,20 @@ export class CategoriesPage {
       )
     ).toBeVisible();
   }
+
+  async openEditCategory(categoryName: string): Promise<void> {
+  await this.openActionsMenu(categoryName);
+
+  await this.clickEdit();
+
+  await expect(this.categoryNameInput).toBeVisible();
+}
+
+async clickEdit(): Promise<void> {
+  await this.page
+    .getByRole("menuitem", {
+      name: "Edit",
+    })
+    .click();
+}
 }
