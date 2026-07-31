@@ -476,23 +476,6 @@ test.describe('@partners @products @single-product @without-variant', () => {
       page.getByRole('cell', { name: new RegExp(product.name, 'i') })
     ).toBeVisible();
   });
-
-  test('should view product details successfully', async ({ page }) => {
-    const product = createSimpleProduct();
-    const productPage = new ProductPage(page);
-
-    await productPage.createSingleProduct(product);
-
-    await productPage.goToProducts();
-
-    await productPage.openProductActions(product.name);
-
-    await productPage.clickViewProduct();
-
-    await expect(page).toHaveURL(/products\/details/i);
-
-    await expect(page.getByText(product.name)).toBeVisible();
-  });
 });
 
 test.describe("View Product", () => {

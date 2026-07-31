@@ -369,14 +369,14 @@ export class CategoriesPage {
     );
   }
 
-  async openActionsMenu(
-    categoryName: string
-  ) {
-    await this.getRowByName(
-      categoryName
-    )
-      .getByRole("cell", {
-        name: "Open menu",
+  async openActionsMenu(categoryName: string): Promise<void> {
+    const row = this.getRowByName(categoryName);
+    
+    await expect(row).toBeVisible();
+    
+    await row
+      .getByRole("button", {
+        name: /open menu/i,
       })
       .click();
   }

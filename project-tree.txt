@@ -113,7 +113,9 @@
 │       ├── Umigidi Note 10A - 6.jpg
 │       ├── Umigidi Note 10A - 7.jpg
 │       ├── Umigidi Note 10A - 8.jpg
-│       └── Umigidi Note 10A.jpg
+│       ├── Umigidi Note 10A.jpg
+│       ├── business_logo.png
+│       └── profile.png
 ├── package-lock.json
 ├── package.json
 ├── pages
@@ -132,31 +134,7 @@
 │   └── .auth
 │       └── partner.json
 ├── playwright-report
-│   ├── data
-│   │   ├── 2f325448b3724bdb5f9698f9c478dfd0595888ea.zip
-│   │   ├── 8a7c9dff47dd50ff56082bcdf54ac7a5549580e2.md
-│   │   └── b33b880ae52505eb30ee38c7b22482919d3c2784.webm
-│   ├── index.html
-│   └── trace
-│       ├── assets
-│       │   ├── codeMirrorModule-LEHpjmcn.js
-│       │   ├── defaultSettingsView-BNmKHKpQ.js
-│       │   └── urlMatch-BYQrIQwR.js
-│       ├── codeMirrorModule.DYBRYzYX.css
-│       ├── codicon.DCmgc-ay.ttf
-│       ├── defaultSettingsView.CjdS-WJx.css
-│       ├── index.CzXZzn5A.css
-│       ├── index.DEBl1tfz.js
-│       ├── index.html
-│       ├── manifest.webmanifest
-│       ├── playwright-logo.svg
-│       ├── snapshot.html
-│       ├── snapshot.v8KI4P3m.js
-│       ├── sw.bundle.js
-│       ├── uiMode.BZQ54Kgt.css
-│       ├── uiMode.Ut8wwJNp.js
-│       ├── uiMode.html
-│       └── xtermModule.DYP7pi_n.css
+│   └── index.html
 ├── playwright.config.ts
 ├── project-tree.txt
 ├── reports
@@ -209,11 +187,31 @@
 │   │   ├── 041127a65d49b31010c4-ef8ecefbfb6c299f9060.json
 │   │   ├── 041127a65d49b31010c4-f0584997047defa34951.json
 │   │   ├── 041127a65d49b31010c4-f3150a82346ee06c4c6f.json
+│   │   ├── 1009cab121a89c8fd65a-01c4ecadcbffb99fe710.json
+│   │   ├── 1009cab121a89c8fd65a-071a09a91d223b52cebe.json
+│   │   ├── 1009cab121a89c8fd65a-1573d133cce379d49eec.json
+│   │   ├── 1009cab121a89c8fd65a-1c09953cb409dd028bd7.json
+│   │   ├── 1009cab121a89c8fd65a-382d24b464285a67a97a.json
+│   │   ├── 1009cab121a89c8fd65a-4067f9ac715ebe2fa08e.json
+│   │   ├── 1009cab121a89c8fd65a-452aaa6eab1694194614.json
+│   │   ├── 1009cab121a89c8fd65a-465887c585f077d69526.json
+│   │   ├── 1009cab121a89c8fd65a-4a84176c5ba73e87734a.json
+│   │   ├── 1009cab121a89c8fd65a-4cd9d10aaeb46279e196.json
+│   │   ├── 1009cab121a89c8fd65a-54cbb801224031274a97.json
+│   │   ├── 1009cab121a89c8fd65a-56784cfc7f6c7ae2f6f8.json
+│   │   ├── 1009cab121a89c8fd65a-6bd76968069c35f81319.json
+│   │   ├── 1009cab121a89c8fd65a-8a4d8e068027a9addf7b.json
+│   │   ├── 1009cab121a89c8fd65a-a7c58cd6d07868331698.json
+│   │   ├── 1009cab121a89c8fd65a-db340db2c63a2828ccb6.json
+│   │   ├── 1009cab121a89c8fd65a-e12dde7595fda8d5fd56.json
+│   │   ├── 1009cab121a89c8fd65a-e9175b79bd4f766ce044.json
+│   │   ├── 1009cab121a89c8fd65a-ea604da254ef6487d323.json
 │   │   ├── 4bccdc5f44574acb2f0b-02815619627e03860cb0.json
 │   │   ├── 4bccdc5f44574acb2f0b-055f8901a846d8409492.json
 │   │   ├── 4bccdc5f44574acb2f0b-06a1390fcaf54444e28f.json
 │   │   ├── 4bccdc5f44574acb2f0b-1800f9d032ba92736d90.json
 │   │   ├── 4bccdc5f44574acb2f0b-237a64f45e3892e5f7dc.json
+│   │   ├── 4bccdc5f44574acb2f0b-23c77985d3af1cf81f22.json
 │   │   ├── 4bccdc5f44574acb2f0b-27225ff7dd3e33b8a8b9.json
 │   │   ├── 4bccdc5f44574acb2f0b-2890fc0a0eae6193b9a7.json
 │   │   ├── 4bccdc5f44574acb2f0b-3566ef8eb1b43204d907.json
@@ -221,27 +219,36 @@
 │   │   ├── 4bccdc5f44574acb2f0b-39605e321d40ebd81529.json
 │   │   ├── 4bccdc5f44574acb2f0b-3ce77fecc4dd18aac06a.json
 │   │   ├── 4bccdc5f44574acb2f0b-3eb4b8ff33396e72a32b.json
+│   │   ├── 4bccdc5f44574acb2f0b-3f879665129d30d614ae.json
+│   │   ├── 4bccdc5f44574acb2f0b-42b08503d6d8776fb2dd.json
 │   │   ├── 4bccdc5f44574acb2f0b-49f6a55f67a2255981d2.json
 │   │   ├── 4bccdc5f44574acb2f0b-4ef6aaf61fb1a8c3f307.json
 │   │   ├── 4bccdc5f44574acb2f0b-5441be9bbe301b3eb936.json
+│   │   ├── 4bccdc5f44574acb2f0b-618723453bf0208f969e.json
 │   │   ├── 4bccdc5f44574acb2f0b-685e9edc755e35d38fe0.json
+│   │   ├── 4bccdc5f44574acb2f0b-6c2fd25098fe46351974.json
 │   │   ├── 4bccdc5f44574acb2f0b-7442d634144f73bb9411.json
+│   │   ├── 4bccdc5f44574acb2f0b-7901cfd4d9ddd27b28b2.json
 │   │   ├── 4bccdc5f44574acb2f0b-7e3ba9aa02a575d1487d.json
 │   │   ├── 4bccdc5f44574acb2f0b-7fd5bfd7d1a9875e1160.json
 │   │   ├── 4bccdc5f44574acb2f0b-804185fc5847799cfd51.json
 │   │   ├── 4bccdc5f44574acb2f0b-816c313d91781c994ce3.json
 │   │   ├── 4bccdc5f44574acb2f0b-9e7faec9aa63259a2cf0.json
+│   │   ├── 4bccdc5f44574acb2f0b-9eacdbd1badfdd70a1ca.json
 │   │   ├── 4bccdc5f44574acb2f0b-a1138360c56b4d763e74.json
 │   │   ├── 4bccdc5f44574acb2f0b-a630cd37db6a0c82ad74.json
 │   │   ├── 4bccdc5f44574acb2f0b-a8f214979dbe6f9a3a71.json
 │   │   ├── 4bccdc5f44574acb2f0b-ab677eb1e6c032013809.json
 │   │   ├── 4bccdc5f44574acb2f0b-b68df9b6e6cfd9a471cc.json
 │   │   ├── 4bccdc5f44574acb2f0b-b7e38b8228098f30eee5.json
+│   │   ├── 4bccdc5f44574acb2f0b-becbc5fa693c557668c5.json
 │   │   ├── 4bccdc5f44574acb2f0b-c0b4af6502ca6e3e4bfa.json
 │   │   ├── 4bccdc5f44574acb2f0b-c1368d907ddb7690cfa3.json
+│   │   ├── 4bccdc5f44574acb2f0b-c1c386944f13f12b7cd6.json
 │   │   ├── 4bccdc5f44574acb2f0b-c7e6c037f4cce23ee956.json
 │   │   ├── 4bccdc5f44574acb2f0b-dc8f409d32db46d4d8f0.json
 │   │   ├── 4bccdc5f44574acb2f0b-df42e6d7d0f12f6dd115.json
+│   │   ├── 4bccdc5f44574acb2f0b-e90978f315269f4fa95e.json
 │   │   ├── 4bccdc5f44574acb2f0b-f9c181d736a78edf9733.json
 │   │   ├── 4bccdc5f44574acb2f0b-fa153001b1c30ddb54b4.json
 │   │   ├── 4bccdc5f44574acb2f0b-fd1daa64c406f772d2b8.json
@@ -255,14 +262,18 @@
 │   │   ├── 981a336822773a1ea1d3-23af4b3fd2c6afcb3373.json
 │   │   ├── 981a336822773a1ea1d3-241540fe76607c6f81f7.json
 │   │   ├── 981a336822773a1ea1d3-24b247466f93b8bd3c3e.json
+│   │   ├── 981a336822773a1ea1d3-2b9b498799e1b9f88da9.json
 │   │   ├── 981a336822773a1ea1d3-3800e889db6e748e95c8.json
 │   │   ├── 981a336822773a1ea1d3-410b8203bba03b469011.json
 │   │   ├── 981a336822773a1ea1d3-451d4d8c8fd44ce07fe4.json
 │   │   ├── 981a336822773a1ea1d3-4688a2019bf323a8fe03.json
 │   │   ├── 981a336822773a1ea1d3-47f04601ab3eba6789d0.json
 │   │   ├── 981a336822773a1ea1d3-4c04aff95af600e21328.json
+│   │   ├── 981a336822773a1ea1d3-6897ec908386436c1eb8.json
 │   │   ├── 981a336822773a1ea1d3-6927ba96a856df6917e2.json
 │   │   ├── 981a336822773a1ea1d3-7186b4e3ecd84a910316.json
+│   │   ├── 981a336822773a1ea1d3-7cef7c50438adaa72cb0.json
+│   │   ├── 981a336822773a1ea1d3-850fa0a2abf95319e4cd.json
 │   │   ├── 981a336822773a1ea1d3-890b01bf70ce47b511bb.json
 │   │   ├── 981a336822773a1ea1d3-8f78acc7d94facad87b4.json
 │   │   ├── 981a336822773a1ea1d3-9ac392191dc474372a34.json
@@ -270,8 +281,10 @@
 │   │   ├── 981a336822773a1ea1d3-ad5ce327824575e758c2.json
 │   │   ├── 981a336822773a1ea1d3-b3724e0a4bb1d38da207.json
 │   │   ├── 981a336822773a1ea1d3-b9373a3455325cfbd9b8.json
+│   │   ├── 981a336822773a1ea1d3-bbfbc629198199353436.json
 │   │   ├── 981a336822773a1ea1d3-bf399f5b9e5c6b67f010.json
 │   │   ├── 981a336822773a1ea1d3-c62998cd2a6d74d190e8.json
+│   │   ├── 981a336822773a1ea1d3-c8571159f5f34a06b387.json
 │   │   ├── 981a336822773a1ea1d3-c89927dd8a268fbe65dd.json
 │   │   ├── 981a336822773a1ea1d3-d2638f67143b26c3f37a.json
 │   │   ├── 981a336822773a1ea1d3-de862dc9774fa4d0297a.json
@@ -302,25 +315,7 @@
 │   └── products
 │       └── simpleProduct.ts
 ├── test-results
-│   ├── .last-run.json
-│   ├── .playwright-artifacts-0
-│   ├── setup-auth.setup.ts-authenticate-partner-setup
-│   │   ├── error-context.md
-│   │   └── trace.zip
-│   ├── ui-partners-categories--pa-5f18c-ry-description-successfully-chromium
-│   │   ├── error-context.md
-│   │   ├── trace.zip
-│   │   └── video.webm
-│   ├── ui-partners-product--partn-2269d-k-across-multiple-locations-chromium
-│   │   └── error-context.md
-│   ├── ui-partners-product--partn-4964a-ng-spaces-from-product-name-chromium
-│   │   └── error-context.md
-│   ├── ui-partners-product--partn-639dd-uploaded-image-successfully-chromium
-│   │   └── error-context.md
-│   ├── ui-partners-product--partn-7b706-details-in-pending-approval-chromium
-│   │   └── error-context.md
-│   └── ui-partners-product--partn-82e04-approval-without-allocation-chromium
-│       └── error-context.md
+│   └── .last-run.json
 ├── tests
 │   ├── api
 │   │   ├── clients
@@ -339,4 +334,4 @@
 └── utils
     └── networkLogger.ts
 
-77 directories, 263 files
+66 directories, 269 files

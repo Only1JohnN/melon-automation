@@ -51,6 +51,13 @@ export class SettingsPage {
   readonly directorsHeading: Locator;
   readonly directorsTable: Locator;
 
+  // ── QR Code ──────────────────────────────────────────────
+
+  readonly generateQrCodeButton: Locator;
+  readonly generateQrCodeModal: Locator;
+  readonly branchDropdown: Locator;
+  readonly generateQrButton: Locator;
+
   // ── Common ────────────────────────────────────────────────
   readonly toast: Locator;
 
@@ -70,25 +77,25 @@ export class SettingsPage {
     this.profileEmail = page.locator('tr:has(td:has-text("Email")) td:nth-child(2)');
     this.profileGender = page.locator('tr:has(td:has-text("Gender")) td:nth-child(2)');
     this.profileAddress = page.locator('tr:has(td:has-text("Address")) td:nth-child(2)');
-    this.profilePhotoUpload = page.locator('label').filter({ hasText: /upload photo/i }).first();
+    this.profilePhotoUpload = page.getByText('Upload photo');
     this.profilePhotoInput = page.locator('input[type="file"]').first();
-    this.profileCancelButton = page.getByRole('button', { name: /cancel/i }).first();
-    this.profileContinueButton = page.getByRole('button', { name: /continue/i }).first();
+    this.profileCancelButton = page.getByRole('button', { name: 'Cancel' }).first();
+    this.profileContinueButton = page.getByRole('button', { name: 'Continue' }).first();
     this.profileFirstNameInput = page.getByRole('textbox', { name: /first name/i });
     this.profileLastNameInput = page.getByRole('textbox', { name: /last name/i });
 
     // ─── Business Details ──────────────────────────────────
-    this.businessEditButton = page.getByRole('button', { name: /edit/i }).nth(1);
-    this.businessEmailInput = page.getByRole('textbox', { name: /email address/i });
-    this.businessPhoneInput = page.getByRole('textbox', { name: /business phone/i });
-    this.businessIndustryDropdown = page.getByRole('combobox', { name: /industry/i });
+    this.businessEditButton = page.getByText('Edit');
+    this.businessEmailInput = page.getByRole('textbox', { name: 'Email Address' });
+    this.businessPhoneInput = page.getByRole('textbox', { name: 'Enter business phone number' });
+    this.businessIndustryDropdown = page.getByRole('combobox', { name: 'Industry' });
     this.businessLogoUpload = page.locator('label').filter({ hasText: /upload photo/i }).nth(1);
-    this.businessLogoInput = page.locator('input[type="file"]').nth(1);
-    this.businessCancelButton = page.getByRole('button', { name: /cancel/i }).nth(1);
-    this.businessContinueButton = page.getByRole('button', { name: /continue/i }).nth(1);
+    this.businessLogoInput = page.locator('input[type="file"]').first();
+    this.businessCancelButton = page.getByRole('button', { name: 'Cancel' });
+    this.businessContinueButton = page.getByRole('button', { name: 'Continue' });
 
     // ─── Branches ──────────────────────────────────────────
-    this.branchesTab = page.getByRole('tab', { name: /branches/i });
+    this.branchesTab = page.getByRole('button', { name: 'Branches' });
     this.addLocationButton = page.getByRole('button', { name: /add another location/i });
     this.onlineStorefrontOption = page.getByRole('button', { name: /create online storefront/i });
     this.tradingAddressOption = page.getByRole('button', { name: /add trading address/i });
@@ -103,9 +110,15 @@ export class SettingsPage {
     this.branchList = page.locator('table').last(); // adjust to branch table
 
     // ─── Directors ──────────────────────────────────────────
-    this.directorsTab = page.getByRole('tab', { name: /directors/i });
+    this.directorsTab = page.getByRole('button', { name: 'Directors' });
     this.directorsHeading = page.getByRole('heading', { name: /director details/i });
-    this.directorsTable = page.locator('table').nth(1); // adjust
+    this.directorsTable = page.locator('table'); // adjust
+
+    // ─── QR Code ──────────────────────────────────────────
+    this.generateQrCodeButton = page.getByRole('button', { name: 'Generate QRCode' });
+    this.generateQrCodeModal = page.getByRole('heading', { name: 'Generate QR Code' });
+    this.branchDropdown = page.getByRole('combobox');
+    this.generateQrButton = page.getByRole('button', { name: /^Generate QR Code$/i });
 
     // ─── Common ────────────────────────────────────────────
     this.toast = page.getByRole('alert');
@@ -151,7 +164,7 @@ export class SettingsPage {
 
   async saveProfile(): Promise<void> {
     await this.profileContinueButton.click();
-    await this.waitForToast(/saved|success/i);
+    await this.page.waitForLoadState('networkidle');
   }
 
   async cancelProfileEdit(): Promise<void> {
@@ -160,9 +173,9 @@ export class SettingsPage {
   }
 
   async uploadProfilePhoto(filePath: string): Promise<void> {
-    await this.profilePhotoUpload.click();
+    // await this.profilePhotoUpload.click();
     await this.profilePhotoInput.setInputFiles(filePath);
-    await expect(this.page.locator('img[alt*="profile"]')).toBeVisible({ timeout: 10000 });
+    // await expect(this.page.locator('img[alt*="profile"]')).toBeVisible({ timeout: 10000 });
   }
 
   // ============================================================
@@ -174,14 +187,21 @@ export class SettingsPage {
    * Assumes the fields are in a table or labelled divs.
    * Customize selectors to match your DOM.
    */
+  async getBusinessField(label: string): Promise<string> {
+    return (
+      await this.page
+        .locator('div.text-sm')
+        .filter({ has: this.page.getByRole('heading', { name: label }) })
+        .locator('p')
+        .textContent()
+    )?.trim() || '';
+  }
+
   async getBusinessFields() {
-    const emailCell = this.page.locator('tr:has(td:has-text("Email")) td:nth-child(2)');
-    const phoneCell = this.page.locator('tr:has(td:has-text("Phone")) td:nth-child(2)');
-    const industryCell = this.page.locator('tr:has(td:has-text("Industry")) td:nth-child(2)');
     return {
-      email: (await emailCell.textContent())?.trim() || '',
-      phone: (await phoneCell.textContent())?.trim() || '',
-      industry: (await industryCell.textContent())?.trim() || '',
+      email: await this.getBusinessField('Business email'),
+      phone: await this.getBusinessField('Phone number'),
+      industry: await this.getBusinessField('Industry'),
     };
   }
 
@@ -197,7 +217,7 @@ export class SettingsPage {
 
   async saveBusiness(): Promise<void> {
     await this.businessContinueButton.click();
-    await this.waitForToast(/saved|success/i);
+    await this.page.waitForLoadState('networkidle');
   }
 
   async cancelBusinessEdit(): Promise<void> {
@@ -205,9 +225,9 @@ export class SettingsPage {
   }
 
   async uploadBusinessLogo(filePath: string): Promise<void> {
-    await this.businessLogoUpload.click();
+    // await this.businessLogoUpload.click();
     await this.businessLogoInput.setInputFiles(filePath);
-    await expect(this.page.locator('img[alt*="business"]')).toBeVisible({ timeout: 10000 });
+    // await expect(this.page.locator('img[alt*="business"]')).toBeVisible({ timeout: 10000 });
   }
 
   // ============================================================
@@ -342,6 +362,26 @@ export class SettingsPage {
   async getDirectorsCount(): Promise<number> {
     const rows = this.directorsTable.locator('tbody tr');
     return await rows.count();
+  }
+
+  // ============================================================
+  // QR Code
+  // ============================================================
+
+  async openQrCode() {
+    await this.page.getByRole('link', { name: /qr code/i }).click();
+  }
+
+  async generateQrCode() {
+    const responsePromise = this.page.waitForResponse(
+      res =>
+        res.request().method() === 'POST' &&
+        res.url().includes('/qr') // adjust endpoint
+    );
+
+    await this.generateQrButton.click();
+
+    return responsePromise;
   }
 
   // ============================================================

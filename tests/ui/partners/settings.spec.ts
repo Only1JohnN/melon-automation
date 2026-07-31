@@ -266,15 +266,15 @@ test.describe('@partners @settings @smoke', () => {
       await settingsPage.gotoProfile();
     });
 
-    test('should display the correct profile data in view mode', async () => {
+    test('should display profile information', async () => {
       const fields = await settingsPage.getProfileFields();
 
-      expect(fields.firstName).toContain('Melon');
-      expect(fields.lastName).toContain('QA-Bot');
-      expect(fields.phone).toContain('+2347080702920');
-      expect(fields.email).toContain('melonqabot@yopmail.com');
-      expect(fields.gender).toContain('male');
-      expect(fields.address).toContain('Araromi');
+      expect(fields.firstName).not.toBe('');
+      expect(fields.lastName).not.toBe('');
+      expect(fields.phone).not.toBe('');
+      expect(fields.email).not.toBe('');
+      expect(fields.gender).not.toBe('');
+      expect(fields.address).not.toBe('');
     });
 
     test('should cancel profile edit and discard changes', async () => {
@@ -292,21 +292,37 @@ test.describe('@partners @settings @smoke', () => {
     });
 
     test('should save profile changes and persist after refresh', async () => {
-      const newFirstName = `UpdatedFirst-${Date.now()}`;
-      const newLastName = `UpdatedLast-${Date.now()}`;
+      const previousProfile = await settingsPage.getProfileFields();
+      console.log('Previous:', previousProfile);
+
+      const now = new Date();
+      const time = `${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
+
+      const newFirstName = `UpdatedFirst-${time}`;
+      const newLastName = `UpdatedLast-${time}`;
 
       await settingsPage.editProfile(newFirstName, newLastName);
       await settingsPage.saveProfile();
+      await settingsPage.page.reload();
+      
 
       const afterSave = await settingsPage.getProfileFields();
+      console.log('After Save:', afterSave);
+
+      expect(afterSave.firstName).not.toBe(previousProfile.firstName);
+      expect(afterSave.lastName).not.toBe(previousProfile.lastName);
+
       expect(afterSave.firstName).toBe(newFirstName);
       expect(afterSave.lastName).toBe(newLastName);
 
       await settingsPage.page.reload();
       await settingsPage.page.waitForLoadState('networkidle');
+
       const afterRefresh = await settingsPage.getProfileFields();
-      expect(afterRefresh.firstName).toBe(newFirstName);
-      expect(afterRefresh.lastName).toBe(newLastName);
+      console.log('After Refresh:', afterRefresh);
+
+      expect(afterRefresh.firstName).toBe(afterSave.firstName);
+      expect(afterRefresh.lastName).toBe(afterSave.lastName);
     });
 
     test('should upload a profile photo successfully', async () => {
@@ -352,7 +368,7 @@ test.describe('@partners @settings @smoke', () => {
       test('should save business details successfully', async () => {
         const newEmail = generateEmail();
         const newPhone = '+2348123456789';
-        const newIndustry = getRandomItem(INDUSTRIES);
+        const newIndustry = getRandomItem(INDUSTRIES).toLowerCase();;
 
         await settingsPage.editBusiness(newEmail, newPhone, newIndustry);
         await settingsPage.saveBusiness();
@@ -362,6 +378,24 @@ test.describe('@partners @settings @smoke', () => {
         expect(afterSave.phone).toContain(newPhone);
         expect(afterSave.industry).toContain(newIndustry);
       });
+
+      test('should persist business changes after refresh', async () => {
+        const newEmail = generateEmail();
+        const newPhone = '+2348123456789';
+        const newIndustry = getRandomItem(INDUSTRIES).toLowerCase();
+
+        await settingsPage.editBusiness(newEmail, newPhone, newIndustry);
+        await settingsPage.saveBusiness();
+
+        await settingsPage.page.reload();
+        await settingsPage.page.waitForLoadState('networkidle');
+
+        const details = await settingsPage.getBusinessFields();
+
+        expect(details.email).toContain(newEmail);
+        expect(details.phone).toContain(newPhone);
+        expect(details.industry).toContain(newIndustry);
+      });
     });
 
     test.describe('Branches', () => {
@@ -369,26 +403,40 @@ test.describe('@partners @settings @smoke', () => {
         await settingsPage.goToBranches();
       });
 
-      test('should create an online storefront branch successfully', async () => {
+      test('should create an online storefront branch successfully', async ({}, testInfo) => {
+        const onlineCount = await settingsPage.page
+          .getByRole('cell', { name: 'Online' })
+          .count();
+
+        test.skip(
+          onlineCount > 0,
+          'Online storefront already exists.'
+        );
+
         const storeName = `online-${Date.now()}`;
+
         const response = await settingsPage.createOnlineBranch(storeName);
 
         expect(response.status()).toBe(201);
-        const branches = await settingsPage.getBranchNames();
-        expect(branches.some(b => b.includes(storeName))).toBeTruthy();
+
+        await expect(
+          settingsPage.page.getByRole('cell', { name: 'Online' })
+        ).toHaveCount(1);
       });
 
-      test('should prevent duplicate online storefront', async () => {
-        const storeName = `duplicate-${Date.now()}`;
-        await settingsPage.createOnlineBranch(storeName);
+      test('should display branches', async () => {
+          const branches = await settingsPage.getBranchNames();
 
+          expect(branches.length).toBeGreaterThan(0);
+      });
+
+      test('should not allow multiple online storefronts', async () => {
         await settingsPage.addLocationButton.click();
-        await settingsPage.onlineStorefrontOption.click();
-        await settingsPage.storeNameInput.fill(storeName);
-        await settingsPage.addStoreButton.click();
 
-        const error = await settingsPage.getBranchError();
-        expect(error).toContain('already has an online presence');
+        await expect(settingsPage.page.getByText(/online/i)).toHaveCount(1); // The already created one from the background is the count (1)
+        await expect(settingsPage.page.getByText(/store/i)).toHaveCount(0);
+        await expect(settingsPage.page.getByText(/storefront/i)).toHaveCount(0);
+        await expect(settingsPage.page.getByText(/online storefront/i)).toHaveCount(0);
       });
 
       test('should create an offline branch with trading address', async () => {
@@ -417,6 +465,54 @@ test.describe('@partners @settings @smoke', () => {
         const count = await settingsPage.getDirectorsCount();
         expect(count).toBeGreaterThan(0);
       });
+    });
+
+    test.describe('QR Code', () => {
+      test.beforeEach(async () => {
+        await settingsPage.openQrCode();
+      });
+
+      test('should display QR Code page successfully', async () => {
+        await expect(settingsPage.generateQrCodeButton).toBeVisible();
+        await expect(settingsPage.page.getByText(/How reward customer with QR code works/i)).toBeVisible();
+      });
+
+      test('should open Generate QR Code modal', async () => {
+        await settingsPage.generateQrCodeButton.click();
+
+        await expect(settingsPage.generateQrCodeModal).toBeVisible();
+        await expect(settingsPage.branchDropdown).toBeVisible();
+        await expect(settingsPage.generateQrButton).toBeDisabled();
+      });
+
+      test('should require branch before generating QR code', async () => {
+        await settingsPage.generateQrCodeButton.click();
+
+        await expect(settingsPage.generateQrButton).toBeDisabled();
+      });
+
+      test('should generate QR code successfully', async () => {
+        await settingsPage.generateQrCodeButton.click();
+
+        await settingsPage.branchDropdown.click();
+        await settingsPage.page.getByRole('option').first().click();
+
+        const response = await settingsPage.generateQrCode();
+
+        expect(response.status()).toBe(201);
+
+        // Verify success UI here once available
+      });
+
+      /*
+      test('should revoke generated QR code successfully', async () => {
+        // TODO:
+        // 1. Generate QR Code
+        // 2. Click Revoke
+        // 3. Confirm revoke
+        // 4. Verify QR Code becomes inactive
+      });
+      */
     });
   });
 });

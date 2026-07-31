@@ -75,23 +75,30 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "setup",
-
-      testMatch: "**/auth.setup.ts",
-
+      name: "partner-setup",
+      testMatch: "**/partner.auth.setup.ts",
       use: {
         ...devices["Desktop Chrome"],
-        storageState: undefined, // start with fresh context, no saved session
+        storageState: undefined,
       },
     },
 
     {
-      name: "chromium",
+      name: "storefront-setup",
+      testMatch: "**/storefront.auth.setup.ts",
+      use: {
+        ...devices["Desktop Chrome"],
+        storageState: undefined,
+      },
+    },
 
-      dependencies: ["setup"],
+    {
+      name: "partners",
+      dependencies: ["partner-setup"],
 
       testIgnore: [
         "**/setup/**",
+        "**/storefront/**",
         "**/login.spec.ts",
       ],
 
@@ -103,13 +110,25 @@ export default defineConfig({
     },
 
     {
-      name: "guest",
+      name: "storefront",
+      dependencies: ["storefront-setup"],
 
+      testMatch: "**/storefront/**/*.spec.ts",
+
+      use: {
+        ...devices["Desktop Chrome"],
+        storageState: "playwright/.auth/storefront.json",
+        ignoreHTTPSErrors: true,
+      },
+    },
+
+    {
+      name: "guest",
       testMatch: "**/login.spec.ts",
 
       use: {
         ...devices["Desktop Chrome"],
-        storageState: undefined, // no session for login tests
+        storageState: undefined,
       },
     },
 
