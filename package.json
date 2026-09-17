@@ -5,6 +5,8 @@
   "scripts": {
     "test:staging": "APP_ENV=staging npx playwright test",
     "test:pre-release": "APP_ENV=pre-release npx playwright test",
+    "test:pre-release:smoke": "APP_ENV=pre-release npx playwright test --grep \"@smoke\"",
+    "test:pre-release:ci": "APP_ENV=pre-release npx playwright test --grep-invert \"@manual\"",
     "test:production": "APP_ENV=production npx playwright test"
   },
   "keywords": [],

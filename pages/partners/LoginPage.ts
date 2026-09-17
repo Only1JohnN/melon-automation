@@ -36,10 +36,9 @@ export class LoginPage extends BasePage {
     await this.loginButton.click();
 
     if (options?.expectSuccess ?? true) {
-      await this.page.waitForURL(/^(?!.*\/auth\/login).*$/, { timeout: 30000 });
-      await this.page.waitForURL(/\/get-started/, { timeout: 30_000 });
-      await expect(this.page.getByRole("button", { name: /skip to dashboard/i })).toBeVisible({
-        timeout: 20_000,
+      await this.page.waitForURL(/^(?!.*\/auth\/login).*$/, { timeout: 30_000 });
+      await expect(this.page.getByRole("link", { name: "Settings", exact: true })).toBeVisible({
+        timeout: 30_000,
       });
     }
   }

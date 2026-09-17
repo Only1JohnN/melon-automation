@@ -5,7 +5,7 @@ permissions:
 on:
   push:
     branches:
-      - master
+      - "**"
 
   # schedule:
   #   - cron: "0 6 * * *"
@@ -24,6 +24,9 @@ jobs:
 
       PARTNER_EMAIL: ${{ secrets.PARTNER_EMAIL }}
       PARTNER_PASSWORD: ${{ secrets.PARTNER_PASSWORD }}
+
+      TEST_PHONE_NUMBER: ${{ secrets.TEST_PHONE_NUMBER }}
+      TEST_STORE_SLUG: ${{ secrets.TEST_STORE_SLUG }}
 
       HEADLESS: ${{ secrets.HEADLESS }}
       SLOW_MO: ${{ secrets.SLOW_MO }}
@@ -49,7 +52,12 @@ jobs:
 
       - name: Run Tests
         continue-on-error: true
-        run: npm run test:pre-release
+        run: |
+          if [ "${{ github.ref_name }}" = "master" ]; then
+            npm run test:pre-release:ci
+          else
+            npm run test:pre-release:smoke
+          fi
 
       - name: Convert Videos to MP4
         if: always()
