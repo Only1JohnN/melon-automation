@@ -3,6 +3,7 @@ import Topbar from "@/components/Topbar";
 import { getExecutionFailureById } from "@/lib/execution-parser";
 import { notFound } from "next/navigation";
 import ApiRequestRow from "@/components/ApiRequestRow";
+import StepsTimeline from "@/components/StepsTimeline";
 import { formatBytes } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
@@ -28,6 +29,7 @@ export default async function FailureDetailsPage({
   }
 
   const apiLogs = (failure as any).apiLogs ?? [];
+  const steps = (failure as any).steps ?? [];
 
   return (
   <>
@@ -77,7 +79,25 @@ export default async function FailureDetailsPage({
           <span>
             {(failure.duration / 1000).toFixed(2)}s
           </span>
+
+          {failure.project && (
+            <span className="rounded-md border border-slate-700 bg-slate-800 px-2.5 py-1 text-xs text-slate-300">
+              {failure.project}
+            </span>
+          )}
         </div>
+      </div>
+
+      <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
+        <h3 className="mb-1 text-lg font-semibold">
+          Steps
+        </h3>
+
+        <p className="mb-4 text-sm text-slate-400">
+          What the test did, in order. The step it failed on is highlighted.
+        </p>
+
+        <StepsTimeline steps={steps} />
       </div>
 
       <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">

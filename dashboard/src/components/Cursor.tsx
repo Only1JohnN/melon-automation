@@ -79,6 +79,10 @@ export default function Cursor() {
       <div
         ref={dotRef}
         className="
+          hidden
+          lg:block
+          pointer-events-none
+          fixed
           pointer-events-none
           fixed left-0 top-0 z-[9999]
           w-1 h-1
@@ -95,6 +99,10 @@ export default function Cursor() {
       <div
         ref={ringRef}
         className={`
+          hidden
+          lg:block
+          pointer-events-none
+          fixed
           pointer-events-none
           fixed left-0 top-0 z-[9998]
           rounded-full

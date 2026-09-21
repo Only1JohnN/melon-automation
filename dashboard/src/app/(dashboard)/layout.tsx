@@ -1,4 +1,4 @@
-import Sidebar from "@/components/Sidebar";
+import DashboardShell from "@/components/DashboardShell";
 
 export const dynamic = "force-dynamic";
 
@@ -7,13 +7,5 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <main className="flex min-h-screen bg-[#020B22] text-white">
-      <Sidebar />
-
-      <section className="flex-1 overflow-auto p-10">
-        {children}
-      </section>
-    </main>
-  );
+  return <DashboardShell>{children}</DashboardShell>;
 }

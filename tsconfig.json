@@ -2,17 +2,20 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "CommonJS",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
 
     "baseUrl": ".",
 
     "paths": {
+      "@/*": ["./*"],
       "@config/*": ["config/*"],
       "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"],
       "@utils/*": ["utils/*"],
       "@fixtures/*": ["fixtures/*"],
       "@test-data/*": ["test-data/*"],

@@ -1,6 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 import { env } from "./config/environment";
 
+const MERCHANT_STATE = "playwright/.auth/merchant.json";
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -22,13 +24,17 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
 
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 1 : 0,
+
+  /* Add timeout for each test */
+  timeout: env.timeout || 60_000,
 
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
+    ["line"],
     ["html"],
     [
       "json",
@@ -70,42 +76,69 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // ── Merchant dashboard (authenticated) ─────────────────────────────────
     {
-      name: "setup",
+      name: "merchant-setup",
+      testMatch: "**/merchant.auth.setup.ts",
+      use: { ...devices["Desktop Chrome"], storageState: undefined },
+    },
 
-      testMatch: "**/auth.setup.ts",
+    {
+      name: "merchant",
+      dependencies: ["merchant-setup"],
+      testMatch: "**/ui/partners/merchant/**/*.spec.ts",
+      testIgnore: "**/*.mobile.spec.ts",
+      use: { ...devices["Desktop Chrome"], storageState: MERCHANT_STATE },
+    },
 
+    {
+      name: "merchant-mobile",
+      dependencies: ["merchant-setup"],
+      testMatch: "**/ui/partners/merchant/**/*.mobile.spec.ts",
+      use: { ...devices["Pixel 7"], storageState: MERCHANT_STATE },
+    },
+
+    // ── Customer-facing pay link (public) ──────────────────────────────────
+    {
+      name: "storefront",
+      testMatch: "**/ui/storefront/**/*.spec.ts",
+      testIgnore: "**/*.mobile.spec.ts",
       use: {
         ...devices["Desktop Chrome"],
+        storageState: undefined,
+        ignoreHTTPSErrors: true,
       },
     },
 
     {
-      name: "chromium",
-
-      dependencies: ["setup"],
-
-      testIgnore: [
-        "**/setup/**",
-        "**/login.spec.ts",
-      ],
-
+      name: "storefront-mobile",
+      testMatch: "**/ui/storefront/**/*.mobile.spec.ts",
       use: {
-        ...devices["Desktop Chrome"],
-
-        storageState:
-          "playwright/.auth/partner.json",
+        ...devices["Pixel 7"],
+        storageState: undefined,
+        ignoreHTTPSErrors: true,
       },
     },
 
+    // ── Cross-actor flows: customer pays, merchant sees it ─────────────────
+    {
+      name: "e2e",
+      dependencies: ["merchant-setup"],
+      testMatch: "**/ui/e2e/**/*.spec.ts",
+      use: { ...devices["Desktop Chrome"], storageState: MERCHANT_STATE },
+    },
+
+    // ── Backend API checks (no browser) ────────────────────────────────────
+    {
+      name: "api",
+      testMatch: "**/api/**/*.spec.ts",
+    },
+
+    // ── Auth flows (logged out) ────────────────────────────────────────────
     {
       name: "guest",
-
-      testMatch: "**/login.spec.ts",
-
-      use: {
-        ...devices["Desktop Chrome"],
-      },
+      testMatch: ["**/login.spec.ts", "**/signup.spec.ts", "**/forgot-password.spec.ts"],
+      use: { ...devices["Desktop Chrome"], storageState: undefined },
     },
 
     // {

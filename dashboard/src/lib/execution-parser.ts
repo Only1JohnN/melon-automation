@@ -15,13 +15,20 @@ const REPORTS_URL =
 export async function getExecutionReport(
   executionId: string
 ) {
-  const executions =
-    await fetch(
-      `${REPORTS_URL}/executions/index.json`,
-      {
-        cache: "no-store",
-      }
-    ).then((r) => r.json());
+  // Same rule as the executions list: prefer a local reports/ folder, else read the reports branch.
+  const localIndex = path.join(
+    process.cwd(),
+    "../reports/executions/index.json"
+  );
+
+  const executions = fs.existsSync(localIndex)
+    ? JSON.parse(fs.readFileSync(localIndex, "utf8"))
+    : await fetch(
+        `${REPORTS_URL}/executions/index.json`,
+        {
+          cache: "no-store",
+        }
+      ).then((r) => r.json());
 
   const execution =
     executions.find(
@@ -237,12 +244,24 @@ export async function getExecutionTestById(
       executionId
     );
 
-  return (
+  const found =
     tests.find(
       (test) =>
         test.id === testId
-    ) || null
-  );
+    ) || null;
+
+  if (!found) {
+    return null;
+  }
+
+  return {
+    ...found,
+    apiLogs:
+      await getExecutionApiLogs(
+        executionId,
+        found.playwrightTestId
+      ),
+  };
 }
 
 export async function getExecutionFailureById(

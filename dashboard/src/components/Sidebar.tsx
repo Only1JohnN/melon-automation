@@ -43,12 +43,12 @@ const links = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onLinkClick }: { onLinkClick?: () => void }) {
   const pathname = usePathname();
 
   return (
-    <aside className="w-72 h-screen border-r border-slate-800 bg-[#020B22] flex flex-col sticky top-0">
-      <div className="p-8">
+    <aside className="w-full lg:w-72 border-b lg:border-b-0 lg:border-r border-slate-800 bg-[#020B22] flex flex-col lg:h-screen lg:sticky lg:top-0">
+      <div className="p-4 sm:p-8">
         <div className="flex items-center gap-3">
           <span className="text-4xl">🍉</span>
 
@@ -78,6 +78,7 @@ export default function Sidebar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => onLinkClick?.()}
                 className={`flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 ${
                   isActive
                     ? "bg-[#D6FF32] text-black font-semibold"
@@ -102,6 +103,7 @@ export default function Sidebar() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#D6FF32] hover:underline"
+              onClick={() => onLinkClick?.()}
             >
               Only1JohnN
             </a>
