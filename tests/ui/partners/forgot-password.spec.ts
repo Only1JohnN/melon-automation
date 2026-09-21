@@ -8,6 +8,9 @@ import { getEmailVerificationLink, getPasswordResetLink } from "../../../utils/y
 import { test, expect } from "../../../fixtures/baseTest";
 
 test.describe("@partners @auth @forgot-password @smoke", () => {
+  // Sign-up + two emails read from yopmail: slow on a busy inbox, so the default 90s is too tight.
+  test.describe.configure({ timeout: 240_000 });
+
   test("should let a partner reset their password via an emailed link and log in with it", async ({
     page,
   }) => {
@@ -37,6 +40,8 @@ test.describe("@partners @auth @forgot-password @smoke", () => {
 });
 
 test.describe("@partners @auth @forgot-password", () => {
+  test.describe.configure({ timeout: 240_000 });
+
   test("should show the same confirmation whether or not the account exists", async ({
     page,
   }) => {

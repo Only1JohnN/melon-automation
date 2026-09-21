@@ -8,8 +8,11 @@ import {
 } from "./playwright-parser";
 
 import { Execution } from "./executions";
+import { resolveArtifacts } from "./artifacts";
 
+// Override with REPORTS_URL to read reports from somewhere else (e.g. a local server while developing).
 const REPORTS_URL =
+  process.env.REPORTS_URL ??
   "https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports/reports";
 
 export async function getExecutionReport(
@@ -292,83 +295,34 @@ export async function getExecutionFailureById(
     return null;
   }
 
-  const screenshotAttachment =
-    failure.attachments?.find(
-      (a: any) => a.name === "screenshot"
-    ) ?? null;
-  
-  const videoAttachment =
-    failure.attachments?.find(
-      (a: any) => a.name === "video"
-    ) ?? null;
-  
-  const traceAttachment =
-    failure.attachments?.find(
-      (a: any) => a.name === "trace"
-    ) ?? null;
-  
-  const screenshot =
-    screenshotAttachment && fs.existsSync(screenshotAttachment.path)
-      ? {
-          ...screenshotAttachment,
-          size: fs.statSync(
-            screenshotAttachment.path
-          ).size,
-        }
-      : screenshotAttachment;
-  
-  const video =
-    videoAttachment && fs.existsSync(videoAttachment.path)
-      ? {
-          ...videoAttachment,
-          size: fs.statSync(
-            videoAttachment.path
-          ).size,
-        }
-      : videoAttachment;
-  
-  const trace =
-    traceAttachment && fs.existsSync(traceAttachment.path)
-      ? {
-          ...traceAttachment,
-          size: fs.statSync(
-            traceAttachment.path
-          ).size,
-        }
-      : traceAttachment;
+  const artifacts = await resolveArtifacts(
+    failure.attachments,
+    {
+      localRoots: [
+        {
+          dir: path.join(
+            process.cwd(),
+            "../reports/executions",
+            String(data.year),
+            data.month,
+            executionId,
+            "reports-artifacts"
+          ),
+          urlPrefix: `/api/artifacts/${data.year}/${data.month}/${executionId}/`,
+        },
+        {
+          dir: path.join(process.cwd(), "test-results"),
+          urlPrefix: "/api/artifacts/",
+        },
+      ],
+      remoteBase: `${REPORTS_URL}/executions/${data.year}/${data.month}/${executionId}/reports-artifacts`,
+    }
+  );
 
   return {
     ...failure,
 
-    screenshot,
-
-    video,
-
-    trace,
-
-    screenshotUrl:
-      buildExecutionArtifactUrl(
-        executionId,
-        data.year,
-        data.month,
-        screenshot
-      ),
-
-    videoUrl:
-      buildExecutionArtifactUrl(
-        executionId,
-        data.year,
-        data.month,
-        video
-      ),
-
-    traceUrl:
-      buildExecutionArtifactUrl(
-        executionId,
-        data.year,
-        data.month,
-        trace
-      ),
+    artifacts,
 
     apiLogs:
       await getExecutionApiLogs(
@@ -455,46 +409,3 @@ export async function getExecutionApiLogs(
         return [];
     }
     }
-
-function buildExecutionArtifactUrl(
-  executionId: string,
-  year: string | number,
-  month: string,
-  attachment: any
-) {
-  if (!attachment?.path) {
-    return null;
-  }
-
-  const normalized = attachment.path.replace(/\\/g, "/");
-  const marker = "/test-results/";
-  const index = normalized.lastIndexOf(marker);
-
-  // Extract everything after the last "/test-results/"
-  const relative = index >= 0
-    ? normalized.substring(index + marker.length)
-    : normalized;
-
-  const localArtifact = path.join(
-    process.cwd(),
-    "../reports/executions",
-    String(year),
-    month,
-    executionId,
-    "reports-artifacts",
-    relative
-  );
-
-  // Local reports copy (if you manually copied artifacts)
-  if (fs.existsSync(localArtifact)) {
-    return `/api/artifacts/${year}/${month}/${executionId}/${relative}`;
-  }
-
-  // Fallback to original path (for local Playwright test-results)
-  if (fs.existsSync(attachment.path)) {
-    return `/api/artifacts/${year}/${month}/${executionId}/${relative}`;
-  }
-
-  // GitHub reports branch
-  return `${REPORTS_URL}/executions/${year}/${month}/${executionId}/reports-artifacts/${relative}`;
-}

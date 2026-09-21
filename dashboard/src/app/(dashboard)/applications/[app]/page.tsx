@@ -1,6 +1,8 @@
 import Topbar from "@/components/Topbar";
 import { getTestsByApplication } from "@/lib/report-parser";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { isEnabledApplication } from "@/lib/applications";
 import StatusBadge from "@/components/StatusBadge";
 import FeatureAccordion from "@/components/FeatureAccordion";
 
@@ -12,6 +14,11 @@ export default async function ApplicationPage({
   params: Promise<{ app: string }>;
 }) {
   const { app } = await params;
+
+  // Disabled applications (see lib/applications.ts) have no page for now.
+  if (!isEnabledApplication(app)) {
+    notFound();
+  }
 
   const groups = await getTestsByApplication(app);
 

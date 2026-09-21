@@ -1,6 +1,9 @@
 import fs from "fs";
 import path from "path";
 import { getReportData } from "./report-reader";
+import { resolveArtifacts } from "./artifacts";
+import { normalizeSteps, stripAnsi } from "./playwright-parser";
+import { APPLICATIONS } from "./applications";
 
 export async function getOverviewStats() {
   const { report, metadata } = await getReportData();
@@ -42,31 +45,6 @@ export async function getFailures() {
   const { report } = await getReportData();
   const failures: any[] = [];
 
-  const githubBase =
-    "https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports";
-
-  const buildArtifactUrl = (attachment: any) => {
-    if (!attachment?.path) {
-      return null;
-    }
-
-    const normalized = attachment.path.replace(/\\/g, "/");
-    const marker = "/test-results/";
-    const index = normalized.indexOf(marker);
-
-    // Extract everything after "/test-results/"
-    const relative =
-      index >= 0 ? normalized.substring(index + marker.length) : normalized;
-
-    // For local development – try to serve from the original path
-    if (fs.existsSync(attachment.path)) {
-      return `/api/artifacts/${relative}`;
-    }
-
-    // Fallback to GitHub reports branch
-    return `${githubBase}/reports-artifacts/${relative}`;
-  };
-
   // Convert spec file path to a human‑readable feature name
   const extractFeature = (filePath: string) => {
     const fileName = filePath.split("/").pop() ?? "Unknown";
@@ -88,48 +66,12 @@ export async function getFailures() {
               const fileName = filePath.split("/").pop() ?? "Unknown";
               const feature = extractFeature(filePath);
 
-              // Extract attachments safely
-              const screenshotAttachment =
-                result.attachments?.find((a: any) => a.name === "screenshot") ??
-                null;
-
-              const videoAttachment =
-                result.attachments?.find((a: any) => a.name === "video") ??
-                null;
-
-              const traceAttachment =
-                result.attachments?.find((a: any) => a.name === "trace") ??
-                null;
-
-              const screenshot =
-                screenshotAttachment && fs.existsSync(screenshotAttachment.path)
-                  ? {
-                      ...screenshotAttachment,
-                      size: fs.statSync(screenshotAttachment.path).size,
-                    }
-                  : screenshotAttachment;
-
-              const video =
-                videoAttachment && fs.existsSync(videoAttachment.path)
-                  ? {
-                      ...videoAttachment,
-                      size: fs.statSync(videoAttachment.path).size,
-                    }
-                  : videoAttachment;
-
-              const trace =
-                traceAttachment && fs.existsSync(traceAttachment.path)
-                  ? {
-                      ...traceAttachment,
-                      size: fs.statSync(traceAttachment.path).size,
-                    }
-                  : traceAttachment;
-
               // Error message priority: direct error → first error from array → fallback
-              const errorMessage =
+              const errorMessage = stripAnsi(
                 result.error?.message ??
                 result.errors?.[0]?.message ??
-                "Unknown error";
+                "Unknown error"
+              );
 
               failures.push({
                 id: spec.id ?? spec.title,
@@ -141,12 +83,8 @@ export async function getFailures() {
                 file,
                 fileName,
                 feature,
-                screenshot,
-                video,
-                trace,
-                screenshotUrl: buildArtifactUrl(screenshot),
-                videoUrl: buildArtifactUrl(video),
-                traceUrl: buildArtifactUrl(trace),
+                project: test.projectName ?? null,
+                steps: normalizeSteps(result.steps),
                 attachments: result.attachments ?? [],
                 tags: [...(spec.tags ?? []), ...(test.tags ?? [])],
               });
@@ -175,6 +113,17 @@ export async function getFailureById(id: string) {
   }
 
   const apiLogs = await getApiLogs(failure.playwrightTestId);
+
+  const artifacts = await resolveArtifacts(failure.attachments, {
+    localRoots: [
+      {
+        dir: path.join(process.cwd(), "test-results"),
+        urlPrefix: "/api/artifacts/",
+      },
+    ],
+    remoteBase:
+      "https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports/reports-artifacts",
+  });
   // console.log(
   //   "Failure ID:",
   //   failure.id
@@ -192,6 +141,7 @@ export async function getFailureById(id: string) {
 
   return {
     ...failure,
+    artifacts,
     apiLogs,
   };
 }
@@ -266,7 +216,7 @@ export async function getAllTests() {
             const filePath = spec.location?.file ?? spec.file ?? "";
             const fileSegments = String(filePath).toLowerCase().split(/[\\/]/);
 
-            const appsList = ["partners", "storefront", "admin", "stack"];
+            const appsList = [...APPLICATIONS];
             const inferredApps = appsList.filter(
               (a) =>
                 (spec.tags || []).includes(a) ||
@@ -362,7 +312,7 @@ export async function getGroupedFailures() {
 export async function getApplications() {
   const tests = await getAllTests();
 
-  const apps = ["partners", "storefront", "admin", "stack"];
+  const apps = [...APPLICATIONS];
 
   return apps.map((app) => {
     const appTests = tests.filter(

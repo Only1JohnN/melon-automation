@@ -45,10 +45,20 @@ export const test = base.extend<Fixtures>({
     await use(customerPage);
 
     if (testInfo.status !== testInfo.expectedStatus) {
-      await testInfo.attach("customer-screenshot", {
-        body: await customerPage.screenshot({ fullPage: true }).catch(() => Buffer.from("")),
-        contentType: "image/png",
-      });
+      // Attached as a file (not an inline body) so the JSON report stays small and the dashboard can
+      // find it next to the other failure screenshots.
+      const screenshotPath = testInfo.outputPath("customer-screenshot.png");
+      const saved = await customerPage
+        .screenshot({ path: screenshotPath, fullPage: true })
+        .then(() => true)
+        .catch(() => false);
+
+      if (saved) {
+        await testInfo.attach("customer-screenshot", {
+          path: screenshotPath,
+          contentType: "image/png",
+        });
+      }
     }
 
     await context.close();
