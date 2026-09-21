@@ -154,52 +154,6 @@ jobs:
           path: reports
           retention-days: 30
 
-      - name: Send summary to Zoho Cliq
-        if: always() && env.CLIQ_WEBHOOK_URL != ''
-        env:
-          # Optional repository variable, e.g. https://your-dashboard.example.com - links the message
-          # straight to this run's page in the results dashboard. Falls back to the Actions run.
-          DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
-          JOB_STATUS: ${{ job.status }}
-        run: |
-          RESULTS=reports/results.json
-
-          if [ -s "$RESULTS" ]; then
-            STATS=$(jq -r '.stats | "\(.expected) passed, \(.unexpected) failed, \(.flaky) flaky, \(.skipped) skipped (total \(.expected + .unexpected + .flaky + .skipped))"' "$RESULTS")
-            FAILED=$(jq -r '.stats.unexpected' "$RESULTS")
-
-            if [ "$FAILED" -gt 0 ]; then STATUS="failure"; else STATUS="success"; fi
-          else
-            # The tests never produced a report (setup or install broke before they ran).
-            STATS="summary unavailable"
-            STATUS="failure"
-          fi
-
-          if [ "$JOB_STATUS" = "cancelled" ]; then STATUS="cancelled"; fi
-
-          case "$STATUS" in
-            success) EMOJI="✅" ;;
-            failure) EMOJI="❌" ;;
-            cancelled) EMOJI="⚠️" ;;
-            *) EMOJI="ℹ️" ;;
-          esac
-
-          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          if [ -n "$DASHBOARD_URL" ]; then
-            REPORT="${DASHBOARD_URL%/}/executions/${GITHUB_RUN_ID}"
-          else
-            REPORT="$RUN_URL"
-          fi
-
-          MESSAGE=$(printf '%s Melon web tests: %s\n%s\nReport: %s' \
-            "$EMOJI" "$STATUS" "$STATS" "$REPORT")
-
-          # A failed notification must never fail the test run.
-          curl --silent --show-error --fail -X POST "$CLIQ_WEBHOOK_URL" \
-            -H "Content-Type: application/json" \
-            -d "$(jq -n --arg text "$MESSAGE" '{text: $text}')" \
-            || echo "::warning::Could not send the Zoho Cliq notification"
-
       - name: Publish Reports Branch
         if: always()
         run: |
@@ -306,3 +260,49 @@ jobs:
           git push origin HEAD:reports
 
           echo "✅ Reports branch published successfully."
+
+      # Last step on purpose: the message links to this run's page in the results dashboard, which only
+      # exists once the reports have been published above.
+      - name: Send summary to Zoho Cliq
+        if: always() && env.CLIQ_WEBHOOK_URL != ''
+        env:
+          DASHBOARD_URL: ${{ vars.DASHBOARD_URL || 'https://melon-automation.vercel.app' }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          # The report is in reports/ unless the publish step wiped the workspace, when the copy it made
+          # in /tmp is the one that's left.
+          RESULTS=""
+          for candidate in reports/results.json /tmp/melon-reports/results.json; do
+            if [ -s "$candidate" ]; then RESULTS="$candidate"; break; fi
+          done
+
+          if [ -n "$RESULTS" ]; then
+            STATS=$(jq -r '.stats | "\(.expected) passed, \(.unexpected) failed, \(.flaky) flaky, \(.skipped) skipped (total \(.expected + .unexpected + .flaky + .skipped))"' "$RESULTS")
+            FAILED=$(jq -r '.stats.unexpected' "$RESULTS")
+
+            if [ "$FAILED" -gt 0 ]; then STATUS="failure"; else STATUS="success"; fi
+          else
+            # The tests never produced a report (setup or install broke before they ran).
+            STATS="summary unavailable"
+            STATUS="failure"
+          fi
+
+          if [ "$JOB_STATUS" = "cancelled" ]; then STATUS="cancelled"; fi
+
+          case "$STATUS" in
+            success) EMOJI="✅" ;;
+            failure) EMOJI="❌" ;;
+            cancelled) EMOJI="⚠️" ;;
+            *) EMOJI="ℹ️" ;;
+          esac
+
+          REPORT="${DASHBOARD_URL%/}/executions/${GITHUB_RUN_ID}"
+
+          MESSAGE=$(printf '%s Melon web tests: %s\n%s\nReport: %s' \
+            "$EMOJI" "$STATUS" "$STATS" "$REPORT")
+
+          # A failed notification must never fail the test run.
+          curl --silent --show-error --fail -X POST "$CLIQ_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n --arg text "$MESSAGE" '{text: $text}')" \
+            || echo "::warning::Could not send the Zoho Cliq notification"
