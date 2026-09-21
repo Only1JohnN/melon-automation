@@ -8,17 +8,19 @@ import {
 } from "../../../fixtures/baseTest";
 
 test.describe("@partners @auth", () => {
-  test("should allow a partner to log in successfully", async ({
+  test("should allow a partner to log in successfully @smoke", async ({
     page,
   }) => {
     await loginAsPartner(page);
 
-    await expect(page).toHaveURL(/get-started/, {
-      timeout: 100000,
+    await expect(
+      page.getByRole("link", { name: "Settings", exact: true })
+    ).toBeVisible({
+      timeout: 30_000,
     });
   });
 
-  test("should display an error message for invalid credentials", async ({
+  test("should display an error message for a non-existent account", async ({
     page,
   }) => {
     const loginPage = new LoginPage(page);
@@ -34,8 +36,40 @@ test.describe("@partners @auth", () => {
     await expect(
       page.getByText("User not found")
     ).toBeVisible({
-      timeout: 100000,
+      timeout: 20_000,
     });
+  });
+
+  test("should display an error message for an incorrect password on a real account", async ({
+    page,
+  }) => {
+    const loginPage = new LoginPage(page);
+
+    await page.goto(`${Applications.partners.url}/auth/login`);
+
+    await loginPage.login(
+      process.env.PARTNER_EMAIL!,
+      "WrongPassword@999",
+      { expectSuccess: false }
+    );
+
+    await expect(
+      page.getByText("Incorrect credential")
+    ).toBeVisible({
+      timeout: 20_000,
+    });
+  });
+
+  test("should require email and password before submitting", async ({
+    page,
+  }) => {
+    await page.goto(`${Applications.partners.url}/auth/login`);
+
+    await page.getByRole("button", { name: /log in/i }).click();
+
+    await expect(page.getByText("Email address is required")).toBeVisible();
+    await expect(page.getByText("Password is required")).toBeVisible();
+    await expect(page).toHaveURL(/\/auth\/login/);
   });
 
   test.describe("@partners", () => {

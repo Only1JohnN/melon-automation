@@ -59,4 +59,14 @@ export const env = {
   partnerUrl: process.env.PARTNER_URL!,
   storefrontUrl: process.env.STOREFRONT_URL!,
   stackUrl: process.env.STACK_URL!,
+
+  apiUrl: process.env.API_URL || "https://staging-api.getmelon.co/api/v1",
+  pagaSimulatorUrl:
+    process.env.PAGA_SIMULATOR_URL ||
+    "https://qa-developer-portal.paga.com/simulate/inbound-bank-deposit",
+
+  partnerEmail: process.env.PARTNER_EMAIL!,
+  partnerPassword: process.env.PARTNER_PASSWORD!,
+  testStoreSlug: process.env.TEST_STORE_SLUG!,
+  testPhoneNumber: process.env.TEST_PHONE_NUMBER,
 };
