@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ADMIN_URL: ${{ secrets.ADMIN_URL }}
+      # Admin app isn't built yet, so it's switched off (see config/applications.ts).
+      # ADMIN_URL: ${{ secrets.ADMIN_URL }}
       PARTNER_URL: ${{ secrets.PARTNER_URL }}
       STOREFRONT_URL: ${{ secrets.STOREFRONT_URL }}
-      STACK_URL: ${{ secrets.STACK_URL }}
 
       PARTNER_EMAIL: ${{ secrets.PARTNER_EMAIL }}
       PARTNER_PASSWORD: ${{ secrets.PARTNER_PASSWORD }}
@@ -73,7 +73,9 @@ jobs:
           while IFS= read -r -d '' file; do
             echo "Converting: $file"
 
-            ffmpeg \
+            # Only delete the original once the MP4 really exists; otherwise a failed conversion
+            # would leave the failure with no video at all.
+            if ffmpeg \
               -nostdin \
               -y \
               -i "$file" \
@@ -81,9 +83,12 @@ jobs:
               -preset fast \
               -pix_fmt yuv420p \
               -movflags +faststart \
-              "${file%.webm}.mp4"
-
-            rm -f "$file"
+              "${file%.webm}.mp4" && [ -s "${file%.webm}.mp4" ]; then
+              rm -f "$file"
+            else
+              echo "::warning::Could not convert $file, keeping the original .webm"
+              rm -f "${file%.webm}.mp4"
+            fi
           done
 
       - name: Generate Run Metadata

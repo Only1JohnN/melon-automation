@@ -1,10 +1,12 @@
 import { env } from "./environment";
 
 export const Applications = {
-  admin: {
-    name: "admin",
-    url: env.adminUrl,
-  },
+  // Admin isn't built yet, so it's switched off. Un-comment (and restore adminUrl in
+  // config/environment.ts) once it has tests.
+  // admin: {
+  //   name: "admin",
+  //   url: env.adminUrl,
+  // },
 
   partners: {
     name: "partners",
@@ -14,10 +16,5 @@ export const Applications = {
   storefront: {
     name: "storefront",
     url: env.storefrontUrl,
-  },
-
-  stack: {
-    name: "stack",
-    url: env.stackUrl,
   },
 };

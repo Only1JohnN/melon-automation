@@ -4,7 +4,7 @@ import { getExecutionFailureById } from "@/lib/execution-parser";
 import { notFound } from "next/navigation";
 import ApiRequestRow from "@/components/ApiRequestRow";
 import StepsTimeline from "@/components/StepsTimeline";
-import { formatBytes } from "@/lib/format";
+import ArtifactsCard from "@/components/ArtifactsCard";
 
 export const dynamic = "force-dynamic";
 
@@ -110,64 +110,7 @@ export default async function FailureDetailsPage({
         </pre>
       </div>
 
-      <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
-        <h3 className="mb-4 text-lg font-semibold">
-          Artifacts
-        </h3>
-
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {failure.screenshot && (
-            <a
-              href={failure.screenshotUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
-            >
-              <p className="font-medium">
-                📷 Screenshot
-              </p>
-
-              <p className="mt-1 text-xs text-slate-400">
-                PNG • {formatBytes(failure.screenshot?.size)}
-              </p>
-            </a>
-          )}
-
-          {failure.video && (
-            <a
-              href={failure.videoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
-            >
-                <p className="font-medium">
-                🎥 Video
-              </p>
-
-              <p className="mt-1 text-xs text-slate-400">
-                MP4 • {formatBytes(failure.video?.size)}
-              </p>
-            </a>
-          )}
-
-          {failure.trace && (
-            <a
-              href={failure.traceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-slate-700 p-4 hover:border-[#D6FF32]"
-            >
-              <p className="font-medium">
-                🔍 Trace
-              </p>
-
-              <p className="mt-1 text-xs text-slate-400">
-                ZIP • {formatBytes(failure.trace?.size)}
-              </p>
-            </a>
-          )}
-        </div>
-      </div>
+      <ArtifactsCard artifacts={(failure as any).artifacts} />
 
       <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
           <h3 className="mb-4 text-lg font-semibold">
