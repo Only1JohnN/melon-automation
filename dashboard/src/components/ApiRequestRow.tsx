@@ -35,6 +35,11 @@ export default function ApiRequestRow({ log }: Props) {
         className="flex w-full items-center justify-between px-4 py-4 hover:bg-slate-900 gap-4"
       >
         <div className="flex items-center gap-4 min-w-0 flex-1">
+          {log.source && (
+            <span className="shrink-0 rounded-md border border-slate-700 bg-slate-800 px-2 py-0.5 text-xs text-slate-300">
+              {log.source}
+            </span>
+          )}
           <span className="font-medium shrink-0">{log.method}</span>
           <span className="text-slate-400 truncate" title={log.url}>
             {log.url}

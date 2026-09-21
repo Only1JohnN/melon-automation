@@ -1,3 +1,25 @@
+export type ReportStep = {
+  title: string;
+  duration: number;
+  error: string | null;
+  steps: ReportStep[];
+};
+
+const ANSI = /\u001b\[[0-9;]*m/g;
+
+// Playwright's JSON report nests `test.step` calls: each has a title, a duration
+// and, when it failed, an error. Normalise them so the UI never touches raw report shapes.
+export function normalizeSteps(steps: any[] = []): ReportStep[] {
+  return steps.map((step) => ({
+    title: step.title,
+    duration: step.duration ?? 0,
+    error:
+      (step.error?.message ?? step.errors?.[0]?.message)?.replace(ANSI, "") ??
+      null,
+    steps: normalizeSteps(step.steps),
+  }));
+}
+
 export function walkSuites(
   suites: any[],
   callback: (
@@ -70,6 +92,14 @@ export function parseTests(
           result?.status ??
           "unknown",
 
+        project:
+          test.projectName ??
+          null,
+
+        steps: normalizeSteps(
+          result?.steps
+        ),
+
         duration:
           result?.duration ??
           0,
@@ -86,10 +116,13 @@ export function parseTests(
           [],
 
         error:
-          result?.errors?.[1]
-            ?.message ||
-          result?.error
-            ?.message ||
+          (
+            result?.errors?.[1]
+              ?.message ||
+            result?.error
+              ?.message ||
+            null
+          )?.replace(ANSI, "") ??
           null,
       });
     }

@@ -5,7 +5,9 @@
   "scripts": {
     "test:staging": "APP_ENV=staging npx playwright test",
     "test:pre-release": "APP_ENV=pre-release npx playwright test",
-    "test:pre-release:smoke": "APP_ENV=pre-release npx playwright test --grep \"@smoke\"",
+    "test:pre-release:smoke": "APP_ENV=pre-release npx playwright test --grep \"@smoke|@setup\"",
+    "test:pre-release:mobile": "APP_ENV=pre-release npx playwright test --grep \"@mobile|@setup\"",
+    "test:pre-release:api": "APP_ENV=pre-release npx playwright test --project=api",
     "test:pre-release:ci": "APP_ENV=pre-release npx playwright test --grep-invert \"@manual\"",
     "test:production": "APP_ENV=production npx playwright test"
   },
@@ -16,9 +18,12 @@
   "devDependencies": {
     "@playwright/test": "^1.61.0",
     "@types/node": "^26.0.0",
+    "@types/pngjs": "^6.0.5",
     "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-playwright": "^2.10.4",
+    "jsqr": "^1.4.0",
+    "pngjs": "^7.0.0",
     "prettier": "^3.8.4"
   },
   "dependencies": {

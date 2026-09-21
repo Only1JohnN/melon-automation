@@ -28,6 +28,10 @@ jobs:
       TEST_PHONE_NUMBER: ${{ secrets.TEST_PHONE_NUMBER }}
       TEST_STORE_SLUG: ${{ secrets.TEST_STORE_SLUG }}
 
+      # Optional: both fall back to the QA defaults in config/environment.ts when unset.
+      API_URL: ${{ secrets.API_URL }}
+      PAGA_SIMULATOR_URL: ${{ secrets.PAGA_SIMULATOR_URL }}
+
       HEADLESS: ${{ secrets.HEADLESS }}
       SLOW_MO: ${{ secrets.SLOW_MO }}
       TIMEOUT: ${{ secrets.TIMEOUT }}
