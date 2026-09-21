@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2026-09-21T09:52:44.075Z",
+    "source": "app",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:944351073735:web:b5622c2c9f05058a49b5e2/webConfig",
+    "status": 200,
+    "request": {
+      "headers": {
+        ":authority": "firebase.googleapis.com",
+        ":method": "GET",
+        ":path": "/v1alpha/projects/-/apps/1:944351073735:web:b5622c2c9f05058a49b5e2/webConfig",
+        ":scheme": "https",
+        "accept": "application/json",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-US",
+        "origin": "https://partner-dev.getmelon.co",
+        "priority": "u=1, i",
+        "referer": "https://partner-dev.getmelon.co/",
+        "sec-ch-ua": "\"HeadlessChrome\";v=\"149\", \"Chromium\";v=\"149\", \"Not)A;Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.7827.55 Safari/537.36",
+        "x-goog-api-key": "AIzaSyBJYsTWrU-8JqJToCg3m87ZIhp2Cd0UUFw"
+      },
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "access-control-expose-headers": "vary,vary,vary,content-encoding,date,server,content-length",
+        "content-encoding": "gzip",
+        "x-content-type-options": "nosniff",
+        "access-control-allow-origin": "https://partner-dev.getmelon.co",
+        "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "content-length": "232",
+        "date": "Mon, 21 Sep 2026 09:52:44 GMT",
+        "x-xss-protection": "0",
+        "content-type": "application/json; charset=UTF-8",
+        "vary": "Origin, X-Origin, Referer",
+        "server": "ESF",
+        "x-frame-options": "SAMEORIGIN"
+      },
+      "body": "{\"projectId\":\"melon-dev-53520\",\"appId\":\"1:944351073735:web:b5622c2c9f05058a49b5e2\",\"databaseURL\":\"https://melon-dev-53520-default-rtdb.firebaseio.com\",\"storageBucket\":\"melon-dev-53520.firebasestorage.app\",\"authDomain\":\"melon-dev-53520.firebaseapp.com\",\"messagingSenderId\":\"944351073735\",\"measurementId\":\"G-ZM1JE3JR2F\"}"
+    }
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "timestamp": "2026-09-21T09:51:46.218Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/details/this-business-does-not-exist",
+    "status": 404,
+    "request": {
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:46 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "801b7d90-f7de-45c9-a7c3-3a6a38b7d55d",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"42-h6q2QyF+eKbkoKCsuAit8vEDp5s\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=KqA5MdFBRyOPN6%2BdyFEc86LxhyGKZan%2F3LZzeRqYqkMUUl8y%2BGaRGTf%2FTZqiPBcRnaKsrd3i9sxjBnrX9iJkYYXHMGNiSUX3TVQckfUCOxElCVHWTzMC3YVWrLp6dVjkR7oXtjlwIFvu1A%3D%3D\"}]}",
+        "content-encoding": "br",
+        "cf-ray": "a3e82c57edf1f065-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"message\":\"Business not found\",\"status\":\"error\",\"statusCode\":404}"
+    }
+  }
+]

@@ -1,0 +1,135 @@
+[
+  {
+    "timestamp": "2026-09-21T09:51:38.290Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "POST",
+    "url": "https://staging-api.getmelon.co/api/v1/auth/login-member",
+    "status": 200,
+    "request": {
+      "headers": {},
+      "body": "{\"email\":\"melonqabot@yopmail.com\",\"password\":\"[REDACTED]\"}"
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:38 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "67bae022-0eed-43d7-b4af-fa1ac1f1a054",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"b4f-13wm+zLTL+OnN6Rk2c3hP8nJR7c\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=tzLN3i23L9JHVEk%2F7wyfkOZmPJH923%2FFjUn55enYcNrlh5kE2eQa9iHtgiWtnLP599EbPFcIk2FOBolCkU8tHwb79pNIN8yVbOLTdljnV3N6I6JRmW%2FM3a5cK3wsRH1Az4lyqC2TkPnlEQ%3D%3D\"}]}",
+        "content-encoding": "br",
+        "cf-ray": "a3e82c23fc9f67aa-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"message\":\"Logged in successfully\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"member\":{\"member_id\":\"1cd0b1a3-36dd-4594-a399-55b5509f6891\",\"businesses\":[{\"id\":\"866167cd-5c0e-4a02-bd58-4975dca846c9\",\"name\":\"Melon QA Bot\",\"logo\":\"https://image.getmelon.co/UPLOADS-694c5cbb-e3ff-4b45-a5c3-2f69a8ff9d2d.png\",\"rc_number\":\"RC100001\",\"business_email\":\"melonqabot-1785749135479@yopmail.com\",\"phone\":\"+2348099999999\",\"industry\":\"manufacturing\",\"website_link\":null,\"instagram\":null,\"facebook\":null,\"twitter\":null,\"linkedin\":null},{\"id\":\"a61aafd5-5947-4bd0-baae-1e1e400360f3\",\"name\":\"Tailsman \",\"logo\":null,\"rc_number\":\"RC100011\",\"business_email\":\"iyinoluwa@YOPmail.com\",\"phone\":\"+2347071216035\",\"industry\":\"finance\",\"website_link\":null,\"instagram\":null,\"facebook\":null,\"twitter\":null,\"linkedin\":null}],\"default_business\":\"866167cd-5c0e-4a02-bd58-4975dca846c9\",\"has_business_access\":true,\"requires_business_setup\":false,\"avatar\":\"https://image.getmelon.co/UPLOADS-df6fb9c5-b0a8-46cc-991f-b802a1ebfb24.png\",\"phone_number\":\"+2347777702920\",\"profile_completed\":true,\"verified\":true,\"email\":\"melonqabot@yopmail.com\",\"first_name\":\"UpdatedFirst-102337\",\"last_name\":\"UpdatedLast-102337\",\"type\":\"member\"},\"token\":\"[REDACTED]\"}}"
+    }
+  },
+  {
+    "timestamp": "2026-09-21T09:51:38.623Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/wallets/businesses/866167cd-5c0e-4a02-bd58-4975dca846c9",
+    "status": 200,
+    "request": {
+      "headers": {
+        "Authorization": "[REDACTED]"
+      },
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:38 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "6634d4a8-65de-4089-bdf7-64d37a33d5b7",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"15a-4GW8C91hxduxEZA2jUBE+f7awWo\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=eJ6EL55VdLw2Ku1%2FiZObg1DYUf6MywI6PnkoOBBJpOtbyjuPiE1fSgyL%2BAJ%2FkTKfSIlqEoO2b7F6055eTxWG3TL%2BPB2rcKeounjfA%2F9EqoVfdmUHLr7G4UOSx2wzGyKHgoDR%2B6ZOZiYB0g%3D%3D\"}]}",
+        "content-encoding": "br",
+        "cf-ray": "a3e82c286fee67aa-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"message\":\"Wallet retrived\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"id\":\"5029b793-30ea-46c6-96a5-671c7850ef00\",\"account_name\":\"Melon QA Bot\",\"account_number\":\"3832020608\",\"business_id\":\"866167cd-5c0e-4a02-bd58-4975dca846c9\",\"bank_name\":\"Paga\",\"bank_code\":null,\"account_reference\":\"ACCT-1784713657659\",\"provider\":\"paga\",\"balance\":260131760}}"
+    }
+  },
+  {
+    "timestamp": "2026-09-21T09:51:38.948Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/businesses/866167cd-5c0e-4a02-bd58-4975dca846c9",
+    "status": 200,
+    "request": {
+      "headers": {
+        "Authorization": "[REDACTED]"
+      },
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:38 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "2402eab7-784a-4c41-b16c-dff9fb54250f",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"cfa-2Vn/USLzqx8FIYhCkq8Sxe/QeAg\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=zWxNz5nFZ19Wo1vdaiZRJcuOXKrF3hCve%2FWMzgdWHqNtikodLlz4aTZEVQxi1brz7IOcH5Yk1XcuHnLPELo%2FYSfngQmSOt5bTbBeObIcs9CBr2yEJfYJ1pBar4jKLvm7Au%2BHA9LqKq%2FlUw%3D%3D\"}]}",
+        "content-encoding": "br",
+        "cf-ray": "a3e82c2a795767aa-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"message\":\"Retrive business successfully\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"id\":\"866167cd-5c0e-4a02-bd58-4975dca846c9\",\"plain_key\":\"[REDACTED]\",\"plugin_key\":\"[REDACTED]\",\"profile_completed\":false,\"type\":\"registered\",\"details\":{\"logo\":\"https://image.getmelon.co/UPLOADS-694c5cbb-e3ff-4b45-a5c3-2f69a8ff9d2d.png\",\"rc_number\":\"RC100001\",\"type\":\"registered\",\"name\":\"Melon QA Bot\",\"business_email\":\"melonqabot-1785749135479@yopmail.com\",\"slug\":\"melon-qa-bot\",\"tagline\":\"Where Quality meets Innovation\",\"phone_number\":\"+2348099999999\",\"industry\":\"manufacturing\",\"industry_id\":null,\"industry_category_id\":null,\"industry_info\":null,\"category_info\":null,\"address\":null},\"stage\":19,\"required_stage\":3,\"bvn_validated\":true,\"is_onboarded\":true,\"is_subscribed\":true,\"directors\":[{\"id\":\"ceddadff-409c-443b-80ee-374f99e26bad\",\"first_name\":\"FESTUS\",\"last_name\":\"AJIMOBI\",\"email\":\"a.festus@yopmail.com\",\"phone_number\":\"+2349187234232\",\"address\":\"10, HERBERT TEST WAY,  LAGOS,\"},{\"id\":\"97b8e75b-62eb-4c67-bb82-157534486730\",\"first_name\":\"BUNCH\",\"last_name\":\"DILLION\",\"email\":\"bunch@yopmail.com\",\"phone_number\":\"+2348000000000\",\"address\":\"PLOT 167 STEFFANY CRESCENT, APARTMENT1,ZONE 2, ABUJA.\"}],\"branches\":[{\"id\":\"c2815ed1-88a0-4837-8eed-1c02a2937eff\",\"channel\":null,\"link\":null,\"address\":\"General Warehouse\",\"location\":null,\"longitude\":null,\"latitude\":null,\"accuracy\":null,\"opening_hours\":null,\"pick_up_details\":null,\"has_offer\":false,\"manager_id\":\"Melo001\",\"member_count\":0,\"manager\":null,\"payment_options\":[]},{\"id\":\"cab4f743-d2fa-4819-bcc2-3c7204212d5f\",\"channel\":\"offline\",\"link\":null,\"address\":\"Ameen St, Abule ijesha, Lagos 101245, Lagos, Nigeria\",\"location\":\"0101000020E61000002B3C1EE9C20E0B40474B2F7B23141A40\",\"longitude\":3.3822077,\"latitude\":6.5196666,\"accuracy\":90,\"opening_hours\":{\"Friday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}],\"Monday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}],\"Tuesday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}],\"Thursday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}],\"Wednesday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}]},\"pick_up_details\":null,\"has_offer\":true,\"manager_id\":\"Melo003\",\"member_count\":1,\"manager\":null,\"payment_options\":[]},{\"id\":\"46e1ace9-fc18-4381-8dbf-062d6271bbda\",\"channel\":\"online\",\"link\":\"https://melonqabot.getmelon.shop\",\"address\":null,\"location\":null,\"longitude\":null,\"latitude\":null,\"accuracy\":null,\"opening_hours\":null,\"pick_up_details\":{\"address\":\"Ameen St, Abule ijesha, Lagos 101245, Lagos, Nigeria\",\"accuracy\":90,\"latitude\":6.5196666,\"longitude\":3.3822077,\"opening_time\":{\"Friday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}],\"Monday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}],\"Tuesday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}],\"Thursday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}],\"Wednesday\":[{\"open\":\"9:00AM\",\"close\":\"5:00PM\"}]},\"phone_number\":\"+2347080702920\"},\"has_offer\":true,\"manager_id\":\"Melo002\",\"member_count\":3,\"manager\":{\"name\":\"UpdatedFirst-102337 UpdatedLast-102337\",\"id\":\"8cad8c2a-c142-4790-8002-a1172582b69c\",\"member_id\":\"1cd0b1a3-36dd-4594-a399-55b5509f6891\",\"passcode_set\":false},\"payment_options\":[{\"id\":\"1d9019db-0624-44ae-9d49-e33c48d3041c\",\"name\":\"Melon Wallet\",\"slug\":\"melon_wallet\"},{\"id\":\"3cd5e3a9-db3b-4098-aba4-99ae799ff29e\",\"name\":\"Online Payments\",\"slug\":\"online_payments\"},{\"id\":\"9804e417-98c7-4bae-9d4f-cb406ff268fb\",\"name\":\"Pay on Delivery\",\"slug\":\"pay_on_delivery\"}]}]}}"
+    }
+  }
+]

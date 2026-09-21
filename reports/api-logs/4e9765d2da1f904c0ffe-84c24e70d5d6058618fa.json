@@ -1,0 +1,171 @@
+[
+  {
+    "timestamp": "2026-09-21T09:51:33.988Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "POST",
+    "url": "https://staging-api.getmelon.co/api/v1/auth/login-member",
+    "status": 200,
+    "request": {
+      "headers": {},
+      "body": "{\"email\":\"melonqabot@yopmail.com\",\"password\":\"[REDACTED]\"}"
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:33 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "5824a84f-b4bc-4ad2-a2f8-565271e9cac5",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"b4f-CiuJ6MWWIVVavoz/1jve/AaraRA\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=jfjXHgpE80bthCJKNvJZ%2BrR%2B1dhS3ScWkfhay9yJ0o3zk%2BvcuhYYwxzHeY8q%2FTzg%2F17HuSRmOLadPYoaHJuV%2BnLAROT%2BPzwf4F5vzdSJRnmx23tzMVP9Agz5mNRDjCtXLmSXG9w9uExMzQ%3D%3D\"}]}",
+        "content-encoding": "br",
+        "cf-ray": "a3e82c092a5f67aa-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"message\":\"Logged in successfully\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"member\":{\"member_id\":\"1cd0b1a3-36dd-4594-a399-55b5509f6891\",\"businesses\":[{\"id\":\"866167cd-5c0e-4a02-bd58-4975dca846c9\",\"name\":\"Melon QA Bot\",\"logo\":\"https://image.getmelon.co/UPLOADS-694c5cbb-e3ff-4b45-a5c3-2f69a8ff9d2d.png\",\"rc_number\":\"RC100001\",\"business_email\":\"melonqabot-1785749135479@yopmail.com\",\"phone\":\"+2348099999999\",\"industry\":\"manufacturing\",\"website_link\":null,\"instagram\":null,\"facebook\":null,\"twitter\":null,\"linkedin\":null},{\"id\":\"a61aafd5-5947-4bd0-baae-1e1e400360f3\",\"name\":\"Tailsman \",\"logo\":null,\"rc_number\":\"RC100011\",\"business_email\":\"iyinoluwa@YOPmail.com\",\"phone\":\"+2347071216035\",\"industry\":\"finance\",\"website_link\":null,\"instagram\":null,\"facebook\":null,\"twitter\":null,\"linkedin\":null}],\"default_business\":\"866167cd-5c0e-4a02-bd58-4975dca846c9\",\"has_business_access\":true,\"requires_business_setup\":false,\"avatar\":\"https://image.getmelon.co/UPLOADS-df6fb9c5-b0a8-46cc-991f-b802a1ebfb24.png\",\"phone_number\":\"+2347777702920\",\"profile_completed\":true,\"verified\":true,\"email\":\"melonqabot@yopmail.com\",\"first_name\":\"UpdatedFirst-102337\",\"last_name\":\"UpdatedLast-102337\",\"type\":\"member\"},\"token\":\"[REDACTED]\"}}"
+    }
+  },
+  {
+    "timestamp": "2026-09-21T09:51:34.300Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/simple-mode/business/866167cd-5c0e-4a02-bd58-4975dca846c9/overview",
+    "status": 401,
+    "request": {
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:34 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "63",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "ee0d5b2f-1011-497c-aeb3-1d3585805f3c",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"3f-I2YUJLi0mxWmGlP+7SN5J/Q0RhI\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=j5W0HexHcb6XiBpBiubjCL7o2B%2BUSWzKhCS08H0edfY%2FRCmQTPGERX6990%2BSHdf%2BOIF4WqxullTAVSDkWfv%2FXdCRaQ8MPr72sKxbAGv1YzavZ6OqY52smqPAVNAqoqoEL6qUO%2BpGIkL%2F%2Fw%3D%3D\"}]}",
+        "cf-ray": "a3e82c0d8d4e67aa-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"status\":\"error\",\"statusCode\":401,\"message\":\"token not found\"}"
+    }
+  },
+  {
+    "timestamp": "2026-09-21T09:51:34.737Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/simple-mode/business/866167cd-5c0e-4a02-bd58-4975dca846c9/transactions?page=1&limit=5",
+    "status": 401,
+    "request": {
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:34 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "63",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "dcd78c76-2a02-40a4-8903-d38b92bb13bc",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"3f-I2YUJLi0mxWmGlP+7SN5J/Q0RhI\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=dYXb77XXGiNaVehflC9wpR0Fc5dcGhr%2BHTLtqXwkOuIuifPi2t1Kdlk3%2FRR8uPQxvQp0HZaoMu6b2VOFmDzU9YTOSwvM93JyKt0jLwPAWiJU9rot5%2FguuurUJ0Rn8c0nm2SvBhWhR7PWeQ%3D%3D\"}]}",
+        "cf-ray": "a3e82c0f7e7267aa-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"status\":\"error\",\"statusCode\":401,\"message\":\"token not found\"}"
+    }
+  },
+  {
+    "timestamp": "2026-09-21T09:51:35.043Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/wallets/businesses/866167cd-5c0e-4a02-bd58-4975dca846c9",
+    "status": 401,
+    "request": {
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:35 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "63",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "4bd8f8a4-07c8-4165-b46a-c7282f8e96c9",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"3f-I2YUJLi0mxWmGlP+7SN5J/Q0RhI\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=rSkPJHhl5s8gLNOM8JSEoJ90lXTGbuA5C94nnSU9mHTgJgWsm3gX%2FLSJV5DDLQHKsdmgOmZGx7HEDScLVgkV2RAAlcOmHw4LUjUEhmMmGDEv3exLKC7AeBycBAHXDNLPFiMuybyoNwR4Cg%3D%3D\"}]}",
+        "cf-ray": "a3e82c12282e67aa-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"status\":\"error\",\"statusCode\":401,\"message\":\"token not found\"}"
+    }
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "timestamp": "2026-09-21T09:51:45.525Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "POST",
+    "url": "https://staging-api.getmelon.co/api/v1/auth/login-member",
+    "status": 200,
+    "request": {
+      "headers": {},
+      "body": "{\"email\":\"melonqabot@yopmail.com\",\"password\":\"[REDACTED]\"}"
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:45 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "43b53e90-0fbd-4420-b4fd-0463f9a7a270",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"b4f-sRDwi7oKG2O9cP2Qm/0OdoXkwUo\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=oaPgy%2BR2HPsj1npXFrluOEm4RTmNofcC%2Fp0XFbytp4RbGVAvwdogsIPbNK%2BWZ4kBarYc26gsUsakQie%2FdHd4FGglb7GdNsE1rS%2FRLpFKsXTujBHoHtvGW1cBcMEGa5eQ3uMH2Yw0CbK6vQ%3D%3D\"}]}",
+        "content-encoding": "br",
+        "cf-ray": "a3e82c504bbdf065-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"message\":\"Logged in successfully\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"member\":{\"member_id\":\"1cd0b1a3-36dd-4594-a399-55b5509f6891\",\"businesses\":[{\"id\":\"866167cd-5c0e-4a02-bd58-4975dca846c9\",\"name\":\"Melon QA Bot\",\"logo\":\"https://image.getmelon.co/UPLOADS-694c5cbb-e3ff-4b45-a5c3-2f69a8ff9d2d.png\",\"rc_number\":\"RC100001\",\"business_email\":\"melonqabot-1785749135479@yopmail.com\",\"phone\":\"+2348099999999\",\"industry\":\"manufacturing\",\"website_link\":null,\"instagram\":null,\"facebook\":null,\"twitter\":null,\"linkedin\":null},{\"id\":\"a61aafd5-5947-4bd0-baae-1e1e400360f3\",\"name\":\"Tailsman \",\"logo\":null,\"rc_number\":\"RC100011\",\"business_email\":\"iyinoluwa@YOPmail.com\",\"phone\":\"+2347071216035\",\"industry\":\"finance\",\"website_link\":null,\"instagram\":null,\"facebook\":null,\"twitter\":null,\"linkedin\":null}],\"default_business\":\"866167cd-5c0e-4a02-bd58-4975dca846c9\",\"has_business_access\":true,\"requires_business_setup\":false,\"avatar\":\"https://image.getmelon.co/UPLOADS-df6fb9c5-b0a8-46cc-991f-b802a1ebfb24.png\",\"phone_number\":\"+2347777702920\",\"profile_completed\":true,\"verified\":true,\"email\":\"melonqabot@yopmail.com\",\"first_name\":\"UpdatedFirst-102337\",\"last_name\":\"UpdatedLast-102337\",\"type\":\"member\"},\"token\":\"[REDACTED]\"}}"
+    }
+  },
+  {
+    "timestamp": "2026-09-21T09:51:45.854Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/wallets/withdrawals/866167cd-5c0e-4a02-bd58-4975dca846c9?page=1&limit=10",
+    "status": 200,
+    "request": {
+      "headers": {
+        "Authorization": "[REDACTED]"
+      },
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 09:51:45 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "0b31e24e-9f0f-4ea8-acb1-cd3eb05d9b4c",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"1398-oDpXSV2cyD3Ib/Uvj1bimoHVHos\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=LnXqDdFwwK7qzmg7Ioy0gyhJ%2FZ%2F9dT6qzwgeFbxNAbcMePENQYWmZ3sUk437TK%2FFEEIK4btrtO%2BF6kR1wybEL3KV4stYkehEFU7ZBJgySToVsgM%2BNizbZeUOAcRa8%2FzDeHYmu7JINH%2B%2B3g%3D%3D\"}]}",
+        "content-encoding": "br",
+        "cf-ray": "a3e82c55aaf3f065-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"message\":\"Withdrawal history fetched successfully\",\"status\":\"success\",\"statusCode\":200,\"data\":{\"results\":[{\"id\":\"9782a54b-01b0-48d9-8ce2-7b3e6e63563f\",\"reference\":\"ML-TXN-260819183545\",\"status\":\"failed\",\"amount\":500000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"440c63a0-9458-4c7b-9945-fdc4ee584766\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-08-19T05:46:57.576Z\",\"updated_at\":\"2026-08-19T05:46:58.204Z\"},{\"id\":\"acda5a9d-0f07-4944-9445-87693aa4473d\",\"reference\":\"ML-TXN-260819276369\",\"status\":\"failed\",\"amount\":200000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"440c63a0-9458-4c7b-9945-fdc4ee584766\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-08-19T05:46:23.698Z\",\"updated_at\":\"2026-08-19T05:46:24.347Z\"},{\"id\":\"b779663a-f20c-4271-90ae-db2527c13505\",\"reference\":\"ML-TXN-260817114872\",\"status\":\"failed\",\"amount\":700000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"440c63a0-9458-4c7b-9945-fdc4ee584766\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-08-17T13:23:54.857Z\",\"updated_at\":\"2026-08-17T13:23:59.203Z\"},{\"id\":\"b1d9b422-156a-416e-8146-057532fa1b7b\",\"reference\":\"ML-TXN-260817530962\",\"status\":\"failed\",\"amount\":300000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"440c63a0-9458-4c7b-9945-fdc4ee584766\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-08-17T13:20:15.953Z\",\"updated_at\":\"2026-08-17T13:20:16.462Z\"},{\"id\":\"5bc50e31-8ed7-404b-a3e1-4dfff2013ed3\",\"reference\":\"ML-TXN-260817754069\",\"status\":\"failed\",\"amount\":600000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"440c63a0-9458-4c7b-9945-fdc4ee584766\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-08-17T13:18:29.360Z\",\"updated_at\":\"2026-08-17T13:18:29.992Z\"},{\"id\":\"f94d6495-b2a8-4b4f-93f6-9956d47dbe3b\",\"reference\":\"ML-TXN-260806808428\",\"status\":\"failed\",\"amount\":500000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"517c8ff1-6268-40c8-a786-dc72083faa7c\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-08-06T13:41:55.365Z\",\"updated_at\":\"2026-08-06T13:41:56.017Z\"},{\"id\":\"5a91b3d8-1863-4d58-adb3-3dc57f4a12e6\",\"reference\":\"ML-TXN-260805929923\",\"status\":\"failed\",\"amount\":350000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"517c8ff1-6268-40c8-a786-dc72083faa7c\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-08-05T13:33:12.343Z\",\"updated_at\":\"2026-08-05T13:33:12.978Z\"},{\"id\":\"bd0756d7-9e6a-4569-a8bd-60ee43a9ed38\",\"reference\":\"ML-TXN-260729303700\",\"status\":\"failed\",\"amount\":300000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"d1e8c764-f158-4141-b2a3-3c9edef6bb19\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-07-29T07:59:15.885Z\",\"updated_at\":\"2026-07-29T07:59:16.354Z\"},{\"id\":\"389e73c0-1ee8-472f-9734-a2a0b6d68e25\",\"reference\":\"ML-TXN-260729816954\",\"status\":\"failed\",\"amount\":300000,\"transaction_type\":\"Withdrawal\",\"narration\":\"Withdrawal to Test Customer - 0000000000\",\"payment_method\":\"MELON_WALLET\",\"metadata\":{\"fee\":\"0\",\"bank_name\":\"Access Bank\",\"credit_account_name\":\"Test Customer\",\"credit_account_number\":\"0000000000\",\"withdrawal_account_id\":\"d1e8c764-f158-4141-b2a3-3c9edef6bb19\"},\"provider_response\":{\"code\":500},\"created_at\":\"2026-07-29T07:57:11.976Z\",\"updated_at\":\"2026-07-29T07:57:12.624Z\"}],\"paginate\":{\"page\":\"1\",\"perPage\":\"10\",\"offset\":0,\"totalEntriesSize\":9,\"currentEntriesSize\":9,\"totalPages\":1}}}"
+    }
+  }
+]
