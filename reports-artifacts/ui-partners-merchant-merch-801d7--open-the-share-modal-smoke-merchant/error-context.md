@@ -58,7 +58,7 @@ Received: "https://customer.getmelon.co/pay/melon-qa-bot"
                   - img [ref=e54]
                   - img [ref=e58]
             - generic [ref=e64]:
-              - heading "₦2,571,317.60" [level=2] [ref=e66]
+              - heading "₦2,601,317.60" [level=2] [ref=e66]
               - paragraph [ref=e67]: Settled instantly on every payment
             - generic [ref=e68]:
               - button "Withdraw to bank" [ref=e69] [cursor=pointer]
@@ -66,7 +66,7 @@ Received: "https://customer.getmelon.co/pay/melon-qa-bot"
           - generic [ref=e72]:
             - paragraph [ref=e73]:
               - text: You have
-              - generic [ref=e74]: ₦2,571,317.60
+              - generic [ref=e74]: ₦2,601,317.60
               - text: available. Add a bank account to withdraw anytime.
             - generic [ref=e75]:
               - button "Add bank account" [ref=e76] [cursor=pointer]
@@ -95,14 +95,14 @@ Received: "https://customer.getmelon.co/pay/melon-qa-bot"
             - generic [ref=e115]: Revenue
             - img [ref=e117]
           - generic [ref=e120]:
-            - heading "₦2,443,500.00" [level=3] [ref=e121]
+            - heading "₦2,473,500.00" [level=3] [ref=e121]
             - generic [ref=e124]: No growth data
         - generic [ref=e126]:
           - generic [ref=e127]:
             - generic [ref=e128]: Transactions
             - img [ref=e130]
           - generic [ref=e133]:
-            - heading "5.00" [level=3] [ref=e134]
+            - heading "11.00" [level=3] [ref=e134]
             - generic [ref=e135]: Total successful payments
         - generic [ref=e137]:
           - generic [ref=e138]:
@@ -112,7 +112,7 @@ Received: "https://customer.getmelon.co/pay/melon-qa-bot"
             - heading "3.00" [level=3] [ref=e145]
             - generic [ref=e147]:
               - img "coin" [ref=e149]
-              - text: 71,750 Coins awarded
+              - text: 86,750 Coins awarded
         - generic [ref=e151]:
           - generic [ref=e152]:
             - generic [ref=e153]: Repeat customers
@@ -135,71 +135,71 @@ Received: "https://customer.getmelon.co/pay/melon-qa-bot"
               - columnheader "Reward (Coins)" [ref=e178]
               - columnheader "Status" [ref=e179]
           - rowgroup [ref=e180]:
-            - row "JA John Ade MELON-1789968040784 ₦1,500.00 coin-icon +0 pending" [ref=e181]:
+            - row "JA John Ade MELON-1789976315991 ₦5,000.00 coin-icon +2,500.00 successful" [ref=e181]:
               - cell "JA John Ade" [ref=e182]:
                 - generic [ref=e183]:
                   - generic [ref=e184]: JA
                   - generic [ref=e185]: John Ade
-              - cell "MELON-1789968040784" [ref=e186]
-              - cell "₦1,500.00" [ref=e187]
-              - cell "coin-icon +0" [ref=e188]:
+              - cell "MELON-1789976315991" [ref=e186]
+              - cell "₦5,000.00" [ref=e187]
+              - cell "coin-icon +2,500.00" [ref=e188]:
                 - generic [ref=e189]:
                   - img "coin-icon" [ref=e191]
-                  - generic [ref=e192]: "+0"
-              - cell "pending" [ref=e193]:
-                - generic [ref=e194]: pending
-            - row "JA John Ade MELON-1789968010592 ₦1,000.00 coin-icon +0 pending" [ref=e196]:
+                  - generic [ref=e192]: +2,500.00
+              - cell "successful" [ref=e193]:
+                - generic [ref=e194]: successful
+            - row "JA John Ade MELON-1789976263257 ₦5,000.00 coin-icon +2,500.00 successful" [ref=e196]:
               - cell "JA John Ade" [ref=e197]:
                 - generic [ref=e198]:
                   - generic [ref=e199]: JA
                   - generic [ref=e200]: John Ade
-              - cell "MELON-1789968010592" [ref=e201]
-              - cell "₦1,000.00" [ref=e202]
-              - cell "coin-icon +0" [ref=e203]:
+              - cell "MELON-1789976263257" [ref=e201]
+              - cell "₦5,000.00" [ref=e202]
+              - cell "coin-icon +2,500.00" [ref=e203]:
                 - generic [ref=e204]:
                   - img "coin-icon" [ref=e206]
-                  - generic [ref=e207]: "+0"
-              - cell "pending" [ref=e208]:
-                - generic [ref=e209]: pending
-            - row "JA John Ade MELON-1789967972818 ₦1,000.00 coin-icon +0 pending" [ref=e211]:
+                  - generic [ref=e207]: +2,500.00
+              - cell "successful" [ref=e208]:
+                - generic [ref=e209]: successful
+            - row "JA John Ade MELON-1789976217128 ₦5,000.00 coin-icon +2,500.00 successful" [ref=e211]:
               - cell "JA John Ade" [ref=e212]:
                 - generic [ref=e213]:
                   - generic [ref=e214]: JA
                   - generic [ref=e215]: John Ade
-              - cell "MELON-1789967972818" [ref=e216]
-              - cell "₦1,000.00" [ref=e217]
-              - cell "coin-icon +0" [ref=e218]:
+              - cell "MELON-1789976217128" [ref=e216]
+              - cell "₦5,000.00" [ref=e217]
+              - cell "coin-icon +2,500.00" [ref=e218]:
                 - generic [ref=e219]:
                   - img "coin-icon" [ref=e221]
-                  - generic [ref=e222]: "+0"
-              - cell "pending" [ref=e223]:
-                - generic [ref=e224]: pending
-            - row "JA John Ade MELON-1789967964594 ₦5,000.00 coin-icon +0 pending" [ref=e226]:
+                  - generic [ref=e222]: +2,500.00
+              - cell "successful" [ref=e223]:
+                - generic [ref=e224]: successful
+            - row "JA John Ade MELON-1789975651687 ₦2,500.00 coin-icon +0 expired" [ref=e226]:
               - cell "JA John Ade" [ref=e227]:
                 - generic [ref=e228]:
                   - generic [ref=e229]: JA
                   - generic [ref=e230]: John Ade
-              - cell "MELON-1789967964594" [ref=e231]
-              - cell "₦5,000.00" [ref=e232]
+              - cell "MELON-1789975651687" [ref=e231]
+              - cell "₦2,500.00" [ref=e232]
               - cell "coin-icon +0" [ref=e233]:
                 - generic [ref=e234]:
                   - img "coin-icon" [ref=e236]
                   - generic [ref=e237]: "+0"
-              - cell "pending" [ref=e238]:
-                - generic [ref=e239]: pending
-            - row "JA John Ade MELON-1789964778212 ₦1,000.00 coin-icon +0 expired" [ref=e241]:
+              - cell "expired" [ref=e238]:
+                - generic [ref=e239]: expired
+            - row "JA John Ade MELON-1789975643311 ₦5,000.00 coin-icon +2,500.00 successful" [ref=e241]:
               - cell "JA John Ade" [ref=e242]:
                 - generic [ref=e243]:
                   - generic [ref=e244]: JA
                   - generic [ref=e245]: John Ade
-              - cell "MELON-1789964778212" [ref=e246]
-              - cell "₦1,000.00" [ref=e247]
-              - cell "coin-icon +0" [ref=e248]:
+              - cell "MELON-1789975643311" [ref=e246]
+              - cell "₦5,000.00" [ref=e247]
+              - cell "coin-icon +2,500.00" [ref=e248]:
                 - generic [ref=e249]:
                   - img "coin-icon" [ref=e251]
-                  - generic [ref=e252]: "+0"
-              - cell "expired" [ref=e253]:
-                - generic [ref=e254]: expired
+                  - generic [ref=e252]: +2,500.00
+              - cell "successful" [ref=e253]:
+                - generic [ref=e254]: successful
   - region "Notifications Alt+T"
   - region "Notifications alt+T"
 ```
