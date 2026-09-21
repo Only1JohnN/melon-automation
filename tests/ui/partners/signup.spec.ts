@@ -7,6 +7,9 @@ import { getEmailVerificationLink } from "../../../utils/yopmail";
 import { test, expect } from "../../../fixtures/baseTest";
 
 test.describe("@partners @auth @signup", () => {
+  // The sign-up flow reads its verification email from yopmail; allow for a slow inbox.
+  test.describe.configure({ timeout: 240_000 });
+
   test("should allow a new partner to create an account and verify their email @smoke", async ({
     page,
   }) => {
@@ -101,6 +104,8 @@ test.describe("@partners @auth @signup", () => {
 // after checking the phone that received the code, e.g.:
 //   TEST_PHONE_NUMBER=07080702920 SIGNUP_OTP=1234 npx playwright test --grep @manual
 test.describe("@partners @auth @signup @manual", () => {
+  test.describe.configure({ timeout: 240_000 });
+
   test("should verify a phone number by OTP and reach business type selection", async ({
     page,
   }) => {
