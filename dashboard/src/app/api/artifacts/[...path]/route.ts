@@ -2,6 +2,26 @@ import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
 
+const CONTENT_TYPES: Record<string, string> = {
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm",
+  ".zip": "application/zip",
+  ".json": "application/json",
+};
+
+function serve(file: string) {
+  return new NextResponse(fs.readFileSync(file), {
+    headers: {
+      "Content-Type":
+        CONTENT_TYPES[path.extname(file).toLowerCase()] ??
+        "application/octet-stream",
+    },
+  });
+}
+
 export async function GET(
   request: Request,
   {
@@ -43,11 +63,7 @@ export async function GET(
         executionFile
       )
     ) {
-      return new NextResponse(
-        fs.readFileSync(
-          executionFile
-        )
-      );
+      return serve(executionFile);
     }
   }
 
@@ -64,11 +80,7 @@ export async function GET(
       localFile
     )
   ) {
-    return new NextResponse(
-      fs.readFileSync(
-        localFile
-      )
-    );
+    return serve(localFile);
   }
 
   return new NextResponse(

@@ -1,3 +1,5 @@
+import { APPLICATIONS } from "./applications";
+
 export type ReportStep = {
   title: string;
   duration: number;
@@ -6,6 +8,8 @@ export type ReportStep = {
 };
 
 const ANSI = /\u001b\[[0-9;]*m/g;
+
+export const stripAnsi = (text: string) => text.replace(ANSI, "");
 
 // Playwright's JSON report nests `test.step` calls: each has a title, a duration
 // and, when it failed, an error. Normalise them so the UI never touches raw report shapes.
@@ -149,12 +153,7 @@ export function parseApplications(
   const tests =
     parseTests(report);
 
-  const apps = [
-    "partners",
-    "admin",
-    "storefront",
-    "stack",
-  ];
+  const apps = [...APPLICATIONS];
 
   return apps.map((app) => {
     const appTests =

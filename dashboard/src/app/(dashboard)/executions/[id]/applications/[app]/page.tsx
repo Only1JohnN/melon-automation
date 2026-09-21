@@ -1,4 +1,6 @@
 import Topbar from "@/components/Topbar";
+import { notFound } from "next/navigation";
+import { isEnabledApplication } from "@/lib/applications";
 import GroupedTestsTable from "@/components/GroupedTestsTable";
 
 import {
@@ -20,6 +22,11 @@ export default async function Page({
     id,
     app,
   } = await params;
+
+  // Disabled applications (see lib/applications.ts) have no page for now.
+  if (!isEnabledApplication(app)) {
+    notFound();
+  }
 
   const groups =
     await getExecutionTestsByApplication(
