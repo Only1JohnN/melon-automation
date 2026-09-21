@@ -10,7 +10,9 @@ import {
 import { Execution } from "./executions";
 import { resolveArtifacts } from "./artifacts";
 
+// Override with REPORTS_URL to read reports from somewhere else (e.g. a local server while developing).
 const REPORTS_URL =
+  process.env.REPORTS_URL ??
   "https://raw.githubusercontent.com/Only1JohnN/melon-automation/reports/reports";
 
 export async function getExecutionReport(
