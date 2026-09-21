@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2026-09-21T05:51:18.203Z",
+    "source": "api",
+    "resourceType": "fetch",
+    "method": "GET",
+    "url": "https://staging-api.getmelon.co/api/v1/details/",
+    "status": 404,
+    "request": {
+      "headers": {},
+      "body": null
+    },
+    "response": {
+      "headers": {
+        "date": "Mon, 21 Sep 2026 05:51:18 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "29",
+        "connection": "keep-alive",
+        "server": "cloudflare",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "x-request-id": "9e612a5d-f14a-45da-beab-86c1153de18f",
+        "access-control-allow-origin": "*",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "etag": "W/\"1d-OBJmQ+W//28C8NdoV82HGWh2ME8\"",
+        "cf-cache-status": "DYNAMIC",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=9UzmNVqpaL40hsaJUocIUtXGUacM2PKpMAgxQj%2FkzvbAd03S208WYGaPe1WyRh9N%2BT5rXRFcShe71kRyfE4mLo9orjSlFnT9uEpaEqeI54y%2Fu9dvkAJcjp%2BHOkI5DY5kwgGp3CwQIJCePg%3D%3D\"}]}",
+        "cf-ray": "a3e6cc14ee56cb7d-LAX",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "body": "{\"message\":\"Route not exist\"}"
+    }
+  }
+]
