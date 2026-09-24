@@ -60,7 +60,7 @@ export async function getFailures() {
         suite.specs.forEach((spec: any) => {
           spec.tests?.forEach((test: any) => {
             const result = test.results?.[0];
-            if (result && result.status !== "passed") {
+            if (result && result.status !== "passed" && result.status !== "skipped") {
               const filePath = spec.location?.file ?? spec.file ?? "Unknown";
               const file = filePath;
               const fileName = filePath.split("/").pop() ?? "Unknown";
@@ -237,6 +237,10 @@ export async function getAllTests() {
 
               tags: [...(spec.tags || []), ...(test.tags || [])],
 
+              project: test.projectName ?? null,
+
+              annotations: test.annotations ?? [],
+
               apps: inferredApps,
 
               status,
@@ -286,7 +290,9 @@ export async function getGroupedTests() {
 
     passed: group.tests.filter((t: any) => t.status === "passed").length,
 
-    failed: group.tests.filter((t: any) => t.status !== "passed").length,
+    failed: group.tests.filter((t: any) => t.status !== "passed" && t.status !== "skipped").length,
+
+    skipped: group.tests.filter((t: any) => t.status === "skipped").length,
   }));
 }
 
@@ -369,7 +375,9 @@ export async function getTestsByApplication(application: string) {
 
     passed: group.tests.filter((t: any) => t.status === "passed").length,
 
-    failed: group.tests.filter((t: any) => t.status !== "passed").length,
+    failed: group.tests.filter((t: any) => t.status !== "passed" && t.status !== "skipped").length,
+
+    skipped: group.tests.filter((t: any) => t.status === "skipped").length,
   }));
 }
 

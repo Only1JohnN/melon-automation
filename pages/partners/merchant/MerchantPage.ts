@@ -1,6 +1,7 @@
 import { expect, Locator, Page, test } from "@playwright/test";
 import { env } from "../../../config/environment";
 import { BasePage } from "../../common/BasePage";
+import { gotoWithRetry } from "../../../utils/navigation";
 
 /** Shared behaviour for every logged-in merchant screen (desktop sidebar / mobile menu). */
 export abstract class MerchantPage extends BasePage {
@@ -20,7 +21,7 @@ export abstract class MerchantPage extends BasePage {
 
   async open() {
     await test.step(`Open ${this.path}`, async () => {
-      await this.page.goto(`${env.partnerUrl}${this.path}`);
+      await gotoWithRetry(this.page, `${env.partnerUrl}${this.path}`);
       await this.waitUntilReady();
     });
   }

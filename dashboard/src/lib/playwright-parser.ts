@@ -119,6 +119,10 @@ export function parseTests(
           result?.attachments ||
           [],
 
+        annotations:
+          test.annotations ||
+          [],
+
         error:
           (
             result?.errors?.[1]
@@ -143,7 +147,10 @@ export function parseFailures(
   ).filter(
     (test) =>
       test.status !==
-      "passed"
+        "passed" &&
+      // A skipped test is waiting on something, not failing (its reason is shown with it).
+      test.status !==
+        "skipped"
   );
 }
 
@@ -178,7 +185,16 @@ export function parseApplications(
         appTests.filter(
           (t) =>
             t.status !==
-            "passed"
+              "passed" &&
+            t.status !==
+              "skipped"
+        ).length,
+
+      skipped:
+        appTests.filter(
+          (t) =>
+            t.status ===
+            "skipped"
         ).length,
     };
   });

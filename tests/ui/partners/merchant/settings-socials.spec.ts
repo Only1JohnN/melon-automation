@@ -1,6 +1,7 @@
 import { SocialsSettingsPage } from "../../../../pages/partners/merchant/settings/SocialsSettingsPage";
 import { test, expect } from "../../../../fixtures/baseTest";
 
+import { pending } from "../../../../utils/pending";
 test.describe("@partners @settings @socials", () => {
   test("should list the website and social links a customer can find", async ({ page }) => {
     const socials = new SocialsSettingsPage(page);
@@ -27,11 +28,7 @@ test.describe("@partners @settings @socials", () => {
     await expect(socials.websiteInput).toBeHidden();
   });
 
-  test.fixme("should save website and social links and show them afterwards", async ({ page, api }) => {
-    // TODO(dev): the save call succeeds (PUT /businesses/socials -> 200 "Update Social details", toast
-    // "Online presence updated successfully") but NOTHING is persisted: the view still shows "--" after a
-    // reload, GET /businesses/{id} has no social fields and the public GET /details/{slug} returns
-    // website_link/instagram/facebook as null. Un-fixme once the links are stored and displayed.
+  test.fixme("should save website and social links and show them afterwards", pending("Observed: saving Website & Social Media succeeds (the request returns 200 \"Update Social details\" and the toast says \"Online presence updated successfully\") but nothing is stored: after a reload the page still shows \"--\", the business record has no social fields, and the public details endpoint returns website_link, instagram and facebook as null. Expected: the saved links are stored and shown again."), async ({ page, api }) => {
     const socials = new SocialsSettingsPage(page);
     const links = { website: "https://www.melonqabot.example", instagram: "@melonqabot" };
 
@@ -52,8 +49,6 @@ test.describe("@partners @settings @socials", () => {
     // Cleanup once this passes: clear the links again so the QA merchant stays untouched.
   });
 
-  test.fixme("should show saved social links on the customer pay page", async () => {
-    // TODO(dev): depends on the persistence bug above. Customer page (customer.getmelon.co/pay/{slug})
-    // currently renders no website/social links at all; confirm with product where they should appear.
+  test.fixme("should show saved social links on the customer pay page", pending("The customer pay page currently shows no website or social links at all. This depends on the save problem in \"should save website and social links and show them afterwards\", and on product confirming where the links should appear."), async () => {
   });
 });
