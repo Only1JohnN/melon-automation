@@ -65,6 +65,25 @@ export class PayLinkPage extends BasePage {
     await test.step(`Open the pay link for "${businessSlug}"`, async () => {
       await gotoWithRetry(this.page, `${env.storefrontUrl}/pay/${businessSlug}`);
       await expect(this.amountInput).toBeVisible({ timeout: 30_000 });
+
+      // The business's own details (its name and the "Payments completed" card) come from a separate request that
+      // now and then never answers, leaving the placeholder business ("Melon", "?") on screen with a working form.
+      // For the QA business, reload until the details arrive and write down that it was needed.
+      if (businessSlug !== env.testStoreSlug) return;
+
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        const loaded = await this.paymentCompletedCard
+          .waitFor({ state: "visible", timeout: 15_000 })
+          .then(() => true, () => false);
+        if (loaded || attempt === 3) return;
+
+        test.info().annotations.push({
+          type: "slow-response",
+          description: `The pay page's business details did not load within 15s (the page showed the placeholder business); reloaded (attempt ${attempt} of 3).`,
+        });
+        await this.page.reload();
+        await expect(this.amountInput).toBeVisible({ timeout: 30_000 });
+      }
     });
   }
 
