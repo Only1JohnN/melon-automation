@@ -4,6 +4,7 @@ import { env } from "../../../config/environment";
 import { expectedRewardNaira } from "../../../test-data/constants/rewards";
 import { formatNaira } from "../../../utils/money";
 
+import { pending } from "../../../utils/pending";
 const SLUG = env.testStoreSlug;
 const KNOWN_PHONE = env.testPhoneNumber;
 
@@ -153,6 +154,7 @@ test.describe("@storefront @pay", () => {
       expect(transfer.accountNumber).toBe(link.account_number);
       expect(transfer.reference).toBe(link.transaction_id);
       await expect(page.getByText(/expires in (29|30):\d\d/)).toBeVisible();
+      await expect(pay.madeTransferButton).toBeVisible();
       await expect(page.getByText(/you'll earn ₦25.00 in melon coins once this payment is confirmed/i)).toBeVisible();
     });
 
@@ -254,18 +256,52 @@ test.describe("@storefront @pay", () => {
     await expect(pay.transferHeading).toBeHidden();
   });
 
-  test.fixme("should complete a payment for a brand-new customer after entering the SMS code", async () => {
-    // TODO(qa): needs a phone number the team owns that is NOT yet registered with Melon, plus a human to
-    // read the SMS (same constraint as the partner sign-up OTP test). Suggested shape, mirroring signup.spec.ts:
-    // tag @manual, skip unless TEST_NEW_PHONE_NUMBER and CUSTOMER_OTP are set, then: amount -> phone ->
-    // "Confirm your number" -> type the 4-digit code -> (profile details step, if any) -> transfer details.
-    // The screens after the OTP haven't been seen yet, so the rest of the flow still has to be mapped.
+  test("should switch between light and dark", async ({ page }) => {
+    const pay = new PayLinkPage(page);
+    await pay.goto(SLUG);
+
+    const light = await pay.backgroundColor();
+    await pay.themeToggle.click();
+    await expect.poll(() => pay.backgroundColor()).not.toBe(light);
+    const dark = await pay.backgroundColor();
+
+    // The choice is not remembered across a reload today (the page comes back light); only the toggle is checked.
+    await pay.themeToggle.click();
+    await expect.poll(() => pay.backgroundColor()).toBe(light);
+    expect(dark).not.toBe(light);
   });
 
-  test.fixme("should tell the customer when the pay link's business does not exist", async ({ page }) => {
-    // TODO(dev): opening /pay/<unknown-slug> makes the API answer 404 "Business not found", yet the page
-    // still renders a placeholder business ("Melon", "KYC Approved", "?" avatar) and lets the customer go
-    // on to pay. Expected: a clear "business not found" state with no payment form.
+  test("should check for the transfer straight away when the customer taps I've made the transfer", async ({
+    page,
+    api,
+  }) => {
+    knownPhoneOnly();
+    const pay = new PayLinkPage(page);
+
+    await pay.goto(SLUG);
+    await pay.enterAmount("1000");
+    await pay.continueToPay();
+    await pay.enterPhoneNumber(KNOWN_PHONE!);
+    const transfer = await pay.readTransferDetails();
+
+    const check = page.waitForResponse(
+      (r) => r.url().includes(`/simple-mode/payment-links?transactionId=${transfer.reference}`) && r.status() === 200
+    );
+    await pay.madeTransferButton.click();
+
+    await expect(pay.checkingTransferText).toBeVisible();
+    await expect(pay.checkingTransferButton).toBeDisabled();
+    await check;
+
+    await test.step("Nothing was paid, so the payment is still pending and no coins are given", async () => {
+      const { body } = await api.paymentLink(transfer.reference);
+      expect(body.data.payment_status).toBe("pending");
+      expect(body.data.reward_coin_amount).toBeNull();
+      await expect(page.getByText(/received$/i)).toBeHidden();
+    });
+  });
+
+  test.fixme("should tell the customer when the pay link's business does not exist", pending("Observed: opening a pay link for a business that does not exist makes the API answer 404 \"Business not found\", yet the page still shows a placeholder business (\"Melon\", \"KYC Approved\", a \"?\" avatar) and lets the customer continue to pay. Expected: a clear \"business not found\" page with no payment form."), async ({ page }) => {
     await page.goto(`${env.storefrontUrl}/pay/this-business-does-not-exist`);
     await expect(page.getByText(/not found|doesn't exist|invalid/i)).toBeVisible();
     await expect(page.getByRole("button", { name: /continue to pay/i })).toBeHidden();

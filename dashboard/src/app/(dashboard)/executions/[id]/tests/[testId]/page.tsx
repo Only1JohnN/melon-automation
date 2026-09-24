@@ -1,4 +1,5 @@
 import Topbar from "@/components/Topbar";
+import TestReasons from "@/components/TestReasons";
 import StatusBadge from "@/components/StatusBadge";
 import StepsTimeline from "@/components/StepsTimeline";
 import ApiRequestRow from "@/components/ApiRequestRow";
@@ -64,6 +65,8 @@ export default async function TestPage({
             </div>
           )}
         </div>
+
+        <TestReasons annotations={test.annotations} status={test.status} />
 
         <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
           <h3 className="mb-1 text-lg font-semibold">

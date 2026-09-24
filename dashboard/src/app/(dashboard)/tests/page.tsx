@@ -1,4 +1,5 @@
 import Topbar from "@/components/Topbar";
+import { ReasonNote, ScreenBadge } from "@/components/TestNote";
 import Link from "next/link";
 import { getGroupedTests } from "@/lib/report-parser";
 
@@ -77,7 +78,9 @@ export default async function TestsPage() {
                           className="block"
                         >
                           {test.title}
+                          <ScreenBadge project={test.project} />
                         </Link>
+                        <ReasonNote annotations={test.annotations} status={test.status} />
                       </td>
 
                       <td className="p-4">
@@ -86,6 +89,8 @@ export default async function TestsPage() {
                             test.status ===
                             "passed"
                               ? "text-green-400"
+                              : test.status === "skipped"
+                              ? "text-yellow-400"
                               : "text-red-400"
                           }
                         >

@@ -2,6 +2,7 @@ import { expect, Locator, Page, test } from "@playwright/test";
 import { env } from "../../config/environment";
 import { BasePage } from "../common/BasePage";
 import { parseNaira } from "../../utils/money";
+import { gotoWithRetry } from "../../utils/navigation";
 
 export interface TransferDetails {
   accountNumber: string;
@@ -18,6 +19,10 @@ export class PayLinkPage extends BasePage {
   readonly phoneInput: Locator;
   readonly continueButton: Locator;
   readonly backButton: Locator;
+  readonly madeTransferButton: Locator;
+  readonly checkingTransferText: Locator;
+  readonly checkingTransferButton: Locator;
+  readonly themeToggle: Locator;
 
   readonly otpHeading: Locator;
   readonly otpInput: Locator;
@@ -38,6 +43,12 @@ export class PayLinkPage extends BasePage {
     this.phoneInput = page.locator('input[inputmode="tel"]');
     this.continueButton = page.getByRole("button", { name: "Continue", exact: true });
     this.backButton = page.getByRole("button", { name: /back$/i });
+    this.madeTransferButton = page.getByRole("button", { name: /made the transfer/i });
+    // After the tap the button relabels itself ("Checking for your transfer…", disabled) and a status line appears.
+    this.checkingTransferText = page.getByText(/confirming your transfer with the bank/i);
+    this.checkingTransferButton = page.getByRole("button", { name: /checking for your transfer/i });
+    // Icon-only button in the header (it has no accessible name), so it's found by being the one without text.
+    this.themeToggle = page.locator("header button").filter({ hasNotText: /./ }).first();
 
     this.otpHeading = page.getByText("Confirm your number");
     this.otpInput = page.getByText(/enter the 4-digit code/i);
@@ -52,7 +63,7 @@ export class PayLinkPage extends BasePage {
 
   async goto(businessSlug: string) {
     await test.step(`Open the pay link for "${businessSlug}"`, async () => {
-      await this.page.goto(`${env.storefrontUrl}/pay/${businessSlug}`);
+      await gotoWithRetry(this.page, `${env.storefrontUrl}/pay/${businessSlug}`);
       await expect(this.amountInput).toBeVisible({ timeout: 30_000 });
     });
   }
@@ -107,7 +118,17 @@ export class PayLinkPage extends BasePage {
 
   async readTransferDetails(): Promise<TransferDetails> {
     return test.step("Read the generated transfer details", async () => {
-      await expect(this.transferHeading).toBeVisible({ timeout: 30_000 });
+      const started = Date.now();
+      await expect(this.transferHeading).toBeVisible({ timeout: 90_000 });
+
+      // Generating the bank account is slow now and then; write down how long it took so a slow one is visible.
+      const seconds = Math.round((Date.now() - started) / 1000);
+      if (seconds > 15) {
+        test.info().annotations.push({
+          type: "slow-response",
+          description: `"Generating your payment details" took about ${seconds}s before the account number appeared.`,
+        });
+      }
       await expect(this.waitingForTransferText).toBeVisible();
 
       const text = await this.page.locator("body").innerText();
@@ -129,6 +150,19 @@ export class PayLinkPage extends BasePage {
     });
   }
 
+  /** The page background colour, which is what flips between light and dark. */
+  async backgroundColor() {
+    return this.page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  }
+
+  async expectClaimCoinsCta() {
+    await test.step("Success screen invites the customer to claim their Coins in the Melon app", async () => {
+      await expect(this.page.getByText(/claim your coins in the melon app/i)).toBeVisible();
+      await expect(this.page.getByRole("link", { name: "App Store" })).toHaveAttribute("href", /apps\.apple\.com/);
+      await expect(this.page.getByRole("link", { name: "Google Play" })).toHaveAttribute("href", /play\.google\.com/);
+    });
+  }
+
   async expectOtpRequested() {
     await test.step("A new number is asked for a 4-digit OTP", async () => {
       await expect(this.otpHeading).toBeVisible({ timeout: 20_000 });
@@ -136,7 +170,7 @@ export class PayLinkPage extends BasePage {
     });
   }
 
-  async expectPaymentConfirmed(amount: number, rewardNaira: number) {
+  async expectPaymentConfirmed(amount: number, rewardNaira?: number) {
     await test.step("Payment is confirmed on the customer side", async () => {
       await expect(this.page.getByText(/received$/i)).toBeVisible({ timeout: 90_000 });
       await expect(this.page.getByText(/your payment to .* is confirmed/i)).toBeVisible();
@@ -144,9 +178,12 @@ export class PayLinkPage extends BasePage {
 
       const text = await this.page.locator("body").innerText();
       expect(parseNaira(text.match(/(₦[\d,.]+) received/i)?.[1] ?? "0")).toBe(amount);
-      expect(parseNaira(text.match(/(₦[\d,.]+) in melon coins earned/i)?.[1] ?? "0")).toBe(
-        rewardNaira
-      );
+      const shownReward = parseNaira(text.match(/(₦[\d,.]+) in melon coins earned/i)?.[1] ?? "0");
+      if (rewardNaira !== undefined) {
+        expect(shownReward).toBe(rewardNaira);
+      } else {
+        expect(shownReward, "a reward is shown").toBeGreaterThan(0);
+      }
     });
   }
 }

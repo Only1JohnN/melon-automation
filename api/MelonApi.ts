@@ -122,6 +122,34 @@ export class MelonApi {
     );
   }
 
+  transactionsQuery(query: string) {
+    return this.send("GET", `/simple-mode/business/${this.businessId}/transactions?${query}`);
+  }
+
+  /** Every transaction, newest first, following the pagination. */
+  async allTransactions(pageSize = 50, maxPages = 20): Promise<any[]> {
+    const all: any[] = [];
+
+    for (let page = 1; page <= maxPages; page++) {
+      const { body } = await this.transactions(page, pageSize);
+      const results: any[] = body?.data?.results ?? [];
+      all.push(...results);
+      if (results.length < pageSize) break;
+    }
+
+    return all;
+  }
+
+  /** The merchant's linked withdrawal bank accounts (status: pending | verified | deactivated). */
+  accounts() {
+    return this.send("GET", `/accounts/${this.businessId}?limit=10000`);
+  }
+
+  /** Banks a merchant can choose from when adding a withdrawal account. */
+  banks() {
+    return this.send("GET", "/wallets/banks");
+  }
+
   qrCodes() {
     return this.send("GET", `/qr-codes/list/${this.businessId}`);
   }

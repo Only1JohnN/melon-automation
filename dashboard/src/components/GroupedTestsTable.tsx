@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import StatusBadge from "./StatusBadge";
+import { ReasonNote, ScreenBadge } from "./TestNote";
 
 type Group = {
   feature: string;
@@ -74,7 +75,11 @@ export default function GroupedTestsTable({ groups, executionId }: Props) {
                         key={test.id}
                         className="border-t border-slate-800 hover:bg-slate-900"
                       >
-                        <td className="p-4">{test.title}</td>
+                        <td className="p-4">
+                          {test.title}
+                          <ScreenBadge project={test.project} />
+                          <ReasonNote annotations={test.annotations} status={test.status} />
+                        </td>
                         <td className="p-4">
                           <StatusBadge status={test.status} />
                         </td>
@@ -83,10 +88,10 @@ export default function GroupedTestsTable({ groups, executionId }: Props) {
                           <Link
                             href={
                               executionId
-                                ? test.status === "passed"
+                                ? test.status === "passed" || test.status === "skipped"
                                   ? `/executions/${executionId}/tests/${test.id}`
                                   : `/executions/${executionId}/failures/${test.id}`
-                                : test.status === "passed"
+                                : test.status === "passed" || test.status === "skipped"
                                 ? `/tests/${test.id}`
                                 : `/failures/${test.id}`
                             }
@@ -109,7 +114,11 @@ export default function GroupedTestsTable({ groups, executionId }: Props) {
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex-1">
-                          <div className="font-semibold">{test.title}</div>
+                          <div className="font-semibold">
+                            {test.title}
+                            <ScreenBadge project={test.project} />
+                          </div>
+                          <ReasonNote annotations={test.annotations} status={test.status} />
                           <div className="text-sm text-slate-400">
                             {(test.duration / 1000).toFixed(2)}s
                           </div>
@@ -120,10 +129,10 @@ export default function GroupedTestsTable({ groups, executionId }: Props) {
                           <Link
                             href={
                               executionId
-                                ? test.status === "passed"
+                                ? test.status === "passed" || test.status === "skipped"
                                   ? `/executions/${executionId}/tests/${test.id}`
                                   : `/executions/${executionId}/failures/${test.id}`
-                                : test.status === "passed"
+                                : test.status === "passed" || test.status === "skipped"
                                 ? `/tests/${test.id}`
                                 : `/failures/${test.id}`
                             }

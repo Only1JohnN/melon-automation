@@ -10,10 +10,13 @@ import {
   attachNetworkLogger,
   saveNetworkLogs,
 } from "../utils/networkLogger";
+import { acquirePaymentLock } from "../utils/paymentLock";
 
 type Fixtures = {
   api: MelonApi;
   customerPage: Page;
+  pagaPage: Page;
+  paymentSlot: void;
   _saveNetworkLogs: void;
 };
 
@@ -33,10 +36,16 @@ export const test = base.extend<Fixtures>({
     await use(new MelonApi(request));
   },
 
-  // A logged-out browser context, for tests where a customer acts alongside the merchant.
+  // A logged-out browser context for the customer. It copies the project's device, so a phone-sized
+  // project gets a phone-sized customer alongside the phone-sized merchant.
   customerPage: async ({ browser }, use, testInfo) => {
+    const device = testInfo.project.use;
     const context = await browser.newContext({
-      viewport: { width: 1280, height: 800 },
+      viewport: device.viewport ?? { width: 1280, height: 800 },
+      isMobile: device.isMobile,
+      hasTouch: device.hasTouch,
+      deviceScaleFactor: device.deviceScaleFactor,
+      userAgent: device.userAgent,
       ignoreHTTPSErrors: true,
     });
     const customerPage = await context.newPage();
@@ -63,6 +72,44 @@ export const test = base.extend<Fixtures>({
 
     await context.close();
   },
+
+  // Paga's QA simulator always runs in a plain desktop browser, whatever device the test is emulating: it's an
+  // external tool we only drive, not something whose layout we are checking.
+  pagaPage: async ({ browser }, use, testInfo) => {
+    const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    const pagaPage = await context.newPage();
+    attachNetworkLogger(pagaPage, testInfo.testId, "paga");
+
+    await use(pagaPage);
+
+    if (testInfo.status !== testInfo.expectedStatus) {
+      const screenshotPath = testInfo.outputPath("paga-screenshot.png");
+      const saved = await pagaPage
+        .screenshot({ path: screenshotPath, fullPage: true })
+        .then(() => true)
+        .catch(() => false);
+
+      if (saved) {
+        await testInfo.attach("paga-screenshot", { path: screenshotPath, contentType: "image/png" });
+      }
+    }
+
+    await context.close();
+  },
+
+  // Waits for its turn to make a real payment (see utils/paymentLock.ts). Request it in a beforeEach of a spec
+  // that pays. Waiting here doesn't use up the test's own time limit.
+  paymentSlot: [
+    async ({}, use) => {
+      const release = await acquirePaymentLock();
+      try {
+        await use();
+      } finally {
+        release();
+      }
+    },
+    { timeout: 0 },
+  ],
 
   _saveNetworkLogs: [
     async ({}, use, testInfo) => {

@@ -3,6 +3,20 @@ import { env } from "./config/environment";
 
 const MERCHANT_STATE = "playwright/.auth/merchant.json";
 
+// Screen sizes every responsive check runs at. Tablet is emulated on Chromium (an iPad descriptor would
+// switch the project to WebKit, which CI doesn't install).
+const DEVICES = {
+  desktop: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } },
+  tablet: {
+    ...devices["Desktop Chrome"],
+    viewport: { width: 820, height: 1180 },
+    deviceScaleFactor: 2,
+    isMobile: true,
+    hasTouch: true,
+  },
+  mobile: { ...devices["Pixel 7"] },
+};
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -49,6 +63,10 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
+    // A wrong locator should fail in seconds, not sit until the whole test times out.
+    actionTimeout: 30_000,
+    navigationTimeout: 60_000,
+
     headless: env.headless,
     viewport: {
       width: 1920,
@@ -76,6 +94,9 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // Any *.responsive.spec.ts runs at desktop, tablet and phone size (see DEVICES above); the
+    // other specs run at desktop size only.
+
     // ── Merchant dashboard (authenticated) ─────────────────────────────────
     {
       name: "merchant-setup",
@@ -87,45 +108,62 @@ export default defineConfig({
       name: "merchant",
       dependencies: ["merchant-setup"],
       testMatch: "**/ui/partners/merchant/**/*.spec.ts",
-      testIgnore: "**/*.mobile.spec.ts",
-      use: { ...devices["Desktop Chrome"], storageState: MERCHANT_STATE },
+      use: { ...DEVICES.desktop, storageState: MERCHANT_STATE },
+    },
+
+    {
+      name: "merchant-tablet",
+      dependencies: ["merchant-setup"],
+      testMatch: "**/ui/partners/merchant/**/*.responsive.spec.ts",
+      use: { ...DEVICES.tablet, storageState: MERCHANT_STATE },
     },
 
     {
       name: "merchant-mobile",
       dependencies: ["merchant-setup"],
-      testMatch: "**/ui/partners/merchant/**/*.mobile.spec.ts",
-      use: { ...devices["Pixel 7"], storageState: MERCHANT_STATE },
+      testMatch: "**/ui/partners/merchant/**/*.responsive.spec.ts",
+      use: { ...DEVICES.mobile, storageState: MERCHANT_STATE },
     },
 
     // ── Customer-facing pay link (public) ──────────────────────────────────
     {
       name: "storefront",
       testMatch: "**/ui/storefront/**/*.spec.ts",
-      testIgnore: "**/*.mobile.spec.ts",
-      use: {
-        ...devices["Desktop Chrome"],
-        storageState: undefined,
-        ignoreHTTPSErrors: true,
-      },
+      use: { ...DEVICES.desktop, storageState: undefined, ignoreHTTPSErrors: true },
+    },
+
+    {
+      name: "storefront-tablet",
+      testMatch: "**/ui/storefront/**/*.responsive.spec.ts",
+      use: { ...DEVICES.tablet, storageState: undefined, ignoreHTTPSErrors: true },
     },
 
     {
       name: "storefront-mobile",
-      testMatch: "**/ui/storefront/**/*.mobile.spec.ts",
-      use: {
-        ...devices["Pixel 7"],
-        storageState: undefined,
-        ignoreHTTPSErrors: true,
-      },
+      testMatch: "**/ui/storefront/**/*.responsive.spec.ts",
+      use: { ...DEVICES.mobile, storageState: undefined, ignoreHTTPSErrors: true },
     },
 
-    // ── Cross-actor flows: customer pays, merchant sees it ─────────────────
+    // ── Cross-actor flows: customer pays, merchant sees it (both actors use the project's device) ──
     {
       name: "e2e",
       dependencies: ["merchant-setup"],
       testMatch: "**/ui/e2e/**/*.spec.ts",
-      use: { ...devices["Desktop Chrome"], storageState: MERCHANT_STATE },
+      use: { ...DEVICES.desktop, storageState: MERCHANT_STATE },
+    },
+
+    {
+      name: "e2e-tablet",
+      dependencies: ["merchant-setup"],
+      testMatch: "**/ui/e2e/**/*.responsive.spec.ts",
+      use: { ...DEVICES.tablet, storageState: MERCHANT_STATE },
+    },
+
+    {
+      name: "e2e-mobile",
+      dependencies: ["merchant-setup"],
+      testMatch: "**/ui/e2e/**/*.responsive.spec.ts",
+      use: { ...DEVICES.mobile, storageState: MERCHANT_STATE },
     },
 
     // ── Backend API checks (no browser) ────────────────────────────────────

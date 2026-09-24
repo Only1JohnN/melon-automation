@@ -86,6 +86,7 @@ export default async function ExecutionPage({
                 <th className="p-4 text-left">Application</th>
                 <th className="p-4 text-left">Passed</th>
                 <th className="p-4 text-left">Failed</th>
+                <th className="p-4 text-left">Skipped</th>
                 <th className="p-4 text-left">Total</th>
               </tr>
             </thead>
@@ -102,6 +103,7 @@ export default async function ExecutionPage({
                   </td>
                   <td className="p-4 text-green-400">{app.passed}</td>
                   <td className="p-4 text-red-400">{app.failed}</td>
+                  <td className="p-4 text-yellow-400">{app.skipped}</td>
                   <td className="p-4">{app.total}</td>
                 </tr>
               ))}
@@ -112,13 +114,13 @@ export default async function ExecutionPage({
         {/* --- Tests Card --- */}
         <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
           <h2 className="mb-4 text-xl font-semibold">Tests</h2>
-          <GroupedTestsTable groups={groupedTests} />
+          <GroupedTestsTable groups={groupedTests} executionId={id} />
         </div>
 
         {/* --- Failures Card --- */}
         <div className="rounded-3xl border border-slate-800 bg-[#111827] p-6">
           <h2 className="mb-4 text-xl font-semibold">Failures</h2>
-          <GroupedTestsTable groups={groupedFailures} />
+          <GroupedTestsTable groups={groupedFailures} executionId={id} />
         </div>
       </div>
     </>
