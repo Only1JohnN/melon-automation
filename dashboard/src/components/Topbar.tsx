@@ -1,4 +1,6 @@
 // components/Topbar.tsx
+import { formatEnvironment } from "@/lib/format";
+
 interface TopbarProps {
   title?: string;
   environment?: string;
@@ -9,6 +11,8 @@ export default function Topbar({ title = "Overview", environment }: TopbarProps)
   const getDotColor = (env?: string) => {
     if (!env) return "bg-slate-500";
     const lower = env.toLowerCase();
+    // "pre-release" is checked before "prod" so nothing later in the name can change its colour.
+    if (/pre[\s_-]?release/.test(lower)) return "bg-amber-500";
     if (lower.includes("prod") || lower.includes("production")) return "bg-green-500";
     if (lower.includes("staging") || lower.includes("stage")) return "bg-yellow-500";
     if (lower.includes("dev") || lower.includes("development")) return "bg-blue-500";
@@ -30,7 +34,7 @@ export default function Topbar({ title = "Overview", environment }: TopbarProps)
               Environment
             </span>
           </span>
-          <span className="text-sm font-semibold text-white">{environment}</span>
+          <span className="text-sm font-semibold text-white">{formatEnvironment(environment)}</span>
         </div>
       )}
     </div>

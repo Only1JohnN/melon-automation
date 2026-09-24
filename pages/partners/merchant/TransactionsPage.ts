@@ -130,6 +130,24 @@ export class MerchantTransactionsPage extends MerchantPage {
     }).toPass({ timeout: 20_000 });
   }
 
+  /**
+   * Finds a payment by reference, looking at the next pages when it isn't on the first one: other tests that run at
+   * the same time create payment links too, and each new link pushes older rows further down the list.
+   */
+  async findReference(reference: string, maxPages = 4) {
+    for (let n = 1; n <= maxPages; n++) {
+      if (n > 1) {
+        if ((await this.pageButton(n).count()) === 0) break;
+        await this.goToPage(n);
+      }
+
+      const row = await this.transactions.find(reference);
+      if (row) return row;
+    }
+
+    return undefined;
+  }
+
   async firstReference() {
     return (await this.transactions.record(0)).reference;
   }

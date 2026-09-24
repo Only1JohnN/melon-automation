@@ -165,7 +165,7 @@ export async function payAndVerify(context: PaymentContext, options: PaymentOpti
 
     await expect(async () => {
       await transactions.open();
-      const row = await transactions.transactions.find(transfer.reference);
+      const row = await transactions.findReference(transfer.reference);
       expect(row, "the pending payment is listed").toBeTruthy();
       expect(row).toMatchObject({ amount, coins: 0, status: "pending" });
     }).toPass({ timeout: 45_000, intervals: [3_000] });
@@ -261,7 +261,7 @@ export async function payAndVerify(context: PaymentContext, options: PaymentOpti
   await test.step("AFTER: the merchant's transaction list shows this payment as successful with the right coins and date", async () => {
     await expect(async () => {
       await transactions.open();
-      const row = await transactions.transactions.find(transfer.reference);
+      const row = await transactions.findReference(transfer.reference);
       expect(row, "the payment is listed").toBeTruthy();
       expect(row).toMatchObject({ amount, coins, status: "successful" });
 
