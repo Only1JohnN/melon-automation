@@ -2,6 +2,7 @@ import { test, expect } from "../../fixtures/baseTest";
 import { env } from "../../config/environment";
 import { toApiPhone } from "../../api/MelonApi";
 
+import { pending } from "../../utils/pending";
 const SLUG = env.testStoreSlug;
 // Lookup only — a GET on this endpoint never sends anything to the number.
 const UNREGISTERED_PHONE = "8011122233";
@@ -107,12 +108,7 @@ test.describe("@storefront @api", () => {
     }
   });
 
-  test.fixme("should answer an invalid amount with a 422 validation error", async ({ api }) => {
-    // TODO(dev): amount "0", "-500" and "abc" make POST /simple-mode/payment-links return HTTP 500 and
-    // leak Paga's raw error ("Invalid request hash…", "Invalid amount -- amount must…"). An empty or missing
-    // amount correctly gets 422 `"amount" is not allowed to be empty`. Expected: 422 with a friendly message
-    // for every invalid amount, never a 500. (The UI can't send these — the button stays disabled — so only
-    // direct API callers hit it.)
+  test.fixme("should answer an invalid amount with a 422 validation error", pending("Observed: amounts \"0\", \"-500\" and \"abc\" make POST /simple-mode/payment-links return HTTP 500 and leak Paga's raw error text (\"Invalid request hash…\", \"Invalid amount -- amount must…\"), while an empty or missing amount correctly gets 422. Expected: a 422 with a friendly message for every invalid amount, never a 500. The website cannot send these (its button stays disabled), so only direct API callers hit it."), async ({ api }) => {
     const phone = toApiPhone(env.testPhoneNumber!);
 
     for (const amount of ["0", "-500", "abc"]) {

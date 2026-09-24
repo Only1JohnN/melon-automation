@@ -1,20 +1,10 @@
+import { activate } from "../../../utils/responsive";
 import { expect, Locator, Page, test } from "@playwright/test";
 import { MerchantPage } from "./MerchantPage";
+import { TransactionTable } from "./components/TransactionTable";
 import { parseNaira } from "../../../utils/money";
 
 export type StatLabel = "Revenue" | "Transactions" | "Customers rewarded" | "Repeat customers";
-
-export interface TransactionRow {
-  customer: string;
-  reference: string;
-  amount: number;
-  coins: number;
-  status: string;
-}
-
-export interface TransactionCard extends TransactionRow {
-  date: string;
-}
 
 export class MerchantHomePage extends MerchantPage {
   readonly path = "/simple/home";
@@ -26,7 +16,15 @@ export class MerchantHomePage extends MerchantPage {
   readonly showBalanceButton: Locator;
   readonly withdrawButton: Locator;
   readonly viewStatementButton: Locator;
+
+  // Shown inside the balance card after "Withdraw to bank" when there is no verified bank account.
+  readonly noBankTitle: Locator;
   readonly addBankAccountButton: Locator;
+  readonly addBankIntro: Locator;
+  readonly bankSelect: Locator;
+  readonly bankSearch: Locator;
+  readonly accountNumberInput: Locator;
+  readonly addBankSubmit: Locator;
 
   readonly sharePaymentLinkCard: Locator;
   readonly qrCodeCard: Locator;
@@ -36,10 +34,15 @@ export class MerchantHomePage extends MerchantPage {
   readonly shareModalShare: Locator;
   readonly shareModalShowQr: Locator;
 
+  readonly qrModalHeading: Locator;
+  readonly qrModalImage: Locator;
+  readonly qrModalPrint: Locator;
+  readonly qrModalDownload: Locator;
+  readonly qrModalClose: Locator;
+  readonly qrModalTips: Locator;
+
   readonly viewAllTransactions: Locator;
-  readonly recentRows: Locator;
-  /** On phones the table is swapped for cards: reference + date, coins + amount, customer + status. */
-  readonly recentCards: Locator;
+  readonly transactions: TransactionTable;
 
   constructor(page: Page) {
     super(page);
@@ -51,7 +54,15 @@ export class MerchantHomePage extends MerchantPage {
     this.showBalanceButton = page.getByRole("button", { name: "Show balance" });
     this.withdrawButton = page.getByRole("button", { name: "Withdraw to bank" });
     this.viewStatementButton = page.getByRole("button", { name: "View statement" });
-    this.addBankAccountButton = page.getByRole("button", { name: "Add bank account" });
+
+    this.noBankTitle = page.getByText("No active bank accounts");
+    this.addBankAccountButton = page.getByRole("button", { name: "Add Bank Account" });
+    this.addBankIntro = page.getByText("Enter details to connect your withdrawal bank account.");
+    // A searchable combobox (cmdk): the trigger reads "Select", the list has a "Search banks..." box.
+    this.bankSelect = page.getByText("Select Bank", { exact: true }).locator("xpath=..").getByRole("combobox");
+    this.bankSearch = page.getByPlaceholder("Search banks...");
+    this.accountNumberInput = page.getByPlaceholder("Enter 10-digit account number");
+    this.addBankSubmit = page.getByRole("button", { name: "Add Bank", exact: true });
 
     this.sharePaymentLinkCard = page.getByRole("button", { name: /^Share payment link/ });
     this.qrCodeCard = page.getByRole("button", { name: /^QR code/ });
@@ -61,17 +72,33 @@ export class MerchantHomePage extends MerchantPage {
     this.shareModalShare = page.getByRole("button", { name: "Share", exact: true });
     this.shareModalShowQr = page.getByText("Show the QR code instead");
 
+    this.qrModalHeading = page.getByRole("heading", { name: "Your Melon QR code" });
+    this.qrModalImage = page.getByAltText("Payment QR Code");
+    this.qrModalPrint = page.getByRole("button", { name: "Print QR" });
+    this.qrModalDownload = page.getByRole("button", { name: "Download" });
+    this.qrModalClose = this.qrModalHeading.locator("xpath=../../button");
+    this.qrModalTips = page.getByText("Where to use it");
+
     this.viewAllTransactions = page.getByRole("button", { name: "View all" });
-    this.recentRows = page.locator("table tbody tr");
-    this.recentCards = page
-      .getByText(/^MELON-\d+$/)
-      .locator("visible=true")
-      .locator("xpath=../..");
+    this.transactions = new TransactionTable(page);
   }
 
   async waitUntilReady() {
     await expect(this.balanceAmount).toBeVisible({ timeout: 30_000 });
-    await expect(this.recentRows.first().locator("td").nth(1)).toContainText("MELON-", { timeout: 30_000 });
+    // Rows/cards render as empty skeletons first; wait until real data is in.
+    await expect(this.page.getByText(/^MELON-\d+$/).locator("visible=true").first()).toBeVisible({
+      timeout: 30_000,
+    });
+  }
+
+  /** The name after "Good evening, " (currently the business name; it used to be the member's first name). */
+  async greetingName(): Promise<string> {
+    const text = await this.greeting.innerText();
+
+    return text
+      .replace(/^Good \w+,\s*/i, "")
+      .replace(/[\p{Extended_Pictographic}\s]+$/u, "")
+      .trim();
   }
 
   /**
@@ -100,35 +127,6 @@ export class MerchantHomePage extends MerchantPage {
     return text.match(/customer\.\S+/)?.[0] ?? "";
   }
 
-  rowFor(reference: string): Locator {
-    return this.recentRows.filter({ hasText: reference });
-  }
-
-  async readRow(row: Locator): Promise<TransactionRow> {
-    const cells = row.locator("td");
-    return {
-      customer: (await cells.nth(0).innerText()).replace(/^[A-Z]{2}\s*/, "").trim(),
-      reference: (await cells.nth(1).innerText()).trim(),
-      amount: parseNaira(await cells.nth(2).innerText()),
-      coins: parseNaira(await cells.nth(3).innerText()),
-      status: (await cells.nth(4).innerText()).trim().toLowerCase(),
-    };
-  }
-
-  async readCard(card: Locator): Promise<TransactionCard> {
-    const text = await card.innerText();
-    const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
-
-    return {
-      customer: lines[1] ?? "",
-      reference: text.match(/MELON-\d+/)?.[0] ?? "",
-      date: text.match(/[A-Z][a-z]{2} \d{1,2}, \d{4}/)?.[0] ?? "",
-      amount: parseNaira(text.match(/₦[\d,.]+/)?.[0] ?? "0"),
-      coins: parseNaira(text.match(/\+([\d,.]+) Coins/)?.[1] ?? "0"),
-      status: (text.match(/successful|pending|expired|failed/i)?.[0] ?? "").toLowerCase(),
-    };
-  }
-
   async toggleBalanceVisibility() {
     await test.step("Toggle balance visibility (eye icon)", async () => {
       if (await this.hideBalanceButton.isVisible()) {
@@ -145,6 +143,45 @@ export class MerchantHomePage extends MerchantPage {
     await test.step("Open the Share payment link modal", async () => {
       await this.sharePaymentLinkCard.click();
       await expect(this.shareModalHeading).toBeVisible();
+    });
+  }
+
+  /**
+   * The share modal has no Close button and Escape doesn't close it, so it is dismissed by clicking the dimmed
+   * page behind it (see the pending "close the share modal with the keyboard" test).
+   */
+  async closeShareModal() {
+    await test.step("Close the Share payment link modal", async () => {
+      await this.page.mouse.click(5, 5);
+      await expect(this.shareModalHeading).toBeHidden();
+    });
+  }
+
+  async openQrModal() {
+    await test.step("Open the QR code modal from the Get Paid card", async () => {
+      await this.qrCodeCard.click();
+      await expect(this.qrModalHeading).toBeVisible();
+    });
+  }
+
+  async closeQrModal() {
+    await test.step("Close the QR code modal", async () => {
+      await this.qrModalClose.click();
+      await expect(this.qrModalHeading).toBeHidden();
+    });
+  }
+
+  /** "Withdraw to bank" with no verified bank account opens the "No active bank accounts" state. */
+  async openWithdraw() {
+    await test.step("Click Withdraw to bank", async () => {
+      await activate(this.page, this.withdrawButton);
+    });
+  }
+
+  async openAddBankForm() {
+    await test.step("Open the Add Bank Account form", async () => {
+      await this.addBankAccountButton.click();
+      await expect(this.addBankIntro).toBeVisible();
     });
   }
 }

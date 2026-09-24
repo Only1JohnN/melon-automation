@@ -1,27 +1,34 @@
 import { BusinessSettingsPage } from "../../../../pages/partners/merchant/settings/BusinessSettingsPage";
 import { test, expect } from "../../../../fixtures/baseTest";
+import { QA_BUSINESS_BASELINE } from "../../../../test-data/qaMerchant";
 
 test.describe("@partners @settings @business", () => {
   test.describe.configure({ mode: "serial" });
 
-  let originalPhone: string;
-  let originalEmail: string;
-  let originalIndustry: string;
+  const original = QA_BUSINESS_BASELINE;
+  const originalPhone = original.phone_number;
 
+  // Start from the baseline even if an earlier run was cut off before it could clean up.
   test.beforeEach(async ({ api }) => {
     await api.login();
     const { body } = await api.business();
-    originalPhone = body.data.details.phone_number;
-    originalEmail = body.data.details.business_email;
-    originalIndustry = body.data.details.industry;
+    const details = body.data.details;
+
+    if (
+      details.phone_number !== original.phone_number ||
+      details.business_email !== original.business_email ||
+      details.industry !== original.industry
+    ) {
+      test.info().annotations.push({
+        type: "healed",
+        description: `The QA business was left as phone ${details.phone_number}, email ${details.business_email}, industry ${details.industry}; set back to its baseline before this test.`,
+      });
+      await api.updateBusiness({ ...original });
+    }
   });
 
   test.afterEach(async ({ api }) => {
-    await api.updateBusiness({
-      business_email: originalEmail,
-      phone_number: originalPhone,
-      industry: originalIndustry,
-    });
+    await api.updateBusiness({ ...original });
   });
 
   test("should show the business details @smoke", async ({ page, api }) => {
@@ -107,11 +114,5 @@ test.describe("@partners @settings @business", () => {
 
     await expect(business.emailInput).toBeVisible();
     expect(saveRequests, "no update request is sent for an invalid email").toHaveLength(0);
-  });
-
-  test.fixme("should upload a new business logo", async () => {
-    // TODO(qa): needs a small PNG fixture (fixtures/images was removed with the old dashboard tests).
-    // Flow: business.logoUpload.setInputFiles(<png>) -> expect the logo <img> src to change and a
-    // success toast; then restore the previous logo via API so the QA merchant keeps its branding.
   });
 });

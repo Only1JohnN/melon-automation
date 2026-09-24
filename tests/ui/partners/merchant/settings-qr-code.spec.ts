@@ -90,20 +90,15 @@ test.describe("@partners @settings @qr-code", () => {
     await expect(page.getByText(/customers scan this code in your store/i)).toBeVisible();
   });
 
-  test.fixme("should download the QR code image", async ({ page }) => {
-    // TODO(dev): clicking "Download" produces no download and no popup within 8s (checked by hand and
-    // with Playwright). Expected: a PNG file download. Un-fixme once Download works.
+  test("should open the QR image when Download is clicked", async ({ page, api }) => {
     const qr = new QrCodeSettingsPage(page);
     await qr.open();
 
-    const [download] = await Promise.all([page.waitForEvent("download"), qr.downloadButton.click()]);
-    expect(download.suggestedFilename()).toMatch(/\.png$/i);
-  });
+    // Download now opens the QR image in a new tab rather than saving a file.
+    const openedUrl = await qr.downloadQr();
 
-  test.fixme("should create a QR code when the merchant has none", async () => {
-    // TODO(qa): needs a merchant with no QR code (the QA merchant already has one, and there is no way
-    // to delete/revoke it from the UI). Flow to cover: open Qr Code settings -> click the create/generate
-    // control -> a QR image appears -> API /qr-codes/list gains an active `payment` QR whose qr_data is
-    // the reward link. The create step inside the first test above is a placeholder until this is known.
+    await api.login();
+    const active = (await api.qrCodes()).body.data.results.find((q: any) => q.status === "active" && q.qr_type === "payment");
+    expect(openedUrl).toBe(active.qr_image_url);
   });
 });

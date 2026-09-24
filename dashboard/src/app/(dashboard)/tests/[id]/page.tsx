@@ -1,6 +1,8 @@
 import Topbar from "@/components/Topbar";
 import { getTestById } from "@/lib/report-parser";
 import { notFound } from "next/navigation";
+import TestReasons from "@/components/TestReasons";
+import { screenOf } from "@/lib/test-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -34,6 +36,17 @@ export default async function TestPage({
           Application:{" "}
           {test.tags.join(", ")}
         </p>
+
+        {screenOf(test.project) && (
+          <p>
+            Screen:{" "}
+            {screenOf(test.project)}
+          </p>
+        )}
+      </div>
+
+      <div className="mt-6">
+        <TestReasons annotations={test.annotations} status={test.status} />
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import Topbar from "@/components/Topbar";
+import { ReasonNote, ScreenBadge } from "@/components/TestNote";
 import { getTestsByApplication } from "@/lib/report-parser";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -52,14 +53,16 @@ export default async function ApplicationPage({
                       <td className="p-4">
                         <Link
                           href={
-                            test.status === "passed"
+                            test.status === "passed" || test.status === "skipped"
                               ? `/tests/${test.id}`
                               : `/failures/${test.id}`
                           }
                           className="block hover:text-[#D6FF32]"
                         >
                           {test.title}
+                          <ScreenBadge project={test.project} />
                         </Link>
+                        <ReasonNote annotations={test.annotations} status={test.status} />
                       </td>
                       <td className="p-4">
                         <StatusBadge status={test.status} />
