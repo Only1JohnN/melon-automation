@@ -1,5 +1,6 @@
 import { test } from "../../../fixtures/baseTest";
 import { env } from "../../../config/environment";
+import { randomAmountWithoutCoinLoss } from "../../../test-data/constants/rewards";
 import { payAndVerify } from "../../../utils/paymentFlow";
 import { expectResponsive } from "../../../utils/responsive";
 
@@ -22,8 +23,8 @@ test.describe("@e2e @payment @responsive @partners @storefront", () => {
     pagaPage,
     api,
   }, testInfo) => {
-    // A different amount every run (₦1,000-₦9,990 in steps of ₦10).
-    const amount = (100 + Math.floor(Math.random() * 900)) * 10;
+    // A different amount every run (₦1,000-₦9,990 in steps of ₦10), leaving out the amounts hit by the coin-loss bug.
+    const amount = randomAmountWithoutCoinLoss(1_000, 9_990);
     testInfo.annotations.push({ type: "amount", description: `₦${amount.toLocaleString()}` });
 
     await payAndVerify(

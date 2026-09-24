@@ -43,3 +43,14 @@ export function formatDuration(ms?: number | null) {
 
   return `${minutes}m ${seconds}s`;
 }
+
+/** "pre-release" -> "Pre-release": how an environment name is shown. */
+export function formatEnvironment(environment?: string | null) {
+  if (!environment) {
+    return "";
+  }
+
+  const trimmed = environment.trim();
+
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
+}

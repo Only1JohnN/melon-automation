@@ -3,13 +3,16 @@ permissions:
   contents: write
 
 on:
+  # Only work that is merged into master runs the suite (and posts to Zoho Cliq). Pushes to feature branches and
+  # develop don't, so one merge flow isn't three runs and three messages.
   push:
     branches:
-      - "**"
+      - master
 
   # schedule:
   #   - cron: "0 6 * * *"
 
+  # A manual run from any branch is still possible from the Actions tab (it runs the smoke tier off master).
   workflow_dispatch:
 
 jobs:
@@ -155,7 +158,9 @@ jobs:
           retention-days: 30
 
       - name: Publish Reports Branch
-        if: always()
+        # Master only: this is what the results dashboard reads, so a manual run from another branch (smoke tier)
+        # must not replace the latest results. Its report is still kept as a workflow artifact below.
+        if: always() && github.ref_name == 'master'
         run: |
           set -e
 
@@ -264,7 +269,8 @@ jobs:
       # Last step on purpose: the message links to this run's page in the results dashboard, which only
       # exists once the reports have been published above.
       - name: Send summary to Zoho Cliq
-        if: always() && env.CLIQ_WEBHOOK_URL != ''
+        # Master only: a manual run from another branch (smoke tier) stays quiet.
+        if: always() && env.CLIQ_WEBHOOK_URL != '' && github.ref_name == 'master'
         env:
           DASHBOARD_URL: ${{ vars.DASHBOARD_URL || 'https://melon-automation.vercel.app' }}
           JOB_STATUS: ${{ job.status }}

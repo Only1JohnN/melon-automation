@@ -1,4 +1,5 @@
 import Topbar from "@/components/Topbar";
+import { formatEnvironment } from "@/lib/format";
 import { getExecutions } from "@/lib/executions";
 import Link from "next/link";
 import StatusBadge from "@/components/StatusBadge";
@@ -72,7 +73,7 @@ export default async function ExecutionsPage() {
                           <StatusBadge status={execution.status} />
                         </td>
 
-                        <td className="p-4 hidden sm:table-cell">{execution.environment}</td>
+                        <td className="p-4 hidden sm:table-cell">{formatEnvironment(execution.environment)}</td>
 
                         <td className="p-4 hidden md:table-cell">{execution.total}</td>
 
