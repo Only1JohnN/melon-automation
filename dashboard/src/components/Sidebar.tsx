@@ -94,6 +94,7 @@ export default function Sidebar({ onLinkClick }: { onLinkClick?: () => void }) {
         </div>
       </nav>
 
+      {/* Hidden on request: "Made with ❤️ by Only1JohnN" footer.
       <div className="p-4 border-t border-slate-800">
         <div className="rounded-xl bg-slate-900 p-4">
           <p className="text-xs text-slate-500 tracking-wider">
@@ -110,6 +111,7 @@ export default function Sidebar({ onLinkClick }: { onLinkClick?: () => void }) {
           </p>
         </div>
       </div>
+      */}
     </aside>
   );
 }

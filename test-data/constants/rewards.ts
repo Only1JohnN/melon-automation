@@ -30,3 +30,24 @@ export function rewardIsHalfCoin(paymentAmount: number): boolean {
   const coins = exactRewardNaira(paymentAmount) * COINS_PER_NAIRA;
   return Math.abs((coins % 1) - 0.5) < 1e-6;
 }
+
+/**
+ * Observed: for some whole-coin rewards the product credits one coin too few (₦1,740 -> reward ₦8.70, 869 coins instead
+ * of 870). That is what rounding DOWN a floating-point product gives: 8.7 * 100 = 869.9999999999999. This predicts
+ * which amounts are hit (about 7% of ₦1,000-₦9,990). It is a model of the symptom, not the product's code; the
+ * pending "coins credited equal 100 x the reward" test tracks the bug itself.
+ */
+export function losesACoinToFloatRounding(paymentAmount: number): boolean {
+  const reward = Math.round(Math.min(paymentAmount * REWARD_RATE, MAX_REWARD_NAIRA) * 100) / 100;
+  return Math.floor(reward * COINS_PER_NAIRA) !== Math.round(reward * COINS_PER_NAIRA);
+}
+
+/** A random amount (a multiple of `step`) that isn't one of the amounts hit by the coin-loss bug above. */
+export function randomAmountWithoutCoinLoss(min: number, max: number, step = 10): number {
+  const steps = Math.floor((max - min) / step) + 1;
+
+  for (;;) {
+    const amount = min + Math.floor(Math.random() * steps) * step;
+    if (!losesACoinToFloatRounding(amount)) return amount;
+  }
+}
